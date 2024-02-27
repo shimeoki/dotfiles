@@ -1,0 +1,27 @@
+@import url("/home/d/.config/colors.css");
+
+* {
+    font-family: 'Noto Sans', 'Noto Sans Mono';
+    color: @text;
+}
+
+window#waybar {
+    background: @background;
+}
+
+#workspaces button {
+    background-color: @secondary;
+    padding: 6px 24px;
+    margin: 6px 8px;
+    border-radius: 16px / 50%;
+}
+
+#workspaces button.active {
+    background-color: @primary;
+}
+
+#clock {
+    background-color: @secondary;
+    padding: 6px 12px;
+    margin: 6px 12px;
+}

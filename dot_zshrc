@@ -1,0 +1,39 @@
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=10000
+setopt extendedglob nomatch notify
+bindkey -v
+# End of lines configured by zsh-newuser-install
+# The following lines were added by compinstall
+zstyle :compinstall filename '/home/d/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+# Plugins
+source ~/.config/zsh/zsh-autocomplete/zsh-autocomplete.plugin.zsh 
+source ~/.config/zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+  
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+
+# Waybar
+alias waybar-toggle='killall -SIGUSR1 waybar'
+alias waybar-reload='killall -SIGUSR2 waybar'
+
+# Pacman
+alias pacman='pacman --color=auto'
+
+# Neovim
+alias vim=nvim
+
+# Prompt
+PROMPT="%# %2~ > "
+
+# Editor
+EDITOR="nvim"
