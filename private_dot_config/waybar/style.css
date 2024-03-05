@@ -13,7 +13,7 @@ window#waybar {
     background-color: @secondary;
     padding: 6px 24px;
     margin: 6px 8px;
-    border-radius: 16px / 50%;
+    border-radius: 12px;
 }
 
 #workspaces button.active {
