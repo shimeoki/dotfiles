@@ -1,0 +1,21 @@
+# ls
+alias ls='ls --color=auto'
+
+# grep
+alias grep='grep --color=auto'
+
+# waybar
+alias waybar-toggle='killall -SIGUSR1 waybar'
+alias waybar-reload='killall -SIGUSR2 waybar'
+
+# pacman
+alias pacman='pacman --color=auto'
+
+# neovim
+alias vim=nvim
+
+# zoxide
+alias cd=z
+
+# sudo
+alias sudo='sudo '
