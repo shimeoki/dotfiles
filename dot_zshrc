@@ -41,3 +41,6 @@ EDITOR="nvim"
 # zoxide
 alias cd=z
 eval "$(zoxide init zsh)"
+
+# fzf
+eval "$(fzf --zsh)"
