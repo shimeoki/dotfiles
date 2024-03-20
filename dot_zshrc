@@ -29,7 +29,8 @@ PROMPT="%# %2~ > "
 EDITOR="nvim"
 
 # zoxide
-eval "$(zoxide init zsh)"
+eval "$(zoxide init --cmd cd zsh)"
 
 # fzf
 eval "$(fzf --zsh)"
+
