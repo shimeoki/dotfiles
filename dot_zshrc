@@ -37,3 +37,7 @@ PROMPT="%# %2~ > "
 
 # Editor
 EDITOR="nvim"
+
+# zoxide
+alias cd=z
+eval "$(zoxide init zsh)"
