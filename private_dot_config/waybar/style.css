@@ -1,27 +1,30 @@
-@import url("/home/d/.config/colors.css");
+@import "mocha.css";
 
 * {
-    font-family: 'Noto Sans', 'Noto Sans Mono';
-    color: @text;
+  font-family: 'Noto Sans', 'Noto Sans Mono';
+  color: @text;
 }
 
 window#waybar {
-    background: @background;
+  background: @base;
 }
 
 #workspaces button {
-    background-color: @secondary;
-    padding: 6px 24px;
-    margin: 6px 8px;
-    border-radius: 12px;
+  background-color: @surface0;
+  padding: 6px 24px;
+  margin: 6px 8px;
+  border-radius: 12px;
 }
 
 #workspaces button.active {
-    background-color: @primary;
+  background-color: @surface2;
+  color: @crust;
 }
 
 #clock {
-    background-color: @secondary;
-    padding: 6px 12px;
-    margin: 6px 12px;
+  background-color: @surface0;
+  color: @text;
+  padding: 6px 12px;
+  margin: 6px 12px;
 }
+
