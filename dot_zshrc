@@ -18,14 +18,14 @@ compinit
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-# Plugins
+# plugins
 source ~/.config/zsh/zsh-autocomplete/zsh-autocomplete.plugin.zsh 
 source ~/.config/zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 
-# Prompt
+# prompt
 PROMPT="%# %2~ > "
 
-# Editor
+# editor
 EDITOR="nvim"
 
 # zoxide

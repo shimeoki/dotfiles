@@ -12,8 +12,11 @@ alias waybar-reload='killall -SIGUSR2 waybar'
 alias pacman='pacman --color=auto'
 
 # neovim
-alias vim=nvim
+alias vim='nvim'
 
 # sudo
 alias sudo='sudo '
+
+# fastfetch
+alias ff='fastfetch'
 
