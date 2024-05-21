@@ -30,8 +30,12 @@ set cursorpreviewfmt "\033[7;2m"
 set previewer ~/.config/lf/lf_kitty_preview
 set cleaner ~/.config/lf/lf_kitty_clean
 
-# icons
+# enable icons
+# ~/.config/lf/icons file should be present
 set icons
+
+# enable hidden by default
+set hidden
 
 # use enter for shell commands
 map <enter> shell
