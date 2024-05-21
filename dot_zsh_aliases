@@ -20,3 +20,6 @@ alias sudo='sudo '
 # fastfetch
 alias ff='fastfetch'
 
+# chezmoi
+alias cz='chezmoi'
+
