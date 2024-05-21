@@ -23,6 +23,13 @@ set scrolloff 10
 # Use the `dim` attribute instead of underline for the cursor in the preview pane
 set cursorpreviewfmt "\033[7;2m"
 
+# preview
+# don't forget to mark the files as executable
+# chmod +x ~/.config/lf/lf_kitty_{clean,preview}
+# source: https://github.com/gokcehan/lf/wiki/Previews
+set previewer ~/.config/lf/lf_kitty_preview
+set cleaner ~/.config/lf/lf_kitty_clean
+
 # use enter for shell commands
 map <enter> shell
 
