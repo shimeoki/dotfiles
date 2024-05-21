@@ -20,7 +20,7 @@
       },
       {
         "type": "kernel",
-        "key": "kernel"
+        "key": "ker"
       },
       {
         "type": "host",
@@ -28,11 +28,11 @@
       },
       {
         "type": "uptime",
-        "key": "uptime"
+        "key": "up"
       },
       {
         "type": "memory",
-        "key": "memory"
+        "key": "ram"
       },
       {
         "type": "packages",
@@ -40,7 +40,7 @@
       },
       {
         "type": "shell",
-        "key": "shell"
+        "key": "sh"
       },
       {
         "type": "wm",
