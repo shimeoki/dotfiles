@@ -25,9 +25,15 @@ source ~/.config/zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zs
 # prompt
 PROMPT="%# %2~ > "
 
+# editor
+EDITOR="nvim"
+
 # zoxide
 eval "$(zoxide init --cmd cd zsh)"
 
 # fzf
 eval "$(fzf --zsh)"
+
+# gpg
+export GPG_TTY=$(tty)
 
