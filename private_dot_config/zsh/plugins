@@ -3,15 +3,15 @@
 # git clone commands expect $ZDOTDIR to be present
 # if it is not, add it explicitly
 
-# git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git "$ZDOTDIR/zsh-autocomplete"
+# git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git "$ZDOTDIR/plugin/zsh-autocomplete"
 # source: https://github.com/marlonrichert/zsh-autocomplete
-source "$ZDOTDIR/zsh-autocomplete/zsh-autocomplete.plugin.zsh"
+source "$ZDOTDIR/plugin/zsh-autocomplete/zsh-autocomplete.plugin.zsh"
 
-# git clone https://github.com/zdharma-continuum/fast-syntax-highlighting "$ZDOTDIR/fast-syntax-highlighting"
+# git clone https://github.com/zdharma-continuum/fast-syntax-highlighting "$ZDOTDIR/plugin/fast-syntax-highlighting"
 # source: https://github.com/zdharma-continuum/fast-syntax-highlighting
-source "$ZDOTDIR/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh"
+source "$ZDOTDIR/plugin/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh"
 
-# git clone https://github.com/zsh-users/zsh-autosuggestions "$ZDOTDIR/zsh-autosuggestions"
+# git clone https://github.com/zsh-users/zsh-autosuggestions "$ZDOTDIR/plugin/zsh-autosuggestions"
 # source: https://github.com/zsh-users/zsh-autosuggestions
-source "$ZDOTDIR/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh"
+source "$ZDOTDIR/plugin/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh"
 
