@@ -2,4 +2,5 @@
 
 source "$ZDOTDIR/zsh-autocomplete/zsh-autocomplete.plugin.zsh"
 source "$ZDOTDIR/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh"
+source "$ZDOTDIR/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh"
 
