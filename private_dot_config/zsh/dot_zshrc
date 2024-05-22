@@ -1,25 +1,30 @@
-#!/bin/env sh
+#!/bin/env zsh
 
-# aliases
+# enable powerlevel10k instant prompt
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+# source theme (powerlevel10k)
+# source: https://github.com/romkatv/powerlevel10k
+source "$ZDOTDIR/theme/powerlevel10k/powerlevel10k.zsh-theme"
+
+# source other files
 source "$ZDOTDIR/aliases"
-
-# history
 source "$ZDOTDIR/history"
-
-# plugins
 source "$ZDOTDIR/plugins"
 
-setopt extendedglob nomatch notify
+# file matching
+setopt EXTENDED_GLOB
+setopt NOMATCH
+
+# report status of background
+setopt NOTIFY
+
+# set vi mode
 bindkey -v
 
-# The following lines were added by compinstall
-zstyle :compinstall filename '/home/d/.zshrc'
-
-autoload -Uz compinit
-compinit
-# End of lines added by compinstall
-
-# If not running interactively, don't do anything
+# if not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
 # prompt
@@ -35,3 +40,5 @@ eval "$(fzf --zsh)"
 # source: https://wiki.archlinux.org/title/GnuPG#Configure_pinentry_to_use_the_correct_TTY
 export GPG_TTY=$(tty)
 
+# load powerlevek10k config
+[[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
