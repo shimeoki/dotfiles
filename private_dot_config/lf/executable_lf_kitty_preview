@@ -1,4 +1,5 @@
-#!/usr/bin/env bash
+#!/bin/env zsh
+
 file=$1
 w=$2
 h=$3
