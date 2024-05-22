@@ -24,11 +24,14 @@ set scrolloff 10
 set cursorpreviewfmt "\033[7;2m"
 
 # preview
+# TODO: use $LF_CONFIG_HOME
 # don't forget to mark the files as executable
-# chmod +x ~/.config/lf/lf_kitty_{clean,preview}
+# chmod +x ~/.config/lf/preview/previewer
+# chmod +x ~/.config/lf/prefiew/cleaner
 # source: https://github.com/gokcehan/lf/wiki/Previews
-set previewer ~/.config/lf/lf_kitty_preview
-set cleaner ~/.config/lf/lf_kitty_clean
+set preview true
+set previewer ~/.config/lf/preview/previewer
+set cleaner ~/.config/lf/preview/cleaner
 
 # enable icons
 # ~/.config/lf/icons file should be present
