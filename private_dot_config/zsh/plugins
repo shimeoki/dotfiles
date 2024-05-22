@@ -1,6 +1,17 @@
 #!/bin/env sh
 
+# git clone commands expect $ZDOTDIR to be present
+# if it is not, add it explicitly
+
+# git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git "$ZDOTDIR/zsh-autocomplete"
+# source: https://github.com/marlonrichert/zsh-autocomplete
 source "$ZDOTDIR/zsh-autocomplete/zsh-autocomplete.plugin.zsh"
+
+# git clone https://github.com/zdharma-continuum/fast-syntax-highlighting "$ZDOTDIR/fast-syntax-highlighting"
+# source: https://github.com/zdharma-continuum/fast-syntax-highlighting
 source "$ZDOTDIR/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh"
+
+# git clone https://github.com/zsh-users/zsh-autosuggestions "$ZDOTDIR/zsh-autosuggestions"
+# source: https://github.com/zsh-users/zsh-autosuggestions
 source "$ZDOTDIR/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh"
 
