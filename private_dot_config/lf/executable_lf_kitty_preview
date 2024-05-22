@@ -1,4 +1,4 @@
-#!/bin/env zsh
+#!/bin/env sh
 
 file=$1
 w=$2
