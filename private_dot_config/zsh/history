@@ -1,5 +1,7 @@
 #!/bin/env sh
 
+# source: https://zsh.sourceforge.io/Doc/Release/Options.html#History
+
 # file
 HISTFILE="$XDG_STATE_HOME/zsh/history"
 
@@ -14,6 +16,6 @@ setopt INC_APPEND_HISTORY
 setopt HIST_FIND_NO_DUPS
 
 # don't save duplicate commands
-# old command are deleted, new are written
+# old commands are deleted, new are written
 setopt HIST_IGNORE_ALL_DUPS
 
