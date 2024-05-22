@@ -1,0 +1,19 @@
+#!/bin/env sh
+
+# file
+HISTFILE="$XDG_STATE_HOME/zsh/history"
+
+# size
+SAVEHIST=1000000
+HISTSIZE=1000000
+
+# update history on the fly
+setopt INC_APPEND_HISTORY
+
+# don't show duplicate lines
+setopt HIST_FIND_NO_DUPS
+
+# don't save duplicate commands
+# old command are deleted, new are written
+setopt HIST_IGNORE_ALL_DUPS
+
