@@ -1,0 +1,5 @@
+#!/bin/env sh
+
+source "$ZDOTDIR/zsh-autocomplete/zsh-autocomplete.plugin.zsh"
+source "$ZDOTDIR/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh"
+

@@ -6,6 +6,9 @@ source "$ZDOTDIR/aliases"
 # history
 source "$ZDOTDIR/history"
 
+# plugins
+source "$ZDOTDIR/plugins"
+
 setopt extendedglob nomatch notify
 bindkey -v
 
@@ -18,10 +21,6 @@ compinit
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
-
-# plugins
-source ~/.config/zsh/zsh-autocomplete/zsh-autocomplete.plugin.zsh 
-source ~/.config/zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 
 # prompt
 PROMPT="%# %2~ > "
