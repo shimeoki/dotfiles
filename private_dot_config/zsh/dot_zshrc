@@ -5,21 +5,24 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+# enable zinit
+# install if not present
+# source: https://github.com/zdharma-continuum/zinit?tab=readme-ov-file
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+
 [ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
 [ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
-source "${ZINIT_HOME}/zinit.zsh"
 
-# source theme (powerlevel10k)
-# source: https://github.com/romkatv/powerlevel10k
-# source "$ZDOTDIR/theme/powerlevel10k/powerlevel10k.zsh-theme"
-zinit ice depth"1"
-zinit light romkatv/powerlevel10k
+source "${ZINIT_HOME}/zinit.zsh"
 
 # source other files
 source "$ZDOTDIR/aliases"
 source "$ZDOTDIR/history"
 source "$ZDOTDIR/plugins"
+
+# enable theme (powerlevel10k)
+# source: https://github.com/romkatv/powerlevel10k
+zinit ice depth"1"; zinit light romkatv/powerlevel10k
 
 # file matching
 setopt EXTENDED_GLOB

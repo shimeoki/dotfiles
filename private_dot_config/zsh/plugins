@@ -1,26 +1,13 @@
 #!/bin/env zsh
 
-# git clone commands expect $ZDOTDIR to be present
-# if it is not, add it explicitly
-
-# git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git "$ZDOTDIR/plugin/zsh-autocomplete"
-# source:
-source "$ZDOTDIR/plugin/zsh-autocomplete/zsh-autocomplete.plugin.zsh"
-
-# git clone https://github.com/zdharma-continuum/fast-syntax-highlighting "$ZDOTDIR/plugin/fast-syntax-highlighting"
-# source: https://github.com/zdharma-continuum/fast-syntax-highlighting
-# source "$ZDOTDIR/plugin/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh"
-
-# git clone https://github.com/zsh-users/zsh-autosuggestions "$ZDOTDIR/plugin/zsh-autosuggestions"
-# source: https://github.com/zsh-users/zsh-autosuggestions
-source "$ZDOTDIR/plugin/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh"
-
-zinit ice depth"1" wait lucid atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay"
-zinit light zdharma-continuum/fast-syntax-highlighting
-
-zinit ice depth"1" wait lucid
-zinit light marlonrichert/zsh-autocomplete
-
-zinit ice depth"1" wait lucid
-zinit light zsh-users/zsh-autosuggestions
+# enable plugins with zinit
+# sources in order:
+# https://github.com/zdharma-continuum/fast-syntax-highlighting
+# https://github.com/zsh-users/zsh-autosuggestions
+# https://github.com/marlonrichert/zsh-autocomplete
+zinit depth"1" lucid light-mode for \
+    wait atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
+        zdharma-continuum/fast-syntax-highlighting \
+    wait zsh-users/zsh-autosuggestions \
+    marlonrichert/zsh-autocomplete
 
