@@ -1,0 +1,23 @@
+[user]
+	name = shimeoki
+	email = shimeoki@gmail.com
+[init]
+	defaultBranch = main
+[core]
+	editor = nvim
+	pager = delta
+[commit]
+	gpgsign = true
+	verbose = true
+[interactive]
+	diffFilter = delta --color-only
+[delta]
+	navigate = true
+	line-numbers = true
+	features = catppuccin-mocha
+[merge]
+	conflictstyle = zdiff3
+[diff]
+	colorMoved = default
+[include]
+	path = ~/.config/delta/themes/catppuccin-mocha.gitconfig
