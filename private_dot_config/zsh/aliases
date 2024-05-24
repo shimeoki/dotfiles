@@ -15,6 +15,7 @@ alias pacman='pacman --color=auto'
 
 # neovim
 alias vim='nvim'
+alias v='nvim'
 
 # sudo
 alias sudo='sudo '
