@@ -1,54 +1,26 @@
 @import "mocha.css";
 
 * {
-  font-family: "RobotoMono Nerd Font";
-  font-size: 16px;
+  font-family: "FiraCode Nerd Font";
+  font-size: 14px;
 }
 
 window#waybar {
   background-color: rgba(0, 0, 0, 0);
 }
 
-#workspaces button {
+#workspaces button, #clock, #battery, #language {
   background-color: @base;
   color: @text;
+
   padding: 4px 16px;
   margin: 0 4px;
-  border-radius: 8px;
+
   border: 4px solid @overlay0;
+  border-radius: 8px;
 }
 
 #workspaces button.active {
   border-color: @lavender;
-}
-
-#clock {
-  background-color: @base;
-  border: 4px solid @overlay0;
-  color: @text;
-  border-radius: 8px;
-  padding: 4px 8px;
-  margin: 0 4px;
-  font-weight: bold;
-}
-
-#battery {
-  background-color: @base;
-  border: 4px solid @overlay0;
-  color: @text;
-  border-radius: 8px;
-  padding: 4px 8px;
-  margin: 0 4px;
-  font-weight: bold;
-}
-
-#language {
-  background-color: @base;
-  border: 4px solid @overlay0;
-  color: @text;
-  border-radius: 8px;
-  padding: 4px 8px;
-  margin: 0 4px;
-  font-weight: bold;
 }
 
