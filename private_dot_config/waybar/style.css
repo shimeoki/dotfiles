@@ -9,7 +9,7 @@ window#waybar {
   background-color: rgba(0, 0, 0, 0);
 }
 
-#workspaces button, #clock, #battery, #language {
+#workspaces button, #clock, #battery, #language, #network {
   background-color: @base;
   color: @text;
 

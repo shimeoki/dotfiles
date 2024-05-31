@@ -5,7 +5,7 @@
     "margin-left": 4,
     "margin-right": 4,
     "modules-left": ["hyprland/workspaces"],
-    "modules-center": [],
+    "modules-center": ["network"],
     "modules-right": ["hyprland/language", "battery", "clock"],
     "clock": {
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
@@ -87,5 +87,12 @@
         "format-charging-charge-29": "{capacity}% 󰂆",
         "format-charging-charge-19": "{capacity}% 󰢜",
         "format-charging-charge-9": "{capacity}% 󰢟"
+    },
+    "network" : {
+        "format-wifi": "{essid} {icon}",
+        "tooltip-format-wifi": "Signal strength: {signalStrength}%",
+        "format-ethernet": "{ipaddr}/{cidr} 󰖈",
+        "format-disconnected": "",
+        "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"]
     }
 }
