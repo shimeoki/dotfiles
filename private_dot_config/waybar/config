@@ -1,9 +1,12 @@
 {
     "layer": "top",
     "position" : "top",
+    "margin-top": 8,
+    "margin-left": 4,
+    "margin-right": 4,
     "modules-left": ["hyprland/workspaces"],
     "modules-center": [],
-    "modules-right": ["battery", "clock"],
+    "modules-right": ["hyprland/language", "battery", "clock"],
     "clock": {
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
         "calendar": {
@@ -27,5 +30,25 @@
             "on-scroll-up": "shift_up",
             "on-scroll-down": "shift_down"
             }
+    },
+    "hyprland/language": {
+        "format": "{}",
+        "format-en": "en",
+        "format-ru": "ru"
+    },
+    "hyprland/workspaces": {
+        "format": "{name}{icon}{windows}",
+        "format-window-separator": " ",
+        "window-rewrite-default": "",
+        "window-rewrite": {
+            "firefox": "󰈹",
+            "code": "󰨞",
+            "kitty": "",
+            "obsidian": "󰠮"
+        },
+        "format-icons": {
+            "default": ": ",
+            "empty": ""
         }
+    }
 }
