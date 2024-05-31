@@ -5,8 +5,8 @@
     "margin-left": 4,
     "margin-right": 4,
     "modules-left": ["hyprland/workspaces"],
-    "modules-center": ["network"],
-    "modules-right": ["hyprland/language", "battery", "clock"],
+    "modules-center": ["clock", "hyprland/language"],
+    "modules-right": ["network", "battery"],
     "clock": {
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
         "calendar": {
