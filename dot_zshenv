@@ -23,3 +23,7 @@ export LF_CONFIG_HOME="$XDG_CONFIG_HOME"
 # gpg config directory
 export GNUPGHOME="$XDG_CONFIG_HOME/gnupg"
 
+# xcursor path
+# source: https://wiki.archlinux.org/title/Cursor_themes#Environment_variable
+export XCURSOR_PATH="${XCURSOR_PATH}:${XDG_DATA_HOME}/icons"
+
