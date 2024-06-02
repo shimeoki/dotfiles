@@ -3,6 +3,7 @@
 * {
     font-family: "FiraCode Nerd Font";
     font-size: 14px;
+    font-feature-settings: "cv02, cv11, cv22, cv25, cv26, cv32, cv28, ss04, ss06, ss07";
 }
 
 window#waybar {
