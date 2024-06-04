@@ -17,22 +17,22 @@ window#waybar {
     padding: 4px 16px;
     margin: 0 4px;
 
+    border: 1px solid alpha(@overlay2, 0.5);
     border-radius: 8px;
 }
 
-#workspaces button {
-    border-color: @overlay0;
-}
-
 #workspaces button.active {
-    border-color: @lavender;
+    color: @green;
+    border-color: @green;
 }
 
 #battery.charging {
     color: @green;
+    border-color: @green;
 }
 
 #battery.charge-9, #battery.charge-19 {
     color: @red;
+    border-color: @red;
 }
 
