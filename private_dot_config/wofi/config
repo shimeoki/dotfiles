@@ -1,0 +1,17 @@
+prompt=
+normal_window=falsee
+allow_images=true
+allow_markup=false
+term=kitty
+matching=fuzzy
+insensitive=true
+no_actions=true
+orientation=vertical
+image_size=24
+content_align=start
+hide_search=false
+copy_exec=wl-copy
+global_coords=true
+single_click=true
+hide_scroll=true
+
