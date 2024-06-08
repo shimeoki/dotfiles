@@ -56,7 +56,7 @@
 }
 
 #outer-box {
-    background-color: alpha(@base, 0.9);
+    background-color: @base;
     border-radius: 16px;
     padding: 16px;
 }
