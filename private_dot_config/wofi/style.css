@@ -68,7 +68,7 @@
 }
 
 #entry {
-    padding: 12px 0px;
+    padding: 12px 16px;
 }
 
 #entry:selected {
@@ -76,6 +76,6 @@
 }
 
 #img {
-    padding: 0 16px;
+    padding-right: 16px;
 }
 
