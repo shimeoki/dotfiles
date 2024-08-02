@@ -15,9 +15,26 @@
 	navigate = true
 	line-numbers = true
 	features = catppuccin-mocha
+	side-by-side = true
 [merge]
 	conflictstyle = zdiff3
 [diff]
 	colorMoved = default
+	algorithm = histogram
+	submodule = log
 [include]
 	path = ~/.config/delta/themes/catppuccin-mocha.gitconfig
+[status]
+	submodulesummary = true
+[submodule]
+	recurse = true
+[transfer]
+	fsckObjects = true
+[fetch]
+	fsckObjects = true
+[receive]
+	fsckObjects = true
+[log]
+	date = iso
+[branch]
+	sort = -committerdate
