@@ -19,6 +19,7 @@ alias v='nvim'
 
 # sudo
 alias sudo='sudo '
+# blank space is a hack
 
 # fastfetch
 alias ff='fastfetch'
@@ -28,4 +29,7 @@ alias cz='chezmoi'
 
 # bat
 alias cat='bat --paging=never'
+
+# git
+alias g='git'
 
