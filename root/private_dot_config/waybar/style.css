@@ -13,7 +13,7 @@ window#waybar {
     background-color: rgba(0, 0, 0, 0);
 }
 
-#workspaces button, #clock, #battery, #language, #network {
+#workspaces button, #clock, #battery, #language, #network, #window {
     background-color: @base;
     color: @text;
 

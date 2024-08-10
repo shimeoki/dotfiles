@@ -4,7 +4,7 @@
     "margin-top": 8,
     "margin-left": 4,
     "margin-right": 4,
-    "modules-left": ["hyprland/workspaces"],
+    "modules-left": ["hyprland/workspaces", "hyprland/window"],
     "modules-center": ["clock", "hyprland/language"],
     "modules-right": ["network", "battery"],
     "hyprland/language": {
@@ -28,6 +28,11 @@
             "default": ": ",
             "empty": ""
         }
+    },
+    "hyprland/window": {
+        "format": "{}",
+        "separate-outputs": true,
+        "icon": false
     },
     "battery": {
         "states": {
