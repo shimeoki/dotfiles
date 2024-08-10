@@ -15,12 +15,14 @@
     "hyprland/workspaces": {
         "format": "{name}{icon}{windows}",
         "format-window-separator": " ",
-        "window-rewrite-default": "",
+        "window-rewrite-default": "󰣆",
         "window-rewrite": {
             "firefox": "󰈹",
             "code": "󰨞",
-            "kitty": "",
-            "obsidian": "󰠮"
+            "kitty": "󰆍",
+            "obsidian": "󰠮",
+            ".*telegram.*": "󰍡",
+            "wofi": "󰮫"
         },
         "format-icons": {
             "default": ": ",
