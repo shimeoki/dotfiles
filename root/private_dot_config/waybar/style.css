@@ -13,6 +13,13 @@ window#waybar {
     background-color: rgba(0, 0, 0, 0);
 }
 
+/* source: https://github.com/Alexays/Waybar/wiki/Module:-Hyprland#example-3 */
+
+window#waybar.empty #window {
+    background-color: transparent;
+    border: none;
+}
+
 #workspaces button, #clock, #battery, #language, #network, #window {
     background-color: @base;
     color: @text;
