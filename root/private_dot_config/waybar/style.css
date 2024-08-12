@@ -20,7 +20,13 @@ window#waybar.empty #window {
     border: none;
 }
 
-#workspaces button, #clock, #battery, #language, #network, #window {
+#workspaces button,
+#clock,
+#battery,
+#language,
+#network,
+#window,
+#backlight {
     background-color: @base;
     color: @text;
 

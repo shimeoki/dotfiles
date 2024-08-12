@@ -6,7 +6,7 @@
     "margin-right": 4,
     "modules-left": ["hyprland/workspaces", "hyprland/window"],
     "modules-center": ["clock", "hyprland/language"],
-    "modules-right": ["network", "battery"],
+    "modules-right": ["backlight", "network", "battery"],
     "hyprland/language": {
         "format": "{}",
         "format-en": "en",
@@ -77,5 +77,10 @@
         "format-ethernet": "{ipaddr}/{cidr} 󰖈",
         "format-disconnected": "",
         "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"]
+    },
+    "backlight": {
+        "device": "amdgpu_bl1",
+        "format": "{percent}% {icon}",
+        "format-icons": ["󰃚", "󰃛", "󰃜", "󰃝", "󰃞", "󰃟", "󰃠"]
     }
 }
