@@ -26,7 +26,8 @@ window#waybar.empty #window {
 #language,
 #network,
 #window,
-#backlight {
+#backlight,
+#keyboard-state {
     background-color: @base;
     color: @text;
 
