@@ -96,6 +96,6 @@
         "interval": 60,
         "tooltip": true,
         "format": "{:%R}",
-        "tooltip-format": "{:%F}"
+        "tooltip-format": "{:%F (%A, %B %e)}"
     }
 }
