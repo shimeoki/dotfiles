@@ -91,5 +91,11 @@
             "locked": "󰌾",
             "unlocked": "󰿆"
         }
+    },
+    "clock": {
+        "interval": 60,
+        "tooltip": true,
+        "format": "{:%R}",
+        "tooltip-format": "{:%F}"
     }
 }
