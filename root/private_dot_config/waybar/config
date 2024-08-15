@@ -22,6 +22,9 @@
             "kitty": "󰆍",
             "obsidian": "󰠮",
             ".*telegram.*": "󰍡",
+            "Element": "󰍡",
+            "Signal": "󰍡",
+            "discord": "󰍡",
             "wofi": "󰮫"
         },
         "format-icons": {
