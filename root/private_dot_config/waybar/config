@@ -18,6 +18,8 @@
         "window-rewrite-default": "󰣆",
         "window-rewrite": {
             "firefox": "󰈹",
+            "floorp": "󰈹",
+            "zen-alpha": "󰈹",
             "code": "󰨞",
             "kitty": "󰆍",
             "obsidian": "󰠮",
