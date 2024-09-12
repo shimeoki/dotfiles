@@ -27,7 +27,8 @@ window#waybar.empty #window {
 #network,
 #window,
 #backlight,
-#keyboard-state {
+#keyboard-state,
+#bluetooth {
     background-color: @base;
     color: @text;
 
