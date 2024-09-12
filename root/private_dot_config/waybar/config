@@ -24,6 +24,7 @@
             "kitty": "󰆍",
             "obsidian": "󰠮",
             ".*telegram.*": "󰍡",
+            ".*materialgram": "󰍡",
             "Element": "󰍡",
             "Signal": "󰍡",
             "discord": "󰍡",
