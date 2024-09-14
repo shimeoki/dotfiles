@@ -1,0 +1,10 @@
+kitty
+dunst
+wl-clipboard
+cliphist
+waybar
+wofi
+swww
+networkmanager
+brightnessctl
+polkit-gnome

@@ -1,0 +1,2 @@
+neovim
+visual-studio-code-bin

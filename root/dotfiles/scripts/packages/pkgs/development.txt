@@ -1,0 +1,13 @@
+go
+gopls
+jdk-openjdk
+python
+dart
+lua
+dotnet-sdk
+dotnet-runtime
+git
+git-delta
+mariadb
+postgresql
+nodejs

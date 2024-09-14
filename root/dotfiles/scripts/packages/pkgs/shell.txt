@@ -1,0 +1,6 @@
+zsh
+zoxide
+bat
+eza
+fzf
+fastfetch
