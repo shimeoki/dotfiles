@@ -2,8 +2,15 @@
 
 # source: https://zsh.sourceforge.io/Doc/Release/Options.html#History
 
+# directory
+HISTFILEDIR="$XDG_STATE_HOME"/zsh
+
+# check for directory presence
+# make if doesn't exist
+[ -d "$HISTFILEDIR" ] || mkdir "$HISTFILEDIR"
+
 # file
-HISTFILE="$XDG_STATE_HOME/zsh/history"
+HISTFILE="$HISTFILEDIR"/history
 
 # size
 HISTSIZE=1000000
