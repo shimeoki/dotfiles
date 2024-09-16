@@ -1,3 +1,2 @@
 materialgram-bin
-nchat
 element-desktop
