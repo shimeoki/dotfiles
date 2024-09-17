@@ -65,4 +65,4 @@ Terminal font is [Fira Code](https://github.com/tonsky/FiraCode), interface font
 
 ## Scripts
 
--   [packages](root/dotfiles/scripts/packages/README.md) (tested, but not on a new machine)
+-   [packages](root/dot_scripts/packages/README.md) (tested, but not on a new machine)
