@@ -4,7 +4,7 @@ set -eu
 
 readonly AUR_HELPER="yay"
 
-readonly SCRIPT_ROOT="$HOME/dotfiles/scripts/packages"
+readonly SCRIPT_ROOT="$HOME/.scripts/packages"
 
 readonly DIR_CONFIG="$SCRIPT_ROOT/config"
 readonly DIR_PACKAGES="$SCRIPT_ROOT/pkgs"
