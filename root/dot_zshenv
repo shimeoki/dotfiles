@@ -11,7 +11,7 @@ export XDG_STATE_HOME="$HOME/.local/state"
 # source: https://wiki.archlinux.org/title/Environment_variables#Default_programs
 export SHELL="/usr/bin/zsh"
 export PAGER="less"
-[ -n "$WAYLAND_DISPLAY" ] && export EDITOR="helix" || export EDITOR="nano"
+export EDITOR="helix"
 export VISUAL="helix"
 export BROWSER="firefox"
 
