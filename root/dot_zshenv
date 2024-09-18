@@ -9,8 +9,10 @@ export XDG_STATE_HOME="$HOME/.local/state"
 
 # default programs
 # source: https://wiki.archlinux.org/title/Environment_variables#Default_programs
-export EDITOR="nvim"
-export VISUAL="code"
+export SHELL="/usr/bin/zsh"
+export PAGER="less"
+[ -n "$WAYLAND_DISPLAY" ] && export EDITOR="helix" || export EDITOR="nano"
+export VISUAL="helix"
 export BROWSER="firefox"
 
 # zsh config directory
