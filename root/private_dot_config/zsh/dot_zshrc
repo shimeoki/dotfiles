@@ -1,18 +1,18 @@
 #!/bin/env zsh
 
-# enable powerlevel10k instant prompt
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+# if not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+# enable oh-my-posh
+# source: https://ohmyposh.dev/docs/installation/prompt
+eval "$(oh-my-posh init zsh --config $OMP_CONFIG_HOME/zen.toml)"
 
 # enable zinit
 # install if not present
 # source: https://github.com/zdharma-continuum/zinit?tab=readme-ov-file
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
-
 [ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
 [ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
-
 source "${ZINIT_HOME}/zinit.zsh"
 
 # source other files
@@ -20,10 +20,6 @@ source "$ZDOTDIR/aliases"
 source "$ZDOTDIR/history"
 source "$ZDOTDIR/plugins"
 source "$ZDOTDIR/yazi"
-
-# enable theme (powerlevel10k)
-# source: https://github.com/romkatv/powerlevel10k
-zinit ice depth"1"; zinit light romkatv/powerlevel10k
 
 # file matching
 setopt EXTENDED_GLOB
@@ -35,18 +31,13 @@ setopt NOTIFY
 # set vi mode
 bindkey -v
 
-# if not running interactively, don't do anything
-[[ $- != *i* ]] && return
-
-# zoxide
-eval "$(zoxide init --cmd cd zsh)"
-
-# fzf
-eval "$(fzf --zsh)"
-
 # gpg
 # source: https://wiki.archlinux.org/title/GnuPG#Configure_pinentry_to_use_the_correct_TTY
 export GPG_TTY=$TTY
 
-# load powerlevek10k config
-[[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
+# fzf
+eval "$(fzf --zsh)"
+
+# zoxide
+eval "$(zoxide init --cmd cd zsh)"
+

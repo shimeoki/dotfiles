@@ -22,6 +22,9 @@ export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 # lf config directory
 export LF_CONFIG_HOME="$XDG_CONFIG_HOME"
 
+# oh-my-posh config directory
+export OMP_CONFIG_HOME="$XDG_CONFIG_HOME/oh-my-posh"
+
 # gpg config directory
 export GNUPGHOME="$XDG_CONFIG_HOME/gnupg"
 
