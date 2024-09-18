@@ -19,6 +19,7 @@ source "${ZINIT_HOME}/zinit.zsh"
 source "$ZDOTDIR/aliases"
 source "$ZDOTDIR/history"
 source "$ZDOTDIR/plugins"
+source "$ZDOTDIR/yazi"
 
 # enable theme (powerlevel10k)
 # source: https://github.com/romkatv/powerlevel10k
