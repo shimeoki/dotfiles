@@ -35,6 +35,10 @@ bindkey -v
 # source: https://wiki.archlinux.org/title/GnuPG#Configure_pinentry_to_use_the_correct_TTY
 export GPG_TTY=$TTY
 
+# enable completions
+autoload -Uz compinit
+compinit
+
 # fzf
 eval "$(fzf --zsh)"
 
