@@ -33,3 +33,5 @@ alias cat='bat --paging=never'
 # git
 alias g='git'
 
+# helix
+alias hx='helix'
