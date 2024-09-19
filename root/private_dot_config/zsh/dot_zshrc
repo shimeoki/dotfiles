@@ -12,7 +12,7 @@ source "$ZSHRC/aliases"
 source "$ZSHRC/history"
 source "$ZSHRC/zinit"
 source "$ZSHRC/yazi"
-soruce "$ZSHRC/up"
+source "$ZSHRC/up"
 source "$ZSHRC/completion"
 
 # file matching
