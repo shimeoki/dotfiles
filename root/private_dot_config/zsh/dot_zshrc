@@ -27,8 +27,7 @@ bindkey -v
 export GPG_TTY=$TTY
 
 # enable completions
-autoload -Uz compinit
-compinit
+autoload -Uz compinit && compinit
 
 # fzf
 eval "$(fzf --zsh)"
