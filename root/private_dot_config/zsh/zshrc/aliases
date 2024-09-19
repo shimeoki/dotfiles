@@ -16,7 +16,6 @@ alias pacman='pacman --color=auto'
 
 # neovim
 alias vim='nvim'
-alias v='nvim'
 
 # sudo
 alias sudo='sudo '
@@ -36,3 +35,7 @@ alias g='git'
 
 # helix
 alias hx='helix'
+
+# envs
+alias e="$EDITOR"
+alias v="$VISUAL"
