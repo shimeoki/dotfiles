@@ -26,6 +26,8 @@ alias ff='fastfetch'
 
 # chezmoi
 alias cz='chezmoi'
+alias czj='chezmoi cd'
+alias cza='chezmoi apply'
 
 # bat
 alias cat='bat --paging=never'
