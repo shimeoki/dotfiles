@@ -1,17 +1,23 @@
 #!/bin/env zsh
 
-ZSHRC="$ZDOTDIR/zshrc"
 
 # enable oh-my-posh
 # source: https://ohmyposh.dev/docs/installation/prompt
 eval "$(oh-my-posh init zsh --config $OMP_CONFIG_HOME/zen.toml)"
 
-# source other files
+# source zshrc directory
+ZSHRC="$ZDOTDIR/zshrc"
 source "$ZSHRC/env"
 source "$ZSHRC/aliases"
 source "$ZSHRC/history"
 source "$ZSHRC/zinit"
 source "$ZSHRC/completion"
+
+# source programs directory
+PROGRAMS="$ZDOTDIR/programs"
+source "$PROGRAMS/y"
+source "$PROGRAMS/up"
+source "$PROGRAMS/eza_tree"
 
 # file matching
 setopt EXTENDED_GLOB
