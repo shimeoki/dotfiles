@@ -12,6 +12,7 @@ source "$ZSHRC/aliases"
 source "$ZSHRC/history"
 source "$ZSHRC/zinit"
 source "$ZSHRC/yazi"
+source "$ZSHRC/completion"
 
 # file matching
 setopt EXTENDED_GLOB
@@ -22,9 +23,6 @@ setopt NOTIFY
 
 # set vi mode
 bindkey -v
-
-# enable completions
-autoload -Uz compinit && compinit
 
 # fzf
 eval "$(fzf --zsh)"
