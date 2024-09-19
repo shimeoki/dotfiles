@@ -1,8 +1,10 @@
 #!/bin/env sh
 
 # eza
-alias ls='eza'
+alias l='eza'
+alias la='eza -a'
 alias ll='eza -l'
+alias lla='eza -la'
 
 # grep
 alias grep='grep --color=auto'
