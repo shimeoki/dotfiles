@@ -7,6 +7,7 @@ ZSHRC="$ZDOTDIR/zshrc"
 eval "$(oh-my-posh init zsh --config $OMP_CONFIG_HOME/zen.toml)"
 
 # source other files
+source "$ZSHRC/env"
 source "$ZSHRC/aliases"
 source "$ZSHRC/history"
 source "$ZSHRC/zinit"
@@ -21,10 +22,6 @@ setopt NOTIFY
 
 # set vi mode
 bindkey -v
-
-# gpg
-# source: https://wiki.archlinux.org/title/GnuPG#Configure_pinentry_to_use_the_correct_TTY
-export GPG_TTY=$TTY
 
 # enable completions
 autoload -Uz compinit && compinit
