@@ -1,5 +1,14 @@
 #!/bin/env zsh
 
+# enable zinit
+# install if not present
+# source: https://github.com/zdharma-continuum/zinit?tab=readme-ov-file
+
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+[ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
+[ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+source "${ZINIT_HOME}/zinit.zsh"
+
 # enable plugins with zinit
 # sources in order:
 # https://github.com/zdharma-continuum/fast-syntax-highlighting
