@@ -11,8 +11,6 @@ source "$ZSHRC/env"
 source "$ZSHRC/aliases"
 source "$ZSHRC/history"
 source "$ZSHRC/zinit"
-source "$ZSHRC/yazi"
-source "$ZSHRC/up"
 source "$ZSHRC/completion"
 
 # file matching
