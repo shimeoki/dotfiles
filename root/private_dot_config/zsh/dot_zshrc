@@ -34,5 +34,4 @@ compinit
 eval "$(fzf --zsh)"
 
 # zoxide
-eval "$(zoxide init --cmd cd zsh)"
-
+eval "$(zoxide init --cmd j zsh)"
