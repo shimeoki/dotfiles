@@ -32,3 +32,6 @@ export GNUPGHOME="$XDG_CONFIG_HOME/gnupg"
 # source: https://wiki.archlinux.org/title/Cursor_themes#Environment_variable
 export XCURSOR_PATH="${XCURSOR_PATH}:${XDG_DATA_HOME}/icons"
 
+# eza
+export EZA_ICONS_AUTO=1
+
