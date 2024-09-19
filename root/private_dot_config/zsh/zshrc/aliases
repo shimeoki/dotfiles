@@ -1,7 +1,8 @@
 #!/bin/env sh
 
-# ls
+# eza (ls)
 alias ls='eza'
+alias ll='eza -l'
 
 # grep
 alias grep='grep --color=auto'
