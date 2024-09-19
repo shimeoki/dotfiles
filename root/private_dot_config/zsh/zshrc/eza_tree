@@ -1,0 +1,19 @@
+#!/bin/env sh
+
+eza_tree() {
+    make_eza_tree() {
+        EZA_TREE_OPTS="--icons=always --color=always"
+        printf "eza %s --tree --level=%d $EZA_TREE_OPTS" "$1" "$2"
+    }
+
+    if [ -d "$1" ]; then
+        if [ -z "$2" ]; then
+            eval "$(make_eza_tree "$1" 1)"
+        else
+            eval "$(make_eza_tree "$1" "$2")"
+        fi
+    else
+        eza_tree . "$1"
+    fi
+}
+
