@@ -1,5 +1,7 @@
 #!/bin/env zsh
 
+ZSHRC="$ZDOTDIR/zshrc"
+
 # enable oh-my-posh
 # source: https://ohmyposh.dev/docs/installation/prompt
 eval "$(oh-my-posh init zsh --config $OMP_CONFIG_HOME/zen.toml)"
@@ -13,10 +15,10 @@ ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 source "${ZINIT_HOME}/zinit.zsh"
 
 # source other files
-source "$ZDOTDIR/aliases"
-source "$ZDOTDIR/history"
-source "$ZDOTDIR/plugins"
-source "$ZDOTDIR/yazi"
+source "$ZSHRC/aliases"
+source "$ZSHRC/history"
+source "$ZSHRC/plugins"
+source "$ZSHRC/yazi"
 
 # file matching
 setopt EXTENDED_GLOB
