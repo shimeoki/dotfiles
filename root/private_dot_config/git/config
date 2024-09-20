@@ -1,6 +1,7 @@
 [user]
 	name = shimeoki
 	email = shimeoki@gmail.com
+	signingkey = 2B092E2DCA05866B
 [init]
 	defaultBranch = main
 [core]
