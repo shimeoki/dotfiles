@@ -19,6 +19,10 @@ source "$PROGRAMS/y"
 source "$PROGRAMS/up"
 source "$PROGRAMS/eza_tree"
 
+# path
+CARGO_PATH="$HOME/.cargo/bin"
+path+="$CARGO_PATH"
+
 # file matching
 setopt EXTENDED_GLOB
 setopt NOMATCH
