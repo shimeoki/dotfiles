@@ -1,40 +1,8 @@
 #!/bin/env sh
 
-# xdg user directories
-# source: https://wiki.archlinux.org/title/XDG_Base_Directory#User_directories 
-export XDG_CONFIG_HOME="$HOME/.config"
-export XDG_CACHE_HOME="$HOME/.cache"
-export XDG_DATA_HOME="$HOME/.local/share"
-export XDG_STATE_HOME="$HOME/.local/state"
-
-# default programs
-# source: https://wiki.archlinux.org/title/Environment_variables#Default_programs
-export SHELL='/usr/bin/zsh'
-export PAGER='less'
-export EDITOR='helix'
-export VISUAL='helix'
-export BROWSER='firefox'
-
 # zsh config directory
 # source: https://wiki.archlinux.org/title/Zsh#Startup/Shutdown_files
-export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
+export ZDOTDIR="$HOME/.config/zsh"
 
-# lf config directory
-export LF_CONFIG_HOME="$XDG_CONFIG_HOME"
-
-# oh-my-posh config directory
-export OMP_CONFIG_HOME="$XDG_CONFIG_HOME/oh-my-posh"
-
-# gpg config directory
-export GNUPGHOME="$XDG_CONFIG_HOME/gnupg"
-
-# xcursor path
-# source: https://wiki.archlinux.org/title/Cursor_themes#Environment_variable
-export XCURSOR_PATH="${XCURSOR_PATH}:${XDG_DATA_HOME}/icons"
-
-# eza
-export EZA_ICONS_AUTO=1
-
-# hypr
-export HYPR_CONFIG_HOME="$XDG_CONFIG_HOME/hypr"
+source "$ZDOTDIR/env.sh"
 

@@ -1,27 +1,6 @@
 #!/bin/env zsh
 
-
-# enable oh-my-posh
-# source: https://ohmyposh.dev/docs/installation/prompt
-eval "$(oh-my-posh init zsh --config $OMP_CONFIG_HOME/zen.toml)"
-
-# source zshrc directory
-ZSHRC="$ZDOTDIR/zshrc"
-source "$ZSHRC/env"
-source "$ZSHRC/aliases"
-source "$ZSHRC/history"
-source "$ZSHRC/zinit"
-source "$ZSHRC/completion"
-
-# source programs directory
-PROGRAMS="$ZDOTDIR/programs"
-source "$PROGRAMS/y"
-source "$PROGRAMS/up"
-source "$PROGRAMS/eza_tree"
-
-# path
-CARGO_PATH="$HOME/.cargo/bin"
-path+="$CARGO_PATH"
+export ZSH_RC="$ZDOTDIR/rc"
 
 # file matching
 setopt EXTENDED_GLOB
@@ -33,8 +12,12 @@ setopt NOTIFY
 # set vi mode
 bindkey -v
 
-# fzf
-eval "$(fzf --zsh)"
+source "$ZSH_RC/zinit.zsh"
+source "$ZSH_RC/aliases.sh"
+source "$ZSH_RC/completion.zsh"
+source "$ZSH_RC/history.zsh"
+source "$ZSH_RC/path.zsh"
 
-# zoxide
-eval "$(zoxide init --cmd j zsh)"
+source "$ZDOTDIR/functions.sh"
+source "$ZDOTDIR/programs.sh"
+
