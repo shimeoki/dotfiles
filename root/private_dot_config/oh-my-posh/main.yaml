@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json
+
+version: 2
+enable_cursor_positioning: true
+
+blocks:
+  - type: prompt
+    alignment: left
+    segments:
+      - type: path
+        style: plain
+        foreground: cyan
+        background: transparent
+        template: "{{ .Path }}"
+        properties:
+            style: full
+      - type: git
+        style: plain
+        foreground: white
+        background: transparent
+        template: " {{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed) }}*{{ end }}"
+        properties:
+            fetch_status: true
+            branch_icon: ""
+            commit_icon: "@"
+  - type: prompt
+    alignment: left
+    newline: true
+    segments:
+      - type: text
+        style: plain
+        foreground: blue
+        background: transparent
+        template: "❯ "
+  - type: rprompt
+    alignment: right   
+    overflow: hidden
+    segments:
+      - type: executiontime
+        style: plain
+        foreground: white
+        background: transparent
+        template: "{{ .FormattedMs }}"
+        properties:
+            threshold: 5000
+            style: round
+
+transient_prompt:
+    foreground: white
+    background: transparent
+    template: "❯ "
+
