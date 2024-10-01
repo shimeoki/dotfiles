@@ -2,5 +2,5 @@
 
 export ZSH_PROGRAMS_FZF_THEMES="$ZSH_PROGRAMS_FZF/themes"
 
-source "$FZF_PROGRAMS_FZF_THEMES/catppuccin-mocha.sh"
+source "$ZSH_PROGRAMS_FZF_THEMES/catppuccin-mocha.sh"
 
