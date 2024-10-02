@@ -14,4 +14,5 @@ source "$ZSH_RC_ALIASES/nvim.sh"
 source "$ZSH_RC_ALIASES/pacman.sh"
 source "$ZSH_RC_ALIASES/sudo.sh"
 source "$ZSH_RC_ALIASES/waybar.sh"
+source "$ZSH_RC_ALIASES/kitty.sh"
 
