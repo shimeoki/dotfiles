@@ -5,10 +5,10 @@
 # - See the source code (completion.{bash,zsh}) for the details.
 
 _fzf_compgen_path() {
-    "$FZF_CTRL_T_COMMAND" . "$1"
+    eval "$FZF_CTRL_T_COMMAND" . "$1"
 }
 
 _fzf_compgen_dir() {
-    "$FZF_ALT_C_COMMAND" . "$1"
+    eval "$FZF_ALT_C_COMMAND" . "$1"
 }
 
