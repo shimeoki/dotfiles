@@ -2,7 +2,6 @@
 
 export ZSH_RC_ALIASES="$ZSH_RC/aliases"
 
-source "$ZSH_RC_ALIASES/bat.sh"
 source "$ZSH_RC_ALIASES/chezmoi.sh"
 source "$ZSH_RC_ALIASES/env.sh"
 source "$ZSH_RC_ALIASES/eza.sh"
