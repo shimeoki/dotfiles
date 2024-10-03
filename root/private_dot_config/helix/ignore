@@ -4,3 +4,8 @@
 # java
 .class
 
+# gradle
+gradle/
+gradlew
+gradlew.bat
+
