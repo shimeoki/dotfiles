@@ -13,7 +13,14 @@ export SHELL='/usr/bin/zsh'
 export PAGER='less'
 export EDITOR='helix'
 export VISUAL='helix'
-export BROWSER='firefox'
+export BROWSER='zen-browser'
+
+# programs
+export TERMINAL='kitty'
+export LAUNCHER='wofi'
+export NOTES='obsidian'
+export WALLPAPER_CLIENT='swww'
+export WALLPAPER_SERVER='swww-daemon'
 
 # zsh config directory
 # source: https://wiki.archlinux.org/title/Zsh#Startup/Shutdown_files
