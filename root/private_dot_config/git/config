@@ -39,3 +39,5 @@
 	date = iso
 [branch]
 	sort = -committerdate
+[pull]
+	ff = only
