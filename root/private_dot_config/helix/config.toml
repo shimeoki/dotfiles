@@ -65,22 +65,21 @@ wrap-at-text-width = false
 "n" = "no_op"
 
 # map
-"tab" = "rotate_view"
+"]" = "rotate_view"
+"[" = "rotate_view_reverse"
 "\\" = "transpose_view"
 ";" = "vsplit"
 "'" = "hsplit"
+"A-;" = "vsplit_new"
+"A-'" = "hsplit_new"
 "h" = "jump_view_left"
 "j" = "jump_view_down"
 "k" = "jump_view_up"
 "l" = "jump_view_right"
-"backspace" = "wclose"
-"A-backspace" = "wonly"
 "A-h" = "swap_view_left"
 "A-j" = "swap_view_down"
 "A-k" = "swap_view_up"
 "A-l" = "swap_view_right"
-
-[keys.normal."C-w"."ret"]
-";" = "vsplit_new"
-"'" = "hsplit_new"
+"backspace" = "wclose"
+"A-backspace" = "wonly"
 
