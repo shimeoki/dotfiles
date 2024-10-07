@@ -1,9 +1,31 @@
 theme = "catppuccin_mocha"
 
 [editor]
+scrolloff = 5
+mouse = true
+middle-click-paste = false
+scroll-lines = 3
 line-number = "relative"
+cursorline = true
+cursorcolumn = false
+auto-completion = true
+auto-format = true
+idle-timeout = 250
+completion-timeout = 250
+preview-completion-insert = true
+completion-trigger-len = 2
+completion-replace = false
+auto-info = true
+true-color = false
+undercurl = false
+color-modes = false
+rulers = [ 80 ]
+text-width = 80
+bufferline = "multiple"
 default-line-ending = "lf"
+insert-final-newline = true
 popup-border = "all"
+indent-heuristic = "hybrid"
 
 [editor.lsp]
 enable = true
@@ -37,6 +59,53 @@ wrap-indicator = ""
 wrap-at-text-width = false
 
 [keys.normal."C-w"]
+# unmap
+"left" = "no_op"
+"down" = "no_op"
+"up" = "no_op"
+"right" = "no_op"
+"C-h" = "no_op"
+"C-j" = "no_op"
+"C-k" = "no_op"
+"C-l" = "no_op"
+"H" = "no_op"
+"J" = "no_op"
+"K" = "no_op"
+"L" = "no_op"
+"v" = "no_op"
+"C-v" = "no_op"
+"o" = "no_op"
+"C-o" = "no_op"
+"s" = "no_op"
+"C-s" = "no_op"
+"w" = "no_op"
+"C-w" = "no_op"
+"q" = "no_op"
+"C-q" = "no_op"
+"t" = "no_op"
+"C-t" = "no_op"
+"n" = "no_op"
+
+# map
+"]" = "rotate_view"
+"[" = "rotate_view_reverse"
+"\\" = "transpose_view"
+";" = "vsplit"
+"'" = "hsplit"
+"A-;" = "vsplit_new"
+"A-'" = "hsplit_new"
+"h" = "jump_view_left"
+"j" = "jump_view_down"
+"k" = "jump_view_up"
+"l" = "jump_view_right"
+"A-h" = "swap_view_left"
+"A-j" = "swap_view_down"
+"A-k" = "swap_view_up"
+"A-l" = "swap_view_right"
+"backspace" = "wclose"
+"A-backspace" = "wonly"
+
+[keys.normal."space"."w"]
 # unmap
 "left" = "no_op"
 "down" = "no_op"
