@@ -56,6 +56,7 @@ alias hx='helix'
 
 # kitty
 alias icat='kitten icat'
+alias s='kitten ssh'
 
 # lazygit
 alias lg='lazygit'
