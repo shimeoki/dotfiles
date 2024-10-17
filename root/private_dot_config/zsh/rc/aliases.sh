@@ -65,6 +65,7 @@ alias lg='lazygit'
 alias vim='nvim'
 
 # pacman
+alias pm='pacman'
 alias pacman='pacman --color=auto'
 
 # sudo
