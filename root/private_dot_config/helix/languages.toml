@@ -6,4 +6,5 @@ file-types = ["java", "jav", "pde"]
 roots = ["pom.xml", "build.gradle", "build.gradle.kts"]
 language-servers = [ "jdtls" ]
 indent = { tab-width = 4, unit = "    " }
+auto-format = true
 
