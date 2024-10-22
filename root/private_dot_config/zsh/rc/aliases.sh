@@ -76,3 +76,7 @@ alias sudo='sudo '
 alias waybar-toggle='killall -SIGUSR1 waybar'
 alias waybar-reload='killall -SIGUSR2 waybar'
 
+# swww
+alias sbg='swww img'
+# stands for "set bg"
+
