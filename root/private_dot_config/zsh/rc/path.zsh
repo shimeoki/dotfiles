@@ -1,6 +1,8 @@
 #!/bin/env zsh
 
-# path
 CARGO_PATH="$HOME/.cargo/bin"
+GO_PATH="$HOME/go/bin"
+
 path+="$CARGO_PATH"
+path+="$GO_PATH"
 
