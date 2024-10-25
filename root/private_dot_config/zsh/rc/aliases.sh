@@ -62,7 +62,7 @@ alias s='kitten ssh'
 alias lg='lazygit'
 
 # neovim
-alias vim='nvim'
+alias nv='nvim'
 
 # pacman
 alias pm='pacman'
