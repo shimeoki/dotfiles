@@ -48,9 +48,6 @@ alias gb='git branch'
 alias gsw='git switch'
 alias gre='git restore'
 
-# grep
-alias grep='grep --color=auto'
-
 # helix
 alias hx='helix'
 
@@ -66,7 +63,6 @@ alias nv='nvim'
 
 # pacman
 alias pm='pacman'
-alias pacman='pacman --color=auto'
 
 # sudo
 alias sudo='sudo '
