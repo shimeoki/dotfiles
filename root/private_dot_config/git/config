@@ -41,3 +41,5 @@
 	sort = -committerdate
 [pull]
 	ff = only
+[tag]
+	gpgsign = true
