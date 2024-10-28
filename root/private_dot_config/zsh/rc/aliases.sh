@@ -33,20 +33,60 @@ alias ff='fastfetch'
 # fzf
 alias f='fzf'
 
-# git
+# git start
+
 alias g='git'
+
+# add
 alias ga='git add'
+
+# reset
 alias gr='git reset'
+
+# status
 alias gs='git status'
+
+# sWitch
+alias gw='git switch'
+
+# rEstore
+alias ge='git restore'
+
+# branch
+alias gb='git branch'
+alias gba='git branch --all'
+alias gbm='git branch --move'
+alias gbd='git branch --delete'
+
+# log
+alias gl='git log'
+alias glg='git log --graph'
+alias gla='git log --all'
+alias glga='git log --graph --all'
+
+# diff
 alias gd='git diff'
 alias gdc='git diff --cached'
 alias gdh='git diff HEAD'
-alias gl='git log'
+
+# commit
 alias gc='git commit'
+alias gca='git commit --all'
+
+# push
 alias gp='git push'
-alias gb='git branch'
-alias gsw='git switch'
-alias gre='git restore'
+alias gpa='git push --all'
+alias gpt='git push --tags'
+
+# tag
+alias gt='git tag'
+alias gta='git tag --annotate'
+alias gtd='git tag --delete'
+
+# merge
+alias gm='git merge'
+
+# git end
 
 # helix
 alias hx='helix'
