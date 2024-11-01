@@ -31,7 +31,7 @@
             "wofi": "󰮫"
         },
         "format-icons": {
-            "default": ": ",
+            "default": " ",
             "empty": ""
         }
     },
