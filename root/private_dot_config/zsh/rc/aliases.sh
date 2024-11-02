@@ -116,3 +116,7 @@ alias waybar-reload='killall -SIGUSR2 waybar'
 alias sbg='swww img'
 # stands for "set bg"
 
+# nmcli
+alias wific='nmcli device wifi connect'
+alias wifir='nmcli device wifi rescan'
+
