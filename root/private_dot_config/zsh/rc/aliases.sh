@@ -80,6 +80,7 @@ alias gpt='git push --tags'
 
 # tag
 alias gt='git tag'
+alias gtn='git tag -n'
 alias gta='git tag --annotate'
 alias gtd='git tag --delete'
 
