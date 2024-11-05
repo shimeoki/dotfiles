@@ -102,7 +102,7 @@
         "interval": 60,
         "tooltip": true,
         "format": "{:%R}",
-        "tooltip-format": "{:%F (%A, %B %e)}"
+        "tooltip-format": "{:%F (%A, %B %d)}"
     },
     "bluetooth": {
         "format": "{status} 󰂯",
