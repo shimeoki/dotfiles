@@ -40,17 +40,14 @@ alias g='git'
 # add
 alias ga='git add'
 
-# reset
-alias gr='git reset'
-
 # status
-alias gs='git status'
+alias gg='git status'
 
-# sWitch
-alias gw='git switch'
+# switch
+alias gs='git switch'
 
-# rEstore
-alias ge='git restore'
+# restore
+alias gr='git restore'
 
 # branch
 alias gb='git branch'
