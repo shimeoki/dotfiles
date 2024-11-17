@@ -57,6 +57,7 @@ alias gbd='git branch --delete'
 
 # log
 alias gl='git log'
+alias gls='git shortlog'
 alias glg='git log --graph'
 alias gla='git log --all'
 alias glga='git log --graph --all'
