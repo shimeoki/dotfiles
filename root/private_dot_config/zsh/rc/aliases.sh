@@ -45,6 +45,7 @@ alias gg='git status'
 
 # switch
 alias gs='git switch'
+alias gsc='git switch -c'
 
 # restore
 alias gr='git restore'
