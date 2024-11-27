@@ -24,3 +24,8 @@ run  = '''
     shell 'ya pub dds-cd --str "$(git rev-parse --show-toplevel)"' --confirm
 '''
 desc = "back to the root of the current git repository"
+
+[[manager.prepend_keymap]]
+on   = "T"
+run  = "plugin --sync max-preview"
+desc = "maximize or restore preview"
