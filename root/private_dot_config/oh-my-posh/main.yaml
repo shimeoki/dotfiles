@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json
 
-version: 2
+version: 3
 enable_cursor_positioning: true
 
 blocks:
@@ -14,6 +14,7 @@ blocks:
         template: "{{ .Path }}"
         properties:
             style: full
+            cache_duration: none
       - type: git
         style: plain
         foreground: white
@@ -23,6 +24,7 @@ blocks:
             fetch_status: true
             branch_icon: ""
             commit_icon: "@"
+            cache_duration: none
   - type: prompt
     alignment: left
     newline: true
@@ -32,6 +34,8 @@ blocks:
         foreground: blue
         background: transparent
         template: "❯ "
+        properties:
+            cache_duration: none
   - type: rprompt
     alignment: right   
     overflow: hidden
@@ -44,6 +48,7 @@ blocks:
         properties:
             threshold: 5000
             style: round
+            cache_duration: none
 
 transient_prompt:
     foreground: white
