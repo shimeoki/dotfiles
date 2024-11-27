@@ -17,3 +17,10 @@ desc = "open shell here"
 on   = "<C-n>"
 run  = 'shell "ripdrag "$@" -x 2>/dev/null &" --confirm'
 desc = "drag and drop on selected files"
+
+[[manager.prepend_keymap]]
+on   = [ "g", "r" ]
+run  = '''
+    shell 'ya pub dds-cd --str "$(git rev-parse --show-toplevel)"' --confirm
+'''
+desc = "back to the root of the current git repository"
