@@ -8,3 +8,7 @@ on   = "<C-d>"
 run  = "plugin diff"
 desc = "diff the selected file with the hovered file"
 
+[[manager.prepend_keymap]]
+on   = "!"
+run  = 'shell "$SHELL" --block --confirm'
+desc = "open shell here"
