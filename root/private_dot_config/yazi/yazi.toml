@@ -1,3 +1,16 @@
+[manager]
+ratio = [1, 2, 2]
+sort_by = "natural"
+sort_dir_first = true
+sort_translit = true
+linemode = "none"
+show_symlink = true
+scrolloff = 5
+
+[preview]
+wrap = "yes"
+tab_size = 4
+
 [[plugin.prepend_fetchers]]
 id   = "git"
 name = "*"
