@@ -123,3 +123,6 @@ alias wifir='nmcli device wifi rescan'
 # zoxide
 alias jj='j -'
 
+# gradle
+alias gw='./gradlew'
+
