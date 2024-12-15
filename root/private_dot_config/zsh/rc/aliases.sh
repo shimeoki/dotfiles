@@ -86,6 +86,9 @@ alias gtd='git tag --delete'
 # merge
 alias gm='git merge'
 
+# fetch
+alias gf='git fetch'
+
 # git end
 
 # helix
