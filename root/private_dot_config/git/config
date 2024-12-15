@@ -33,6 +33,7 @@
 	fsckObjects = true
 [fetch]
 	fsckObjects = true
+	prune = true
 [receive]
 	fsckObjects = true
 [log]
