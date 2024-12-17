@@ -19,6 +19,7 @@
 	side-by-side = true
 [merge]
 	conflictstyle = zdiff3
+	ff = false
 [diff]
 	colorMoved = default
 	algorithm = histogram

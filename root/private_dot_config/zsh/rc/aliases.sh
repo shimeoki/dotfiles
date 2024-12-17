@@ -85,6 +85,7 @@ alias gtd='git tag --delete'
 
 # merge
 alias gm='git merge'
+alias gmf='git merge --ff'
 
 # fetch
 alias gf='git fetch'
