@@ -21,7 +21,7 @@ desc = "drag and drop on selected files"
 [[manager.prepend_keymap]]
 on   = [ "g", "r" ]
 run  = '''
-    shell 'ya pub dds-cd --str "$(git rev-parse --show-toplevel)"' --confirm
+    shell 'ya emit cd "$(git rev-parse --show-toplevel)"'
 '''
 desc = "back to the root of the current git repository"
 
