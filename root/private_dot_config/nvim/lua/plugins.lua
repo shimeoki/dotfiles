@@ -23,4 +23,7 @@ return {
             })
         end
     },
+    {
+        "neovim/nvim-lspconfig"
+    },
 }
