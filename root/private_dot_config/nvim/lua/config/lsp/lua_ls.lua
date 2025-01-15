@@ -24,7 +24,19 @@ local function on_init(client)
     })
 end
 
+-- source: https://github.com/neovim/neovim/issues/21686#issuecomment-1522446128
+local settings = {
+    runtime = { version = runtime },
+    diagnostics = {
+        globals = {
+            "vim",
+            "require",
+        }
+    },
+    telemetry = { enable = false },
+}
+
 require("lspconfig").lua_ls.setup({
     on_init = on_init,
-    settings = { Lua = {} },
+    settings = { Lua = settings },
 })
