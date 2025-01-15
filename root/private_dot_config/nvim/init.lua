@@ -1,7 +1,8 @@
 require("binds")
 require("options")
 
-require("config.lazy")
+require("plugman")
+
 require("config.treesitter")
 
 -- theme
