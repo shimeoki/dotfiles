@@ -1,4 +1,6 @@
 local runtime = "LuaJIT"
+local format = true
+local hints = true
 
 local function on_init(client)
     if not client.workspace_folders then
@@ -34,6 +36,8 @@ local settings = {
         }
     },
     telemetry = { enable = false },
+    format = { enable = format },
+    hint = { enable = hints },
 }
 
 require("lspconfig").lua_ls.setup({
