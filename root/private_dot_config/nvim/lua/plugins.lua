@@ -1,5 +1,2 @@
-return {
-    {
-        "neovim/nvim-lspconfig"
-    },
-}
+return {}
+-- everything is in plugins/
