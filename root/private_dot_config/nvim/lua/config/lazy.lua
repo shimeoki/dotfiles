@@ -20,9 +20,6 @@ end
 
 vim.opt.rtp:prepend(path)
 
-vim.g.mapleader = " "
-vim.g.maplocalleader = "\\"
-
 require("lazy").setup({
     spec = {
         {
