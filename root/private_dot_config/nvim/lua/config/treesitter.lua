@@ -1,11 +1,9 @@
-local cfg = require("nvim-treesitter.configs")
-
 local langs = {
     "lua",
     "go"
 }
 
-cfg.setup({
+require("nvim-treesitter.configs").setup({
     ensure_installed = langs,
     sync_install = false,
     highlight = { enable = true },
