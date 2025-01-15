@@ -1,7 +1,3 @@
-local M = {}
-
-table.insert(M, {
+return {
     "neovim/nvim-lspconfig"
-})
-
-return M
+}

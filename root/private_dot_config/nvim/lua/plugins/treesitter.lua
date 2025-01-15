@@ -1,8 +1,4 @@
-local M = {}
-
-table.insert(M, {
+return {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate"
-})
-
-return M
+}
