@@ -8,3 +8,6 @@ set.softtabstop = tab_width
 set.shiftwidth = tab_width
 set.expandtab = tab_to_spaces
 
+set.number = true
+set.relativenumber = true
+
