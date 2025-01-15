@@ -19,3 +19,8 @@ set.wrapmargin = 0
 set.wrap = true
 set.linebreak = true
 set.columns = columns
+
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
+set.termguicolors = true
