@@ -10,6 +10,8 @@ M.opts = {
 	},
 }
 
-M.formatexpr = 'v:lua.require("conform").formatexpr()'
+function M.set_formatexpr()
+	vim.o.formatexpr = 'v:lua.require("conform").formatexpr()'
+end
 
 return M
