@@ -1,4 +1,6 @@
 return {
     "nvim-treesitter/nvim-treesitter",
-    build = ":TSUpdate"
+    main = "nvim-treesitter.configs",
+    build = ":TSUpdate",
+    opts = require("config.treesitter").opts,
 }
