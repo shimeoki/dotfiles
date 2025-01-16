@@ -1,5 +1,8 @@
+local cfg = require("config.lsp")
+
 return {
     "neovim/nvim-lspconfig",
     priority = 10, -- load after mason
-    config = require("config.lsp").init,
+    opts = cfg.opts,
+    config = cfg.init,
 }

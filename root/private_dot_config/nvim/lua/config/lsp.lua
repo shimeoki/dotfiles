@@ -5,6 +5,9 @@ local enabled = {
     lua_ls = true,
 }
 
+local hints = true
+local lens = true
+
 -- make a list from enabled lsp's
 M.list = {}
 for k, v in pairs(enabled) do
@@ -29,5 +32,10 @@ function M.init()
         end
     end
 end
+
+M.opts = {
+    inlay_hints = { enabled = hints },
+    codelens = { enabled = lens },
+}
 
 return M
