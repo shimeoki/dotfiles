@@ -1,7 +1,13 @@
-require("mason").setup()
+local M = {}
 
-require("mason-lspconfig").setup({
-    ensure_installed = {
-        "lua_ls",
-    }
-})
+local lsp_list = {
+    "lua_ls",
+}
+
+M.lsp = {}
+
+M.lsp.opts = {
+    ensure_installed = lsp_list,
+}
+
+return M
