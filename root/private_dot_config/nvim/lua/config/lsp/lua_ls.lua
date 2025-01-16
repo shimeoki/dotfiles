@@ -1,3 +1,5 @@
+local M = {}
+
 local runtime = "LuaJIT"
 local format = true
 local hints = true
@@ -40,7 +42,9 @@ local settings = {
     hint = { enable = hints },
 }
 
-require("lspconfig").lua_ls.setup({
+M.opts = {
     on_init = on_init,
     settings = { Lua = settings },
-})
+}
+
+return M
