@@ -5,7 +5,7 @@ local columns = 80
 
 local set = vim.opt
 
-set.tabstop = 8
+set.tabstop = tab_width
 set.softtabstop = tab_width
 set.shiftwidth = tab_width
 set.expandtab = tab_to_spaces
