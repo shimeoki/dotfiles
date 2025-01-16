@@ -1,13 +1,9 @@
 local M = {}
 
-local lsp_list = {
-    "lua_ls",
-}
-
 M.lsp = {}
 
 M.lsp.opts = {
-    ensure_installed = lsp_list,
+    ensure_installed = require("config.lsp").list,
 }
 
 return M
