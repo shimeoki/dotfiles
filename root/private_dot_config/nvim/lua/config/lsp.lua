@@ -22,13 +22,23 @@ function M.init()
 		return
 	end
 
+	local cmp = require("cmp_nvim_lsp")
+	if not cmp then
+		return
+	end
+
+	local capabilities = cmp.default_capabilities()
+
 	local prefix = "config.lsp."
 	local lspcfg
+	local opts
 
 	for _, v in ipairs(M.list) do
 		lspcfg = require(prefix .. v)
 		if lspcfg then
-			cfg[v].setup(lspcfg.opts)
+			opts = lspcfg.opts
+			opts.capabilities = capabilities
+			cfg[v].setup(opts)
 		end
 	end
 end
