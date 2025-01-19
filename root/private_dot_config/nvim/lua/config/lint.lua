@@ -22,6 +22,24 @@ M.linter_filetypes = {
 	golangcilint = { "go" },
 }
 
+M.linter_mason_name = {
+	golangcilint = "golangci-lint",
+}
+
+M.mason_ensure_installed = {}
+local mason_name
+
+for linter, enabled in pairs(M.linters) do
+	if enabled then
+		mason_name = M.linter_mason_name[linter]
+		if not mason_name then
+			mason_name = linter
+		end
+
+		table.insert(M.mason_ensure_installed, mason_name)
+	end
+end
+
 local tables = require("tables")
 
 M.enabled_linters = tables.parse_enabled(M.linters)
