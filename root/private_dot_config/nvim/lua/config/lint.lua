@@ -1,45 +1,30 @@
 local M = {}
 
-local linters = {
-	lua = { "luacheck" },
+-- enable or disable all linters
+M.lint_enabled = true
+
+-- enable or disable specific linters
+-- naming from nvim-lint
+M.linters = {
+	luacheck = true,
+	golangcilint = true,
 }
 
-M.list = {}
-for _, t in pairs(linters) do
-	for _, v in ipairs(t) do
-		table.insert(M.list, v)
-	end
-end
-
-local events = {
+-- events to trigger lint
+M.lint_events = {
 	"BufEnter",
 	"BufWritePost",
 	"InsertLeave",
 }
 
-local function plug()
-	return require("lint")
-end
+M.linter_filetypes = {
+	luacheck = { "lua" },
+	golangcilint = { "go" },
+}
 
-function M.init()
-	local p = plug()
+local tables = require("tables")
 
-	p.linters_by_ft = linters
-
-	vim.api.nvim_create_autocmd(events, {
-		callback = function()
-			p.try_lint()
-		end,
-	})
-
-	local prefix = "config.lint."
-	local cfg
-
-	for _, v in ipairs(M.list) do
-		-- todo check require
-		cfg = require(prefix .. v)
-		p.linters[v].args = cfg.args
-	end
-end
+M.enabled_linters = tables.parse_enabled(M.linters)
+M.filetype_linters = tables.parse_filetypes(M.linter_filetypes, M.enabled_linters)
 
 return M
