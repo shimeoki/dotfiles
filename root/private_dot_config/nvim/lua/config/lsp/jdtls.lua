@@ -1,7 +1,5 @@
 local M = {}
 
-local cfg = require("config.mason")
-local exec = cfg.home .. "/bin/jdtls"
 local workspace_prefix = vim.env.HOME .. "/.cache/jdtls/workspace"
 local root_files = {
 	".git",
@@ -24,7 +22,7 @@ function M.workspace_dir(path)
 	return workspace_prefix .. path
 end
 
-function M.cmd(workspace_dir)
+function M.cmd(exec, workspace_dir)
 	return {
 		exec,
 		"-data",
@@ -32,11 +30,11 @@ function M.cmd(workspace_dir)
 	}
 end
 
-function M.config()
+function M.config(exec)
 	local root_dir = M.root_dir()
 
 	return {
-		cmd = M.cmd(M.workspace_dir(M.dir_path(root_dir))),
+		cmd = M.cmd(exec, M.workspace_dir(M.dir_path(root_dir))),
 		root_dir = root_dir,
 	}
 end
