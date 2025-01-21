@@ -1,3 +1,3 @@
-local cfg = require("config.lsp.jdt_ls")
+local cfg = require("config.lsp.jdtls")
 
 require("jdtls").start_or_attach(cfg.config())
