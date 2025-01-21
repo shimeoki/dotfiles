@@ -33,4 +33,23 @@ function M.parse_filetypes(tbl, enabled)
 	return by_filetype
 end
 
+function M.parse_names(map, all)
+	local mapped = {}
+
+	local name
+
+	for key, enabled in pairs(all) do
+		if enabled then
+			name = map[key]
+			if not name then
+				name = key
+			end
+
+			table.insert(mapped, name)
+		end
+	end
+
+	return mapped
+end
+
 return M
