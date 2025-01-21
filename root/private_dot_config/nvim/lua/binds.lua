@@ -19,7 +19,7 @@ function M.split(str)
 	return chars
 end
 
-function M.make(modes, keys, cmd, desc)
+function M.new(modes, keys, cmd, desc)
 	return {
 		modes = modes,
 		keys = "<leader>" .. keys,
@@ -30,6 +30,10 @@ end
 
 function M.add(bind)
 	table.insert(M.map, bind)
+end
+
+function M.add_new(modes, keys, cmd, desc)
+	M.add(M.new(modes, keys, cmd, desc))
 end
 
 function M.convert_to_std(bind)
@@ -45,10 +49,10 @@ function M.convert_to_whichkey(bind)
 	}
 end
 
-M.add(M.make("nv", "h", "wincmd h", "focus left split"))
-M.add(M.make("nv", "j", "wincmd j", "focus down split"))
-M.add(M.make("nv", "k", "wincmd k", "focus up split"))
-M.add(M.make("nv", "l", "wincmd l", "focus right split"))
+M.add_new("nv", "h", "wincmd h", "focus left split")
+M.add_new("nv", "j", "wincmd j", "focus down split")
+M.add_new("nv", "k", "wincmd k", "focus up split")
+M.add_new("nv", "l", "wincmd l", "focus right split")
 
 local function init()
 	local map = vim.keymap.set
