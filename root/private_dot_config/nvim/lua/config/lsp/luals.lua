@@ -1,8 +1,14 @@
 local M = {}
 
+local lsp_cfg = require("config.lsp")
+local fmt_cfg = require("config.fmt")
+
 local runtime = "LuaJIT"
-local format = true
-local hints = true
+
+local globals = {
+	"vim",
+	"require",
+}
 
 local function on_init(client)
 	if not client.workspace_folders then
@@ -31,15 +37,10 @@ end
 -- source: https://github.com/neovim/neovim/issues/21686#issuecomment-1522446128
 local settings = {
 	runtime = { version = runtime },
-	diagnostics = {
-		globals = {
-			"vim",
-			"require",
-		},
-	},
+	diagnostics = { globals = globals },
 	telemetry = { enable = false },
-	format = { enable = format },
-	hint = { enable = hints },
+	format = { enable = fmt_cfg.formatting_enabled },
+	hint = { enable = lsp_cfg.hints },
 }
 
 M.opts = {
