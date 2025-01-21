@@ -33,7 +33,9 @@ function M.add(bind)
 end
 
 function M.add_new(modes, keys, cmd, desc)
-	M.add(M.new(modes, keys, cmd, desc))
+	local bind = M.new(modes, keys, cmd, desc)
+	M.add(bind)
+	return bind
 end
 
 function M.convert_to_std(bind)
