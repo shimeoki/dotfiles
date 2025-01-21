@@ -52,9 +52,32 @@ function M.convert_to_whichkey(bind)
 end
 
 M.add_new("nv", "h", "wincmd h", "focus left split")
-M.add_new("nv", "j", "wincmd j", "focus down split")
-M.add_new("nv", "k", "wincmd k", "focus up split")
+M.add_new("nv", "j", "wincmd j", "focus bottom split")
+M.add_new("nv", "k", "wincmd k", "focus top split")
 M.add_new("nv", "l", "wincmd l", "focus right split")
+
+M.add_new("nv", "H", "wincmd H", "swap split to left")
+M.add_new("nv", "J", "wincmd J", "swap split to bottom")
+M.add_new("nv", "K", "wincmd K", "swap split to top")
+M.add_new("nv", "L", "wincmd L", "swap split to right")
+
+M.add_new("nv", ";", "vsplit", "split left current")
+M.add_new("nv", "'", "split", "split top current")
+
+M.add_new("nv", ":", "vnew", "split left new")
+M.add_new("nv", '"', "new", "split top new")
+
+M.add_new("nv", "<enter>", "vsplit", "open current")
+M.add_new("nv", "<s-enter>", "vnew", "open new")
+
+M.add_new("nv", "<bs>", "close", "close current split")
+M.add_new("nv", "<s-bs>", "only", "close all except current split")
+
+M.add_new("nv", "[", "-wincmd w", "focus previous split")
+M.add_new("nv", "]", "+wincmd w", "focus next split")
+
+M.add_new("nv", "{", "wincmd R", "swap split with next")
+M.add_new("nv", "}", "wincmd r", "swap split with previous")
 
 local function init()
 	local map = vim.keymap.set
