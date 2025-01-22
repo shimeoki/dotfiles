@@ -38,4 +38,5 @@ require("lazy").setup({
 		colorscheme = { theme },
 	},
 	checker = { enabled = check },
+	ui = { border = "rounded" },
 })
