@@ -6,7 +6,7 @@ M.lsp = {}
 M.lint = {}
 
 M.lsp.opts = {
-	ensure_installed = require("config.lsp").list,
+	ensure_installed = require("config.lsp").mason_ensure_installed,
 }
 
 M.lint.opts = {
