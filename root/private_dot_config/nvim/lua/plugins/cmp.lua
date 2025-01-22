@@ -16,10 +16,13 @@ return {
 	main = "cmp",
 	dependencies = addons,
 	opts = function()
+		cfg.autopairs_setup()
+
 		local opts = cfg.opts
 
 		opts.mapping = cfg.binds()
 		opts.sources = cfg.src()
+		opts.window = cfg.window()
 
 		return opts
 	end,
