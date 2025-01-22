@@ -2,7 +2,10 @@ local cfg = require("config.syntax")
 
 local opts = {
 	ensure_installed = cfg.enabled_parsers,
-	highlight = { enable = cfg.highlighting_enabled },
+	highlight = {
+		enable = cfg.highlighting_enabled,
+		additional_vim_regex_highlighting = false,
+	},
 }
 
 return {
