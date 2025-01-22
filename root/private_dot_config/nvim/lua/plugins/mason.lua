@@ -3,7 +3,11 @@ local cfg = require("config.mason")
 local main = {
 	"williamboman/mason.nvim",
 	main = "mason",
-	opts = {},
+	opts = {
+		ui = {
+			border = "rounded",
+		},
+	},
 	priority = 50, -- default
 }
 
