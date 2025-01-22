@@ -51,6 +51,12 @@ function M.convert_to_whichkey(bind)
 	}
 end
 
+-- todo move somewhere else
+
+M.add_new("nv", "`", "cd %:p:h", "change current working directory to file's")
+
+-- splits
+
 M.add_new("nv", "h", "wincmd h", "focus left split")
 M.add_new("nv", "j", "wincmd j", "focus bottom split")
 M.add_new("nv", "k", "wincmd k", "focus top split")
@@ -78,6 +84,48 @@ M.add_new("nv", "]", "+wincmd w", "focus next split")
 
 M.add_new("nv", "{", "wincmd R", "swap split with next")
 M.add_new("nv", "}", "wincmd r", "swap split with previous")
+
+-- yazi
+
+M.add_new("nv", "e", "Yazi", "open yazi at the current file")
+M.add_new("nv", "E", "Yazi cwd", "open yazi in current working directory")
+M.add_new("nv", "<c-e>", "Yazi toggle", "resume last yazi session")
+
+-- telescope
+
+M.add_new("nv", "f", "Telescope find_files", "find files")
+M.add_new("nv", "F", "Telescope live_grep", "live grep files")
+
+M.add_new("nv", "b", "Telescope buffers", "list buffers")
+M.add_new("nv", "B", "Telescope oldfiles", "list old files")
+
+M.add_new("nv", "r", "Telescope commands", "list commands")
+M.add_new("nv", "<c-r>", "Telescope command_history", "show command history")
+
+M.add_new("nv", "v", "Telescope registers", "list registers")
+
+M.add_new("nv", "/", "Telescope current_buffer_fuzzy_find", "fuzzy find in buffer")
+
+M.add_new("nv", "i", "=vim.lsp.buf.hover()", "show symbol information")
+M.add_new("nv", "I", "=vim.lsp.buf.signature_help()", "show symbol signature help")
+
+M.add_new("nv", "a", "=vim.lsp.buf.code_action()", "list code actions")
+
+M.add_new("nv", "n", "Telescope lsp_references", "list symbol references")
+M.add_new("nv", "N", "=vim.lsp.buf.rename()", "rename symbol")
+
+M.add_new("nv", "d", "Telescope diagnostics bufnr=0", "list buffer diagnostics")
+M.add_new("nv", "D", "Telescope diagnostics", "list workspace diagnostics")
+
+M.add_new("nv", "s", "Telescope lsp_document_symbols", "list buffer symbols")
+M.add_new("nv", "S", "Telescope lsp_workspace_symbols", "list workspace symbols")
+
+M.add_new("nv", "t", "Telescope lsp_definitions", "list symbol definitions")
+M.add_new("nv", "T", "Telescope lsp_implementations", "list symbol implementations")
+M.add_new("nv", "<c-t>", "Telescope lsp_type_definitions", "list symbol type definitions")
+
+M.add_new("nv", "g", "Telescope git_commits", "list commits")
+M.add_new("nv", "G", "Telescope git_branches", "list branches")
 
 local function init()
 	local map = vim.keymap.set
