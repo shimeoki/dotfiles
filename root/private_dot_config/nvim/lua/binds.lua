@@ -64,6 +64,11 @@ end
 
 M.add_new("nv", "`", "cd %:p:h", "change current working directory to file's")
 
+-- file management
+
+M.add_new("nv", "u", "w", "save current file")
+M.add_new("nv", "U", "wall", "save all files")
+
 -- splits
 
 M.add_new("nv", "h", "wincmd h", "focus left split")
