@@ -1,5 +1,8 @@
 local M = {}
 
+local cfg = require("config.lsp")
+local fmt = require("config.fmt")
+
 local workspace_prefix = vim.env.HOME .. "/.cache/jdtls/workspace"
 local root_files = {
 	".git",
@@ -8,6 +11,18 @@ local root_files = {
 	"settings.gradle",
 	"settings.gradle.kts",
 	"pom.xml",
+}
+
+local settings = {
+	signatureHelp = { enabled = true },
+	format = { enabled = fmt.formatting_enabled },
+	implementationsCodeLens = { enabled = cfg.lens },
+	inlayHints = {
+		enabled = cfg.hints,
+		parameterNames = {
+			enabled = "All",
+		},
+	},
 }
 
 function M.root_dir()
@@ -36,6 +51,9 @@ function M.config(exec)
 	return {
 		cmd = M.cmd(exec, M.workspace_dir(M.dir_path(root_dir))),
 		root_dir = root_dir,
+		settings = {
+			java = settings,
+		},
 	}
 end
 
