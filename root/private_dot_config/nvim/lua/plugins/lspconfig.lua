@@ -50,7 +50,7 @@ end
 return {
 	"neovim/nvim-lspconfig",
 	cond = enabled,
-	priority = 10, -- load after mason
+	event = { "BufReadPost", "BufWritePost", "BufNewFile" },
 	opts = opts,
 	config = config,
 }
