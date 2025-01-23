@@ -15,8 +15,12 @@ M.server_filetypes = {
 	jdtls = { "java" },
 }
 
-M.server_mason_name = {
+M.server_lspconfig_name = {
 	luals = "lua_ls",
+}
+
+M.server_mason_name = {
+	luals = "lua-language-server",
 }
 
 local tables = require("tables")

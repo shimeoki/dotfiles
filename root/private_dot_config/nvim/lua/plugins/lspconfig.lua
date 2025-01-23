@@ -35,7 +35,7 @@ local function config()
 	for _, server in ipairs(cfg.enabled_servers) do
 		server_cfg = import.safe(prefix .. server)
 		if not external[server] and server_cfg then
-			server_name = cfg.server_mason_name[server]
+			server_name = cfg.server_lspconfig_name[server]
 			if not server_name then
 				server_name = server
 			end
