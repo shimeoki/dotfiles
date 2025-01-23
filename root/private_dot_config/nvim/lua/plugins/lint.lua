@@ -32,7 +32,7 @@ end
 
 return {
 	"mfussenegger/nvim-lint",
-	event = { "BufReadPre", "BufNewFile" },
+	event = { "BufReadPost", "BufWritePost", "BufNewFile" },
 	cond = enabled,
 	config = config,
 }
