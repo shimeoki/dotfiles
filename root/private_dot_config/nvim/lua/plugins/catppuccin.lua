@@ -1,6 +1,8 @@
 return {
 	"catppuccin/nvim",
 	name = "catppuccin",
+	main = "catppuccin",
+	lazy = true,
 	opts = {
 		integrations = {
 			notify = true,
