@@ -12,6 +12,7 @@ end
 add(binds.new("nv", "f", t .. "find_files", "find files"))
 add(binds.new("nv", "F", t .. "live_grep", "live grep files"))
 
+add(binds.new("nv", "b", t .. "buffers", "list buffers"))
 add(binds.new("nv", "B", t .. "oldfiles", "list old files"))
 
 add(binds.new("nv", "r", t .. "commands", "list commands"))
