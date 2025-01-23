@@ -45,6 +45,10 @@ local function config()
 			plug[server_name].setup(server_opts)
 		end
 	end
+
+	if cfg.hints then
+		vim.lsp.inlay_hint.enable(true, { 0 })
+	end
 end
 
 return {
