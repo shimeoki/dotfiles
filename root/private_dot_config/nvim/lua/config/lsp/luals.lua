@@ -1,7 +1,6 @@
 local M = {}
 
 local lsp_cfg = require("config.lsp")
-local fmt_cfg = require("config.fmt")
 
 local runtime = "LuaJIT"
 
@@ -39,8 +38,16 @@ local settings = {
 	runtime = { version = runtime },
 	diagnostics = { globals = globals },
 	telemetry = { enable = false },
-	format = { enable = fmt_cfg.formatting_enabled },
-	hint = { enable = lsp_cfg.hints },
+	format = { enable = false }, -- another formatter is used
+	hint = {
+		enable = lsp_cfg.hints,
+		arrayIndex = "Disable",
+		await = true,
+		paramName = "Literal",
+		paramType = true,
+		semicolon = "SameLine",
+		setType = true,
+	},
 }
 
 M.opts = {
