@@ -12,6 +12,8 @@ local addons = {
 
 return {
 	"hrsh7th/nvim-cmp",
+	cond = true,
+	event = "InsertEnter",
 	name = "cmp",
 	main = "cmp",
 	dependencies = addons,
