@@ -52,10 +52,6 @@ function Bind:to_std()
 	return split(self.modes), self.keys, self.cmd, { desc = self.desc }
 end
 
-function M.convert_to_std(bind)
-	return bind:to_std()
-end
-
 function Bind:to_which_key()
 	return {
 		self.keys,
@@ -65,10 +61,6 @@ function Bind:to_which_key()
 	}
 end
 
-function M.convert_to_whichkey(bind)
-	return bind:to_which_key()
-end
-
 function Bind:to_lazy()
 	return {
 		self.keys,
@@ -76,10 +68,6 @@ function Bind:to_lazy()
 		mode = split(self.modes),
 		desc = self.desc,
 	}
-end
-
-function M.convert_to_lazy(bind)
-	return bind:to_lazy()
 end
 
 -- todo move somewhere else
@@ -134,7 +122,7 @@ M.add_new("nv", "N", "=vim.lsp.buf.rename()", "rename symbol")
 local function init()
 	local map = vim.keymap.set
 	for _, bind in ipairs(M.map) do
-		map(M.convert_to_std(bind))
+		map(bind:to_std())
 	end
 end
 

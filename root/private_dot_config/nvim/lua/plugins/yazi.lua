@@ -18,7 +18,7 @@ end
 local keys = {}
 
 for _, bind in ipairs(yabinds.binds) do
-	table.insert(keys, binds.convert_to_lazy(bind))
+	table.insert(keys, bind:to_lazy())
 end
 
 return {
