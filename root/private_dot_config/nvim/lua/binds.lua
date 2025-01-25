@@ -16,6 +16,8 @@ M.map = {}
 local bytes = string.byte
 local char = string.char
 
+--- @param str string
+--- @return table
 local function split(str)
 	local codes = { bytes(str, 1, #str) }
 
@@ -49,7 +51,7 @@ function M.add_new(modes, keys, cmd, desc)
 end
 
 function Bind:to_std()
-	return split(self.modes), self.keys, self.cmd, { desc = self.desc }
+	return self:mode_table(), self.keys, self.cmd, { desc = self.desc }
 end
 
 function Bind:to_which_key()
@@ -57,7 +59,7 @@ function Bind:to_which_key()
 		self.keys,
 		self.cmd,
 		desc = self.desc,
-		mode = split(self.modes),
+		mode = self:mode_table(),
 	}
 end
 
@@ -65,9 +67,13 @@ function Bind:to_lazy()
 	return {
 		self.keys,
 		self.cmd,
-		mode = split(self.modes),
+		mode = self:mode_table(),
 		desc = self.desc,
 	}
+end
+
+function Bind:mode_table()
+	return split(self.modes)
 end
 
 -- todo move somewhere else
