@@ -37,6 +37,9 @@ set.smartcase = true
 set.showmode = false
 set.showtabline = 0
 
+vim.g.mapleader = " "
+vim.g.maplocalleader = " " -- subject to change
+
 -- source: https://github.com/Wansmer/langmapper.nvim
 local function escape(str)
 	local escape_chars = [[;,."|\]]

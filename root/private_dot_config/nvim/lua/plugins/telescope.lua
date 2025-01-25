@@ -1,30 +1,12 @@
 local enabled = true
 
-local import = require("import")
-local log = require("log")
-
 local sorter = {
 	"nvim-telescope/telescope-fzf-native.nvim",
 	build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release",
 }
 
-local binds = import.safe("binds")
-if not binds then
-	log.error("plugins.telescope: no binds module")
-	return
-end
-
-local telebinds = import.safe("binds.telescope")
-if not telebinds then
-	log.error("plugins.telescope: no binds.telescope module")
-	return
-end
-
-local keys = {}
-
-for _, bind in ipairs(telebinds.binds) do
-	table.insert(keys, bind:to_lazy())
-end
+local binds = require("binds")
+local keys = binds.convert(binds.map.telescope, "lazy")
 
 return {
 	"nvim-telescope/telescope.nvim",
