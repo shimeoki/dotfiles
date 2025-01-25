@@ -76,6 +76,10 @@ function Bind:mode_table()
 	return split(self.modes)
 end
 
+function Bind:apply()
+	vim.keymap.set(self:to_std())
+end
+
 -- todo move somewhere else
 
 M.add_new("nv", "`", "cd %:p:h", "change current working directory to file's")
@@ -126,9 +130,8 @@ M.add_new("nv", "a", "=vim.lsp.buf.code_action()", "list code actions")
 M.add_new("nv", "N", "=vim.lsp.buf.rename()", "rename symbol")
 
 local function init()
-	local map = vim.keymap.set
 	for _, bind in ipairs(M.map) do
-		map(bind:to_std())
+		bind:apply()
 	end
 end
 
