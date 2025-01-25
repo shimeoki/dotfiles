@@ -2,7 +2,7 @@ require("binds")
 require("options")
 require("plugman")
 
--- todo move somewhere else
+-- todo: move somewhere else
 
 vim.diagnostic.config({
 	underline = true,
