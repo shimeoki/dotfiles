@@ -1,14 +1,22 @@
 local M = {}
 
-local bytes = string.byte
-local char = string.char
-
 vim.g.mapleader = " "
 vim.g.maplocalleader = " " -- subject to change
 
+--- @class Bind
+--- @field modes string
+--- @field keys string
+--- @field cmd string
+--- @field desc string
+local Bind = {}
+Bind.__index = Bind
+
 M.map = {}
 
-function M.split(str)
+local bytes = string.byte
+local char = string.char
+
+local function split(str)
 	local codes = { bytes(str, 1, #str) }
 
 	local chars = {}
@@ -20,12 +28,14 @@ function M.split(str)
 end
 
 function M.new(modes, keys, cmd, desc)
-	return {
-		modes = modes,
-		keys = "<leader>" .. keys,
-		cmd = "<cmd>" .. cmd .. "<cr>",
-		desc = desc,
-	}
+	local self = setmetatable({}, Bind)
+
+	self.modes = modes
+	self.keys = "<leader>" .. keys
+	self.cmd = "<cmd>" .. cmd .. "<cr>"
+	self.desc = desc
+
+	return self
 end
 
 function M.add(bind)
@@ -38,26 +48,38 @@ function M.add_new(modes, keys, cmd, desc)
 	return bind
 end
 
+function Bind:to_std()
+	return split(self.modes), self.keys, self.cmd, { desc = self.desc }
+end
+
 function M.convert_to_std(bind)
-	return M.split(bind.modes), bind.keys, bind.cmd, { desc = bind.desc }
+	return bind:to_std()
+end
+
+function Bind:to_which_key()
+	return {
+		self.keys,
+		self.cmd,
+		desc = self.desc,
+		mode = split(self.modes),
+	}
 end
 
 function M.convert_to_whichkey(bind)
+	return bind:to_which_key()
+end
+
+function Bind:to_lazy()
 	return {
-		bind.keys,
-		bind.cmd,
-		desc = bind.desc,
-		mode = M.split(bind.modes),
+		self.keys,
+		self.cmd,
+		mode = split(self.modes),
+		desc = self.desc,
 	}
 end
 
 function M.convert_to_lazy(bind)
-	return {
-		bind.keys,
-		bind.cmd,
-		mode = M.split(bind.modes),
-		desc = bind.desc,
-	}
+	return bind:to_lazy()
 end
 
 -- todo move somewhere else
@@ -99,12 +121,6 @@ M.add_new("nv", "]", "+wincmd w", "focus next split")
 
 M.add_new("nv", "{", "wincmd R", "swap split with next")
 M.add_new("nv", "}", "wincmd r", "swap split with previous")
-
--- yazi
-
-M.add_new("nv", "e", "Yazi", "open yazi at the current file")
-M.add_new("nv", "E", "Yazi cwd", "open yazi in current working directory")
-M.add_new("nv", "<c-e>", "Yazi toggle", "resume last yazi session")
 
 -- lsp
 
