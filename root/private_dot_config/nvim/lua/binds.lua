@@ -92,6 +92,7 @@ M.add_new("nv", "<s-enter>", "vnew", "open new")
 
 M.add_new("nv", "<bs>", "close", "close current split")
 M.add_new("nv", "<s-bs>", "only", "close all except current split")
+M.add_new("nv", "<c-bs>", "bdelete", "close current buffer")
 
 M.add_new("nv", "[", "-wincmd w", "focus previous split")
 M.add_new("nv", "]", "+wincmd w", "focus next split")
