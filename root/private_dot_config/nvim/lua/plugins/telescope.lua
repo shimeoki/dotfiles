@@ -5,7 +5,7 @@ local sorter = {
 	build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release",
 }
 
-local binds = require("binds")
+local binds = require("config.binds")
 local keys = binds.convert(binds.map.telescope, "lazy")
 
 return {

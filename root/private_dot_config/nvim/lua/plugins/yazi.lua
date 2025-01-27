@@ -1,6 +1,6 @@
 local enabled = true
 
-local binds = require("binds")
+local binds = require("config.binds")
 local keys = binds.convert(binds.map.yazi, "lazy")
 
 return {

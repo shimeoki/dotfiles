@@ -1,5 +1,5 @@
-require("options")
-require("binds")
+require("config.options")
+require("config.binds")
 require("plugman")
 
 -- todo: move somewhere else
