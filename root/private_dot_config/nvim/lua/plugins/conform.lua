@@ -1,10 +1,10 @@
-local cfg = require("config.fmt")
+local formatters = require("config.formatters")
 
 local opts = {
-	formatters_by_ft = cfg.filetype_formatters,
+	formatters_by_ft = formatters.by_filetype,
 }
 
-if cfg.format_on_save then
+if formatters.opts.on_save then
 	opts.format_on_save = {
 		timeout_ms = 500,
 		lsp_format = "fallback",
@@ -17,7 +17,7 @@ end
 
 return {
 	"stevearc/conform.nvim",
-	cond = cfg.formatting_enabled,
+	cond = true,
 	event = { "BufWritePre" },
 	cmd = { "ConformInfo" },
 	opts = opts,
