@@ -1,12 +1,10 @@
-local import = require("import")
+local langservers = require("config.langservers")
 
-local cfg_path = "config.lsp"
-local cfg = require(cfg_path)
-local enabled = cfg.enabled
+local enabled = true
 
 local opts = {
-	inlay_hints = { enabled = cfg.hints },
-	codelens = { enabled = cfg.lens },
+	inlay_hints = { enabled = langservers.opts.hints },
+	codelens = { enabled = langservers.opts.lens },
 }
 
 -- servers that are not managed by lspconfig
@@ -22,31 +20,25 @@ local function config()
 	local plug = require("lspconfig")
 
 	local capabilities
-	if cfg.completions then
+	if langservers.opts.completions then
 		local cmp = require("cmp_nvim_lsp")
 		capabilities = cmp.default_capabilities()
 	end
 
-	local prefix = cfg_path .. "."
-	local server_cfg
-	local server_name
-	local server_opts
+	local server_name, server_opts
+	for _, server in ipairs(langservers.enabled) do
+		if not external[server.name] then
+			server_name = server.aliases.lspconfig or server.name
 
-	for _, server in ipairs(cfg.enabled_servers) do
-		server_cfg = import.safe(prefix .. server)
-		if not external[server] and server_cfg then
-			server_name = cfg.server_lspconfig_name[server]
-			if not server_name then
-				server_name = server
+			if server.config then
+				server_opts = server.config.opts
+				server_opts.capabilities = capabilities
+				plug[server_name].setup(server_opts)
 			end
-
-			server_opts = server_cfg.opts
-			server_opts.capabilities = capabilities
-			plug[server_name].setup(server_opts)
 		end
 	end
 
-	if cfg.hints then
+	if langservers.opts.hints then
 		vim.lsp.inlay_hint.enable(true, { 0 })
 	end
 end

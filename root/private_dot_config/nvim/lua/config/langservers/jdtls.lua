@@ -1,9 +1,5 @@
-local M = {}
-
-local cfg = require("config.lsp")
-local fmt = require("config.fmt")
-
 local workspace_prefix = vim.env.HOME .. "/.cache/jdtls/workspace"
+
 local root_files = {
 	".git",
 	"gradlew",
@@ -13,31 +9,32 @@ local root_files = {
 	"pom.xml",
 }
 
+-- todo: get parameters?
 local settings = {
 	signatureHelp = { enabled = true },
-	format = { enabled = fmt.formatting_enabled },
-	implementationsCodeLens = { enabled = cfg.lens },
+	format = { enabled = true },
+	implementationsCodeLens = { enabled = true },
 	inlayHints = {
-		enabled = cfg.hints,
+		enabled = true,
 		parameterNames = {
 			enabled = "All",
 		},
 	},
 }
 
-function M.root_dir()
+local function rootdir()
 	return vim.fs.root(0, root_files)
 end
 
-function M.dir_path(dir)
+local function dirpath(dir)
 	return vim.fn.fnamemodify(dir, ":p:h")
 end
 
-function M.workspace_dir(path)
+local function workdir(path)
 	return workspace_prefix .. path
 end
 
-function M.cmd(exec, workspace_dir)
+local function cmd(exec, workspace_dir)
 	return {
 		exec,
 		"-data",
@@ -45,16 +42,14 @@ function M.cmd(exec, workspace_dir)
 	}
 end
 
-function M.config(exec)
-	local root_dir = M.root_dir()
+return function(exec)
+	local root_dir = rootdir()
 
 	return {
-		cmd = M.cmd(exec, M.workspace_dir(M.dir_path(root_dir))),
+		cmd = cmd(exec, workdir(dirpath(root_dir))),
 		root_dir = root_dir,
 		settings = {
 			java = settings,
 		},
 	}
 end
-
-return M

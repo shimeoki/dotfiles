@@ -3,13 +3,8 @@ local log = require("log")
 
 local ensure_installed = {}
 
-local lsp = import.safe("config.lsp")
-if not lsp then
-	log.error("plugins.mason: no config.lsp module")
-	return
-end
-
-for _, key in ipairs(lsp.mason_ensure_installed) do
+local langservers = require("config.langservers")
+for _, key in ipairs(langservers.by_group.mason) do
 	table.insert(ensure_installed, key)
 end
 

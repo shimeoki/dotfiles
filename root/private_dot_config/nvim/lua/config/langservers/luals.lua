@@ -1,7 +1,3 @@
-local M = {}
-
-local lsp_cfg = require("config.lsp")
-
 local runtime = "LuaJIT"
 
 local globals = {
@@ -40,7 +36,7 @@ local settings = {
 	telemetry = { enable = false },
 	format = { enable = false }, -- another formatter is used
 	hint = {
-		enable = lsp_cfg.hints,
+		enable = true,
 		arrayIndex = "Disable",
 		await = true,
 		paramName = "Literal",
@@ -50,9 +46,9 @@ local settings = {
 	},
 }
 
-M.opts = {
-	on_init = on_init,
-	settings = { Lua = settings },
+return {
+	opts = {
+		on_init = on_init,
+		settings = { Lua = settings },
+	},
 }
-
-return M
