@@ -22,8 +22,8 @@ local function split(str)
 	return chars
 end
 
-function Bind:new(modes, keys, cmd, desc)
-	self = setmetatable({}, Bind)
+function Bind.new(modes, keys, cmd, desc)
+	local self = setmetatable({}, Bind)
 
 	self.modes = modes
 	self.keys = "<leader>" .. keys

@@ -1,5 +1,5 @@
 require("options")
-require("binds").apply_std()
+require("binds")
 require("plugman")
 
 -- todo: move somewhere else
