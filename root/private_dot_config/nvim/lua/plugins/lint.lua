@@ -1,8 +1,6 @@
-local import = require("import")
+local enabled = true
 
-local cfg_path = "config.lint"
-local cfg = require(cfg_path)
-local enabled = cfg.lint_enabled
+local linters = require("config.linters")
 
 local function config()
 	if not enabled then
@@ -11,21 +9,17 @@ local function config()
 
 	local plug = require("lint")
 
-	plug.linters_by_ft = cfg.filetype_linters
+	plug.linters_by_ft = linters.by_filetype
 
-	vim.api.nvim_create_autocmd(cfg.lint_events, {
+	vim.api.nvim_create_autocmd(linters.opts.events, {
 		callback = function()
 			plug.try_lint()
 		end,
 	})
 
-	local prefix = cfg_path .. "."
-	local linter_cfg
-
-	for _, linter in ipairs(cfg.enabled_linters) do
-		linter_cfg = import.safe(prefix .. linter)
-		if linter_cfg then
-			plug.linters[linter].args = linter_cfg.args
+	for _, linter in ipairs(linters.enabled) do
+		if linter.config then
+			plug.linters[linter.name].args = linter.config.args
 		end
 	end
 end
