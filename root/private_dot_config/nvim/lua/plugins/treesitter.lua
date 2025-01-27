@@ -1,9 +1,11 @@
-local cfg = require("config.syntax")
+local enabled = true
+
+local highlighters = require("config.highlighters")
 
 local opts = {
-	ensure_installed = cfg.enabled_parsers,
+	ensure_installed = highlighters.by_group.treesitter,
 	highlight = {
-		enable = cfg.highlighting_enabled,
+		enable = enabled,
 		additional_vim_regex_highlighting = false,
 	},
 }
@@ -14,7 +16,7 @@ return {
 	name = "treesitter",
 	main = "nvim-treesitter.configs",
 	version = false, -- last release doesn't work on windows
-	cond = cfg.syntax_enabled,
+	cond = enabled,
 	event = { "BufReadPost", "BufWritePost", "BufNewFile", "VeryLazy" },
 	lazy = vim.fn.argc(-1) == 0,
 	init = function(plugin)
