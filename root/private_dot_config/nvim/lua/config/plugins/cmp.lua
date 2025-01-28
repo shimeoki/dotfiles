@@ -1,6 +1,21 @@
 local M = {}
 
-local function plug()
+local binds = {
+	select = "<enter>",
+	forward = "<tab>",
+	backward = "<s-tab>",
+}
+
+local source1 = {
+	{ name = "nvim_lsp" },
+	{ name = "luasnip" },
+}
+
+local source2 = {
+	{ name = "buffer" },
+}
+
+local function cmp()
 	return require("cmp")
 end
 
@@ -8,66 +23,79 @@ local function luasnip()
 	return require("luasnip")
 end
 
-local snippet = {
-	expand = function(args)
-		require("luasnip").lsp_expand(args.body)
-	end,
-}
-
--- todo move to binds
-function M.binds()
-	local cmp = plug()
+local function snippet()
 	local snip = luasnip()
-	local map = cmp.mapping
-
-	local function jump(step)
-		return function(fallback)
-			if cmp.visible() then
-				if step > 0 then
-					cmp.select_next_item()
-				else
-					cmp.select_prev_item()
-				end
-			elseif snip.locally_jumpable(step) then
-				snip.jump(step)
-			else
-				fallback()
-			end
-		end, { "i", "s" }
-	end
-
-	local function select()
-		return function(fallback)
-			if cmp.visible() then
-				if snip.expandable() then
-					snip.expand()
-				else
-					cmp.confirm({ select = true })
-				end
-			else
-				fallback()
-			end
-		end
-	end
 
 	return {
-		["<cr>"] = map(select()),
-		["<tab>"] = map(jump(1)),
-		["<s-tab>"] = map(jump(-1)),
+		expand = function(args)
+			snip.lsp_expand(args.body)
+		end,
 	}
 end
 
-function M.src()
-	return plug().config.sources({
-		{ name = "nvim_lsp" },
-		{ name = "luasnip" },
-	}, {
-		{ name = "buffer" },
-	})
+local function jump(step)
+	local comp = cmp()
+	local snip = luasnip()
+
+	local callback
+	if step > 0 then
+		callback = comp.select_next_item
+	else
+		callback = comp.select_prev_item
+	end
+
+	return function(fallback)
+		if comp.visible() then
+			callback()
+		elseif snip.locally_jumpable(step) then
+			snip.jump(step)
+		else
+			fallback()
+		end
+	end, { "i", "s" }
 end
 
-function M.window()
-	local bordered = plug().config.window.bordered()
+local function select()
+	local comp = cmp()
+	local snip = luasnip()
+
+	return function(fallback)
+		if comp.visible() then
+			if snip.expandable() then
+				snip.expand()
+			else
+				comp.confirm({ select = true })
+			end
+		else
+			fallback()
+		end
+	end
+end
+
+local function jump_forward()
+	return jump(1)
+end
+
+local function jump_backward()
+	return jump(-1)
+end
+
+local function mapping()
+	local map = cmp().mapping
+
+	return {
+		[binds.select] = map(select()),
+		[binds.forward] = map(jump_forward()),
+		[binds.backward] = map(jump_backward()),
+	}
+end
+
+local function sources()
+	return cmp().config.sources(source1, source2)
+end
+
+local function window()
+	local bordered = cmp().config.window.bordered()
 
 	return {
 		completion = bordered,
@@ -75,13 +103,23 @@ function M.window()
 	}
 end
 
-function M.autopairs_setup()
+local function setup_completions()
 	local cmp_autopairs = require("nvim-autopairs.completion.cmp")
-	plug().event:on("confirm_done", cmp_autopairs.on_confirm_done())
+	cmp().event:on("confirm_done", cmp_autopairs.on_confirm_done())
 end
 
-M.opts = {
-	snippet = snippet,
-}
+function M.opts()
+	local opts = {
+		snippet = snippet(),
+		mapping = mapping(),
+		window = window(),
+		sources = sources(),
+	}
+
+	-- todo: check completions before loading
+	setup_completions()
+
+	return opts
+end
 
 return M

@@ -1,31 +1,23 @@
-local cfg = require("config.plugins.cmp")
+local enabled = true
+local name = "cmp"
 
-local snippet_addon = "saadparwaiz1/cmp_luasnip"
+local cmp = require("config.plugins.cmp")
 
-local addons = {
+local dependencies = {
 	"hrsh7th/cmp-nvim-lsp",
 	"hrsh7th/cmp-buffer",
 	"hrsh7th/cmp-path",
 	"hrsh7th/cmp-cmdline",
-	snippet_addon,
+	"L3MON4D3/LuaSnip",
+	"saadparwaiz1/cmp_luasnip",
 }
 
 return {
 	"hrsh7th/nvim-cmp",
-	cond = true,
+	cond = enabled,
 	event = "InsertEnter",
-	name = "cmp",
-	main = "cmp",
-	dependencies = addons,
-	opts = function()
-		cfg.autopairs_setup()
-
-		local opts = cfg.opts
-
-		opts.mapping = cfg.binds()
-		opts.sources = cfg.src()
-		opts.window = cfg.window()
-
-		return opts
-	end,
+	name = name,
+	main = name,
+	dependencies = dependencies,
+	opts = cmp.opts,
 }
