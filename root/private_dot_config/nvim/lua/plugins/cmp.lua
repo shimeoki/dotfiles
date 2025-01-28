@@ -1,4 +1,4 @@
-local cfg = require("config.cmp")
+local cfg = require("config.plugins.cmp")
 
 local snippet_addon = "saadparwaiz1/cmp_luasnip"
 
