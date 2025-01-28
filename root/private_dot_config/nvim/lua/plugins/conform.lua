@@ -1,5 +1,8 @@
 local formatters = require("config.formatters")
 
+local name = "conform"
+local enabled = formatters.opts.enabled
+
 local opts = {
 	formatters_by_ft = formatters.by_filetype,
 }
@@ -17,7 +20,9 @@ end
 
 return {
 	"stevearc/conform.nvim",
-	cond = true,
+	name = name,
+	main = name,
+	cond = enabled,
 	event = { "BufWritePre" },
 	cmd = { "ConformInfo" },
 	opts = opts,

@@ -1,4 +1,5 @@
 local M = require("toolbox").new({
+	enabled = true,
 	on_save = true,
 })
 
