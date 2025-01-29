@@ -1,22 +1,7 @@
-local formatters = require("config.formatters")
-
+local enabled = true
 local name = "conform"
-local enabled = formatters.opts.enabled
 
-local opts = {
-	formatters_by_ft = formatters.by_filetype,
-}
-
-if formatters.opts.on_save then
-	opts.format_on_save = {
-		timeout_ms = 500,
-		lsp_format = "fallback",
-	}
-end
-
-local function init()
-	vim.o.formatexpr = 'v:lua.require("conform").formatexpr()'
-end
+local conform = require("config.plugins.conform")
 
 return {
 	"stevearc/conform.nvim",
@@ -25,6 +10,6 @@ return {
 	cond = enabled,
 	event = { "BufWritePre" },
 	cmd = { "ConformInfo" },
-	opts = opts,
-	init = init,
+	opts = conform.opts,
+	init = conform.init,
 }
