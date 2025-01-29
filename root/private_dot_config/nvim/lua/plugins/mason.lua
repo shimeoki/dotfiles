@@ -1,34 +1,21 @@
-local ensure_installed = {}
+local enabled = true
+local name = "mason"
+local name_installer = "mason-tool-installer"
 
-local langservers = require("config.langservers")
-for _, key in ipairs(langservers.by_group.mason) do
-	table.insert(ensure_installed, key)
-end
-
-local linters = require("config.linters")
-for _, key in ipairs(linters.by_group.mason) do
-	table.insert(ensure_installed, key)
-end
+local mason = require("config.plugins.mason")
 
 local installer = {
 	"WhoIsSethDaniel/mason-tool-installer.nvim",
-	name = "mason-tool-installer",
-	main = "mason-tool-installer",
-	opts = {
-		ensure_installed = ensure_installed,
-	},
+	name = name_installer,
+	main = name_installer,
+	opts = mason.installer_opts,
 }
 
 return {
 	"williamboman/mason.nvim",
-	name = "mason",
-	main = "mason",
-	opts = {
-		ui = {
-			border = "rounded",
-		},
-	},
-	dependencies = {
-		installer,
-	},
+	cond = enabled,
+	name = name,
+	main = name,
+	opts = mason.opts,
+	dependencies = { installer },
 }
