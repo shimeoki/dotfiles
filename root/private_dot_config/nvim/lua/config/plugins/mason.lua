@@ -4,15 +4,15 @@ M.home = vim.env.HOME .. "/.local/share/nvim/mason"
 
 local ensure_installed = {}
 
-local langservers = require("config.langservers")
-for _, key in ipairs(langservers.by_group.mason) do
-	table.insert(ensure_installed, key)
+local function add_installed(tools)
+	for _, key in ipairs(tools) do
+		table.insert(ensure_installed, key)
+	end
 end
 
-local linters = require("config.linters")
-for _, key in ipairs(linters.by_group.mason) do
-	table.insert(ensure_installed, key)
-end
+add_installed(require("config.langservers").by_group.mason)
+add_installed(require("config.linters").by_group.mason)
+add_installed(require("config.formatters").by_group.mason)
 
 M.opts = {
 	ui = {
