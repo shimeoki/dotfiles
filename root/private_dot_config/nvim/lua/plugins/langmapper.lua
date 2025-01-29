@@ -1,14 +1,7 @@
-local name = "langmapper"
 local enabled = true
+local name = "langmapper"
 
-local function config()
-	local plug = require(name)
-
-	plug.automapping({
-		global = true,
-		buffer = true,
-	})
-end
+local langmapper = require("config.plugins.langmapper")
 
 return {
 	"Wansmer/langmapper.nvim",
@@ -18,5 +11,5 @@ return {
 	lazy = false,
 	priority = 1,
 	opts = {},
-	config = config,
+	config = langmapper.config,
 }
