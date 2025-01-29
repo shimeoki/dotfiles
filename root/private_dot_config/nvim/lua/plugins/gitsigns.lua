@@ -1,8 +1,11 @@
+local enabled = true
+local name = "gitsigns"
+
 return {
 	"lewis6991/gitsigns.nvim",
-	cond = true,
-	name = "gitsigns",
-	main = "gitsigns",
+	cond = enabled,
+	name = name,
+	main = name,
 	event = { "BufReadPost", "BufWritePost", "BufNewFile" },
 	opts = {},
 }
