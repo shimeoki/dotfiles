@@ -1,22 +1,15 @@
 local enabled = true
+local name = "treesitter"
 
-local highlighters = require("config.highlighters")
-
-local opts = {
-	ensure_installed = highlighters.by_group.treesitter,
-	highlight = {
-		enable = enabled,
-		additional_vim_regex_highlighting = false,
-	},
-}
+local treesitter = require("config.plugins.treesitter")
 
 -- source: https://www.lazyvim.org/plugins/treesitter
 return {
 	"nvim-treesitter/nvim-treesitter",
-	name = "treesitter",
+	cond = enabled,
+	name = name,
 	main = "nvim-treesitter.configs",
 	version = false, -- last release doesn't work on windows
-	cond = enabled,
 	event = { "BufReadPost", "BufWritePost", "BufNewFile", "VeryLazy" },
 	lazy = vim.fn.argc(-1) == 0,
 	init = function(plugin)
@@ -25,5 +18,5 @@ return {
 	end,
 	cmd = { "TSUpdateSync", "TSUpdate", "TSInstall" },
 	build = ":TSUpdate",
-	opts = opts,
+	opts = treesitter.opts,
 }
