@@ -1,4 +1,6 @@
-local M = require("toolbox").new({})
+local M = require("toolbox").new({
+	enabled = true,
+})
 
 M:add({
 	name = "lua",
