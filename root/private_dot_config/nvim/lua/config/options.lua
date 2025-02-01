@@ -20,6 +20,8 @@ set.wrap = true
 set.linebreak = true
 set.columns = columns
 
+set.breakindent = true
+
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
@@ -39,6 +41,8 @@ set.showtabline = 0
 
 set.splitright = true
 set.splitbelow = true
+
+set.cursorline = true
 
 vim.g.mapleader = " "
 vim.g.maplocalleader = " " -- subject to change
