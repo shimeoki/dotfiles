@@ -1,7 +1,4 @@
-local enabled = true
-local name = "cmp"
-
-local cmp = require("config.plugins.cmp")
+local cmp = require("config.plugins").cmp
 
 local dependencies = {
 	"hrsh7th/cmp-nvim-lsp",
@@ -14,10 +11,10 @@ local dependencies = {
 
 return {
 	"hrsh7th/nvim-cmp",
-	cond = enabled,
+	cond = cmp.enabled,
 	event = "InsertEnter",
-	name = name,
-	main = name,
+	name = cmp.name,
+	main = "cmp",
 	dependencies = dependencies,
-	opts = cmp.opts,
+	opts = cmp.config.opts,
 }
