@@ -43,6 +43,9 @@ local std = {
 	Bind.new("nv", "a", "=vim.lsp.buf.code_action()", "list code actions"),
 	Bind.new("nv", "N", "=vim.lsp.buf.rename()", "rename symbol"),
 	-- other lsp actions are done with telescope
+	-- comments
+	Bind.new("n", "c", 'lua vim.api.nvim_input("gcc")', "toggle comment"),
+	Bind.new("v", "c", 'lua vim.api.nvim_input("gc")', "toggle comment"),
 }
 
 local yazi = {
