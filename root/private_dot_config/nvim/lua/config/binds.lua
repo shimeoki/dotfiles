@@ -38,10 +38,10 @@ local std = {
 	Bind.new("nv", "{", "wincmd R", "swap split with next"),
 	Bind.new("nv", "}", "wincmd r", "swap split with previous"),
 	-- lsp
-	Bind.new("nv", "i", "=vim.lsp.buf.hover()", "show symbol information"),
-	Bind.new("nv", "I", "=vim.lsp.buf.signature_help()", "show symbol signature help"),
-	Bind.new("nv", "a", "=vim.lsp.buf.code_action()", "list code actions"),
-	Bind.new("nv", "N", "=vim.lsp.buf.rename()", "rename symbol"),
+	Bind.new("nv", "i", "lua vim.lsp.buf.hover()", "show symbol information"),
+	Bind.new("nv", "I", "lua vim.lsp.buf.signature_help()", "show symbol signature help"),
+	Bind.new("nv", "a", "lua vim.lsp.buf.code_action()", "list code actions"),
+	Bind.new("nv", "N", "lua vim.lsp.buf.rename()", "rename symbol"),
 	-- other lsp actions are done with telescope
 	-- comments
 	Bind.new("n", "c", 'lua vim.api.nvim_input("gcc")', "toggle comment"),
