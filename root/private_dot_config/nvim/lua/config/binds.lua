@@ -28,7 +28,7 @@ local std = {
 	Bind.new("nv", "<enter>", "vsplit", "open current"),
 	Bind.new("nv", "<s-enter>", "vnew", "open new"),
 	-- close
-	Bind.new("nv", "<bs>", "close", "close current split"),
+	Bind.new("nv", "<bs>", "quit", "close current split"),
 	Bind.new("nv", "<s-bs>", "only", "close all except current split"),
 	Bind.new("nv", "<c-bs>", "bdelete", "close current buffer"),
 	-- focus relative
