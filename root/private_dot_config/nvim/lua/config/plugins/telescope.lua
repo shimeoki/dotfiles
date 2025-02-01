@@ -23,6 +23,8 @@ local mappings = {
 		["K"] = "preview_scrolling_up",
 	},
 	n = {
+		["<c-j>"] = "move_selection_next",
+		["<c-k>"] = "move_selection_previous",
 		["J"] = "preview_scrolling_down",
 		["K"] = "preview_scrolling_up",
 	},
