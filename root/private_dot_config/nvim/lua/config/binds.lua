@@ -19,11 +19,11 @@ local std = {
 	Bind.new("nv", "K", "wincmd K", "swap split to top"),
 	Bind.new("nv", "L", "wincmd L", "swap split to right"),
 	-- split current
-	Bind.new("nv", "'", "vsplit", "split left current"),
-	Bind.new("nv", ";", "split", "split top current"),
+	Bind.new("nv", "'", "vsplit", "split horizontally current"),
+	Bind.new("nv", ";", "split", "split vertically current"),
 	-- split new
-	Bind.new("nv", '"', "vnew", "split left new"),
-	Bind.new("nv", ":", "new", "split top new"),
+	Bind.new("nv", '"', "vnew", "split horizontally new"),
+	Bind.new("nv", ":", "new", "split vertically new"),
 	-- open
 	Bind.new("nv", "<enter>", "vsplit", "open current"),
 	Bind.new("nv", "<s-enter>", "vnew", "open new"),
