@@ -18,7 +18,8 @@ set.textwidth = 0
 set.wrapmargin = 0
 set.wrap = true
 set.linebreak = true
-set.columns = columns
+
+set.colorcolumn = tostring(columns + 1)
 
 set.breakindent = true
 
@@ -43,6 +44,8 @@ set.splitright = true
 set.splitbelow = true
 
 set.cursorline = true
+
+set.updatetime = 1000
 
 vim.g.mapleader = " "
 vim.g.maplocalleader = " " -- subject to change
