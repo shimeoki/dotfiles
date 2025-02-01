@@ -37,5 +37,8 @@ set.smartcase = true
 set.showmode = false
 set.showtabline = 0
 
+set.splitright = true
+set.splitbelow = true
+
 vim.g.mapleader = " "
 vim.g.maplocalleader = " " -- subject to change
