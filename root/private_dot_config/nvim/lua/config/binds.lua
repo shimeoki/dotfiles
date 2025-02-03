@@ -18,6 +18,11 @@ local std = {
 	Bind.new("nv", "J", "wincmd J", "swap split to bottom"),
 	Bind.new("nv", "K", "wincmd K", "swap split to top"),
 	Bind.new("nv", "L", "wincmd L", "swap split to right"),
+	-- split resize
+	Bind.new("nv", "<c-h>", "4wincmd <", "decrease split width"),
+	Bind.new("nv", "<c-j>", "4wincmd -", "decrease split height"),
+	Bind.new("nv", "<c-k>", "4wincmd +", "increase split width"),
+	Bind.new("nv", "<c-l>", "4wincmd >", "increase split width"),
 	-- split current
 	Bind.new("nv", "'", "vsplit", "split horizontally current"),
 	Bind.new("nv", ";", "split", "split vertically current"),
