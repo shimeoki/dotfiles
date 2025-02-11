@@ -1,5 +1,34 @@
-[plugin]
-deps = [{ use = "yazi-rs/plugins:full-border", rev = "71c4fc2" }, { use = "yazi-rs/plugins:chmod", rev = "71c4fc2" }, { use = "yazi-rs/plugins:git", rev = "71c4fc2" }, { use = "yazi-rs/plugins:diff", rev = "71c4fc2" }, { use = "yazi-rs/plugins:max-preview", rev = "71c4fc2" }, { use = "yazi-rs/plugins:hide-preview", rev = "71c4fc2" }]
+[[plugin.deps]]
+use = "yazi-rs/plugins:full-border"
+rev = "8945e54"
+hash = "ae9e1d0c6bfd68cdebc98cc684c22b45"
 
-[flavor]
-deps = [{ use = "yazi-rs/flavors:catppuccin-mocha", rev = "fc8eeaa" }]
+[[plugin.deps]]
+use = "yazi-rs/plugins:chmod"
+rev = "8945e54"
+hash = "f28138c2e11e87962b66d583fef724c3"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:git"
+rev = "8945e54"
+hash = "771f18427fb75fb19990ce602bb322f4"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:diff"
+rev = "8945e54"
+hash = "7a08e303167d5b655c06da6d570f0333"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:max-preview"
+rev = "8945e54"
+hash = "15b2ff7f6563c14d5b2e93b3e9da35de"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:hide-preview"
+rev = "8945e54"
+hash = "55904f17e1053cfb91dacd9015a99f9d"
+
+[[flavor.deps]]
+use = "yazi-rs/flavors:catppuccin-mocha"
+rev = "fd85060"
+hash = "c40e434318a8ceffd01842f8dfb2390e"
