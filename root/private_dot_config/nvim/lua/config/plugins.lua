@@ -90,4 +90,10 @@ add({
 	config = require("config.plugins.lint"),
 })
 
+add({
+	name = "lspconfig",
+	enabled = true,
+	config = require("config.plugins.lspconfig"),
+})
+
 return M
