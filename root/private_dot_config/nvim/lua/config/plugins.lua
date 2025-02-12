@@ -84,4 +84,10 @@ add({
 	config = require("config.plugins.which_key"),
 })
 
+add({
+	name = "lint",
+	enabled = true,
+	config = require("config.plugins.lint"),
+})
+
 return M
