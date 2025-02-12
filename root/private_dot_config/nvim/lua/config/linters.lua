@@ -1,4 +1,5 @@
 local M = require("toolbox").new({
+	enabled = true,
 	events = {
 		"BufEnter",
 		"BufWritePost",
