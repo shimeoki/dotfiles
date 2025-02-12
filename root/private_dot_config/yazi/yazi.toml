@@ -10,6 +10,8 @@ scrolloff = 5
 [preview]
 wrap = "yes"
 tab_size = 4
+max_width = 1280
+max_height = 720
 
 [[plugin.prepend_fetchers]]
 id   = "git"
