@@ -1,32 +1,9 @@
-local enabled = true
-
-local linters = require("config.linters")
-
-local function config()
-	if not enabled then
-		return false
-	end
-
-	local plug = require("lint")
-
-	plug.linters_by_ft = linters.by_filetype
-
-	vim.api.nvim_create_autocmd(linters.opts.events, {
-		callback = function()
-			plug.try_lint()
-		end,
-	})
-
-	for _, linter in ipairs(linters.enabled) do
-		if linter.config then
-			plug.linters[linter.name].args = linter.config.args
-		end
-	end
-end
+local lint = require("config.plugins").lint
 
 return {
 	"mfussenegger/nvim-lint",
+	name = lint.name,
 	event = { "BufReadPost", "BufWritePost", "BufNewFile" },
-	cond = enabled,
-	config = config,
+	cond = lint.enabled,
+	config = lint.config.setup,
 }
