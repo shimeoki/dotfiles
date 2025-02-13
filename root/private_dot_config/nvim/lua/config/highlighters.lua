@@ -26,6 +26,12 @@ M:add({
 	filetypes = { "java" },
 })
 
+M:add({
+	name = "python",
+	enabled = true,
+	filetypes = { "python" },
+})
+
 M:parse_groups({ "treesitter" })
 
 return M
