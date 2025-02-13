@@ -25,16 +25,18 @@ function M.setup()
 		capabilities = cmp.default_capabilities()
 	end
 
-	local server_name, server_opts
+	local server_name
 	for _, server in ipairs(langservers.enabled) do
 		if not external[server.name] then
 			server_name = server.aliases.lspconfig or server.name
 
+			local server_opts = {}
 			if server.config then
 				server_opts = server.config.opts
 				server_opts.capabilities = capabilities
-				lspconfig[server_name].setup(server_opts)
 			end
+
+			lspconfig[server_name].setup(server_opts)
 		end
 	end
 
