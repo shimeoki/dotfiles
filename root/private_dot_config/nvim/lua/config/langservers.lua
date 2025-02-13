@@ -23,6 +23,23 @@ M:add({
 	config = require("config.langservers.jdtls"),
 })
 
+M:add({
+	name = "jedi_language_server",
+	enabled = true,
+	filetypes = { "python" },
+	aliases = {
+		lspconfig = "jedi_language_server",
+		mason = "jedi-language-server",
+	},
+})
+
+M:add({
+	name = "ruff",
+	enabled = true,
+	filetypes = { "python" },
+	config = require("config.langservers.ruff"),
+})
+
 M:parse_groups({ "lspconfig", "mason" })
 
 return M
