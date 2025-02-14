@@ -6,6 +6,11 @@ local sorter = {
 	build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release",
 }
 
+local selecter = {
+	"nvim-telescope/telescope-ui-select.nvim",
+	name = "telescope-ui-select",
+}
+
 local telescope = require("config.plugins.telescope")
 
 return {
@@ -18,5 +23,6 @@ return {
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 		sorter,
+		selecter,
 	},
 }

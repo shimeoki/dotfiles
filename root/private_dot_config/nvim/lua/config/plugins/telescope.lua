@@ -1,6 +1,7 @@
 local M = {}
 
 local fuzzy = true
+local selecter = true
 
 local sorting_strategy = "ascending"
 local layout_strategy = "horizontal"
@@ -68,6 +69,10 @@ function M.config()
 
 	if fuzzy then
 		telescope.load_extension("fzf")
+	end
+
+	if selecter then
+		telescope.load_extension("ui-select")
 	end
 end
 
