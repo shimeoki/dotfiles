@@ -44,6 +44,12 @@ M:add({
 	},
 })
 
+M:add({
+	name = "shfmt",
+	enabled = true,
+	filetypes = { "sh", "bash", "zsh" },
+})
+
 M:parse_groups({ "mason" })
 
 return M
