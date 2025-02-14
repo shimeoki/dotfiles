@@ -39,4 +39,5 @@ require("lazy").setup({
 	},
 	checker = { enabled = check },
 	ui = { border = "rounded" },
+	rocks = { hererocks = true },
 })
