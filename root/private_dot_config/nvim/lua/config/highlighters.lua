@@ -38,6 +38,18 @@ M:add({
 	filetypes = { "sh", "bash", "zsh" },
 })
 
+M:add({
+	name = "markdown",
+	enabled = true,
+	filetypes = { "markdown" },
+})
+
+M:add({
+	name = "markdown_inline",
+	enabled = true,
+	filetypes = { "markdown" },
+})
+
 M:parse_groups({ "treesitter" })
 
 return M
