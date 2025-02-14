@@ -40,6 +40,16 @@ M:add({
 	config = require("config.langservers.ruff"),
 })
 
+M:add({
+	name = "bashls",
+	enabled = true,
+	filetypes = { "sh", "zsh", "bash" },
+	aliases = {
+		mason = "bash-language-server",
+	},
+	config = require("config.langservers.bashls"),
+})
+
 M:parse_groups({ "lspconfig", "mason" })
 
 return M
