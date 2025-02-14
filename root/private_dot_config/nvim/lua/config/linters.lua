@@ -23,6 +23,12 @@ M:add({
 	},
 })
 
+M:add({
+	name = "shellcheck",
+	enabled = false, -- bashls does this automatically
+	filetypes = { "sh", "bash" },
+})
+
 M:parse_groups({ "mason" })
 
 return M
