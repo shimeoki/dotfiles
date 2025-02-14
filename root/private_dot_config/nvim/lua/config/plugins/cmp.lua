@@ -1,11 +1,5 @@
 local M = {}
 
-local binds = {
-	select = "<enter>",
-	forward = "<tab>",
-	backward = "<s-tab>",
-}
-
 local source1 = {
 	{ name = "nvim_lsp" },
 	{ name = "luasnip" },
@@ -84,9 +78,13 @@ local function mapping()
 	local map = cmp().mapping
 
 	return {
-		[binds.select] = map(select()),
-		[binds.forward] = map(jump_forward()),
-		[binds.backward] = map(jump_backward()),
+		["<enter>"] = map(select()),
+		["<tab>"] = map(jump_forward()),
+		["<c-j>"] = map(jump_forward()),
+		["<s-tab>"] = map(jump_backward()),
+		["<c-k>"] = map(jump_backward()),
+		["J"] = map.scroll_docs(4),
+		["K"] = map.scroll_docs(-4),
 	}
 end
 
