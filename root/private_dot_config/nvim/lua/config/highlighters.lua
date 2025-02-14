@@ -32,6 +32,12 @@ M:add({
 	filetypes = { "python" },
 })
 
+M:add({
+	name = "bash",
+	enabled = true,
+	filetypes = { "sh", "bash", "zsh" },
+})
+
 M:parse_groups({ "treesitter" })
 
 return M
