@@ -1,7 +1,3 @@
-local install_missing = true
-local check = false
-local theme = "catppuccin"
-
 -- source: https://lazy.folke.io/installation
 
 local path = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -30,14 +26,3 @@ if not (vim.uv or vim.loop).fs_stat(path) then
 end
 
 vim.opt.rtp:prepend(path)
-
-require("lazy").setup({
-	spec = { { import = "plugins" } },
-	install = {
-		missing = install_missing,
-		colorscheme = { theme },
-	},
-	checker = { enabled = check },
-	ui = { border = "rounded" },
-	rocks = { hererocks = true },
-})
