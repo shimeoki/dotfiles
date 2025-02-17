@@ -1,5 +1,5 @@
 require("options")
-require("config.binds")
+require("binds")
 require("diagnostics")
 require("plugman")
 

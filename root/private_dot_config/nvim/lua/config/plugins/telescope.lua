@@ -51,7 +51,7 @@ if fuzzy then
 	M.opts.extensions = { fzf = fzf }
 end
 
-local binds = require("config.binds")
+local binds = require("binds")
 M.keys = binds.convert(binds.map.telescope, "lazy")
 
 -- enable line wrapping in preview
