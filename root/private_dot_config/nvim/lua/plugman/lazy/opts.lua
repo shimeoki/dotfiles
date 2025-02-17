@@ -5,7 +5,6 @@ return {
 		border = "rounded",
 	},
 	install = {
-		path = "plugins",
 		missing = true,
 	},
 }
