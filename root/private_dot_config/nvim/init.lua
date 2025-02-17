@@ -1,6 +1,6 @@
 require("options")
 require("config.binds")
-require("config.diagnostics")
+require("diagnostics")
 require("plugman")
 
 -- theme
