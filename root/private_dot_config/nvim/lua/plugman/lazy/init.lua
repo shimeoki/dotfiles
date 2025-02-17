@@ -3,7 +3,7 @@ require("plugman.lazy.install")
 local opts = require("plugman.lazy.opts")
 
 require("lazy").setup({
-	spec = { { import = opts.install.path } },
+	spec = { { import = "plugman.lazy.spec" } },
 	install = {
 		missing = opts.install.missing,
 		colorscheme = { opts.ui.theme },
