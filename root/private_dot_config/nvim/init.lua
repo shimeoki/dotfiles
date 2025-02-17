@@ -1,7 +1,7 @@
 require("config.options")
 require("config.binds")
 require("config.diagnostics")
-require("plugman.lazy")
+require("plugman")
 
 -- theme
 vim.cmd.colorscheme("catppuccin-mocha")
