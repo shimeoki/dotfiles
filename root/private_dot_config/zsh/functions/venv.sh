@@ -6,8 +6,8 @@ export VENV_HOME="$HOME/.venv"
 [ -d "$VENV_HOME" ] || mkdir "$VENV_HOME"
 
 lsvenv() {
-    ls -1 "$VENV_HOME"
-    return 1
+    ls -1 "$VENV_HOME" || return 1
+    return 0
 }
 
 venv() {
@@ -31,8 +31,7 @@ venv() {
     fi
 
     # shellcheck source=/dev/null
-    . "$venv_path/bin/activate"
-
+    . "$venv_path/bin/activate" || return 1
     return 0
 }
 
@@ -49,8 +48,7 @@ mkvenv() {
         return 1
     fi
 
-    python3 -m venv "$venv_path"
-
+    python3 -m venv "$venv_path" || return 1
     return 0
 }
 
@@ -86,10 +84,10 @@ rmvenv() {
     current_venv=$(basename "${VIRTUAL_ENV:-}")
 
     if [ "$1" = "$current_venv" ]; then
+        echo "info: deactivating current venv"
         deactivate
     fi
 
-    rm -rf "$venv_path"
-
+    rm -rf "$venv_path" || return 1
     return 0
 }
