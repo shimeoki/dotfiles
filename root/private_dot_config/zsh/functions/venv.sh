@@ -54,6 +54,22 @@ mkvenv() {
     return 0
 }
 
+cdvenv() {
+    if [ $# -eq 0 ]; then
+        echo "error: no name provided"
+    fi
+
+    venv_path="$VENV_HOME/$1"
+
+    if ! [ -d "$venv_path" ]; then
+        echo "error: '$1' does not exist"
+        return 1
+    fi
+
+    cd "$venv_path" || return 1
+    return 0
+}
+
 rmvenv() {
     if [ $# -eq 0 ]; then
         echo "error: no name provided"
