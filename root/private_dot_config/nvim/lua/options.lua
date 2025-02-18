@@ -65,7 +65,7 @@ set.updatetime = 1000
 vim.g.mapleader = " "
 vim.g.maplocalleader = " " -- subject to change
 
-local python_exec = "/nvim/bin/python3"
-vim.g.python3_host_prog = vim.fn.expand(vim.env.VENV_HOME .. python_exec)
+local venv = vim.fn.expand(vim.env.VENV_HOME .. "/nvim/bin")
+vim.g.python3_host_prog = venv .. "/python3"
 
 return M
