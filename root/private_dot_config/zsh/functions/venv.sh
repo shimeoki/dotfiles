@@ -1,6 +1,15 @@
 #!/bin/env sh
 
-# source: https://gist.github.com/dbtek/fb2ddccb18f0cf63a654ea2cc94c8f19
+# venv v1.0.0
+#
+# my posix-compatible fork of venv wrapper script from these two sources:
+#
+# - https://gist.github.com/dbtek/fb2ddccb18f0cf63a654ea2cc94c8f19
+# - https://gist.github.com/benlubas/5b5e38ae27d9bb8b5c756d8371e238e6
+#
+# this gist is a mirror of functions/venv.sh from shimeoki/dotfiles repository.
+# because of this, the gist can be outdated. in this case, please notify me
+# and/or look the upstream in the repository mentioned above.
 
 export VENV_HOME="$HOME/.venv"
 [ -d "$VENV_HOME" ] || mkdir "$VENV_HOME"
