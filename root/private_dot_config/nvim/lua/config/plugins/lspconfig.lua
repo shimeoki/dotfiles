@@ -26,7 +26,7 @@ function M.setup()
 	end
 
 	local server_name
-	for _, server in ipairs(langservers.enabled) do
+	for _, server in ipairs(langservers.list) do
 		if not external[server.name] then
 			server_name = server.aliases.lspconfig or server.name
 

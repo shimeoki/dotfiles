@@ -2,22 +2,39 @@
 --- @alias alias string
 --- @alias name string
 
+--- @class Hooks
+---
+--- @field pre_init fun(any): table
+--- @field init fun(any): table
+--- @field post_init fun(any): table
+
 --- @class Tool
 ---
 --- @field name name
 --- @field enabled boolean
---- @field aliases? table<group, alias>
+--- @field aliases? table<group, alias | alias[]>
 --- @field filetypes string[]
 --- @field config? table | fun(any): table
+---
+--- new:
+--- @field hooks? Hooks
+--- @field binds? Bind[]
+--- @field exec? string | fun(any): table
+--- @field events? string[]
+--- @field opts? table | fun(any): table
 
 --- @class ToolBox
 ---
 --- @field opts? table
 --- @field map table<name, Tool>
---- @field enabled Tool[]
+--- @field list Tool[]
 --- @field by_filetype table<string, name[]>
 --- @field groups table<group, boolean>
 --- @field by_group? table<group, alias[]>
+---
+--- new:
+--- @field enabled? boolean
+--- @field events? string[]
 local ToolBox = {}
 ToolBox.__index = ToolBox
 
@@ -29,7 +46,7 @@ function ToolBox.new(opts)
 
 	self.opts = opts
 	self.map = {}
-	self.enabled = {}
+	self.list = {}
 	self.by_filetype = {}
 	self.groups = {}
 
@@ -46,7 +63,7 @@ function ToolBox:add(tool)
 		return
 	end
 
-	table.insert(self.enabled, tool)
+	table.insert(self.list, tool)
 
 	local tools
 	for _, filetype in ipairs(tool.filetypes) do

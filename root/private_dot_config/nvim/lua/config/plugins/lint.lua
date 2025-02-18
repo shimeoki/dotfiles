@@ -11,7 +11,7 @@ function M.setup()
 
 	lint.linters_by_ft = linters.by_filetype
 
-	for _, linter in ipairs(linters.enabled) do
+	for _, linter in ipairs(linters.list) do
 		if linter.config then
 			lint.linters[linter.name].args = linter.config.args
 		end
