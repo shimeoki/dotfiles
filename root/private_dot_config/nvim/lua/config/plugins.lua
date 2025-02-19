@@ -100,4 +100,9 @@ add({
 	enabled = true,
 })
 
+add({
+	name = "jupytext",
+	enabled = true,
+})
+
 return M
