@@ -1,11 +1,8 @@
--- fix: move opts
+local jupytext = require("config.plugins").jupytext
 
 return {
 	"GCBallesteros/jupytext.nvim",
-	name = "jupytext",
-	opts = {
-		style = "markdown",
-		output_extension = "md",
-		force_ft = "markdown",
-	},
+	name = jupytext.name,
+	cond = jupytext.enabled,
+	opts = jupytext.config.opts,
 }
