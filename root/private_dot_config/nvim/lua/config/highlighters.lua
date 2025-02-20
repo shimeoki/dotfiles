@@ -50,6 +50,12 @@ M:add({
 	filetypes = { "markdown" },
 })
 
+M:add({
+	name = "hyprlang",
+	enabled = true,
+	filetypes = { "hyprlang" },
+})
+
 M:parse_groups({ "treesitter" })
 
 return M
