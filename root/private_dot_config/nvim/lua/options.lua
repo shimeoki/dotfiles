@@ -68,4 +68,8 @@ vim.g.maplocalleader = " " -- subject to change
 local venv = vim.fn.expand(vim.env.VENV_HOME .. "/nvim/bin")
 vim.g.python3_host_prog = venv .. "/python3"
 
+vim.filetype.add({
+	pattern = { [".*/hypr/.*%.conf"] = "hyprlang" },
+})
+
 return M
