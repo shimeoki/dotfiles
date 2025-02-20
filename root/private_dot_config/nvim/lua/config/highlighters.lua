@@ -56,6 +56,12 @@ M:add({
 	filetypes = { "hyprlang" },
 })
 
+M:add({
+	name = "html",
+	enabled = true,
+	filetypes = { "html" },
+})
+
 M:parse_groups({ "treesitter" })
 
 return M
