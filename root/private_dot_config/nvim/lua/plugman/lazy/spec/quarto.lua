@@ -18,13 +18,6 @@ return {
 			},
 			completion = { enabled = true },
 		},
-		keymap = {
-			hover = "H",
-			definition = "gd",
-			rename = "<leader>rn",
-			references = "gr",
-			format = "<leader>gf",
-		},
 		codeRunner = {
 			enabled = true,
 			default_method = "molten",
