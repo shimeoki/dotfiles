@@ -62,6 +62,12 @@ M:add({
 	filetypes = { "html" },
 })
 
+M:add({
+	name = "json",
+	enabled = true,
+	filetypes = { "json" },
+})
+
 M:parse_groups({ "treesitter" })
 
 return M
