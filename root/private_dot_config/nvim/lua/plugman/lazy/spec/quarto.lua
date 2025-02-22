@@ -1,4 +1,4 @@
--- fix: separate
+local quarto = require("config.plugins").quarto
 
 return {
 	"quarto-dev/quarto-nvim",
@@ -8,19 +8,5 @@ return {
 		"jmbuhr/otter.nvim",
 		"nvim-treesitter/nvim-treesitter",
 	},
-	opts = {
-		lspFeatures = {
-			languages = { "python" },
-			chunks = "all",
-			diagnostics = {
-				enabled = true,
-				triggers = { "BufWritePost" },
-			},
-			completion = { enabled = true },
-		},
-		codeRunner = {
-			enabled = true,
-			default_method = "molten",
-		},
-	},
+	opts = quarto.config.opts,
 }
