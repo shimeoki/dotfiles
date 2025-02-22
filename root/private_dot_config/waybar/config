@@ -6,7 +6,7 @@
     "margin-right": 4,
     "modules-left": ["hyprland/workspaces", "hyprland/window"],
     "modules-center": ["clock", "hyprland/language", "keyboard-state"],
-    "modules-right": ["bluetooth", "backlight", "network", "battery"],
+    "modules-right": ["bluetooth", "network", "wireplumber", "backlight", "battery"],
     "hyprland/language": {
         "format": "{}",
         "format-en": "en",
@@ -110,5 +110,11 @@
         "format-off": "",
         "format-connected": "{device_alias} 󰂱",
         "format-connected-battery": "{device_alias} 󰂱 {device_battery_percentage}% 󰥉"
+    },
+    "wireplumber": {
+        "format": "{volume}% {icon}",
+        "format-muted": "󰝟",
+        "on-click": "pwvucontrol",
+        "format-icons": ["󰕿", "󰖀", "󰕾"]
     }
 }

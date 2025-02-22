@@ -28,7 +28,8 @@ window#waybar.empty #window {
 #window,
 #backlight,
 #keyboard-state,
-#bluetooth {
+#bluetooth,
+#wireplumber {
     background-color: @base;
     color: @text;
 
