@@ -110,4 +110,9 @@ add({
 	enabled = true,
 })
 
+add({
+	name = "molten",
+	enabled = true,
+})
+
 return M
