@@ -88,10 +88,19 @@ local telescope = {
 	Bind.new("nv", "G", t .. "git_branches", "list branches"),
 }
 
+local q = 'lua require("quarto.runner").'
+local quarto = {
+	Bind.new("n", "q", q .. "run_cell()", "run cell with quarto"),
+	Bind.new("v", "q", q .. "run_range()", "run visual range with quarto"),
+	Bind.new("nv", "Q", q .. "run_above()", "run cell and above with quarto"),
+	Bind.new("nv", "<c-q>", q .. "run_all()", "run all cells with quarto"),
+}
+
 M.map = {
 	std = std,
 	yazi = yazi,
 	telescope = telescope,
+	quarto = quarto,
 }
 
 function M.convert(tbl, format)
