@@ -4,6 +4,7 @@ return {
 	"3rd/image.nvim",
 	name = "image",
 	cond = true,
+	ft = { "markdown" },
 	opts = {
 		backend = "kitty",
 		max_width = 128,
