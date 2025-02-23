@@ -4,7 +4,7 @@ local opts = {
 		chunks = "all",
 		diagnostics = {
 			enabled = true,
-			triggers = { "BufWritePost" },
+			triggers = { "BufEnter", "BufWritePost", "InsertLeave" },
 		},
 		completion = { enabled = true },
 	},
