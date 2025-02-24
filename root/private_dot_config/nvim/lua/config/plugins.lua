@@ -115,4 +115,9 @@ add({
 	enabled = true,
 })
 
+add({
+	name = "image",
+	enabled = true,
+})
+
 return M
