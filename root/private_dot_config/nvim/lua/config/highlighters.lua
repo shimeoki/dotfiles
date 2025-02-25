@@ -68,6 +68,12 @@ M:add({
 	filetypes = { "json" },
 })
 
+M:add({
+	name = "toml",
+	enabled = true,
+	filetypes = { "toml" },
+})
+
 M:parse_groups({ "treesitter" })
 
 return M
