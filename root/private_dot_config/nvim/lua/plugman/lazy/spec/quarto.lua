@@ -7,7 +7,7 @@ return {
 	"quarto-dev/quarto-nvim",
 	cond = true,
 	name = "quarto",
-	ft = { "markdown" },
+	ft = { "quarto", "markdown", "json", "python" },
 	keys = keys,
 	dependencies = {
 		"jmbuhr/otter.nvim",
