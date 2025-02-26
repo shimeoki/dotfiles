@@ -5,8 +5,10 @@ alias b='bat'
 
 # chezmoi
 alias cz='chezmoi'
+alias czz='chezmoi apply'
 alias czj='chezmoi cd'
-alias cza='chezmoi apply'
+alias cza='chezmoi add'
+alias czac='chezmoi add .'
 
 # clear
 alias c='clear'
@@ -33,6 +35,7 @@ alias f='fzf'
 # git
 alias g='git'
 alias ga='git add'
+alias gac='git add .'
 alias gg='git status'
 alias gs='git switch'
 alias gsc='git switch -c'
