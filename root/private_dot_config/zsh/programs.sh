@@ -2,9 +2,17 @@
 
 export ZSH_PROGRAMS="$ZDOTDIR/programs"
 
-source "$ZSH_PROGRAMS/eza.sh"
-source "$ZSH_PROGRAMS/fzf.sh"
-source "$ZSH_PROGRAMS/gpg.sh"
-source "$ZSH_PROGRAMS/oh-my-posh.sh"
-source "$ZSH_PROGRAMS/zoxide.sh"
+# shellcheck source=programs/eza.sh
+. "$ZSH_PROGRAMS/eza.sh"
 
+# shellcheck source=programs/fzf.sh
+. "$ZSH_PROGRAMS/fzf.sh"
+
+# shellcheck source=programs/gpg.sh
+. "$ZSH_PROGRAMS/gpg.sh"
+
+# shellcheck source=programs/oh-my-posh.sh
+. "$ZSH_PROGRAMS/oh-my-posh.sh"
+
+# shellcheck source=programs/zoxide.sh
+. "$ZSH_PROGRAMS/zoxide.sh"
