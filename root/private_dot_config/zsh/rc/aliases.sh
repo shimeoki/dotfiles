@@ -80,6 +80,11 @@ alias nv='nvim'
 
 # pacman
 alias pm='pacman'
+alias pms='sudo pacman -S'
+alias pmu='sudo pacman -Syu'
+alias pml='pacman -Q'
+alias pmi='pacman -Qi'
+alias pmr='sudo pacman -Rs'
 
 # sudo
 alias sudo='sudo ' # blank space is a hack
