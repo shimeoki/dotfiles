@@ -62,7 +62,7 @@ local yazi = {
 local t = "Telescope "
 local telescope = {
 	-- file navigation
-	Bind.new("nv", "f", t .. "find_files hidden=true", "find files"),
+	Bind.new("nv", "f", t .. "find_files", "find files"),
 	Bind.new("nv", "F", t .. "live_grep", "live grep fils"),
 	-- check current or previous files
 	Bind.new("nv", "b", t .. "buffers", "list buffers"),

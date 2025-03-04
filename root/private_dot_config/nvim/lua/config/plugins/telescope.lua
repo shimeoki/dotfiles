@@ -38,12 +38,25 @@ local fzf = {
 	case_mode = "smart_case",
 }
 
+local find_command = {
+	"rg",
+	"--files",
+	"--hidden",
+	"--glob",
+	"!**/.git/*",
+}
+
 M.opts = {
 	defaults = {
 		layout_strategy = layout_strategy,
 		layout_config = layout_config,
 		sorting_strategy = sorting_strategy,
 		mappings = mappings,
+	},
+	pickers = {
+		find_files = {
+			find_command = find_command,
+		},
 	},
 }
 
@@ -62,9 +75,21 @@ vim.api.nvim_create_autocmd("User", {
 	end,
 })
 
+local function vimgrep_arguments()
+	local telescope_config = require("telescope.config")
+	local args = { unpack(telescope_config.values.vimgrep_arguments) }
+
+	table.insert(args, "--hidden")
+	table.insert(args, "--glob")
+	table.insert(args, "!**/.git/*")
+
+	return args
+end
+
 function M.config()
 	local telescope = require("telescope")
 
+	M.opts.defaults.vimgrep_arguments = vimgrep_arguments()
 	telescope.setup(M.opts)
 
 	if fuzzy then
