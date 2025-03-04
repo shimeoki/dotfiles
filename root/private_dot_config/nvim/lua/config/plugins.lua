@@ -120,4 +120,9 @@ add({
 	enabled = true,
 })
 
+add({
+	name = "silicon",
+	enabled = true,
+})
+
 return M
