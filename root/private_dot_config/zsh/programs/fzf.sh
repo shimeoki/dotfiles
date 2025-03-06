@@ -9,7 +9,8 @@ export ZSH_PROGRAMS_FZF="$ZSH_PROGRAMS/fzf"
 eval "$(fzf --zsh)"
 
 # theme
-source "$ZSH_PROGRAMS_FZF/themes/catppuccin-mocha.sh"
+# shellcheck source=fzf/themes/catppuccin-mocha.sh
+. "$ZSH_PROGRAMS_FZF/themes/catppuccin-mocha.sh"
 
 # use fd
 FD_OPTS="--hidden --exclude .git"
@@ -18,7 +19,8 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="fd --type=d $FD_OPTS"
 
 # git
-source "$ZSH_PROGRAMS_FZF/git.zsh"
+# shellcheck source=fzf/git.zsh
+. "$ZSH_PROGRAMS_FZF/git.zsh"
 
 # preview
 FZF_DIR_PREVIEW="eza --tree --color=always {} | head -200"
@@ -42,14 +44,13 @@ _fzf_compgen_dir() {
 # comprun
 
 _fzf_comprun() {
-    local command=$1
+    command=$1
     shift
 
     case "$command" in
-        cd|j)         fzf --preview "$FZF_DIR_PREVIEW" "$@" ;;
-        export|unset) fzf --preview "eval 'echo \${}'" "$@" ;;
-        ssh)          fzf --preview 'dig {}'           "$@" ;;
-        *)            fzf --preview "$FZF_PREVIEW"     "$@" ;;
+    cd | j) fzf --preview "$FZF_DIR_PREVIEW" "$@" ;;
+    export | unset) fzf --preview "eval 'echo \${}'" "$@" ;;
+    ssh) fzf --preview 'dig {}' "$@" ;;
+    *) fzf --preview "$FZF_PREVIEW" "$@" ;;
     esac
 }
-
