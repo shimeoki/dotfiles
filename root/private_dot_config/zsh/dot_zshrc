@@ -12,12 +12,11 @@ setopt NOTIFY
 # set vi mode
 bindkey -v
 
-source "$ZSH_RC/zinit.zsh"
-source "$ZSH_RC/aliases.sh"
-source "$ZSH_RC/completion.zsh"
-source "$ZSH_RC/history.zsh"
-source "$ZSH_RC/path.zsh"
+. "$ZSH_RC/zinit.zsh"
+. "$ZSH_RC/aliases.sh"
+. "$ZSH_RC/completion.zsh"
+. "$ZSH_RC/history.zsh"
+. "$ZSH_RC/path.zsh"
 
-source "$ZDOTDIR/functions.sh"
-source "$ZDOTDIR/programs.sh"
-
+. "$ZDOTDIR/functions.sh"
+. "$ZDOTDIR/programs.sh"
