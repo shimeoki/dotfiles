@@ -13,3 +13,6 @@ export ZSH_FUNCTIONS="$ZDOTDIR/functions"
 
 # shellcheck source=functions/venv.sh
 . "$ZSH_FUNCTIONS/venv.sh"
+
+# shellcheck source=functions/deattach.sh
+. "$ZSH_FUNCTIONS/deattach.sh"
