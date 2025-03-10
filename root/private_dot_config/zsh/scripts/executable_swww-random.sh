@@ -10,7 +10,7 @@ DEFAULT_INTERVAL=300 # seconds
 
 if [ $# -lt 1 ] || [ ! -d "$1" ]; then
     echo "usage: <directory> [<interval>|300]"
-    return 0
+    exit 1
 fi
 
 while true; do
