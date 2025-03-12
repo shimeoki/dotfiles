@@ -103,5 +103,8 @@ alias wifir='nmcli device wifi rescan'
 # zoxide
 alias jj='j -'
 
+# hyprland
+alias hlr='hyprctl reload'
+
 # gradle
 alias gw='./gradlew'
