@@ -5,7 +5,7 @@
 [init]
 	defaultBranch = main
 [core]
-	editor = helix
+	editor = nvim
 	pager = delta
 [commit]
 	gpgsign = true
