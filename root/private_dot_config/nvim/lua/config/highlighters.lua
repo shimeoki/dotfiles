@@ -74,6 +74,18 @@ M:add({
 	filetypes = { "toml" },
 })
 
+M:add({
+	name = "cpp",
+	enabled = true,
+	filetypes = { "cpp" },
+})
+
+M:add({
+	name = "c",
+	enabled = true,
+	filetypes = { "c" },
+})
+
 M:parse_groups({ "treesitter" })
 
 return M
