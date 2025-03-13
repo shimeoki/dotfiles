@@ -4,12 +4,12 @@ local api = vim.api
 
 local formatters = require("config.formatters")
 
-M.opts = {
+local opts = {
 	formatters_by_ft = formatters.by_filetype,
 }
 
 if formatters.opts.on_save then
-	M.opts.format_on_save = {
+	opts.format_on_save = {
 		timeout_ms = 500,
 		lsp_format = "fallback",
 	}
@@ -37,6 +37,20 @@ end, { range = true })
 
 function M.init()
 	vim.o.formatexpr = 'v:lua.require("conform").formatexpr()'
+end
+
+function M.setup()
+	local conform = require("conform")
+	conform.setup(opts)
+
+	local formatter_name
+	for _, formatter in ipairs(formatters.list) do
+		formatter_name = formatter.aliases.conform or formatter.name
+
+		if formatter.config then
+			conform.formatters[formatter_name] = formatter.config
+		end
+	end
 end
 
 return M

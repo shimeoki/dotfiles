@@ -10,6 +10,6 @@ return {
 	cond = enabled,
 	event = { "BufWritePre" },
 	cmd = { "ConformInfo" },
-	opts = conform.opts,
+	config = conform.setup,
 	init = conform.init,
 }
