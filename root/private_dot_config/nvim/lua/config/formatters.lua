@@ -50,6 +50,13 @@ M:add({
 	filetypes = { "sh", "bash", "zsh" },
 })
 
+M:add({
+	name = "clang-format",
+	enabled = true,
+	filetypes = { "c", "cpp" },
+	config = require("config.formatters.clang"),
+})
+
 M:parse_groups({ "mason" })
 
 return M
