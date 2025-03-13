@@ -1,6 +1,6 @@
 return {
 	append_args = {
 		"--style",
-		"{BasedOnStyle: LLVM, IndentWidth: 4}",
+		"{ BasedOnStyle: Chromium, IndentWidth: 4, LineEnding: LF }",
 	},
 }
