@@ -50,6 +50,12 @@ M:add({
 	config = require("config.langservers.bashls"),
 })
 
+M:add({
+	name = "clangd",
+	enabled = true,
+	filetypes = { "c", "cpp" },
+})
+
 M:parse_groups({ "lspconfig", "mason" })
 
 return M
