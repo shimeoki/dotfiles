@@ -56,6 +56,15 @@ M:add({
 	filetypes = { "c", "cpp" },
 })
 
+M:add({
+	name = "nushell",
+	enabled = true,
+	filetypes = { "nu" },
+	aliases = {
+		mason = "",
+	},
+})
+
 M:parse_groups({ "lspconfig", "mason" })
 
 return M

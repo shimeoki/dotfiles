@@ -86,6 +86,12 @@ M:add({
 	filetypes = { "c" },
 })
 
+M:add({
+	name = "nu",
+	enabled = true,
+	filetypes = { "nu" },
+})
+
 M:parse_groups({ "treesitter" })
 
 return M
