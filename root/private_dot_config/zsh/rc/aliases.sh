@@ -28,6 +28,7 @@ alias ltl='eza_tree'
 
 # fastfetch
 alias ff='fastfetch'
+alias cf='clear && fastfetch'
 
 # fzf
 alias f='fzf'
@@ -105,6 +106,9 @@ alias jj='j -'
 
 # hyprland
 alias hlr='hyprctl reload'
+
+# btop
+alias t='btop'
 
 # gradle
 alias gw='./gradlew'
