@@ -95,11 +95,13 @@ function ToolBox:parse_groups(groups)
 		for group, _ in pairs(self.groups) do
 			alias = tool.aliases[group] or name
 
-			tools = self.by_group[group]
-			if not tools then
-				self.by_group[group] = { alias }
-			else
-				table.insert(tools, alias)
+			if alias ~= "" then
+				tools = self.by_group[group]
+				if not tools then
+					self.by_group[group] = { alias }
+				else
+					table.insert(tools, alias)
+				end
 			end
 		end
 	end
