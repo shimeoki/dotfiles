@@ -1,6 +1,7 @@
 # custom
 
 $env.VENV_HOME = $env.HOME | path join '.venv'
+$env.GPG_TTY = (tty)
 
 # history
 
