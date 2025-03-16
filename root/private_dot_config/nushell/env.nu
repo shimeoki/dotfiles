@@ -1,7 +1,13 @@
 # custom
 
-$env.VENV_HOME = $env.HOME | path join '.venv'
+$env.VENV_HOME = '~/.venv'
 $env.GPG_TTY = (tty)
+
+const cargo_path = '~/.cargo/bin'
+const go_path = '~/go/bin'
+$env.PATH = $env.PATH | append [$cargo_path $go_path]
+
+$env.EZA_ICONS_AUTO = 1
 
 # history
 
