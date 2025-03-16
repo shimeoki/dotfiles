@@ -57,6 +57,16 @@ M:add({
 	config = require("config.formatters.clang"),
 })
 
+-- warn: doesn't work, don't turn this on
+M:add({
+	name = "nufmt",
+	enabled = false,
+	filetypes = { "nu" },
+	aliases = {
+		mason = "",
+	},
+})
+
 M:parse_groups({ "mason" })
 
 return M
