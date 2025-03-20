@@ -7,4 +7,7 @@ return {
 	install = {
 		missing = true,
 	},
+	change_detection = {
+		enabled = false,
+	},
 }
