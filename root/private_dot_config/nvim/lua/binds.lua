@@ -86,6 +86,7 @@ local telescope = {
 	-- git
 	Bind.new("nv", "g", t .. "git_commits", "list commits"),
 	Bind.new("nv", "G", t .. "git_branches", "list branches"),
+	Bind.new("nv", "<c-g>", "LazyGit", "lazygit"),
 }
 
 local q = 'lua require("quarto.runner").'
