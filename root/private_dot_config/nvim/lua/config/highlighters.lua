@@ -92,6 +92,18 @@ M:add({
 	filetypes = { "nu" },
 })
 
+M:add({
+	name = "javascript",
+	enabled = true,
+	filetypes = { "javascript", "javascriptreact" },
+})
+
+M:add({
+	name = "typescript",
+	enabled = true,
+	filetypes = { "typescript", "typescriptreact" },
+})
+
 M:parse_groups({ "treesitter" })
 
 return M
