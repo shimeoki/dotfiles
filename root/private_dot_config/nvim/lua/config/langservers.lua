@@ -65,6 +65,20 @@ M:add({
 	},
 })
 
+M:add({
+	name = "deno",
+	enabled = true,
+	filetypes = {
+		"javascript",
+		"javascriptreact",
+		"typescript",
+		"typescriptreact",
+	},
+	aliases = {
+		lspconfig = "denols",
+	},
+})
+
 M:parse_groups({ "lspconfig", "mason" })
 
 return M
