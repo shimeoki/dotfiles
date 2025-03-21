@@ -67,6 +67,21 @@ M:add({
 	},
 })
 
+M:add({
+	name = "deno_fmt",
+	enabled = true,
+	filetypes = {
+		"javascript",
+		"javascriptreact",
+		"typescript",
+		"typescriptreact",
+	},
+	aliases = {
+		mason = "deno",
+	},
+	config = require("config.formatters.deno"),
+})
+
 M:parse_groups({ "mason" })
 
 return M
