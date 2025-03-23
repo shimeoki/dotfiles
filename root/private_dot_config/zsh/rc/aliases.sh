@@ -100,6 +100,7 @@ alias sbg='swww img'
 # nmcli
 alias wific='nmcli device wifi connect'
 alias wifir='nmcli device wifi rescan'
+alias wifil='nmcli device wifi list'
 
 # zoxide
 alias jj='j -'
