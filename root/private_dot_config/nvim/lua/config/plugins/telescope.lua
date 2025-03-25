@@ -7,13 +7,15 @@ local sorting_strategy = "ascending"
 local layout_strategy = "horizontal"
 local layout_config = {
 	anchor = "CENTER",
-	height = { padding = 2 },
-	mirror = false,
 	prompt_position = "top",
+	mirror = false,
 	scroll_speed = 4,
+	height = { padding = 2 },
 	width = { padding = 4 },
-	preview_cutoff = 100,
-	preview_width = 80,
+	horizontal = {
+		preview_cutoff = 100,
+		preview_width = 80,
+	},
 }
 
 local mappings = {
