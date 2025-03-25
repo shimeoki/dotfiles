@@ -12,4 +12,5 @@ require("lazy").setup({
 	checker = { enabled = opts.check },
 	ui = { border = opts.ui.border },
 	rocks = { hererocks = true },
+	change_detection = { enabled = opts.reload },
 })
