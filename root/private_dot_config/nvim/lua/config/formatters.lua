@@ -82,6 +82,12 @@ M:add({
 	config = require("config.formatters.deno"),
 })
 
+M:add({
+	name = "pyproject-fmt",
+	enabled = true,
+	filetypes = { "toml" },
+})
+
 M:parse_groups({ "mason" })
 
 return M
