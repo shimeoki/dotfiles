@@ -104,6 +104,24 @@ M:add({
 	filetypes = { "typescript", "typescriptreact" },
 })
 
+M:add({
+	name = "yaml",
+	enabled = true,
+	filetypes = { "yaml" },
+})
+
+M:add({
+	name = "css",
+	enabled = true,
+	filetypes = { "css" },
+})
+
+M:add({
+	name = "vue",
+	enabled = true,
+	filetypes = { "vue" },
+})
+
 M:parse_groups({ "treesitter" })
 
 return M
