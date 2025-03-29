@@ -3,13 +3,12 @@
 # source: https://yazi-rs.github.io/docs/quick-start#shell-wrapper
 
 function y() {
-	  local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
-	  yazi "$@" --cwd-file="$tmp"
+    local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+    yazi "$@" --cwd-file="$tmp"
 
-	  if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-	  	  builtin cd -- "$cwd"
-	  fi
+    if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+        builtin cd -- "$cwd"
+    fi
 
-	  rm -f -- "$tmp"
+    rm -f -- "$tmp"
 }
-
