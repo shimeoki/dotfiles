@@ -75,6 +75,12 @@ M:add({
 		"javascriptreact",
 		"typescript",
 		"typescriptreact",
+		"json",
+		"jsonc",
+		"css",
+		"html",
+		"yaml",
+		"vue",
 	},
 	aliases = {
 		mason = "deno",
