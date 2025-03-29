@@ -31,9 +31,14 @@ function M.setup()
 			server_name = server.aliases.lspconfig or server.name
 
 			local server_opts = {}
+
 			if server.config then
 				server_opts = server.config.opts
 				server_opts.capabilities = capabilities
+			end
+
+			if server.filetypes then
+				server_opts.filetypes = server.filetypes
 			end
 
 			lspconfig[server_name].setup(server_opts)

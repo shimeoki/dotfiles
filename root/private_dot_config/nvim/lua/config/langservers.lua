@@ -47,7 +47,6 @@ M:add({
 	aliases = {
 		mason = "bash-language-server",
 	},
-	config = require("config.langservers.bashls"),
 })
 
 M:add({
