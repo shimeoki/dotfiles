@@ -78,6 +78,35 @@ M:add({
 	},
 })
 
+M:add({
+	name = "volar",
+	enabled = true,
+	filetypes = { "vue" },
+	aliases = {
+		mason = "vue-language-server",
+	},
+	config = require("config.langservers.volar"),
+})
+
+M:add({
+	name = "tsls",
+	enabled = false, -- denols is used for js/ts and non-hybrid mode is used for vue
+	filetypes = { "vue" },
+	aliases = {
+		mason = "typescript-language-server",
+		lspconfig = "ts_ls",
+	},
+})
+
+M:add({
+	name = "cssls",
+	enabled = true,
+	filetypes = { "css" },
+	aliases = {
+		mason = "css-lsp",
+	},
+})
+
 M:parse_groups({ "lspconfig", "mason" })
 
 return M
