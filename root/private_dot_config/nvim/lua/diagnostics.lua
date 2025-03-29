@@ -1,3 +1,25 @@
+local icons = {
+	Error = "󰅚 ",
+	Warn = "󰀪 ",
+	Hint = "󰌶 ",
+	Info = " ",
+}
+
+local signs = {
+	text = {},
+	numhl = {},
+	texthl = {},
+}
+
+for type, icon in pairs(icons) do
+	local hl = "DiagnosticSign" .. type
+	local severity = vim.diagnostic.severity[string.upper(type)]
+
+	signs.text[severity] = icon
+	signs.numhl[severity] = hl
+	signs.texthl[severity] = hl
+end
+
 vim.diagnostic.config({
 	underline = true,
 	virtual_text = {
@@ -7,23 +29,11 @@ vim.diagnostic.config({
 		hl_mode = "replace",
 		virt_text_pos = "eol",
 	},
-	signs = true,
 	float = {
 		source = true,
 		border = "rounded",
 	},
 	update_in_insert = false,
 	severity_sort = true,
+	signs = signs,
 })
-
-local signs = {
-	Error = "󰅚 ",
-	Warn = "󰀪 ",
-	Hint = "󰌶 ",
-	Info = " ",
-}
-
-for type, icon in pairs(signs) do
-	local hl = "DiagnosticSign" .. type
-	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
-end
