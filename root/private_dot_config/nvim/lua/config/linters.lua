@@ -29,6 +29,15 @@ M:add({
 	filetypes = { "sh", "bash" },
 })
 
+M:add({
+	name = "dmypy",
+	enabled = true,
+	filetypes = { "python" },
+	aliases = {
+		mason = "mypy",
+	},
+})
+
 M:parse_groups({ "mason" })
 
 return M
