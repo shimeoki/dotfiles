@@ -107,6 +107,12 @@ M:add({
 	},
 })
 
+M:add({
+	name = "texlab",
+	enabled = true,
+	filetypes = { "tex", "plaintex" },
+})
+
 M:parse_groups({ "lspconfig", "mason" })
 
 return M
