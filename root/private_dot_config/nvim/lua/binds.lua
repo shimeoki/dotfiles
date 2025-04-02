@@ -18,6 +18,9 @@ local std = {
 	Bind.new("nv", "J", "wincmd J", "swap split to bottom"),
 	Bind.new("nv", "K", "wincmd K", "swap split to top"),
 	Bind.new("nv", "L", "wincmd L", "swap split to right"),
+	-- buffer navigation
+	Bind.new("nv", ",", "bnext", "next buffer"),
+	Bind.new("nv", ".", "bprevious", "previous buffer"),
 	-- split resize
 	Bind.new("nv", "<c-h>", "4wincmd <", "decrease split width"),
 	Bind.new("nv", "<c-j>", "4wincmd -", "decrease split height"),
