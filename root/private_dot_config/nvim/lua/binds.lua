@@ -51,6 +51,8 @@ local std = {
 	-- comments
 	Bind.new("n", "c", 'lua vim.api.nvim_input("gcc")', "toggle comment"),
 	Bind.new("v", "c", 'lua vim.api.nvim_input("gc")', "toggle comment"),
+	-- todo: move elsewhere
+	Bind.new("nv", "<c-g>", "LazyGit", "lazygit"),
 }
 
 local yazi = {
@@ -86,7 +88,6 @@ local telescope = {
 	-- git
 	Bind.new("nv", "g", t .. "git_commits", "list commits"),
 	Bind.new("nv", "G", t .. "git_branches", "list branches"),
-	Bind.new("nv", "<c-g>", "LazyGit", "lazygit"),
 }
 
 local q = 'lua require("quarto.runner").'
