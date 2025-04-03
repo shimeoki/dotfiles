@@ -4,18 +4,38 @@ local fuzzy = true
 local selecter = true
 
 local sorting_strategy = "ascending"
-local layout_strategy = "horizontal"
-local layout_config = {
+local layout_strategy = "flex"
+local preview_width = 80
+local preview_cutoff = preview_width + preview_width / 2
+
+local horizontal = {
 	anchor = "CENTER",
+
+	height = { padding = 0 },
+	width = { padding = 0 },
+
+	preview_width = preview_width,
+	preview_cutoff = preview_cutoff,
+
 	prompt_position = "top",
 	mirror = false,
+}
+
+local vertical = {
+	anchor = "CENTER",
+
+	height = { padding = 0 },
+	width = { padding = 0 },
+
+	prompt_position = "top",
+	mirror = true,
+}
+
+local layout_config = {
 	scroll_speed = 4,
-	height = { padding = 2 },
-	width = { padding = 4 },
-	horizontal = {
-		preview_cutoff = 100,
-		preview_width = 80,
-	},
+	horizontal = horizontal,
+	vertical = vertical,
+	flip_columns = preview_cutoff,
 }
 
 local mappings = {
