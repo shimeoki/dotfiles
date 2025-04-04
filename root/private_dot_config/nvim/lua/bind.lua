@@ -3,6 +3,7 @@
 --- @field keys string
 --- @field cmd string
 --- @field desc string
+--- @field silent boolean
 local Bind = {}
 Bind.__index = Bind
 
@@ -29,12 +30,16 @@ function Bind.new(modes, keys, cmd, desc)
 	self.keys = "<leader>" .. keys
 	self.cmd = "<cmd>" .. cmd .. "<cr>"
 	self.desc = desc
+	self.silent = true -- hack: temporary fix
 
 	return self
 end
 
 function Bind:to_std()
-	return self:mode_table(), self.keys, self.cmd, { desc = self.desc }
+	return self:mode_table(), self.keys, self.cmd, {
+		desc = self.desc,
+		silent = self.silent,
+	}
 end
 
 function Bind:to_which_key()
