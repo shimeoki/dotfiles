@@ -8,3 +8,4 @@ swww
 networkmanager
 brightnessctl
 polkit-gnome
+opentabletdriver

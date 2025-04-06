@@ -11,3 +11,15 @@ git-delta
 mariadb
 postgresql
 nodejs
+gradle
+pnpm
+arduino-cli
+android-tools
+clang
+uv
+luarocks
+lazygit
+rust
+rust-analyzer
+npm
+gitleaks

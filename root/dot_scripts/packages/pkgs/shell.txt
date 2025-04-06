@@ -4,3 +4,12 @@ bat
 eza
 fzf
 fastfetch
+fd
+btop
+nushell
+yazi
+openssh
+ripgrep
+ripgrep-all
+ripdrag-git
+pueue

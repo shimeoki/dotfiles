@@ -4,3 +4,4 @@ hyprlock
 hyprpicker
 hyprwayland-scanner
 grimblast-git
+pwvucontrol
