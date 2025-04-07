@@ -1,0 +1,129 @@
+{
+	"layer": "bottom",
+	"position": "top",
+	"margin-top": 8,
+	"margin-left": 4,
+	"margin-right": 4,
+	"modules-left": ["hyprland/workspaces", "hyprland/window"],
+	"modules-center": ["clock", "hyprland/language", "keyboard-state"],
+	"modules-right": [
+		"bluetooth",
+		"network",
+		"wireplumber",
+		"backlight",
+		"battery"
+	],
+	"hyprland/language": {
+		"format": "{}",
+		"format-en": "en",
+		"format-ru": "ru"
+	},
+	"hyprland/workspaces": {
+		"format": "{name}{icon}{windows}",
+		"format-window-separator": " ",
+		"window-rewrite-default": "󰣆",
+		"window-rewrite": {
+			"firefox": "󰈹",
+			"floorp": "󰈹",
+			"zen": "󰈹",
+			"code": "󰨞",
+			"kitty": "󰆍",
+			"obsidian": "󰠮",
+			".*telegram.*": "󰍡",
+			".*materialgram": "󰍡",
+			"Element": "󰍡",
+			"Signal": "󰍡",
+			"discord": "󰍡",
+			"wofi": "󰮫",
+			"steam": "󰓓",
+			"discord": "󰙯"
+		},
+		"format-icons": {
+			"default": " ",
+			"empty": ""
+		}
+	},
+	"hyprland/window": {
+		"format": "{}",
+		"separate-outputs": true,
+		"icon": false
+	},
+	"battery": {
+		"states": {
+			"charge-100": 100,
+			"charge-99": 99,
+			"charge-89": 89,
+			"charge-79": 79,
+			"charge-69": 69,
+			"charge-59": 59,
+			"charge-49": 49,
+			"charge-39": 39,
+			"charge-29": 29,
+			"charge-19": 19,
+			"charge-9": 9
+		},
+		"format-charge-100": "{capacity}% 󰁹",
+		"format-charge-99": "{capacity}% 󰂂",
+		"format-charge-89": "{capacity}% 󰂁",
+		"format-charge-79": "{capacity}% 󰂀",
+		"format-charge-69": "{capacity}% 󰁿",
+		"format-charge-59": "{capacity}% 󰁾",
+		"format-charge-49": "{capacity}% 󰁽",
+		"format-charge-39": "{capacity}% 󰁼",
+		"format-charge-29": "{capacity}% 󰁻",
+		"format-charge-19": "{capacity}% 󰁺",
+		"format-charge-9": "{capacity}% 󰂎",
+		"format-charging-charge-100": "{capacity}% 󰂅",
+		"format-charging-charge-99": "{capacity}% 󰂋",
+		"format-charging-charge-89": "{capacity}% 󰂊",
+		"format-charging-charge-79": "{capacity}% 󰢞",
+		"format-charging-charge-69": "{capacity}% 󰂉",
+		"format-charging-charge-59": "{capacity}% 󰢝",
+		"format-charging-charge-49": "{capacity}% 󰂈",
+		"format-charging-charge-39": "{capacity}% 󰂇",
+		"format-charging-charge-29": "{capacity}% 󰂆",
+		"format-charging-charge-19": "{capacity}% 󰢜",
+		"format-charging-charge-9": "{capacity}% 󰢟"
+	},
+	"network": {
+		"format-wifi": "{essid} {icon}",
+		"tooltip-format-wifi": "Signal strength: {signalStrength}%",
+		"format-ethernet": "󰖈",
+		"format-disconnected": "",
+		"format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"]
+	},
+	"backlight": {
+		"format": "{percent}% {icon}",
+		"format-icons": ["󰃚", "󰃛", "󰃜", "󰃝", "󰃞", "󰃟", "󰃠"]
+	},
+	"keyboard-state": {
+		"capslock": true,
+		"format": {
+			"capslock": "caps {icon}"
+		},
+		"format-icons": {
+			"locked": "󰌾",
+			"unlocked": "󰿆"
+		}
+	},
+	"clock": {
+		"interval": 60,
+		"tooltip": true,
+		"format": "{:%R}",
+		"tooltip-format": "{:%F (%A, %B %d)}"
+	},
+	"bluetooth": {
+		"format": "{status} 󰂯",
+		"format-no-controller": "",
+		"format-disabled": "",
+		"format-off": "",
+		"format-connected": "{device_alias} 󰂱",
+		"format-connected-battery": "{device_alias} 󰂱 {device_battery_percentage}% 󰥉"
+	},
+	"wireplumber": {
+		"format": "{volume}% {icon}",
+		"format-muted": "󰝟",
+		"on-click": "pwvucontrol",
+		"format-icons": ["󰕿", "󰖀", "󰕾"]
+	}
+}
