@@ -6,7 +6,8 @@ Documentation=https://github.com/jtroo/kanata
 Environment=PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/home/d/.cargo/bin
 Environment=DISPLAY=:0
 Type=simple
-ExecStart=/usr/bin/sh -c 'exec $$(which kanata)'
+ExecStart=/usr/bin/kanata --cfg /home/d/.config/kanata/kanata.kbd
+Restart=no
 
 [Install]
 WantedBy=default.target
