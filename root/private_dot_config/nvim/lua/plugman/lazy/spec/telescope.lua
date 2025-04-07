@@ -3,7 +3,7 @@ local enabled = true
 local sorter = {
 	"nvim-telescope/telescope-fzf-native.nvim",
 	name = "telescope-fzf-native",
-	build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release",
+	build = "make",
 }
 
 local selecter = {
