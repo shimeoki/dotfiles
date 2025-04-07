@@ -80,7 +80,7 @@
     "network" : {
         "format-wifi": "{essid} {icon}",
         "tooltip-format-wifi": "Signal strength: {signalStrength}%",
-        "format-ethernet": "{ipaddr}/{cidr} 󰖈",
+        "format-ethernet": "󰖈",
         "format-disconnected": "",
         "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"]
     },
@@ -106,6 +106,7 @@
     },
     "bluetooth": {
         "format": "{status} 󰂯",
+        "format-no-controller": "",
         "format-disabled": "",
         "format-off": "",
         "format-connected": "{device_alias} 󰂱",
