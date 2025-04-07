@@ -36,7 +36,10 @@
 			"discord": "󰍡",
 			"wofi": "󰮫",
 			"steam": "󰓓",
-			"discord": "󰙯"
+			"discord": "󰙯",
+			"nekobox": "󰖂",
+			"OpenTabletDriver.UX": "󰓶",
+			"albert": "󱁴"
 		},
 		"format-icons": {
 			"default": " ",
