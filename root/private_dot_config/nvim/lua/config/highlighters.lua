@@ -69,6 +69,12 @@ M:add({
 })
 
 M:add({
+	name = "jsonc",
+	enabled = true,
+	filetypes = { "jsonc" },
+})
+
+M:add({
 	name = "toml",
 	enabled = true,
 	filetypes = { "toml" },
