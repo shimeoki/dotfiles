@@ -113,6 +113,12 @@ M:add({
 	filetypes = { "tex", "plaintex" },
 })
 
+M:add({
+	name = "hyprls",
+	enabled = true,
+	filetypes = { "hyprlang" },
+})
+
 M:parse_groups({ "lspconfig", "mason" })
 
 return M
