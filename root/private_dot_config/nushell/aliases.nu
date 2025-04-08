@@ -1,4 +1,5 @@
 alias b = bat
+alias h = batman
 
 alias cz = chezmoi
 alias czz = chezmoi apply

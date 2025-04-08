@@ -2,6 +2,7 @@
 
 # bat
 alias b='bat'
+alias h='batman'
 
 # chezmoi
 alias cz='chezmoi'
