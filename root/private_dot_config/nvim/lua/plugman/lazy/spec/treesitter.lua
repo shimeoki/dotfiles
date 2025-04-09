@@ -1,7 +1,7 @@
 local enabled = true
 local name = "treesitter"
 
-local treesitter = require("config.plugins.treesitter")
+local treesitter = require("config.plugins").treesitter
 
 -- source: https://www.lazyvim.org/plugins/treesitter
 return {
@@ -18,5 +18,5 @@ return {
 	end,
 	cmd = { "TSUpdateSync", "TSUpdate", "TSInstall" },
 	build = ":TSUpdate",
-	opts = treesitter.opts,
+	config = treesitter.config.setup,
 }
