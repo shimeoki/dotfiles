@@ -88,6 +88,9 @@ alias jj = cd -
 
 # hyprland
 alias hlr = hyprctl reload
+alias hle = hyprctl dispatch exec
+alias hlm = hyprctl monitors
+alias hlc = hyprctl clients
 
 alias t = btop
 
