@@ -10,4 +10,11 @@ M.opts = {
 	},
 }
 
+function M.setup()
+	require("nvim-treesitter.configs").setup(M.opts)
+
+	-- fix: currently custom filetypes in config.highlighters don't work
+	vim.treesitter.language.register("css", "gtkcss")
+end
+
 return M
