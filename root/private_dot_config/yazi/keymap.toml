@@ -26,14 +26,14 @@ run  = '''
 desc = "back to the root of the current git repository"
 
 [[manager.prepend_keymap]]
-on   = "T"
-run  = "plugin --sync max-preview"
-desc = "maximize or restore preview"
+on   = "<C-t>"
+run  = "plugin toggle-pane min-preview"
+desc = "show or hide the preview pane"
 
 [[manager.prepend_keymap]]
-on   = "<C-t>"
-run  = "plugin --sync hide-preview"
-desc = "hide or show preview"
+on   = "T"
+run  = "plugin toggle-pane max-preview"
+desc = "maximize or restore the preview pane"
 
 [[manager.prepend_keymap]]
 on   = "b"

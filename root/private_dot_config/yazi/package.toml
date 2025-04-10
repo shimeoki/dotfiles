@@ -19,14 +19,9 @@ rev = "a1738e8"
 hash = "7a08e303167d5b655c06da6d570f0333"
 
 [[plugin.deps]]
-use = "yazi-rs/plugins:max-preview"
+use = "yazi-rs/plugins:toggle-pane"
 rev = "a1738e8"
-hash = "a8025f2bb311e869069364fba01abffc"
-
-[[plugin.deps]]
-use = "yazi-rs/plugins:hide-preview"
-rev = "a1738e8"
-hash = "53f826884e2c7e521cecc492a7f31d7e"
+hash = "5c9dda1a587b8f5b6f63e3d5375bda88"
 
 [[flavor.deps]]
 use = "yazi-rs/flavors:catppuccin-mocha"
