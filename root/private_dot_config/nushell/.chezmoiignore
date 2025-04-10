@@ -1,0 +1,4 @@
+# vim:ft=gitignore
+
+history.sqlite3*
+history.txt

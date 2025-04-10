@@ -5,6 +5,3 @@ lazy-lock.json
 
 # zsh
 .zcompdump
-
-# nushell
-history.sqlite3*
