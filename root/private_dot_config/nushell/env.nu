@@ -53,20 +53,9 @@ $env.config.table.mode = 'rounded'
 # prompt
 
 # source: https://github.com/nushell/nushell/blob/main/crates/nu-utils/src/default_files/default_env.nu
-# todo: rewrite
-$env.PROMPT_COMMAND = {||
-    let dir = match (do -i { $env.PWD | path relative-to $nu.home-path }) {
-        null => $env.PWD
-        '' => '~'
-        $relative_pwd => ([~ $relative_pwd] | path join)
-    }
+# source: https://github.com/nushell/nu_scripts/blob/main/sourced/cool-oneliners/pwd-short.nu
 
-    let path_color = (if (is-admin) { ansi red_bold } else { ansi green_bold })
-    let separator_color = (if (is-admin) { ansi light_red_bold } else { ansi light_green_bold })
-    let path_segment = $"($path_color)($dir)(ansi reset)"
-
-    $path_segment | str replace --all (char path_sep) $"($separator_color)(char path_sep)($path_color)"
-}
+$env.PROMPT_COMMAND = { $env.PWD | str replace $nu.home-path '~' }
 $env.PROMPT_COMMAND_RIGHT = ''
 $env.PROMPT_INDICATOR = " \n$ "
 $env.PROMPT_INDICATOR_VI_NORMAL = " \n: "
