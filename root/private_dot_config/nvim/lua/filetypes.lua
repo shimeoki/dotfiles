@@ -1,6 +1,6 @@
 vim.filetype.add({
 	pattern = {
-		[".*/hypr/.*%.conf"] = "hyprlang",
-		[".*/waybar/.*%.css"] = "gtkcss",
+		[".*/.config/hypr/.*%.conf"] = "hyprlang",
+		[".*/.config/waybar/.*%.css"] = "gtkcss",
 	},
 })
