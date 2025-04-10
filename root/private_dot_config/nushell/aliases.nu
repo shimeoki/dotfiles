@@ -1,4 +1,9 @@
 alias b = bat
+alias bn = bat --number
+alias bnl = bat --number --line-range
+alias bp = bat --plain
+alias bpl = bat --plain --line-range
+alias bl = bat --line-range
 alias h = batman
 
 alias cz = chezmoi
