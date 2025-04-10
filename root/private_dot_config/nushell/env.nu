@@ -33,7 +33,7 @@ $env.config.buffer_editor = 'editor'
 $env.config.cursor_shape = {
     emacs:     'inherit'
     vi_insert: 'line'
-    vi_normal: 'underscore'
+    vi_normal: 'block'
 }
 
 # completions
