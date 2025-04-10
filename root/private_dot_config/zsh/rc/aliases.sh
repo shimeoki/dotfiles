@@ -2,6 +2,11 @@
 
 # bat
 alias b='bat'
+alias bn='bat --number'
+alias bnl='bat --number --line-range'
+alias bp='bat --plain'
+alias bpl='bat --plain --line-range'
+alias bl='bat --line-range'
 alias h='batman'
 
 # chezmoi
@@ -10,6 +15,8 @@ alias czz='chezmoi apply'
 alias czj='chezmoi cd'
 alias cza='chezmoi add'
 alias czac='chezmoi add .'
+alias czd='chezmoi diff'
+alias czs='chezmoi status'
 
 # clear
 alias c='clear'
