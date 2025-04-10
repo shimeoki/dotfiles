@@ -11,6 +11,8 @@ alias czz = chezmoi apply
 alias czj = chezmoi cd
 alias cza = chezmoi add
 alias czac = chezmoi add .
+alias czd = chezmoi diff
+alias czs = chezmoi status
 
 alias c = clear
 
