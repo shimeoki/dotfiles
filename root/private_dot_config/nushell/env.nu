@@ -70,10 +70,6 @@ $env.TRANSIENT_PROMPT_INDICATOR_VI_NORMAL = ': '
 $env.TRANSIENT_PROMPT_INDICATOR_VI_INSERT = '> '
 $env.TRANSIENT_PROMPT_MULTILINE_INDICATOR = ''
 
-# binds
-
-source ./binds.nu
-
 # zoxide
 # source: https://github.com/ajeetdsouza/zoxide#installation
 
