@@ -67,12 +67,11 @@ alias lg = lazygit
 
 alias nv = nvim
 
-alias pm = pacman
-alias pms = sudo pacman --sync
-alias pmu = sudo pacman --sync --refresh --sysupgrade
-alias pml = pacman --query
-alias pmi = pacman --query --info
-alias pmr = sudo pacman --remove --recursive
+alias pm = yay
+alias pms = yay --sync
+alias pml = yay --query
+alias pmi = yay --query --info
+alias pmr = yay --remove --recursive
 
 alias waybar-toggle = killall -SIGUSR1 waybar
 alias waybar-reload = killall -SIGUSR2 waybar
