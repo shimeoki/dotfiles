@@ -74,13 +74,6 @@ vim.g.python3_host_prog = venv .. "/python3"
 
 vim.g.lazygit_floating_window_scaling_factor = 0.95
 
-vim.filetype.add({
-	pattern = {
-		[".*/hypr/.*%.conf"] = "hyprlang",
-		[".*/waybar/.*%.css"] = "gtkcss",
-	},
-})
-
 -- hack: workaround for "buffer newer than edits"
 -- source: https://github.com/neovim/neovim/issues/12970#issuecomment-1166957212
 
