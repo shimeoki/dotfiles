@@ -2,6 +2,7 @@ local M = {}
 
 local fuzzy = true
 local selecter = true
+local wrap = true
 
 local sorting_strategy = "ascending"
 local layout_strategy = "flex"
@@ -38,20 +39,25 @@ local layout_config = {
 	flip_columns = preview_cutoff,
 }
 
-local mappings = {
-	i = {
+local function mappings()
+	local actions = require("telescope.actions")
+	local layout = require("telescope.actions.layout")
+
+	local keys = {
 		["<c-j>"] = "move_selection_next",
 		["<c-k>"] = "move_selection_previous",
+		["<c-l>"] = actions.cycle_previewers_next,
+		["<c-h>"] = actions.cycle_previewers_prev,
+		["<c-u>"] = false,
+		["<c-d>"] = actions.delete_buffer,
 		["J"] = "preview_scrolling_down",
 		["K"] = "preview_scrolling_up",
-	},
-	n = {
-		["<c-j>"] = "move_selection_next",
-		["<c-k>"] = "move_selection_previous",
-		["J"] = "preview_scrolling_down",
-		["K"] = "preview_scrolling_up",
-	},
-}
+		["T"] = layout.toggle_preview,
+		["<s-esc>"] = actions.close,
+	}
+
+	return { i = keys, n = keys }
+end
 
 local fzf = {
 	fuzzy = true,
@@ -68,22 +74,39 @@ local find_command = {
 	"!**/.git/*",
 }
 
-M.opts = {
-	defaults = {
-		layout_strategy = layout_strategy,
-		layout_config = layout_config,
-		sorting_strategy = sorting_strategy,
-		mappings = mappings,
-	},
-	pickers = {
-		find_files = {
-			find_command = find_command,
-		},
-	},
-}
+local function vimgrep_arguments()
+	local telescope_config = require("telescope.config")
+	local args = { unpack(telescope_config.values.vimgrep_arguments) }
 
-if fuzzy then
-	M.opts.extensions = { fzf = fzf }
+	table.insert(args, "--hidden")
+	table.insert(args, "--glob")
+	table.insert(args, "!**/.git/*")
+
+	return args
+end
+
+local function opts()
+	local o = {
+		defaults = {
+			layout_strategy = layout_strategy,
+			layout_config = layout_config,
+			sorting_strategy = sorting_strategy,
+			mappings = mappings(),
+			vimgrep_arguments = vimgrep_arguments(),
+			wrap_results = wrap,
+		},
+		pickers = {
+			find_files = {
+				find_command = find_command,
+			},
+		},
+	}
+
+	if fuzzy then
+		o.extensions = { fzf = fzf }
+	end
+
+	return o
 end
 
 local binds = require("binds")
@@ -97,22 +120,10 @@ vim.api.nvim_create_autocmd("User", {
 	end,
 })
 
-local function vimgrep_arguments()
-	local telescope_config = require("telescope.config")
-	local args = { unpack(telescope_config.values.vimgrep_arguments) }
-
-	table.insert(args, "--hidden")
-	table.insert(args, "--glob")
-	table.insert(args, "!**/.git/*")
-
-	return args
-end
-
 function M.config()
 	local telescope = require("telescope")
 
-	M.opts.defaults.vimgrep_arguments = vimgrep_arguments()
-	telescope.setup(M.opts)
+	telescope.setup(opts())
 
 	if fuzzy then
 		telescope.load_extension("fzf")
