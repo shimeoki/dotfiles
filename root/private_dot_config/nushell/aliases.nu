@@ -104,3 +104,6 @@ alias t = btop
 alias gw = ./gradlew
 
 alias y = yazi-cwd
+
+# todo: could be a function with dynamic venv path
+alias venv = overlay use .venv/bin/activate.nu
