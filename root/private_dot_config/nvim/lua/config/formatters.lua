@@ -88,9 +88,10 @@ M:add({
 	config = require("config.formatters.deno"),
 })
 
+-- fix: don't enable on all toml files
 M:add({
 	name = "pyproject-fmt",
-	enabled = true,
+	enabled = false,
 	filetypes = { "toml" },
 })
 
