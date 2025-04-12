@@ -16,9 +16,15 @@ local M = {
 		highlight_line = true,
 	},
 	relative_numbers = true,
+	mouse = false,
 }
 
 local set = vim.opt
+
+if not M.mouse then
+	set.mouse = ""
+	set.mousescroll = "ver:0,hor:0" -- fix: doesn't work
+end
 
 set.tabstop = M.indent.width
 set.softtabstop = M.indent.width
