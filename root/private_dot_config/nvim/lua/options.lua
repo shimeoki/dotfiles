@@ -69,8 +69,11 @@ vim.g.markdown_fenced_languages = {
 	"ts=typescript",
 }
 
-local venv = vim.fn.expand(vim.env.VENV_HOME .. "/nvim/bin")
-vim.g.python3_host_prog = venv .. "/python3"
+local venv_home = vim.env.VENV_HOME
+if venv_home then
+	local venv = vim.fn.expand(vim.env.VENV_HOME .. "/nvim/bin")
+	vim.g.python3_host_prog = venv .. "/python3"
+end
 
 vim.g.lazygit_floating_window_scaling_factor = 0.95
 
