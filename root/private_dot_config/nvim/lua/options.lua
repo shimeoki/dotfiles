@@ -17,6 +17,7 @@ local M = {
 	},
 	relative_numbers = true,
 	mouse = false,
+	share_clipboard = true,
 }
 
 local set = vim.opt
@@ -24,6 +25,10 @@ local set = vim.opt
 if not M.mouse then
 	set.mouse = ""
 	set.mousescroll = "ver:0,hor:0" -- fix: doesn't work
+end
+
+if M.share_clipboard then
+	set.clipboard = "unnamedplus"
 end
 
 set.tabstop = M.indent.width
