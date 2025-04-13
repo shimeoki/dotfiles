@@ -129,8 +129,12 @@
 	},
 	"wireplumber": {
 		"format": "{volume}% {icon}",
-		"format-muted": "󰝟",
+		"format-muted": "{volume}% 󰝟",
+		"format-icons": ["󰕿", "󰖀", "󰕾"],
+		"scroll-step": 1,
 		"on-click": "pwvucontrol",
-		"format-icons": ["󰕿", "󰖀", "󰕾"]
+		"on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+		"tooltip": false,
+		"reverse-scrolling": false
 	}
 }
