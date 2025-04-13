@@ -1,8 +1,0 @@
-# nvim
-lazy-lock.json
-
-# zsh
-dot_zcompdump
-
-# nushell
-history.sqlite3*
