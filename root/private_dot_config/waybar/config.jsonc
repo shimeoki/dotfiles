@@ -59,7 +59,10 @@
 	"hyprland/window": {
 		"format": "{}",
 		"separate-outputs": true,
-		"icon": false
+		"icon": false,
+		"on-click": "hyprctl dispatch exec $TERMINAL",
+		"on-click-right": "hyprctl dispatch movetoworkspacesilent special:S",
+		"on-click-middle": "hyprctl dispatch killactive"
 	},
 	"battery": {
 		"states": {
