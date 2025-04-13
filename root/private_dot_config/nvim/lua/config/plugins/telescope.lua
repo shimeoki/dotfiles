@@ -49,11 +49,22 @@ local function mappings()
 		["<c-l>"] = actions.cycle_previewers_next,
 		["<c-h>"] = actions.cycle_previewers_prev,
 		["<c-u>"] = false,
-		["<c-d>"] = actions.delete_buffer,
+		["<c-d>"] = false,
 		["J"] = "preview_scrolling_down",
 		["K"] = "preview_scrolling_up",
 		["T"] = layout.toggle_preview,
-		["<s-esc>"] = actions.close,
+		["<esc>"] = actions.close,
+		["<s-esc>"] = { "<esc>", type = "command" },
+	}
+
+	return { i = keys, n = keys }
+end
+
+local function mappings_buffers()
+	local actions = require("telescope.actions")
+
+	local keys = {
+		["<c-d>"] = actions.delete_buffer,
 	}
 
 	return { i = keys, n = keys }
@@ -98,6 +109,9 @@ local function opts()
 		pickers = {
 			find_files = {
 				find_command = find_command,
+			},
+			buffers = {
+				mappings = mappings_buffers(),
 			},
 		},
 	}
