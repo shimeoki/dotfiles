@@ -94,9 +94,10 @@
 	"network": {
 		"format-wifi": "{essid} {icon}",
 		"tooltip-format-wifi": "Signal strength: {signalStrength}%",
-		"format-ethernet": "󰖈",
-		"format-disconnected": "",
-		"format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"]
+		"format-ethernet": "{bandwidthTotalBytes} 󰲝",
+		"format-disconnected": "n/a 󰲜",
+		"format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+		"interval": 2
 	},
 	"backlight": {
 		"format": "{percent}% {icon}",
