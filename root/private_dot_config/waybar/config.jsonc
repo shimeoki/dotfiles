@@ -15,6 +15,7 @@
 	"modules-right": [
 		"bluetooth",
 		"network",
+		"cava",
 		"wireplumber",
 		"backlight",
 		"battery"
@@ -136,5 +137,25 @@
 		"on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
 		"tooltip": false,
 		"reverse-scrolling": false
+	},
+	"cava": {
+		"framerate": 144,
+		"autosens": 1,
+		"sensitivity": 3,
+		"bars": 12,
+		"lower_cutoff_freq": 60,
+		"higher_cutoff_freq": 20000,
+		"method": "pipewire",
+		"source": "auto",
+		"stereo": false,
+		"reverse": false,
+		"bar_delimiter": 0,
+		"monstercat": false,
+		"waves": false,
+		"noise_reduction": 0.77,
+		"input_delay": 2,
+		"format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇"],
+		"hide_on_silence": true,
+		"sleep_timer": 4
 	}
 }

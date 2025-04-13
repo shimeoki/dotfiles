@@ -29,7 +29,8 @@ window#waybar.empty #window {
 #backlight,
 #keyboard-state,
 #bluetooth,
-#wireplumber {
+#wireplumber,
+#cava {
     background-color: @base;
     color: @text;
 
