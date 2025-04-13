@@ -23,7 +23,9 @@
 	"hyprland/language": {
 		"format": "{}",
 		"format-en": "en",
-		"format-ru": "ru"
+		"format-ru": "ru",
+		// warn: won't work if you don't use kanata
+		"on-click": "hyprctl switchxkblayout kanata next"
 	},
 	"hyprland/workspaces": {
 		"format": "{name}{icon}{windows}",
