@@ -66,11 +66,6 @@ add({
 })
 
 add({
-	name = "molten",
-	enabled = true,
-})
-
-add({
 	name = "luasnip",
 	enabled = true,
 })
