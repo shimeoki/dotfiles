@@ -7,6 +7,7 @@ local dependencies = {
 	"hrsh7th/cmp-cmdline",
 	"L3MON4D3/LuaSnip",
 	"saadparwaiz1/cmp_luasnip",
+	"onsails/lspkind.nvim",
 }
 
 local source1 = {
@@ -115,12 +116,28 @@ local function setup_completions()
 	cmp().event:on("confirm_done", cmp_autopairs.on_confirm_done())
 end
 
+local lspkind = {
+	mode = "symbol_text",
+	menu = {
+		luasnip = "",
+		buffer = "buf",
+		nvim_lsp = "lsp",
+		nvim_lua = "lua",
+		latex_symbols = "tex",
+	},
+}
+
+local function format()
+	return require("lspkind").cmp_format(lspkind)
+end
+
 local function opts()
 	return {
 		snippet = snippet(),
 		mapping = mapping(),
 		window = window(),
 		sources = sources(),
+		formatting = { format = format() },
 	}
 end
 
