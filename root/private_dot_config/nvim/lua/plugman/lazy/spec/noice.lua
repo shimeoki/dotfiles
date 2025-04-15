@@ -1,15 +1,31 @@
 local enabled = true
-local name = "noice"
 
-local noice = require("config.plugins.noice")
+local presets = {
+	command_palette = true,
+	long_message_to_split = true,
+	lsp_doc_border = true,
+}
+
+local lsp = {
+	override = {
+		["vim.lsp.util.convert_input_to_markdown_lines"] = true,
+		["vim.lsp.util.stylize_markdown"] = true,
+		["cmp.entry.get_documentation"] = true,
+	},
+}
+
+local opts = {
+	lsp = lsp,
+	presets = presets,
+}
 
 return {
 	"folke/noice.nvim",
 	cond = enabled,
-	name = name,
-	main = name,
+	name = "noice",
+	main = "noice",
 	event = "VeryLazy",
-	opts = noice.opts,
+	opts = opts,
 	dependencies = {
 		"MunifTanjim/nui.nvim",
 		"rcarriga/nvim-notify",

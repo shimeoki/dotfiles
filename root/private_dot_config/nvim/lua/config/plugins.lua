@@ -51,11 +51,6 @@ add({
 })
 
 add({
-	name = "noice",
-	enabled = true,
-})
-
-add({
 	name = "todo_comments",
 	enabled = true,
 })
