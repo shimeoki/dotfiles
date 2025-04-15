@@ -31,11 +31,6 @@ local function add(plugin)
 end
 
 add({
-	name = "catppuccin",
-	enabled = true,
-})
-
-add({
 	name = "cmp",
 	enabled = true,
 })

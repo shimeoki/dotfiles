@@ -1,7 +1,16 @@
 local enabled = true
 local name = "catppuccin"
 
-local catppuccin = require("config.plugins.catppuccin")
+local integrations = {
+	notify = true,
+	noice = true,
+	mason = true,
+	which_key = true,
+}
+
+local opts = {
+	integrations = integrations,
+}
 
 return {
 	"catppuccin/nvim",
@@ -9,6 +18,6 @@ return {
 	name = name,
 	main = name,
 	lazy = true,
-	opts = catppuccin.opts,
+	opts = opts,
 	priority = 1000,
 }
