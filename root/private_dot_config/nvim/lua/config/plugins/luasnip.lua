@@ -9,8 +9,8 @@ local function vue_init()
 
 	return ls.snippet("init", {
 		text({ '<script setup lang="ts">', "" }),
-		text({ "</script>", "" }),
-		text({ "<template></template>", "" }),
+		text({ "</script>", "", "" }),
+		text({ "<template></template>", "", "" }),
 		text({ '<style scoped lang="css">', "" }),
 		text("</style>"),
 	}, {
