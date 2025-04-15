@@ -71,11 +71,6 @@ add({
 })
 
 add({
-	name = "telescope",
-	enabled = true,
-})
-
-add({
 	name = "todo_comments",
 	enabled = true,
 })
