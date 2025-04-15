@@ -31,11 +31,6 @@ local function add(plugin)
 end
 
 add({
-	name = "cmp",
-	enabled = true,
-})
-
-add({
 	name = "conform",
 	enabled = true,
 })
