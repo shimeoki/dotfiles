@@ -51,11 +51,6 @@ add({
 })
 
 add({
-	name = "todo_comments",
-	enabled = true,
-})
-
-add({
 	name = "treesitter",
 	enabled = true,
 })
