@@ -81,11 +81,6 @@ add({
 })
 
 add({
-	name = "silicon",
-	enabled = true,
-})
-
-add({
 	name = "luasnip",
 	enabled = true,
 })
