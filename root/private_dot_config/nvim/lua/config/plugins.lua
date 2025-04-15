@@ -66,11 +66,6 @@ add({
 })
 
 add({
-	name = "quarto",
-	enabled = true,
-})
-
-add({
 	name = "molten",
 	enabled = true,
 })
