@@ -106,11 +106,6 @@ add({
 })
 
 add({
-	name = "image",
-	enabled = true,
-})
-
-add({
 	name = "silicon",
 	enabled = true,
 })
