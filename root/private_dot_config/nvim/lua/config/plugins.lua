@@ -46,11 +46,6 @@ add({
 })
 
 add({
-	name = "langmapper",
-	enabled = true,
-})
-
-add({
 	name = "lualine",
 	enabled = true,
 })
