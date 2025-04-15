@@ -91,11 +91,6 @@ add({
 })
 
 add({
-	name = "jupytext",
-	enabled = true,
-})
-
-add({
 	name = "quarto",
 	enabled = true,
 })
