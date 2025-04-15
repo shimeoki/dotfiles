@@ -66,11 +66,6 @@ add({
 })
 
 add({
-	name = "which_key",
-	enabled = true,
-})
-
-add({
 	name = "lint",
 	enabled = true,
 })

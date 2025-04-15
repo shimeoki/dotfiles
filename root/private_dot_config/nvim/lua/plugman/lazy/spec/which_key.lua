@@ -1,13 +1,20 @@
 local enabled = true
-local name = "which-key"
 
-local which_key = require("config.plugins.which_key")
+local preset = "modern"
+local border = "rounded"
+
+local opts = {
+	preset = preset,
+	win = {
+		border = border,
+	},
+}
 
 return {
 	"folke/which-key.nvim",
 	cond = enabled,
-	name = name,
-	main = name,
+	name = "which-key",
+	main = "which-key",
 	event = "VeryLazy",
-	opts = which_key.opts,
+	opts = opts,
 }
