@@ -36,11 +36,6 @@ add({
 })
 
 add({
-	name = "jdlts",
-	enabled = true,
-})
-
-add({
 	name = "mason",
 	enabled = true,
 })
