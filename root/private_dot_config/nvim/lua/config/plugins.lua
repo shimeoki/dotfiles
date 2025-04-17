@@ -60,9 +60,4 @@ add({
 	enabled = true,
 })
 
-add({
-	name = "luasnip",
-	enabled = true,
-})
-
 return M
