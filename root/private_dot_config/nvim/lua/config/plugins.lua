@@ -31,11 +31,6 @@ local function add(plugin)
 end
 
 add({
-	name = "conform",
-	enabled = true,
-})
-
-add({
 	name = "mason",
 	enabled = true,
 })
