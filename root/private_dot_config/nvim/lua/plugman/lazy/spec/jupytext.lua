@@ -72,8 +72,7 @@ return {
 	name = "jupytext",
 	main = "jupytext",
 	cond = enabled,
-	lazy = true,
-	ft = { "ipynb", "markdown" },
+	lazy = false,
 	cmd = { cmd },
 	opts = opts,
 }
