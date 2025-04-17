@@ -1,21 +1,43 @@
 local enabled = true
-local name = "mason"
-local name_installer = "mason-tool-installer"
 
-local mason = require("config.plugins.mason")
+local border = "rounded"
+
+local ensure_installed = {}
+
+local function add_installed(tools)
+	for _, key in ipairs(tools) do
+		table.insert(ensure_installed, key)
+	end
+end
+
+add_installed(require("config.langservers").by_group.mason)
+add_installed(require("config.linters").by_group.mason)
+add_installed(require("config.formatters").by_group.mason)
+
+local opts = {
+	ui = { border = border },
+}
+
+local installer_opts = {
+	ensure_installed = ensure_installed,
+}
 
 local installer = {
 	"WhoIsSethDaniel/mason-tool-installer.nvim",
-	name = name_installer,
-	main = name_installer,
-	opts = mason.installer_opts,
+	name = "mason-tool-installer",
+	main = "mason-tool-installer",
+	opts = installer_opts,
 }
 
 return {
 	"williamboman/mason.nvim",
 	cond = enabled,
-	name = name,
-	main = name,
-	opts = mason.opts,
+	name = "mason",
+	main = "mason",
+	lazy = true,
+	cmd = { "Mason" },
+	event = "VeryLazy",
+	build = ":MasonUpdate",
+	opts = opts,
 	dependencies = { installer },
 }
