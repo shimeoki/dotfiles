@@ -41,11 +41,6 @@ add({
 })
 
 add({
-	name = "lint",
-	enabled = true,
-})
-
-add({
 	name = "lspconfig",
 	enabled = true,
 })
