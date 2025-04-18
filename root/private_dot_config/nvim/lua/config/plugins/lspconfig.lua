@@ -25,23 +25,29 @@ function M.setup()
 		capabilities = cmp.default_capabilities()
 	end
 
-	local server_name
+	local server_name, server_opts
 	for _, server in ipairs(langservers.list) do
 		if not external[server.name] then
 			server_name = server.aliases.lspconfig or server.name
 
-			local server_opts = {}
+			local opts = {}
 
 			if server.config then
 				server_opts = server.config.opts
-				server_opts.capabilities = capabilities
+				if type(server_opts) == "function" then
+					opts = server_opts()
+				else
+					opts = server_opts
+				end
+
+				opts.capabilities = capabilities
 			end
 
 			if server.filetypes then
-				server_opts.filetypes = server.filetypes
+				opts.filetypes = server.filetypes
 			end
 
-			lspconfig[server_name].setup(server_opts)
+			lspconfig[server_name].setup(opts)
 		end
 	end
 
