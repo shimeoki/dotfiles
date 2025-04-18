@@ -31,11 +31,6 @@ local function add(plugin)
 end
 
 add({
-	name = "treesitter",
-	enabled = true,
-})
-
-add({
 	name = "lspconfig",
 	enabled = true,
 })
