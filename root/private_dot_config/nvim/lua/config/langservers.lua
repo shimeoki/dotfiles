@@ -66,7 +66,7 @@ M:add({
 
 M:add({
 	name = "deno",
-	enabled = true,
+	enabled = false, -- doesn't work with vue well
 	filetypes = {
 		"javascript",
 		"javascriptreact",
@@ -85,17 +85,24 @@ M:add({
 	aliases = {
 		mason = "vue-language-server",
 	},
-	config = require("config.langservers.volar"),
+	-- config = require("config.langservers.volar"),
 })
 
 M:add({
 	name = "tsls",
-	enabled = false, -- denols is used for js/ts and non-hybrid mode is used for vue
-	filetypes = { "vue" },
+	enabled = true,
+	filetypes = {
+		"javascript",
+		"javascriptreact",
+		"typescript",
+		"typescriptreact",
+		"vue",
+	},
 	aliases = {
 		mason = "typescript-language-server",
 		lspconfig = "ts_ls",
 	},
+	config = require("config.langservers.tsls"),
 })
 
 M:add({
