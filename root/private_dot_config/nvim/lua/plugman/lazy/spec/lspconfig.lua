@@ -2,27 +2,18 @@ local enabled = true
 
 local langservers = require("config.langservers")
 
--- servers not managed by lspconfig
+-- servers that are not managed by lspconfig
 local external = {
 	jdtls = true,
 }
 
-local opts = {
-	inlay_hints = { enabled = langservers.opts.hints },
-	codelens = { enabled = langservers.opts.lens },
-}
-
 local function config()
 	if not langservers.opts.enabled then
-		return false
+		return
 	end
 
-	local lspconfig = require("lspconfig")
-
-	local capabilities
-	if langservers.opts.completions then
-		local cmp = require("cmp_nvim_lsp")
-		capabilities = cmp.default_capabilities()
+	if langservers.opts.hints then
+		vim.lsp.inlay_hint.enable()
 	end
 
 	local server_name, server_opts
@@ -39,20 +30,15 @@ local function config()
 				else
 					lsopts = server_opts
 				end
-
-				lsopts.capabilities = capabilities
 			end
 
 			if server.filetypes then
 				lsopts.filetypes = server.filetypes
 			end
 
-			lspconfig[server_name].setup(lsopts)
+			vim.lsp.config(server_name, lsopts)
+			vim.lsp.enable(server_name)
 		end
-	end
-
-	if langservers.opts.hints then
-		vim.lsp.inlay_hint.enable(true, { 0 })
 	end
 end
 
@@ -60,7 +46,7 @@ return {
 	"neovim/nvim-lspconfig",
 	cond = enabled,
 	name = "lspconfig",
+	lazy = true,
 	event = { "BufReadPost", "BufWritePost", "BufNewFile" },
 	config = config,
-	opts = opts,
 }

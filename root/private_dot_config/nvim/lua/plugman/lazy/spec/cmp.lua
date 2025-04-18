@@ -141,9 +141,16 @@ local function opts()
 	}
 end
 
+local function extend_capabilities()
+	vim.lsp.config("*", {
+		capabilities = require("cmp_nvim_lsp").default_capabilities(),
+	})
+end
+
 local function config()
 	setup_completions()
 	cmp().setup(opts())
+	extend_capabilities()
 end
 
 return {
