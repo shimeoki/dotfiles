@@ -126,6 +126,12 @@ M:add({
 	filetypes = { "hyprlang" },
 })
 
+M:add({
+	name = "gopls",
+	enabled = true,
+	filetypes = { "go" },
+})
+
 M:parse_groups({ "lspconfig", "mason" })
 
 return M
