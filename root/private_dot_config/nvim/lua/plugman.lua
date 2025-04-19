@@ -26,3 +26,27 @@ if not (vim.uv or vim.loop).fs_stat(path) then
 end
 
 vim.opt.rtp:prepend(path)
+
+local opts = {
+	check = false,
+	reload = false,
+	ui = {
+		theme = "catppuccin",
+		border = "rounded",
+	},
+	install = {
+		missing = true,
+	},
+}
+
+require("lazy").setup({
+	spec = { { import = "plugins" } },
+	install = {
+		missing = opts.install.missing,
+		colorscheme = { opts.ui.theme },
+	},
+	checker = { enabled = opts.check },
+	ui = { border = opts.ui.border },
+	rocks = { hererocks = true },
+	change_detection = { enabled = opts.reload },
+})
