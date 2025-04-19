@@ -1,4 +1,4 @@
-local enabled = true
+local enabled = false
 
 -- source: https://github.com/Wansmer/langmapper.nvim
 local function escape(str)
@@ -28,10 +28,8 @@ end
 return {
 	"Wansmer/langmapper.nvim",
 	cond = enabled,
-	name = "langmapper",
 	main = "langmapper",
 	lazy = false,
 	priority = 1,
-	opts = {},
 	config = config,
 }

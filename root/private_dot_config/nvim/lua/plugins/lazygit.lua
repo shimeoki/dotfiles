@@ -1,15 +1,14 @@
+local enabled = false
+
 return {
 	"kdheepak/lazygit.nvim",
-	name = "lazygit",
-	cond = true,
+	cond = enabled,
+	lazy = true,
 	cmd = {
 		"LazyGit",
 		"LazyGitConfig",
 		"LazyGitCurrentFile",
 		"LazyGitFilter",
 		"LazyGitFilterCurrentFile",
-	},
-	dependencies = {
-		"nvim-lua/plenary.nvim",
 	},
 }

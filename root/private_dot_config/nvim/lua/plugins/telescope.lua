@@ -162,15 +162,10 @@ local selecter = {
 return {
 	"nvim-telescope/telescope.nvim",
 	cond = enabled,
-	name = "telescope",
 	main = "telescope",
 	lazy = true,
 	branch = "0.1.x",
 	keys = keys,
 	config = config,
-	dependencies = {
-		"nvim-lua/plenary.nvim",
-		sorter,
-		selecter,
-	},
+	dependencies = { sorter, selecter },
 }

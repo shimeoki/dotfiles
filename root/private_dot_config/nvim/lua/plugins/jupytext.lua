@@ -69,7 +69,6 @@ end
 
 return {
 	"GCBallesteros/jupytext.nvim",
-	name = "jupytext",
 	main = "jupytext",
 	cond = enabled,
 	lazy = false,

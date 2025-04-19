@@ -60,11 +60,9 @@ local opts = {
 return {
 	"folke/todo-comments.nvim",
 	cond = enabled,
-	name = "todo-comments",
 	main = "todo-comments",
 	lazy = true,
 	cmd = { "TodoTelescope" },
 	event = { "BufReadPost", "BufWritePost", "BufNewFile" },
 	opts = opts,
-	dependencies = { "nvim-lua/plenary.nvim" },
 }

@@ -55,9 +55,9 @@ end
 
 return {
 	"stevearc/conform.nvim",
-	name = "conform",
 	main = "conform",
 	cond = enabled,
+	lazy = true,
 	event = { "BufWritePre" },
 	cmd = { "ConformInfo" },
 	config = config,

@@ -124,8 +124,8 @@ local opts = {
 return {
 	"nvim-lualine/lualine.nvim",
 	cond = enabled,
-	name = "lualine",
 	main = "lualine",
+	lazy = true,
 	event = "VeryLazy",
 	opts = opts,
 	dependencies = { "nvim-tree/nvim-web-devicons" },

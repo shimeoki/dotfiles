@@ -13,8 +13,8 @@ local opts = {
 return {
 	"folke/which-key.nvim",
 	cond = enabled,
-	name = "which-key",
 	main = "which-key",
+	lazy = true,
 	event = "VeryLazy",
 	opts = opts,
 }

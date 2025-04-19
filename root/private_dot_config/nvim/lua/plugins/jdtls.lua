@@ -14,7 +14,6 @@ local ft = server.filetypes
 return {
 	"mfussenegger/nvim-jdtls",
 	cond = enabled,
-	name = "jdtls",
 	lazy = true,
 	ft = ft,
 	config = config,

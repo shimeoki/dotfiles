@@ -156,7 +156,6 @@ end
 return {
 	"hrsh7th/nvim-cmp",
 	cond = enabled,
-	name = "cmp",
 	main = "cmp",
 	lazy = true,
 	event = { "InsertEnter", "CmdlineEnter" },

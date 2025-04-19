@@ -6,8 +6,8 @@ local keys = binds.convert(binds.map.yazi, "lazy")
 return {
 	"mikavilpas/yazi.nvim",
 	cond = enabled,
-	name = "yazi",
 	main = "yazi",
+	lazy = true,
 	event = "VeryLazy",
 	keys = keys,
 	opts = {

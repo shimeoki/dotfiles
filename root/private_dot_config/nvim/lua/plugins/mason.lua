@@ -32,7 +32,6 @@ local installer = {
 return {
 	"williamboman/mason.nvim",
 	cond = enabled,
-	name = "mason",
 	main = "mason",
 	lazy = true,
 	cmd = { "Mason" },

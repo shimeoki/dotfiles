@@ -26,7 +26,6 @@ local opts = {
 return {
 	"quarto-dev/quarto-nvim",
 	cond = enabled,
-	name = "quarto",
 	main = "quarto",
 	lazy = true,
 	ft = { "quarto", "markdown", "json", "python" },

@@ -47,7 +47,6 @@ end
 return {
 	"nvim-treesitter/nvim-treesitter",
 	cond = enabled,
-	name = "treesitter",
 	main = "nvim-treesitter.configs",
 	version = false, -- last release doesn't work on windows
 	event = { "BufReadPost", "BufWritePost", "BufNewFile", "VeryLazy" },

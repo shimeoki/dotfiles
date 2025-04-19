@@ -50,7 +50,6 @@ local opts = {
 return {
 	"michaelrommel/nvim-silicon",
 	cond = enabled,
-	name = "silicon",
 	main = "nvim-silicon",
 	lazy = true,
 	cmd = "Silicon",

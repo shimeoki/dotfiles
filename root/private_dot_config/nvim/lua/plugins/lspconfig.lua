@@ -45,7 +45,6 @@ end
 return {
 	"neovim/nvim-lspconfig",
 	cond = enabled,
-	name = "lspconfig",
 	lazy = true,
 	event = { "BufReadPost", "BufWritePost", "BufNewFile" },
 	config = config,

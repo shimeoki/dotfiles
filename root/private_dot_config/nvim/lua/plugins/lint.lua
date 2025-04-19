@@ -27,8 +27,8 @@ end
 
 return {
 	"mfussenegger/nvim-lint",
-	name = "lint",
 	cond = enabled,
+	lazy = true,
 	event = { "BufReadPost", "BufWritePost", "BufNewFile" },
 	config = config,
 }

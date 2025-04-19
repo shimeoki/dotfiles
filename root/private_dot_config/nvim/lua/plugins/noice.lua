@@ -22,7 +22,6 @@ local opts = {
 return {
 	"folke/noice.nvim",
 	cond = enabled,
-	name = "noice",
 	main = "noice",
 	event = "VeryLazy",
 	opts = opts,

@@ -1,5 +1,4 @@
 local enabled = true
-local name = "catppuccin"
 
 local integrations = {
 	notify = true,
@@ -16,8 +15,8 @@ local opts = {
 return {
 	"catppuccin/nvim",
 	cond = enabled,
-	name = name,
-	main = name,
+	name = "catppuccin",
+	main = "catppuccin",
 	lazy = true,
 	opts = opts,
 	priority = 1000,

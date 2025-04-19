@@ -1,3 +1,5 @@
+local enabled = true
+
 -- todo: i don't like the architecture of this
 
 local function vue_init()
@@ -24,6 +26,7 @@ end
 
 return {
 	"L3MON4D3/LuaSnip",
+	cond = enabled,
 	main = "luasnip",
 	lazy = true,
 	version = "v2.*",

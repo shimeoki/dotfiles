@@ -12,7 +12,6 @@ local opts = {
 
 return {
 	"3rd/image.nvim",
-	name = "image",
 	main = "image",
 	lazy = true,
 	cond = enabled,

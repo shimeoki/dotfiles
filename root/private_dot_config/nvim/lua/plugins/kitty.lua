@@ -1,6 +1,8 @@
+local enabled = true
+
 return {
 	"mikesmithgh/kitty-scrollback.nvim",
-	enabled = true,
+	cond = enabled,
 	lazy = true,
 	main = "kitty-scrollback",
 	name = "kitty-scrollback",

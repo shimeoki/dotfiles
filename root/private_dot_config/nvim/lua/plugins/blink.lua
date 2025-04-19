@@ -1,3 +1,5 @@
+local enabled = true
+
 local keymap = {
 	preset = "none",
 
@@ -64,6 +66,7 @@ local opts = {
 
 return {
 	"saghen/blink.cmp",
+	cond = enabled,
 	version = "1.*",
 	lazy = true,
 	event = { "InsertEnter", "CmdlineEnter" },
