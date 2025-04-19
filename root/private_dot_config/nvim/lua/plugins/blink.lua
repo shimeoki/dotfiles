@@ -1,25 +1,31 @@
 local enabled = true
 
+local function show_no_snippets(cmp)
+	cmp.show({ providers = { "lsp", "path", "buffer" } })
+end
+
 local keymap = {
 	preset = "none",
 
 	["<enter>"] = { "accept", "fallback" },
 	["<s-enter>"] = { "show", "hide", "fallback" },
 
-	["<s-j>"] = { "scroll_documentation_down", "fallback" },
-	["<s-k>"] = { "scroll_documentation_up", "fallback" },
+	["<c-space>"] = { show_no_snippets, "fallback_to_mappings" },
+
+	["<tab>"] = { "snippet_forward", "select_next", "fallback" },
+	["<s-tab>"] = { "snippet_backward", "select_prev", "fallback" },
 
 	["<c-j>"] = { "select_next", "fallback_to_mappings" },
 	["<c-k>"] = { "select_prev", "fallback_to_mappings" },
 
-	["<tab>"] = { "select_next", "fallback" },
-	["<s-tab>"] = { "select_prev", "fallback" },
-
 	["<c-h>"] = { "snippet_backward", "fallback_to_mappings" },
 	["<c-l>"] = { "snippet_forward", "fallback_to_mappings" },
 
-	["<s-space>"] = { "show_signature", "hide_signature", "fallback" },
-	["<c-space>"] = { "show_documentation", "hide_documentation", "fallback" },
+	["<c-d>"] = { "scroll_documentation_down", "fallback_to_mappings" },
+	["<c-u>"] = { "scroll_documentation_up", "fallback_to_mappings" },
+
+	["<c-s>"] = { "show_signature", "hide_signature", "fallback_to_mappings" },
+	["<c-i>"] = { "show_documentation", "hide_documentation", "fallback_to_mappings" },
 }
 
 local completion = {
