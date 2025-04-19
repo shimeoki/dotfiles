@@ -58,6 +58,11 @@ set.scrolloff = M.text.scrolloff
 
 set.signcolumn = "yes"
 
+-- warn: don't uncomment this, because many apps will have a double border
+-- because of this
+--
+-- set.winborder = "rounded"
+
 set.hlsearch = false
 set.incsearch = true
 set.ignorecase = true
