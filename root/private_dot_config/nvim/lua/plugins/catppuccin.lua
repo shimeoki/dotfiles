@@ -9,6 +9,9 @@ local integrations = {
 }
 
 local opts = {
+	flavour = "mocha",
+	background = { light = "latte", dark = "mocha" },
+	show_end_of_buffer = false,
 	integrations = integrations,
 }
 
