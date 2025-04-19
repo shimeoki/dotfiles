@@ -1,11 +1,33 @@
 local enabled = true
 
-local highlighters = require("config.highlighters")
+local highlighters = {
+	"lua",
+	"go",
+	"gomod",
+	"java",
+	"python",
+	"bash",
+	"markdown",
+	"markdown_inline",
+	"hyprlang",
+	"html",
+	"json",
+	"jsonc",
+	"toml",
+	"cpp",
+	"c",
+	"nu",
+	"javascript",
+	"typescript",
+	"yaml",
+	"css",
+	"vue",
+}
 
 local opts = {
-	ensure_installed = highlighters.by_group.treesitter,
+	ensure_installed = highlighters,
 	highlight = {
-		enable = highlighters.opts.enabled,
+		enable = true,
 		additional_vim_regex_highlighting = false,
 	},
 }
@@ -18,7 +40,6 @@ end
 local function config()
 	require("nvim-treesitter.configs").setup(opts)
 
-	-- fix: currently custom filetypes in config.highlighters don't work
 	vim.treesitter.language.register("css", "gtkcss")
 end
 
