@@ -6,6 +6,7 @@ local integrations = {
 	noice = true,
 	mason = true,
 	which_key = true,
+	blink_cmp = true,
 }
 
 local opts = {

@@ -1,4 +1,4 @@
-local enabled = true
+local enabled = false
 
 local dependencies = {
 	"hrsh7th/cmp-nvim-lsp",
