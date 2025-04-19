@@ -4,7 +4,7 @@ require(path .. "install")
 local opts = require(path .. "opts")
 
 require("lazy").setup({
-	spec = { { import = path .. "spec" } },
+	spec = { { import = "plugins" } },
 	install = {
 		missing = opts.install.missing,
 		colorscheme = { opts.ui.theme },
