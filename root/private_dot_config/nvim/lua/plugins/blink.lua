@@ -55,6 +55,33 @@ local cmdline = {
 	},
 }
 
+-- code below for source sorting from
+-- https://github.com/Saghen/blink.cmp/issues/1098#issuecomment-2679295335
+
+local source_priority = {
+	snippets = 4,
+	lsp = 3,
+	path = 2,
+	buffer = 1,
+}
+
+local function source_sort(a, b)
+	local a_priority = source_priority[a.source_id]
+	local b_priority = source_priority[b.source_id]
+
+	if a_priority ~= b_priority then
+		return a_priority > b_priority
+	end
+end
+
+local fuzzy = {
+	sorts = {
+		source_sort,
+		"score",
+		"sort_text",
+	},
+}
+
 local opts = {
 	keymap = keymap,
 	completion = completion,
@@ -62,6 +89,7 @@ local opts = {
 	cmdline = cmdline,
 	snippets = { preset = "luasnip" },
 	sources = { default = { "lsp", "snippets", "path", "buffer" } },
+	fuzzy = fuzzy,
 }
 
 return {
