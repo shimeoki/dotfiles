@@ -8,11 +8,19 @@ local integrations = {
 	blink_cmp = true,
 }
 
+local function custom_highlights(colors)
+	return {
+		LuaSnipChoice = { fg = colors.peach, bg = colors.none },
+		LuaSnipInsert = { fg = colors.blue, bg = colors.none },
+	}
+end
+
 local opts = {
 	flavour = "mocha",
 	background = { light = "latte", dark = "mocha" },
 	show_end_of_buffer = false,
 	integrations = integrations,
+	custom_highlights = custom_highlights,
 }
 
 return {
