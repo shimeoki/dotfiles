@@ -1,6 +1,19 @@
 local enabled = true
 
+local function ext_opts()
+	local types = require("luasnip.util.types")
+	return {
+		[types.choiceNode] = {
+			active = { virt_text = { { "●", "LuaSnipChoice" } } },
+		},
+		[types.insertNode] = {
+			active = { virt_text = { { "●", "LuaSnipInsert" } } },
+		},
+	}
+end
+
 local function config()
+	require("luasnip").setup({ ext_opts = ext_opts() })
 	require("luasnip.loaders.from_vscode").lazy_load()
 	require("luasnip.loaders.from_lua").load()
 end
