@@ -12,8 +12,16 @@ local function ext_opts()
 	}
 end
 
+local function opts()
+	return {
+		region_check_events = "InsertEnter",
+		delete_check_events = "InsertLeave,TextChanged",
+		ext_opts = ext_opts(),
+	}
+end
+
 local function config()
-	require("luasnip").setup({ ext_opts = ext_opts() })
+	require("luasnip").setup(opts())
 	require("luasnip.loaders.from_vscode").lazy_load()
 	require("luasnip.loaders.from_lua").load()
 end
