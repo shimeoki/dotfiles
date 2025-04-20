@@ -1,32 +1,30 @@
 local enabled = true
 
-local function show_no_snippets(cmp)
+local function show_except_snippets(cmp)
 	cmp.show({ providers = { "lsp", "path", "buffer" } })
 end
 
-local keymap = {
-	preset = "none",
+local function show_only_snippets(cmp)
+	cmp.show({ providers = { "snippets" } })
+end
 
-	["<enter>"] = { "accept", "fallback" },
-	["<s-enter>"] = { "show", "hide", "fallback" },
+local function show_all(cmp)
+	cmp.show({ providers = { "lsp", "snippets", "path", "buffer" } })
+end
 
-	["<c-space>"] = { show_no_snippets, "fallback_to_mappings" },
+local function text_idx(ctx)
+	if ctx.idx <= 9 then
+		return tostring(ctx.idx)
+	else
+		return " "
+	end
+end
 
-	["<tab>"] = { "snippet_forward", "select_next", "fallback" },
-	["<s-tab>"] = { "snippet_backward", "select_prev", "fallback" },
-
-	["<c-j>"] = { "select_next", "fallback_to_mappings" },
-	["<c-k>"] = { "select_prev", "fallback_to_mappings" },
-
-	["<c-h>"] = { "snippet_backward", "fallback_to_mappings" },
-	["<c-l>"] = { "snippet_forward", "fallback_to_mappings" },
-
-	["<c-d>"] = { "scroll_documentation_down", "fallback_to_mappings" },
-	["<c-u>"] = { "scroll_documentation_up", "fallback_to_mappings" },
-
-	["<c-s>"] = { "show_signature", "hide_signature", "fallback_to_mappings" },
-	["<c-i>"] = { "show_documentation", "hide_documentation", "fallback_to_mappings" },
-}
+local function accept_idx(idx)
+	return function(cmp)
+		cmp.accept({ index = idx })
+	end
+end
 
 local completion = {
 	keyword = { range = "full" },
@@ -35,20 +33,62 @@ local completion = {
 	},
 	menu = {
 		border = "rounded",
+		max_height = 11,
 		direction_priority = { "n", "s" },
 		draw = {
 			columns = {
-				{ "label", "label_description", gap = 1 },
-				{ "kind_icon", "kind", "source_name", gap = 1 },
+				{ "item_idx" },
+				{ "label" },
+				{ "label_description" },
+				{ "kind_icon" },
+				{ "kind" },
+				{ "source_name" },
+			},
+			components = {
+				item_idx = { text = text_idx },
 			},
 		},
 	},
 	documentation = {
 		auto_show = true,
-		auto_show_delay_ms = 200,
+		auto_show_delay_ms = 0,
 		window = { border = "rounded" },
 	},
 	ghost_text = { enabled = true },
+}
+
+local keymap = {
+	preset = "none",
+
+	["<enter>"] = { "accept", "snippet_forward", "fallback" },
+	["<tab>"] = { "accept", "snippet_forward", "fallback" },
+
+	["<c-s>"] = { "show", "hide", "fallback_to_mappings" },
+	["<c-a>"] = { show_all, "fallback_to_mappings" },
+	["<c-e>"] = { show_except_snippets, "fallback_to_mappings" },
+	["<c-o>"] = { show_only_snippets, "fallback_to_mappings" },
+
+	["<c-j>"] = { "select_next", "fallback" },
+	["<c-k>"] = { "select_prev", "fallback" },
+
+	["<c-h>"] = { "snippet_backward", "fallback_to_mappings" },
+	["<c-l>"] = { "snippet_forward", "fallback_to_mappings" },
+
+	["<c-d>"] = { "scroll_documentation_down", "fallback" },
+	["<c-u>"] = { "scroll_documentation_up", "fallback" },
+
+	["<c-t>"] = { "show_signature", "hide_signature", "fallback" },
+	["<c-i>"] = { "show_documentation", "hide_documentation", "fallback" },
+
+	["<c-1>"] = { accept_idx(1) },
+	["<c-2>"] = { accept_idx(2) },
+	["<c-3>"] = { accept_idx(3) },
+	["<c-4>"] = { accept_idx(4) },
+	["<c-5>"] = { accept_idx(5) },
+	["<c-6>"] = { accept_idx(6) },
+	["<c-7>"] = { accept_idx(7) },
+	["<c-8>"] = { accept_idx(8) },
+	["<c-9>"] = { accept_idx(9) },
 }
 
 local cmdline = {
