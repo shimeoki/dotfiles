@@ -54,7 +54,7 @@ M:add({
 	name = "clang-format",
 	enabled = true,
 	filetypes = { "c", "cpp" },
-	config = require("config.formatters.clang"),
+	config = require("formatters.clang"),
 })
 
 -- warn: doesn't work, don't turn this on
@@ -85,7 +85,7 @@ M:add({
 	aliases = {
 		mason = "deno",
 	},
-	config = require("config.formatters.deno"),
+	config = require("formatters.deno"),
 })
 
 -- fix: don't enable on all toml files

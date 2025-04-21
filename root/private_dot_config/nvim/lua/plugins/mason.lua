@@ -12,7 +12,7 @@ end
 
 add_installed(require("config.langservers").by_group.mason)
 add_installed(require("linters").by_group.mason)
-add_installed(require("config.formatters").by_group.mason)
+add_installed(require("formatters").by_group.mason)
 
 local opts = {
 	ui = { border = border },

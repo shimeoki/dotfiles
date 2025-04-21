@@ -2,7 +2,7 @@ local enabled = true
 
 local api = vim.api
 
-local formatters = require("config.formatters")
+local formatters = require("formatters")
 
 local opts = {
 	formatters_by_ft = formatters.by_filetype,
