@@ -43,22 +43,49 @@ local layout_config = {
 	flex = flex,
 }
 
-local function mappings()
+local function select_idx(idx)
 	local actions = require("telescope.actions")
+	local set = require("telescope.actions.set")
+	local offset = idx - 1
+
+	return function(prompt_bufnr)
+		actions.drop_all(prompt_bufnr)
+		actions.move_to_top(prompt_bufnr)
+		set.shift_selection(prompt_bufnr, offset)
+		actions.select_default(prompt_bufnr)
+	end
+end
+
+local function mappings()
 	local layout = require("telescope.actions.layout")
 
 	local keys = {
 		["<c-j>"] = "move_selection_next",
 		["<c-k>"] = "move_selection_previous",
-		["<c-l>"] = actions.cycle_previewers_next,
-		["<c-h>"] = actions.cycle_previewers_prev,
+
+		["<c-l>"] = "cycle_previewers_next",
+		["<c-h>"] = "cycle_previewers_prev",
+
 		["<c-u>"] = false,
 		["<c-d>"] = false,
+
 		["J"] = "preview_scrolling_down",
 		["K"] = "preview_scrolling_up",
 		["T"] = layout.toggle_preview,
-		["<esc>"] = actions.close,
+
+		["<esc>"] = "close",
 		["<s-esc>"] = { "<esc>", type = "command" },
+
+		-- todo: add row indexes
+		["<c-1>"] = select_idx(1),
+		["<c-2>"] = select_idx(2),
+		["<c-3>"] = select_idx(3),
+		["<c-4>"] = select_idx(4),
+		["<c-5>"] = select_idx(5),
+		["<c-6>"] = select_idx(6),
+		["<c-7>"] = select_idx(7),
+		["<c-8>"] = select_idx(8),
+		["<c-9>"] = select_idx(9),
 	}
 
 	return { i = keys, n = keys }
