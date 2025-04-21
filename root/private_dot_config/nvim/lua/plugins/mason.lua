@@ -11,7 +11,7 @@ local function add_installed(tools)
 end
 
 add_installed(require("config.langservers").by_group.mason)
-add_installed(require("config.linters").by_group.mason)
+add_installed(require("linters").by_group.mason)
 add_installed(require("config.formatters").by_group.mason)
 
 local opts = {

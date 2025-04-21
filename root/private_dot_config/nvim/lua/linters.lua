@@ -11,7 +11,7 @@ M:add({
 	name = "luacheck",
 	enabled = true,
 	filetypes = { "lua" },
-	config = require("config.linters.luacheck"),
+	config = require("linters.luacheck"),
 })
 
 M:add({

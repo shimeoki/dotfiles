@@ -1,6 +1,6 @@
 local enabled = true
 
-local linters = require("config.linters")
+local linters = require("linters")
 
 local function config()
 	if not linters.opts.enabled then
