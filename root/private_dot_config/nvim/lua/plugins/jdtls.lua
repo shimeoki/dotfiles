@@ -1,6 +1,6 @@
 local enabled = true
 
-local langservers = require("config.langservers")
+local langservers = require("langservers")
 local server = langservers.map.jdtls
 local exec = vim.env.HOME .. "/.local/share/nvim/mason/bin/jdtls"
 

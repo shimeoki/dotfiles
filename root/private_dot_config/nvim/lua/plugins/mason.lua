@@ -10,7 +10,7 @@ local function add_installed(tools)
 	end
 end
 
-add_installed(require("config.langservers").by_group.mason)
+add_installed(require("langservers").by_group.mason)
 add_installed(require("linters").by_group.mason)
 add_installed(require("formatters").by_group.mason)
 

@@ -13,14 +13,14 @@ M:add({
 		lspconfig = "lua_ls",
 		mason = "lua-language-server",
 	},
-	config = require("config.langservers.luals"),
+	config = require("langservers.luals"),
 })
 
 M:add({
 	name = "jdtls",
 	enabled = true,
 	filetypes = { "java" },
-	config = require("config.langservers.jdtls"),
+	config = require("langservers.jdtls"),
 })
 
 M:add({
@@ -37,7 +37,7 @@ M:add({
 	name = "ruff",
 	enabled = true,
 	filetypes = { "python" },
-	config = require("config.langservers.ruff"),
+	config = require("langservers.ruff"),
 })
 
 M:add({
@@ -85,7 +85,7 @@ M:add({
 	aliases = {
 		mason = "vue-language-server",
 	},
-	-- config = require("config.langservers.volar"),
+	-- config = require("langservers.volar"),
 })
 
 M:add({
@@ -102,7 +102,7 @@ M:add({
 		mason = "typescript-language-server",
 		lspconfig = "ts_ls",
 	},
-	config = require("config.langservers.tsls"),
+	config = require("langservers.tsls"),
 })
 
 M:add({

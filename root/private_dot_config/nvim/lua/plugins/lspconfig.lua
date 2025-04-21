@@ -1,6 +1,6 @@
 local enabled = true
 
-local langservers = require("config.langservers")
+local langservers = require("langservers")
 
 -- servers that are not managed by lspconfig
 local external = {
