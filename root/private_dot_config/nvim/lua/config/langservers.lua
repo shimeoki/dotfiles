@@ -132,6 +132,15 @@ M:add({
 	filetypes = { "go" },
 })
 
+M:add({
+	name = "dockerls",
+	enabled = true,
+	filetypes = { "dockerfile" },
+	aliases = {
+		mason = "dockerfile-language-server",
+	},
+})
+
 M:parse_groups({ "lspconfig", "mason" })
 
 return M
