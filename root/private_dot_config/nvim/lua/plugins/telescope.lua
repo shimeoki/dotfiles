@@ -32,11 +32,15 @@ local vertical = {
 	mirror = true,
 }
 
+local flex = {
+	flip_columns = preview_cutoff,
+}
+
 local layout_config = {
 	scroll_speed = 4,
 	horizontal = horizontal,
 	vertical = vertical,
-	flip_columns = preview_cutoff,
+	flex = flex,
 }
 
 local function mappings()
