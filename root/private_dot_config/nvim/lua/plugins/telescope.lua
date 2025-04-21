@@ -128,7 +128,19 @@ local function vimgrep_arguments()
 end
 
 local function opts()
-	local o = {
+	local extensions = {}
+
+	if fuzzy then
+		extensions["fzf"] = fzf
+	end
+
+	if select then
+		extensions["ui-select"] = {
+			require("telescope.themes").get_dropdown(),
+		}
+	end
+
+	return {
 		defaults = {
 			layout_strategy = layout_strategy,
 			layout_config = layout_config,
@@ -145,13 +157,8 @@ local function opts()
 				mappings = mappings_buffers(),
 			},
 		},
+		extensions = extensions,
 	}
-
-	if fuzzy then
-		o.extensions = { fzf = fzf }
-	end
-
-	return o
 end
 
 local binds = require("binds")
