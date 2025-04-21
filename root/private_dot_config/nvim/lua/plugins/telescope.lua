@@ -148,6 +148,12 @@ local function opts()
 			mappings = mappings(),
 			vimgrep_arguments = vimgrep_arguments(),
 			wrap_results = wrap,
+			prompt_prefix = "",
+			selection_caret = " ",
+			entry_prefix = " ",
+			border = true,
+			dynamic_preview_title = true,
+			results_title = false,
 		},
 		pickers = {
 			find_files = {
