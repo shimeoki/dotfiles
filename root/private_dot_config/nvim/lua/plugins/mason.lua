@@ -24,7 +24,8 @@ local installer_opts = {
 
 local installer = {
 	"WhoIsSethDaniel/mason-tool-installer.nvim",
-	name = "mason-tool-installer",
+	lazy = true,
+	cmd = { "MasonToolsInstall", "MasonToolsUpdate" },
 	main = "mason-tool-installer",
 	opts = installer_opts,
 }
@@ -35,7 +36,6 @@ return {
 	main = "mason",
 	lazy = true,
 	cmd = { "Mason" },
-	event = "VeryLazy",
 	build = ":MasonUpdate",
 	opts = opts,
 	dependencies = { installer },
