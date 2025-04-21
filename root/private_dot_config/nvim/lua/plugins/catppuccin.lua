@@ -6,6 +6,7 @@ local integrations = {
 	mason = true,
 	which_key = true,
 	blink_cmp = true,
+	telescope = { enabled = true },
 }
 
 local function custom_highlights(colors)
