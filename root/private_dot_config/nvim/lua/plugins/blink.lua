@@ -68,8 +68,8 @@ local keymap = {
 	["<c-e>"] = { show_except_snippets, "fallback_to_mappings" },
 	["<c-o>"] = { show_only_snippets, "fallback_to_mappings" },
 
-	["<c-j>"] = { "select_next", "fallback" },
-	["<c-k>"] = { "select_prev", "fallback" },
+	["<c-j>"] = { "select_next", "fallback_to_mappings" },
+	["<c-k>"] = { "select_prev", "fallback_to_mappings" },
 
 	["<c-h>"] = { "snippet_backward", "fallback_to_mappings" },
 	["<c-l>"] = { "snippet_forward", "fallback_to_mappings" },
