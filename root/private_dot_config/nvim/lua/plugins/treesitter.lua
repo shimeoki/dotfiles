@@ -4,6 +4,8 @@ local highlighters = {
 	"lua",
 	"go",
 	"gomod",
+	"gosum",
+	"gotmpl",
 	"java",
 	"python",
 	"bash",
