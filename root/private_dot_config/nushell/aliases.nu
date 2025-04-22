@@ -16,8 +16,8 @@ alias czs = chezmoi status
 
 alias c = clear
 
-alias e = exec $env.EDITOR
-alias v = exec $env.VISUAL
+alias e = run-external $env.EDITOR
+alias v = run-external $env.VISUAL
 
 alias l = eza
 alias lo = eza --oneline
