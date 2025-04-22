@@ -13,6 +13,7 @@ local function custom_highlights(colors)
 	return {
 		LuaSnipChoice = { fg = colors.peach, bg = colors.none },
 		LuaSnipInsert = { fg = colors.blue, bg = colors.none },
+		WinSeparator = { fg = colors.base },
 	}
 end
 
