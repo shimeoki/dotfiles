@@ -13,8 +13,8 @@ local function ext_opts()
 end
 
 local function cycle_choice(step)
-	local ls = require("luasnip")
 	return function()
+		local ls = require("luasnip")
 		return ls.choice_active() and ls.change_choice(step)
 	end
 end
