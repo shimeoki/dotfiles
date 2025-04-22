@@ -129,7 +129,8 @@ M:add({
 M:add({
 	name = "gopls",
 	enabled = true,
-	filetypes = { "go" },
+	filetypes = { "go", "gomod" },
+	config = require("langservers.gopls"),
 })
 
 M:add({

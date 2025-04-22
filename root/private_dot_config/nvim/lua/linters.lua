@@ -17,7 +17,7 @@ M:add({
 M:add({
 	name = "golangcilint",
 	enabled = true,
-	filetypes = { "go" },
+	filetypes = { "go", "gomod" },
 	aliases = {
 		mason = "golangci-lint",
 	},
