@@ -12,6 +12,26 @@ local function ext_opts()
 	}
 end
 
+local function cycle_choice(step)
+	local ls = require("luasnip")
+	return function()
+		return ls.choice_active() and ls.change_choice(step)
+	end
+end
+
+local keys = {
+	{
+		"<c-s-l>",
+		cycle_choice(1),
+		mode = { "i", "s" },
+	},
+	{
+		"<c-s-h>",
+		cycle_choice(-1),
+		mode = { "i", "s" },
+	},
+}
+
 local function opts()
 	return {
 		region_check_events = "InsertEnter",
@@ -31,6 +51,7 @@ return {
 	cond = enabled,
 	main = "luasnip",
 	lazy = true,
+	keys = keys,
 	version = "v2.*",
 	build = "make install_jsregexp",
 	config = config,
