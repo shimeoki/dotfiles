@@ -1,0 +1,8 @@
+---
+gui:
+    scrollHeight: 4
+
+    sidePanelWidth: 0.25
+    expandFocusedSidePanel: true
+
+    border: hidden
