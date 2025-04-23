@@ -24,6 +24,8 @@ local highlighters = {
 	"yaml",
 	"css",
 	"vue",
+	"vim",
+	"regex",
 }
 
 local opts = {
@@ -57,4 +59,7 @@ return {
 	build = ":TSUpdate",
 	init = init,
 	config = config,
+	dependencies = {
+		"nvim-treesitter/nvim-treesitter-textobjects",
+	},
 }
