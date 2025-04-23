@@ -4,7 +4,7 @@ local integrations = {
 	mason = true,
 	which_key = true,
 	blink_cmp = true,
-	telescope = { enabled = true },
+	indent_blankline = { scope_color = "lavender" },
 }
 
 local function custom_highlights(colors)
