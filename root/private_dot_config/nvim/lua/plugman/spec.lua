@@ -253,21 +253,11 @@ return {
 		end,
 	},
 	{
-		-- source: https://www.lazyvim.org/plugins/treesitter
 		"nvim-treesitter/nvim-treesitter",
-		main = "nvim-treesitter.configs",
-		version = false, -- last release doesn't work on windows
-		event = { "BufReadPost", "BufWritePost", "BufNewFile", "VeryLazy" },
-		lazy = vim.fn.argc(-1) == 0,
-		cmd = { "TSUpdateSync", "TSUpdate", "TSInstall" },
+		event = { "BufReadPost", "BufNewFile", "VeryLazy" },
+		cmd = { "TSUpdate", "TSInstall", "TSBufEnable", "TSBufDisable" },
 		build = ":TSUpdate",
-		dependencies = {
-			"nvim-treesitter/nvim-treesitter-textobjects",
-		},
-		init = function(plugin)
-			require("lazy.core.loader").add_to_rtp(plugin)
-			require("nvim-treesitter.query_predicates")
-		end,
+		dependencies = { "nvim-treesitter/nvim-treesitter-textobjects" },
 		config = function()
 			require("plugins.treesitter").setup()
 		end,
