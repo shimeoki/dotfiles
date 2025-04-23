@@ -58,10 +58,7 @@ set.scrolloff = M.text.scrolloff
 
 set.signcolumn = "yes"
 
--- warn: don't uncomment this, because many apps will have a double border
--- because of this
---
--- set.winborder = "rounded"
+set.winborder = "none"
 
 set.hlsearch = false
 set.incsearch = true
@@ -77,6 +74,7 @@ set.splitbelow = M.split.below
 set.cursorline = M.cursor.highlight_line
 
 set.updatetime = 1000
+set.shortmess:append("sI")
 
 vim.g.mapleader = " "
 vim.g.maplocalleader = " " -- subject to change
