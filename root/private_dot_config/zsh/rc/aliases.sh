@@ -84,6 +84,9 @@ alias s='kitten ssh'
 # lazygit
 alias lg='lazygit'
 
+# lazydocker
+alias lc='lazydocker'
+
 # neovim
 alias nv='nvim'
 

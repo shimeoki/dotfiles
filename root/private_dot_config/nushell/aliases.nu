@@ -71,6 +71,7 @@ alias icat = kitten icat
 alias s = kitten ssh
 
 alias lg = lazygit
+alias lc = lazydocker
 
 alias nv = nvim
 
