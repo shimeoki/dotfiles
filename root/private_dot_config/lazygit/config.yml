@@ -19,7 +19,7 @@ gui:
 
     screenMode: half
     splitDiff: auto
-    border: rounded
+    border: hidden
     portraitMode: auto
 
     filterMode: fuzzy
@@ -28,4 +28,3 @@ git:
     paging:
         colorArg: always
         pager: delta --paging=never
-
