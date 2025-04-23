@@ -1,5 +1,3 @@
-local enabled = true
-
 local function init()
 	vim.g.molten_auto_open_output = false
 	vim.g.molten_image_provider = "image.nvim"
@@ -10,11 +8,5 @@ local function init()
 end
 
 return {
-	"benlubas/molten-nvim",
-	cond = enabled,
-	lazy = true,
-	ft = { "python", "markdown", "json" },
-	version = "^1.0.0",
-	build = ":UpdateRemotePlugins",
 	init = init,
 }

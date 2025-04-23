@@ -1,5 +1,3 @@
-local enabled = true
-
 local function show_except_snippets(cmp)
 	cmp.show({ providers = { "lsp", "path", "buffer" } })
 end
@@ -139,11 +137,5 @@ local opts = {
 }
 
 return {
-	"saghen/blink.cmp",
-	cond = enabled,
-	version = "1.*",
-	lazy = true,
-	event = { "InsertEnter", "CmdlineEnter" },
-	dependencies = { "L3MON4D3/LuaSnip", version = "v2.*" },
 	opts = opts,
 }

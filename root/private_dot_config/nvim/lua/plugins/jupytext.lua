@@ -1,5 +1,3 @@
-local enabled = true
-
 local opts = {
 	style = "markdown",
 	output_extension = "md",
@@ -58,20 +56,13 @@ end
 
 local cmd = "NewNotebook"
 
-if enabled then
-	vim.api.nvim_create_user_command(cmd, function(opt)
-		new_notebook(opt.args)
-	end, {
-		nargs = 1,
-		complete = "file",
-	})
-end
+vim.api.nvim_create_user_command(cmd, function(opt)
+	new_notebook(opt.args)
+end, {
+	nargs = 1,
+	complete = "file",
+})
 
 return {
-	"GCBallesteros/jupytext.nvim",
-	main = "jupytext",
-	cond = enabled,
-	lazy = false,
-	cmd = { cmd },
 	opts = opts,
 }

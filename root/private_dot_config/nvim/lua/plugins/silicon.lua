@@ -1,5 +1,3 @@
-local enabled = true
-
 local api = vim.api
 local date = os.date
 
@@ -48,10 +46,5 @@ local opts = {
 }
 
 return {
-	"michaelrommel/nvim-silicon",
-	cond = enabled,
-	main = "nvim-silicon",
-	lazy = true,
-	cmd = "Silicon",
 	opts = opts,
 }

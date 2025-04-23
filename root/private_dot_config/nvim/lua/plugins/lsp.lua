@@ -1,5 +1,3 @@
-local enabled = true
-
 local langservers = require("langservers")
 
 -- servers that are not managed by lspconfig
@@ -43,9 +41,5 @@ local function config()
 end
 
 return {
-	"neovim/nvim-lspconfig",
-	cond = enabled,
-	lazy = true,
-	event = { "BufReadPost", "BufWritePost", "BufNewFile" },
-	config = config,
+	setup = config,
 }

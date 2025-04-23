@@ -1,5 +1,3 @@
-local enabled = true
-
 local opts = {
 	parser = { comments = { "#", "//" } },
 	view = { display_mode = "border" },
@@ -14,10 +12,5 @@ local opts = {
 }
 
 return {
-	"hat0uma/csvview.nvim",
-	cond = enabled,
-	main = "csvview",
-	lazy = true,
 	opts = opts,
-	cmd = { "CsvViewEnable", "CsvViewDisable", "CsvViewToggle" },
 }

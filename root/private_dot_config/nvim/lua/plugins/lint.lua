@@ -1,5 +1,3 @@
-local enabled = true
-
 local linters = require("linters")
 
 local function config()
@@ -26,9 +24,5 @@ local function config()
 end
 
 return {
-	"mfussenegger/nvim-lint",
-	cond = enabled,
-	lazy = true,
-	event = { "BufReadPost", "BufWritePost", "BufNewFile" },
-	config = config,
+	setup = config,
 }

@@ -1,5 +1,3 @@
-local enabled = true
-
 local langservers = require("langservers")
 local server = langservers.map.jdtls
 local exec = vim.env.HOME .. "/.local/share/nvim/mason/bin/jdtls"
@@ -9,12 +7,6 @@ local function config()
 	jdtls.start_or_attach(server.config(exec))
 end
 
-local ft = server.filetypes
-
 return {
-	"mfussenegger/nvim-jdtls",
-	cond = enabled,
-	lazy = true,
-	ft = ft,
-	config = config,
+	setup = config,
 }

@@ -1,5 +1,3 @@
-local enabled = true
-
 local api = vim.api
 
 local formatters = require("formatters")
@@ -35,13 +33,11 @@ vim.api.nvim_create_user_command("Format", function(args)
 	})
 end, { range = true })
 
-local function init()
-	vim.o.formatexpr = 'v:lua.require("conform").formatexpr()'
-end
-
 local function config()
 	local conform = require("conform")
 	conform.setup(opts)
+
+	vim.o.formatexpr = 'v:lua.require("conform").formatexpr()'
 
 	local formatter_name
 	for _, formatter in ipairs(formatters.list) do
@@ -54,12 +50,5 @@ local function config()
 end
 
 return {
-	"stevearc/conform.nvim",
-	main = "conform",
-	cond = enabled,
-	lazy = true,
-	event = { "BufWritePre" },
-	cmd = { "ConformInfo" },
-	config = config,
-	init = init,
+	setup = config,
 }

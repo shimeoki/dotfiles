@@ -1,5 +1,3 @@
-local enabled = true
-
 local presets = {
 	command_palette = true,
 	long_message_to_split = true,
@@ -21,13 +19,5 @@ local opts = {
 }
 
 return {
-	"folke/noice.nvim",
-	cond = enabled,
-	main = "noice",
-	event = "VeryLazy",
 	opts = opts,
-	dependencies = {
-		"MunifTanjim/nui.nvim",
-		"rcarriga/nvim-notify",
-	},
 }

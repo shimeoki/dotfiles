@@ -1,5 +1,3 @@
-local enabled = true
-
 local fuzzy = true
 local select = true
 local wrap = true
@@ -167,9 +165,6 @@ local function opts()
 	}
 end
 
-local binds = require("binds")
-local keys = binds.convert(binds.map.telescope, "lazy")
-
 -- enable line wrapping in preview
 vim.api.nvim_create_autocmd("User", {
 	pattern = "TelescopePreviewerLoaded",
@@ -192,24 +187,6 @@ local function config()
 	end
 end
 
-local sorter = {
-	"nvim-telescope/telescope-fzf-native.nvim",
-	name = "telescope-fzf-native",
-	build = "make",
-}
-
-local selecter = {
-	"nvim-telescope/telescope-ui-select.nvim",
-	name = "telescope-ui-select",
-}
-
 return {
-	"nvim-telescope/telescope.nvim",
-	cond = enabled,
-	main = "telescope",
-	lazy = true,
-	branch = "0.1.x",
-	keys = keys,
-	config = config,
-	dependencies = { sorter, selecter },
+	setup = config,
 }

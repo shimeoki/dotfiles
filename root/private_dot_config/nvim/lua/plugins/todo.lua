@@ -1,5 +1,3 @@
-local enabled = true
-
 local signs = false
 
 local alt_keywords = {
@@ -58,11 +56,5 @@ local opts = {
 }
 
 return {
-	"folke/todo-comments.nvim",
-	cond = enabled,
-	main = "todo-comments",
-	lazy = true,
-	cmd = { "TodoTelescope" },
-	event = { "BufReadPost", "BufWritePost", "BufNewFile" },
 	opts = opts,
 }

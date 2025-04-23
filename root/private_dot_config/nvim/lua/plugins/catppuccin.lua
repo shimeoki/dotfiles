@@ -1,5 +1,3 @@
-local enabled = true
-
 local integrations = {
 	notify = true,
 	noice = true,
@@ -26,11 +24,5 @@ local opts = {
 }
 
 return {
-	"catppuccin/nvim",
-	cond = enabled,
-	name = "catppuccin",
-	main = "catppuccin",
-	lazy = true,
 	opts = opts,
-	priority = 1000,
 }

@@ -1,5 +1,3 @@
-local enabled = true
-
 local options = {
 	component_separators = "",
 }
@@ -122,11 +120,5 @@ local opts = {
 }
 
 return {
-	"nvim-lualine/lualine.nvim",
-	cond = enabled,
-	main = "lualine",
-	lazy = true,
-	event = "VeryLazy",
 	opts = opts,
-	dependencies = { "nvim-tree/nvim-web-devicons" },
 }

@@ -1,5 +1,3 @@
-local enabled = true
-
 local opts = {
 	backend = "kitty",
 	max_width = 128,
@@ -11,10 +9,5 @@ local opts = {
 }
 
 return {
-	"3rd/image.nvim",
-	main = "image",
-	lazy = true,
-	cond = enabled,
-	ft = { "markdown" },
 	opts = opts,
 }
