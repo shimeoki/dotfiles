@@ -281,4 +281,14 @@ return {
 			return require("plugins.yazi").opts
 		end,
 	},
+	{
+		"mfussenegger/nvim-dap",
+		dependencies = {
+			"theHamsta/nvim-dap-virtual-text",
+			"rcarriga/nvim-dap-ui",
+		},
+	},
+	{
+		"nvim-neotest/nvim-nio",
+	},
 }
