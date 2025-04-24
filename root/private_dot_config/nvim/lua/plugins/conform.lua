@@ -1,23 +1,68 @@
+local M = {}
+
 local api = vim.api
 
-local formatters = require("formatters")
-
-local opts = {
-	formatters_by_ft = formatters.by_filetype,
+local formatters_by_ft = {
+	lua = { "stylua" },
+	go = { "goimports" },
+	python = { "ruff_fix", "ruff_format", "ruff_organize_imports" },
+	sh = { "shfmt" },
+	bash = { "shfmt" },
+	zsh = { "shfmt" },
+	c = { "clang-format" },
+	cpp = { "clang-format" },
+	javascript = { "deno_fmt" },
+	javascriptreact = { "deno_fmt" },
+	typescript = { "deno_fmt" },
+	typescriptreact = { "deno_fmt" },
+	json = { "deno_fmt" },
+	jsonc = { "deno_fmt" },
+	css = { "deno_fmt" },
+	html = { "deno_fmt" },
+	yaml = { "deno_fmt" },
+	vue = { "deno_fmt" },
+	toml = { "pyproject-fmt" }, -- fix: don't enable on all toml files
 }
 
-if formatters.opts.on_save then
-	opts.format_on_save = {
+local deno = {
+	append_args = {
+		"--use-tabs=true",
+		"--indent-width=4",
+		"--line-width=80",
+		"--no-semicolons=false",
+		"--prose-wrap=always",
+		"--single-quote=false",
+	},
+}
+
+local clang = {
+	append_args = {
+		"--style",
+		"{ BasedOnStyle: Chromium, IndentWidth: 4, LineEnding: LF }",
+	},
+}
+
+local opts = {
+	formatters_by_ft = formatters_by_ft,
+	format_on_save = {
 		timeout_ms = 500,
 		lsp_format = "fallback",
-	}
+	},
+	formatters = {
+		["deno_fmt"] = deno,
+		["clang-format"] = clang,
+	},
+}
+
+local function set_formatexpr()
+	vim.opt.formatexpr = 'v:lua.require("conform").formatexpr()'
 end
 
 local function get_end(line2)
 	return api.nvim_buf_get_lines(0, line2 - 1, line2, true)[1]
 end
 
-vim.api.nvim_create_user_command("Format", function(args)
+api.nvim_create_user_command("Format", function(args)
 	local range = nil
 	if args.count ~= -1 then
 		range = {
@@ -33,22 +78,9 @@ vim.api.nvim_create_user_command("Format", function(args)
 	})
 end, { range = true })
 
-local function config()
-	local conform = require("conform")
-	conform.setup(opts)
-
-	vim.o.formatexpr = 'v:lua.require("conform").formatexpr()'
-
-	local formatter_name
-	for _, formatter in ipairs(formatters.list) do
-		formatter_name = formatter.aliases.conform or formatter.name
-
-		if formatter.config then
-			conform.formatters[formatter_name] = formatter.config
-		end
-	end
+function M.setup()
+	require("conform").setup(opts)
+	set_formatexpr()
 end
 
-return {
-	setup = config,
-}
+return M
