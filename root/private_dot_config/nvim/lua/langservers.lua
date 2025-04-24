@@ -11,7 +11,6 @@ M:add({
 	filetypes = { "lua" },
 	aliases = {
 		lspconfig = "lua_ls",
-		mason = "lua-language-server",
 	},
 	config = require("langservers.luals"),
 })
@@ -29,7 +28,6 @@ M:add({
 	filetypes = { "python" },
 	aliases = {
 		lspconfig = "jedi_language_server",
-		mason = "jedi-language-server",
 	},
 })
 
@@ -44,9 +42,6 @@ M:add({
 	name = "bashls",
 	enabled = true,
 	filetypes = { "sh", "zsh", "bash" },
-	aliases = {
-		mason = "bash-language-server",
-	},
 })
 
 M:add({
@@ -59,9 +54,6 @@ M:add({
 	name = "nushell",
 	enabled = true,
 	filetypes = { "nu" },
-	aliases = {
-		mason = "",
-	},
 })
 
 M:add({
@@ -82,9 +74,6 @@ M:add({
 	name = "volar",
 	enabled = true,
 	filetypes = { "vue" },
-	aliases = {
-		mason = "vue-language-server",
-	},
 	-- config = require("langservers.volar"),
 })
 
@@ -99,7 +88,6 @@ M:add({
 		"vue",
 	},
 	aliases = {
-		mason = "typescript-language-server",
 		lspconfig = "ts_ls",
 	},
 	config = require("langservers.tsls"),
@@ -109,9 +97,6 @@ M:add({
 	name = "cssls",
 	enabled = true,
 	filetypes = { "css" },
-	aliases = {
-		mason = "css-lsp",
-	},
 })
 
 M:add({
@@ -137,11 +122,8 @@ M:add({
 	name = "dockerls",
 	enabled = true,
 	filetypes = { "dockerfile" },
-	aliases = {
-		mason = "dockerfile-language-server",
-	},
 })
 
-M:parse_groups({ "lspconfig", "mason" })
+M:parse_groups({ "lspconfig" })
 
 return M

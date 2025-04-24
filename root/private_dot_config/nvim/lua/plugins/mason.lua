@@ -1,19 +1,38 @@
-local ensure_installed = {}
+local M = {}
 
-local function add_installed(tools)
-	for _, key in ipairs(tools) do
-		table.insert(ensure_installed, key)
-	end
-end
+local ensure_installed = {
+	-- langservers
+	"lua-language-server",
+	"jdtls",
+	"jedi-language-server",
+	"bash-language-server",
+	"clangd",
+	"deno",
+	"vue-language-server",
+	"typescript-language-server",
+	"css-lsp",
+	"texlab",
+	"hyprls",
+	"gopls",
+	"dockerfile-language-server",
+	-- debuggers
+	"delve",
+	-- linters
+	"luacheck",
+	"golangci-lint",
+	"shellcheck",
+	"mypy",
+	-- formatters
+	"stylua",
+	"goimports",
+	"ruff",
+	"shfmt",
+	"clang-format",
+	"pyproject-fmt",
+}
 
-add_installed(require("langservers").by_group.mason)
-add_installed(require("linters").by_group.mason)
-add_installed(require("formatters").by_group.mason)
-
-local opts = {
+M.opts = {
 	ensure_installed = ensure_installed,
 }
 
-return {
-	opts = opts,
-}
+return M

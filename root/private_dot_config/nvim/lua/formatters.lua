@@ -21,27 +21,18 @@ M:add({
 	name = "ruff_fix",
 	enabled = true,
 	filetypes = { "python" },
-	aliases = {
-		mason = "ruff",
-	},
 })
 
 M:add({
 	name = "ruff_format",
 	enabled = true,
 	filetypes = { "python" },
-	aliases = {
-		mason = "ruff",
-	},
 })
 
 M:add({
 	name = "ruff_organize_imports",
 	enabled = true,
 	filetypes = { "python" },
-	aliases = {
-		mason = "ruff",
-	},
 })
 
 M:add({
@@ -62,9 +53,6 @@ M:add({
 	name = "nufmt",
 	enabled = false,
 	filetypes = { "nu" },
-	aliases = {
-		mason = "",
-	},
 })
 
 M:add({
@@ -82,9 +70,6 @@ M:add({
 		"yaml",
 		"vue",
 	},
-	aliases = {
-		mason = "deno",
-	},
 	config = require("formatters.deno"),
 })
 
@@ -95,6 +80,6 @@ M:add({
 	filetypes = { "toml" },
 })
 
-M:parse_groups({ "mason" })
+M:parse_groups()
 
 return M

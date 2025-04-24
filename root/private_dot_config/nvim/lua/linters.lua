@@ -18,9 +18,6 @@ M:add({
 	name = "golangcilint",
 	enabled = true,
 	filetypes = { "go", "gomod" },
-	aliases = {
-		mason = "golangci-lint",
-	},
 })
 
 M:add({
@@ -33,11 +30,8 @@ M:add({
 	name = "dmypy",
 	enabled = true,
 	filetypes = { "python" },
-	aliases = {
-		mason = "mypy",
-	},
 })
 
-M:parse_groups({ "mason" })
+M:parse_groups()
 
 return M
