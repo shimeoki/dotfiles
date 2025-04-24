@@ -19,7 +19,7 @@ gui:
 
     screenMode: half
     splitDiff: auto
-    border: hidden
+    border: single
     portraitMode: auto
 
     filterMode: fuzzy
