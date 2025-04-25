@@ -1,4 +1,3 @@
--- fix: duplicated
 local filetypes = {
 	"javascript",
 	"javascriptreact",
