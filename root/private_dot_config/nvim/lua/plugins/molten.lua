@@ -1,4 +1,6 @@
-local function init()
+local M = {}
+
+function M.setup()
 	vim.g.molten_auto_open_output = false
 	vim.g.molten_image_provider = "image.nvim"
 	vim.g.molten_virt_text_output = true
@@ -7,6 +9,4 @@ local function init()
 	vim.g.molten_virt_text_max_lines = 999
 end
 
-return {
-	init = init,
-}
+return M

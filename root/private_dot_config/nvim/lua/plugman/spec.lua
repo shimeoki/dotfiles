@@ -179,8 +179,8 @@ return {
 		ft = { "python", "markdown", "json" },
 		version = "^1.0.0",
 		build = ":UpdateRemotePlugins",
-		init = function()
-			require("plugins.molten").init()
+		config = function()
+			require("plugins.molten").setup()
 		end,
 	},
 	{
