@@ -82,24 +82,8 @@ vim.g.markdown_fenced_languages = {
 
 local venv_home = vim.env.VENV_HOME
 if venv_home then
-	local venv = vim.fn.expand(vim.env.VENV_HOME .. "/nvim/bin")
+	local venv = vim.fn.expand(venv_home .. "/nvim/bin")
 	vim.g.python3_host_prog = venv .. "/python3"
-end
-
-vim.g.lazygit_floating_window_scaling_factor = 0.95
-
--- hack: workaround for "buffer newer than edits"
--- source: https://github.com/neovim/neovim/issues/12970#issuecomment-1166957212
-
-vim.lsp.util.apply_text_document_edit = function(text_document_edit, _, offset_encoding)
-	local text_document = text_document_edit.textDocument
-	local bufnr = vim.uri_to_bufnr(text_document.uri)
-
-	if offset_encoding == nil then
-		vim.notify_once("apply_text_document_edit must be called with valid offset encoding", vim.log.levels.WARN)
-	end
-
-	vim.lsp.util.apply_text_edits(text_document_edit.edits, bufnr, offset_encoding)
 end
 
 return M
