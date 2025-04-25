@@ -189,13 +189,16 @@ return {
 		"folke/noice.nvim",
 		main = "noice",
 		event = "VeryLazy",
-		dependencies = {
-			"MunifTanjim/nui.nvim",
-			"rcarriga/nvim-notify",
-		},
 		opts = function()
 			return require("plugins.noice").opts
 		end,
+	},
+	{
+
+		"MunifTanjim/nui.nvim",
+	},
+	{
+		"rcarriga/nvim-notify",
 	},
 	{
 		"nvim-lua/plenary.nvim",
