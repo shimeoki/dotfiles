@@ -94,8 +94,10 @@ return {
 	{
 		"GCBallesteros/jupytext.nvim",
 		main = "jupytext",
-		lazy = false,
+		lazy = vim.fn.argc(-1) == 0,
 		cmd = { "NewNotebook" },
+		event = { "BufEnter" },
+		ft = { "ipynb", "markdown", "json" },
 		opts = function()
 			return require("plugins.jupytext").opts
 		end,
