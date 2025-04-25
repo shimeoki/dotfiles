@@ -22,18 +22,16 @@ local disabled_builtin_plugins = {
 	"spellfile",
 }
 
-local ui = {
-	border = "none",
-	size = { width = 0.9, height = 0.9 },
-	wrap = true,
-	backdrop = 0,
-}
-
 local opts = {
 	defaults = { lazy = true },
 	spec = require("plugman.spec"),
 	install = { colorscheme = { "catppuccin" } },
-	ui = ui,
+	ui = {
+		border = "none",
+		size = { width = 0.9, height = 0.9 },
+		wrap = true,
+		backdrop = 0,
+	},
 	checker = { enabled = false },
 	rocks = { hererocks = true },
 	change_detection = { enabled = false },
