@@ -168,7 +168,7 @@ return {
 	},
 	{
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
-		cmd = { "MasonToolsInstall", "MasonToolsUpdate" },
+		cmd = { "Mason", "MasonToolsInstall", "MasonToolsUpdate" },
 		main = "mason-tool-installer",
 		build = ":MasonToolsUpdate",
 		dependencies = { "williamboman/mason.nvim", opts = {} },
@@ -194,7 +194,6 @@ return {
 		end,
 	},
 	{
-
 		"MunifTanjim/nui.nvim",
 	},
 	{
