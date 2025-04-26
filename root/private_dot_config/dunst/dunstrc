@@ -24,22 +24,22 @@
     # dynamic width from 0 to 300
     # width = (0, 300)
     # constant width of 300
-    width = 300
+    width = 480
 
     # The maximum height of a single notification, excluding the frame.
-    height = 300
+    height = (0, 320)
 
     # Position the notification in the top right corner
     origin = top-right
 
     # Offset from the origin
-    offset = 10x50
+    offset = (16, 16)
 
     # Scale factor. It is auto-detected if value is 0.
     scale = 0
 
     # Maximum number of notification (0 means no limit)
-    notification_limit = 20
+    notification_limit = 4
 
     ### Progress bar ###
 
@@ -52,7 +52,7 @@
     progress_bar_height = 10
 
     # Set the frame width of the progress bar
-    progress_bar_frame_width = 1
+    progress_bar_frame_width = 0
 
     # Set the minimum width for the progress bar
     progress_bar_min_width = 150
@@ -61,10 +61,10 @@
     progress_bar_max_width = 300
 
     # Corner radius for the progress bar. 0 disables rounded corners.
-    progress_bar_corner_radius = 4
+    progress_bar_corner_radius = 0
 
     # Corner radius for the icon image.
-    icon_corner_radius = 4
+    icon_corner_radius = 0
 
     # Show how many messages are currently hidden (because of
     # notification_limit).
@@ -79,23 +79,23 @@
     # notifications.
     # Set to 0 to disable.
     # If gap_size is greater than 0, this setting will be ignored.
-    separator_height = 2
+    separator_height = 8
 
     # Padding between text and separator.
-    padding = 8
+    padding = 16
 
     # Horizontal padding.
-    horizontal_padding = 8
+    horizontal_padding = 16
 
     # Padding between text and icon.
-    text_icon_padding = 0
+    text_icon_padding = 16
 
     # Defines width in pixels of frame around the notification window.
     # Set to 0 to disable.
-    frame_width = 1
+    frame_width = 0
 
     # Defines color of the frame around the notification window.
-    frame_color = "#89b4fa"
+    frame_color = "#181825"
 
     # Size of gap to display between notifications - requires a compositor.
     # If value is greater than 0, separator_height will be ignored and a border
@@ -123,7 +123,7 @@
 
     ### Text ###
 
-    font = FiraCode Nerd Font 8
+    font = RobotoMono Nerd Font 12
 
     # The spacing between lines.  If the height is smaller than the
     # font height, it will get raised to the font height.
@@ -163,7 +163,7 @@
     #   %n  progress value if set without any extra characters
     #   %%  Literal %
     # Markup is allowed
-    format = "<b>%s</b>\n%b"
+    format = "<b>%s (%a)</b>\n%b"
 
     # Alignment of message text.
     # Possible values are "left", "center" and "right".
@@ -180,7 +180,7 @@
 
     # Specify where to make an ellipsis in long lines.
     # Possible values are "start", "middle" and "end".
-    ellipsize = middle
+    ellipsize = end
 
     # Ignore newlines '\n' in notifications.
     ignore_newline = no
@@ -192,7 +192,7 @@
     hide_duplicate_count = false
 
     # Display indicators for URLs (U) and actions (A).
-    show_indicators = yes
+    show_indicators = no
 
     ### Icons ###
 
@@ -214,7 +214,7 @@
     min_icon_size = 32
 
     # Scale larger icons down to this size, set to 0 to disable
-    max_icon_size = 128
+    max_icon_size = 96
 
     # Paths to default icons (only neccesary when not using recursive icon lookup)
     icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
@@ -250,7 +250,7 @@
     # corners.
     # The radius will be automatically lowered if it exceeds half of the
     # notification height to avoid clipping text and/or icons.
-    corner_radius = 8
+    corner_radius = 0
 
     # Ignore the dbus closeNotification message.
     # Useful to enforce the timeout set by dunst configuration. Without this
@@ -313,21 +313,21 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#1e1e2e"
+    background = "#181825"
     foreground = "#cdd6f4"
     timeout = 10
     # Icon for notifications with low urgency, uncomment to enable
     #default_icon = /path/to/icon
 
 [urgency_normal]
-    background = "#1e1e2e"
+    background = "#181825"
     foreground = "#cdd6f4"
     timeout = 10
     # Icon for notifications with normal urgency, uncomment to enable
     #default_icon = /path/to/icon
 
 [urgency_critical]
-    background = "#1e1e2e"
+    background = "#181825"
     foreground = "#cdd6f4"
     frame_color = "#fab387"
     timeout = 0
