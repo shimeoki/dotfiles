@@ -55,7 +55,7 @@ set.scrolloff = M.text.scrolloff
 
 set.signcolumn = "yes"
 
-set.winborder = "none"
+set.winborder = "solid"
 
 set.hlsearch = false
 set.incsearch = true

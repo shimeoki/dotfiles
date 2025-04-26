@@ -27,7 +27,6 @@ local opts = {
 	spec = require("plugman.spec"),
 	install = { colorscheme = { "catppuccin" } },
 	ui = {
-		border = "none",
 		size = { width = 0.9, height = 0.9 },
 		wrap = true,
 		backdrop = 0,

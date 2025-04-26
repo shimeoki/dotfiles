@@ -1,13 +1,10 @@
-local preset = "modern"
-local border = "rounded"
+local M = {}
 
-local opts = {
-	preset = preset,
+M.opts = {
+	preset = "modern",
 	win = {
-		border = border,
+		border = "none",
 	},
 }
 
-return {
-	opts = opts,
-}
+return M

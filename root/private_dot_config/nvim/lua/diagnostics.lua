@@ -31,7 +31,6 @@ vim.diagnostic.config({
 	},
 	float = {
 		source = true,
-		border = "rounded",
 	},
 	update_in_insert = false,
 	severity_sort = true,

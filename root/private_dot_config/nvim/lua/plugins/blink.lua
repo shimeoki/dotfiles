@@ -30,7 +30,6 @@ local completion = {
 		selection = { preselect = true, auto_insert = false },
 	},
 	menu = {
-		border = "rounded",
 		max_height = 11,
 		direction_priority = { "n", "s" },
 		draw = {
@@ -50,7 +49,6 @@ local completion = {
 	documentation = {
 		auto_show = true,
 		auto_show_delay_ms = 0,
-		window = { border = "rounded" },
 	},
 	ghost_text = { enabled = true },
 }
