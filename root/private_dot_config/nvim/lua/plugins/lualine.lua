@@ -1,5 +1,6 @@
 local options = {
 	component_separators = "",
+	section_separators = "",
 }
 
 local sub = string.sub
@@ -95,13 +96,19 @@ local status = {
 	},
 }
 
+local function macro()
+	local noice = require("noice")
+	local mode = noice.api.statusline.mode
+	return mode.get() or ""
+end
+
 local active_sections = {
 	lualine_a = position,
 	lualine_b = fileinfo,
 	lualine_c = file,
 	lualine_x = status,
 	lualine_y = git,
-	lualine_z = {},
+	lualine_z = { macro },
 }
 
 local inactive_sections = {
