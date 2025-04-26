@@ -7,6 +7,9 @@ local layout_strategy = "flex"
 local preview_width = 80
 local preview_cutoff = preview_width + preview_width / 2
 
+local api = vim.api
+local opt = vim.opt_local
+
 local horizontal = {
 	anchor = "CENTER",
 
@@ -166,10 +169,25 @@ local function opts()
 end
 
 -- enable line wrapping in preview
-vim.api.nvim_create_autocmd("User", {
+api.nvim_create_autocmd("User", {
 	pattern = "TelescopePreviewerLoaded",
 	callback = function()
 		vim.wo.wrap = true
+	end,
+})
+
+-- hack: don't use winborder setting
+-- source: https://github.com/nvim-telescope/telescope.nvim/issues/3436
+api.nvim_create_autocmd("User", {
+	pattern = "TelescopeFindPre",
+	callback = function()
+		opt.winborder = "none"
+		api.nvim_create_autocmd("WinLeave", {
+			once = true,
+			callback = function()
+				opt.winborder = "solid"
+			end,
+		})
 	end,
 })
 

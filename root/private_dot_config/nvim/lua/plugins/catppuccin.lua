@@ -24,6 +24,10 @@ local function highlights(colors)
 		NotifyINFOBorder = { fg = colors.mantle, bg = colors.mantle },
 		NotifyDEBUGBorder = { fg = colors.mantle, bg = colors.mantle },
 		NotifyTRACEBorder = { fg = colors.mantle, bg = colors.mantle },
+		-- telescope
+		TelescopeNormal = { link = "NormalFloat" },
+		TelescopeBorder = { fg = colors.mantle, bg = colors.mantle },
+		TelescopePreviewTitle = { fg = colors.mantle, bg = colors.lavender },
 		-- default split separator
 		WinSeparator = { fg = colors.base },
 	}
