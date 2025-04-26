@@ -199,6 +199,9 @@ return {
 	},
 	{
 		"rcarriga/nvim-notify",
+		opts = function()
+			return require("plugins.notify").opts
+		end,
 	},
 	{
 		"nvim-lua/plenary.nvim",
