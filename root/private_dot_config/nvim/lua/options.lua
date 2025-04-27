@@ -74,7 +74,7 @@ set.cursorline = M.cursor.highlight_line
 set.updatetime = 1000
 
 set.shortmess = "ltToOCFsI"
-set.cpoptions = "aABceF" -- warn: right now is broken in lua files
+set.cpoptions = "aABceF"
 
 g.mapleader = " "
 g.maplocalleader = " "
