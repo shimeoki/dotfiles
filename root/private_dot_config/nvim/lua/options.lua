@@ -20,7 +20,7 @@ local M = {
 	share_clipboard = true,
 }
 
-local set = vim.opt
+local set = vim.o
 
 if not M.mouse then
 	set.mouse = ""
@@ -71,7 +71,9 @@ set.splitbelow = M.split.below
 set.cursorline = M.cursor.highlight_line
 
 set.updatetime = 1000
-set.shortmess:append("sI")
+
+set.shortmess = "ltToOCFsI"
+set.cpoptions = "aABceF" -- warn: right now is broken in lua files
 
 vim.g.mapleader = " "
 vim.g.maplocalleader = " " -- subject to change
