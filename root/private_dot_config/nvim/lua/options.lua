@@ -21,6 +21,7 @@ local M = {
 }
 
 local set = vim.o
+local g = vim.g
 
 if not M.mouse then
 	set.mouse = ""
@@ -75,17 +76,26 @@ set.updatetime = 1000
 set.shortmess = "ltToOCFsI"
 set.cpoptions = "aABceF" -- warn: right now is broken in lua files
 
-vim.g.mapleader = " "
-vim.g.maplocalleader = " " -- subject to change
+g.mapleader = " "
+g.maplocalleader = " "
 
-vim.g.markdown_fenced_languages = {
+g.markdown_fenced_languages = {
 	"ts=typescript",
 }
 
 local venv_home = vim.env.VENV_HOME
 if venv_home then
 	local venv = vim.fn.expand(venv_home .. "/nvim/bin")
-	vim.g.python3_host_prog = venv .. "/python3"
+	g.python3_host_prog = venv .. "/python3"
 end
+
+vim.filetype.add({
+	pattern = {
+		[".*/.config/hypr/.*%.conf"] = "hyprlang",
+		[".*/.config/waybar/.*%.css"] = "gtkcss",
+		[".*/.config/kitty/.*%.conf"] = "kitty",
+		[".*/.chezmoiignore"] = "gitignore",
+	},
+})
 
 return M
