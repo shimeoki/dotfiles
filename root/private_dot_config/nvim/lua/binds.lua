@@ -1,136 +1,227 @@
-local M = {}
+-- info:
+-- there are binds specified in which-key format for lazy loading in one place.
+-- this file should be required() to which-key add() function.
 
-local Bind = require("bind")
-
-local std = {
-	-- change cwd
-	Bind.new("nv", "`", "cd %:p:h", "change current working directory to file's"),
-	-- file management
-	Bind.new("nv", "u", "w", "save current file"),
-	Bind.new("nv", "U", "wall", "save all files"),
-	-- split focus
-	Bind.new("nv", "h", "wincmd h", "focus left split"),
-	Bind.new("nv", "j", "wincmd j", "focus bottom split"),
-	Bind.new("nv", "k", "wincmd k", "focus top split"),
-	Bind.new("nv", "l", "wincmd l", "focus right split"),
-	-- split swap
-	Bind.new("nv", "H", "wincmd H", "swap split to left"),
-	Bind.new("nv", "J", "wincmd J", "swap split to bottom"),
-	Bind.new("nv", "K", "wincmd K", "swap split to top"),
-	Bind.new("nv", "L", "wincmd L", "swap split to right"),
-	-- buffer navigation
-	Bind.new("nv", ",", "bnext", "next buffer"),
-	Bind.new("nv", ".", "bprevious", "previous buffer"),
-	-- split resize
-	Bind.new("nv", "<c-h>", "4wincmd <", "decrease split width"),
-	Bind.new("nv", "<c-j>", "4wincmd -", "decrease split height"),
-	Bind.new("nv", "<c-k>", "4wincmd +", "increase split width"),
-	Bind.new("nv", "<c-l>", "4wincmd >", "increase split width"),
-	-- split current
-	Bind.new("nv", "'", "vsplit", "split horizontally current"),
-	Bind.new("nv", ";", "split", "split vertically current"),
-	-- split new
-	Bind.new("nv", '"', "vnew", "split horizontally new"),
-	Bind.new("nv", ":", "new", "split vertically new"),
-	-- open
-	Bind.new("nv", "<enter>", "vsplit", "open current"),
-	Bind.new("nv", "<s-enter>", "vnew", "open new"),
-	-- close
-	Bind.new("nv", "<bs>", "quit", "close current split"),
-	Bind.new("nv", "<s-bs>", "only", "close all except current split"),
-	Bind.new("nv", "<c-bs>", "bdelete", "close current buffer"),
-	-- focus relative
-	Bind.new("nv", "[", "-wincmd w", "focus previous split"),
-	Bind.new("nv", "]", "+wincmd w", "focus next split"),
-	-- swap relative
-	Bind.new("nv", "{", "wincmd R", "swap split with next"),
-	Bind.new("nv", "}", "wincmd r", "swap split with previous"),
-	-- lsp
-	Bind.new("nv", "i", "lua vim.lsp.buf.hover()", "show symbol information"),
-	Bind.new("nv", "I", "lua vim.lsp.buf.signature_help()", "show symbol signature help"),
-	Bind.new("nv", "<c-i>", "lua vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())", "toggle inlay hints"),
-	Bind.new("nv", "a", "lua vim.lsp.buf.code_action()", "list code actions"),
-	Bind.new("nv", "N", "lua vim.lsp.buf.rename()", "rename symbol"),
-	-- other lsp actions are done with telescope
-	-- comments
-	Bind.new("n", "c", 'lua vim.api.nvim_input("gcc")', "toggle comment"),
-	Bind.new("v", "c", 'lua vim.api.nvim_input("gc")', "toggle comment"),
-	-- todo: move elsewhere
-	Bind.new("nv", "<c-g>", "LazyGit", "lazygit"),
-}
-
-local yazi = {
-	Bind.new("nv", "e", "Yazi", "open yazi at the current file"),
-	Bind.new("nv", "E", "Yazi cwd", "open yazi in current working directory"),
-	Bind.new("nv", "<c-e>", "Yazi toggle", "resume last yazi session"),
-}
+local lsp = vim.lsp
+local lspb = lsp.buf
+local input = vim.api.nvim_input
 
 local t = "Telescope "
-local telescope = {
-	-- file navigation
-	Bind.new("nv", "f", t .. "find_files", "find files"),
-	Bind.new("nv", "F", t .. "live_grep", "live grep fils"),
-	-- check current or previous files
-	Bind.new("nv", "b", t .. "buffers", "list buffers"),
-	Bind.new("nv", "B", t .. "oldfiles", "list old files"),
-	-- commands
-	Bind.new("nv", "r", t .. "commands", "list commands"),
-	Bind.new("nv", "<c-r>", t .. "command_history", "show command history"),
-	-- registers
-	Bind.new("nv", "v", t .. "registers", "list registers"),
-	-- search in file
-	Bind.new("nv", "/", t .. "current_buffer_fuzzy_find", "fuzzy find in buffer"),
-	-- lsp
-	Bind.new("nv", "n", t .. "lsp_references", "list symbol references"),
-	Bind.new("nv", "d", t .. "diagnostics bufnr=0", "list buffer diagnostics"),
-	Bind.new("nv", "D", t .. "diagnostics", "list workspace diagnostics"),
-	Bind.new("nv", "s", t .. "lsp_document_symbols", "list buffer symbols"),
-	Bind.new("nv", "S", t .. "lsp_workspace_symbols", "list workspace symbols"),
-	Bind.new("nv", "t", t .. "lsp_definitions", "list symbol definitions"),
-	Bind.new("nv", "T", t .. "lsp_implementations", "list symbol implementations"),
-	Bind.new("nv", "<c-t>", t .. "lsp_type_definitions", "list symbol type definitions"),
-	-- git
-	Bind.new("nv", "g", t .. "git_commits", "list commits"),
-	Bind.new("nv", "G", t .. "git_branches", "list branches"),
-}
 
-local q = 'lua require("quarto.runner").'
-local quarto = {
-	Bind.new("n", "q", q .. "run_cell()", "run cell with quarto"),
-	Bind.new("v", "q", q .. "run_range()", "run visual range with quarto"),
-	Bind.new("nv", "Q", q .. "run_above()", "run cell and above with quarto"),
-	Bind.new("nv", "<c-q>", q .. "run_all()", "run all cells with quarto"),
-}
+--- @class Bind
+---
+--- @field [1] string key (lhs)
+--- @field no_leader? boolean
+---
+--- @field [2] string | fun(): any cmd (rhs)
+--- @field no_wrap? boolean
+---
+--- @field [3] string | fun(): string description
+---
+--- @field silent? boolean
+--- @field modes? string | string[]
 
-M.map = {
-	std = std,
-	yazi = yazi,
-	telescope = telescope,
-	quarto = quarto,
-}
+--- @param b Bind
+local function new(b)
+	local key = b[1]
+	local cmd = b[2]
+	local desc = b[3]
 
-function M.convert(tbl, format)
-	local binds = {}
-	local callback
-
-	if format == "which_key" then
-		callback = Bind.to_which_key
-	elseif format == "lazy" then
-		callback = Bind.to_lazy
+	local lhs
+	if b.no_leader then
+		lhs = key
 	else
-		-- todo: logging?
-		return binds
+		lhs = "<leader>" .. key
 	end
 
-	for _, bind in ipairs(tbl) do
-		table.insert(binds, callback(bind))
+	local rhs
+	if type(cmd) == "function" or b.no_wrap then
+		rhs = cmd
+	else
+		rhs = "<cmd>" .. cmd .. "<cr>"
 	end
 
-	return binds
+	local silent = b.silent or true
+	local modes = b.modes or { "n", "v" }
+
+	return { lhs, rhs, desc = desc, silent = silent, mode = modes }
 end
 
-for _, bind in ipairs(std) do
-	bind:apply()
-end
+return {
+	new({ "`", "cd %:p:h", "change current working directory to file's" }),
 
-return M
+	new({ "u", "w", "save current file" }),
+	new({ "U", "wall", "save all files" }),
+
+	new({ "h", "wincmd h", "focus left split" }),
+	new({ "j", "wincmd j", "focus bottom split" }),
+	new({ "k", "wincmd k", "focus top split" }),
+	new({ "l", "wincmd l", "focus right split" }),
+
+	new({ "H", "wincmd H", "swap split to left" }),
+	new({ "J", "wincmd J", "swap split to bottom" }),
+	new({ "K", "wincmd K", "swap split to top" }),
+	new({ "L", "wincmd L", "swap split to right" }),
+
+	new({ ",", "bnext", "next buffer" }),
+	new({ ".", "bprevious", "previous buffer" }),
+
+	new({ "<c-h>", "4wincmd <", "decrease split width" }),
+	new({ "<c-j>", "4wincmd -", "decrease split height" }),
+	new({ "<c-k>", "4wincmd +", "increase split width" }),
+	new({ "<c-l>", "4wincmd >", "increase split width" }),
+
+	new({ "'", "vsplit", "split horizontally current" }),
+	new({ ";", "split", "split vertically current" }),
+
+	new({ '"', "vnew", "split horizontally new" }),
+	new({ ":", "new", "split vertically new" }),
+
+	new({ "<enter>", "vsplit", "open current" }),
+	new({ "<s-enter>", "vnew", "open new" }),
+
+	new({ "<bs>", "quit", "close current split" }),
+	new({ "<s-bs>", "only", "close all except current split" }),
+	new({ "<c-bs>", "bdelete", "close current buffer" }),
+
+	new({ "[", "-wincmd w", "focus previous split" }),
+	new({ "]", "+wincmd w", "focus next split" }),
+
+	new({ "{", "wincmd R", "swap split with next" }),
+	new({ "}", "wincmd r", "swap split with previous" }),
+
+	new({
+		"i",
+		function()
+			lspb.hover()
+		end,
+		"show symbol information",
+	}),
+	new({
+		"I",
+		function()
+			lspb.signature_help()
+		end,
+		"show symbol signature help",
+	}),
+	new({
+		"<c-i>",
+		function()
+			local hints = lsp.inlay_hint
+			hints.enable(not hints.is_enabled())
+		end,
+		"toggle inlay hints",
+	}),
+	new({
+		"a",
+		function()
+			lspb.code_action()
+		end,
+		"list code actions",
+	}),
+	new({
+		"N",
+		function()
+			lspb.rename()
+		end,
+		"rename symbol",
+	}),
+
+	new({
+		"c",
+		function()
+			input("gcc")
+		end,
+		"toggle comment (normal)",
+		modes = "n",
+	}),
+	new({
+		"c",
+		function()
+			input("gc")
+		end,
+		"toggle comment (visual)",
+		modes = "v",
+	}),
+
+	new({ "e", "Yazi", "open yazi at the current file" }),
+	new({ "E", "Yazi cwd", "open yazi in current working directory" }),
+	new({ "<c-e>", "Yazi toggle", "resume last yazi session" }),
+
+	new({ "f", t .. "find_files", "find files" }),
+	new({ "F", t .. "live_grep", "live grep fils" }),
+
+	new({ "b", t .. "buffers", "list buffers" }),
+	new({ "B", t .. "oldfiles", "list old files" }),
+
+	new({ "r", t .. "commands", "list commands" }),
+	new({ "<c-r>", t .. "command_history", "show command history" }),
+
+	new({ "v", t .. "registers", "list registers" }),
+
+	new({ "/", t .. "current_buffer_fuzzy_find", "fuzzy find in buffer" }),
+	new({ "n", t .. "lsp_references", "list symbol references" }),
+
+	new({ "d", t .. "diagnostics bufnr=0", "list buffer diagnostics" }),
+	new({ "D", t .. "diagnostics", "list workspace diagnostics" }),
+	new({ "s", t .. "lsp_document_symbols", "list buffer symbols" }),
+	new({ "S", t .. "lsp_workspace_symbols", "list workspace symbols" }),
+	new({ "t", t .. "lsp_definitions", "list symbol definitions" }),
+	new({ "T", t .. "lsp_implementations", "list symbol implementations" }),
+	new({ "<c-t>", t .. "lsp_type_definitions", "list symbol type definitions" }),
+
+	new({ "g", t .. "git_commits", "list commits" }),
+	new({ "G", t .. "git_branches", "list branches" }),
+
+	new({
+		"q",
+		function()
+			require("quarto.runner").run_cell()
+		end,
+		"run cell with quarto",
+		modes = "n",
+	}),
+	new({
+		"q",
+		function()
+			require("quarto.runner").run_range()
+		end,
+		"run visual range with quarto",
+		modes = "v",
+	}),
+	new({
+		"Q",
+		function()
+			require("quarto.runner").run_above()
+		end,
+		"run cell and above with quarto",
+	}),
+	new({
+		"<c-q>",
+		function()
+			require("quarto.runner").run_all()
+		end,
+		"run all cells with quarto",
+	}),
+
+	new({
+		"<c-s-l>",
+		function()
+			local ls = require("luasnip")
+			return ls.choice_active() and ls.change_choice(1)
+		end,
+		"next luasnip choice",
+		modes = { "i", "s" },
+		no_leader = true,
+	}),
+	new({
+		"<c-s-h>",
+		function()
+			local ls = require("luasnip")
+			return ls.choice_active() and ls.change_choice(-1)
+		end,
+		"previous luasnip choice",
+		modes = { "i", "s" },
+		no_leader = true,
+	}),
+}

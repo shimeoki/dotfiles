@@ -140,25 +140,6 @@ return {
 	{
 		"L3MON4D3/LuaSnip",
 		main = "luasnip",
-		-- todo: move this or change the structure
-		keys = {
-			{
-				"<c-s-l>",
-				function()
-					local ls = require("luasnip")
-					return ls.choice_active() and ls.change_choice(1)
-				end,
-				mode = { "i", "s" },
-			},
-			{
-				"<c-s-h>",
-				function()
-					local ls = require("luasnip")
-					return ls.choice_active() and ls.change_choice(-1)
-				end,
-				mode = { "i", "s" },
-			},
-		},
 		version = "v2.*",
 		build = "make install_jsregexp",
 		dependencies = { "rafamadriz/friendly-snippets" },
@@ -213,10 +194,6 @@ return {
 			"jmbuhr/otter.nvim",
 			"nvim-treesitter/nvim-treesitter",
 		},
-		keys = function()
-			local binds = require("binds")
-			return binds.convert(binds.map.quarto, "lazy")
-		end,
 		opts = function()
 			return require("plugins.quarto").opts
 		end,
@@ -241,10 +218,6 @@ return {
 			"nvim-telescope/telescope-ui-select.nvim",
 			{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 		},
-		keys = function()
-			local binds = require("binds")
-			return binds.convert(binds.map.telescope, "lazy")
-		end,
 		config = function()
 			require("plugins.telescope").setup()
 		end,
@@ -272,18 +245,14 @@ return {
 		"folke/which-key.nvim",
 		main = "which-key",
 		event = "VeryLazy",
-		opts = function()
-			return require("plugins.whichkey").opts
+		config = function()
+			require("plugins.whichkey").setup()
 		end,
 	},
 	{
 		"mikavilpas/yazi.nvim",
 		main = "yazi",
 		event = "VeryLazy",
-		keys = function()
-			local binds = require("binds")
-			return binds.convert(binds.map.yazi, "lazy")
-		end,
 		opts = function()
 			return require("plugins.yazi").opts
 		end,
