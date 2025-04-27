@@ -48,6 +48,7 @@ local std = {
 	-- lsp
 	Bind.new("nv", "i", "lua vim.lsp.buf.hover()", "show symbol information"),
 	Bind.new("nv", "I", "lua vim.lsp.buf.signature_help()", "show symbol signature help"),
+	Bind.new("nv", "<c-i>", "lua vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())", "toggle inlay hints"),
 	Bind.new("nv", "a", "lua vim.lsp.buf.code_action()", "list code actions"),
 	Bind.new("nv", "N", "lua vim.lsp.buf.rename()", "rename symbol"),
 	-- other lsp actions are done with telescope
