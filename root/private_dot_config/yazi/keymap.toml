@@ -39,3 +39,8 @@ desc = "maximize or restore the preview pane"
 on   = "b"
 run  = 'shell "swww img "$0""'
 desc = "set hovered as the background"
+
+[[manager.prepend_keymap]]
+on   = "C"
+run  = "plugin ouch"
+desc = "compress with ouch"
