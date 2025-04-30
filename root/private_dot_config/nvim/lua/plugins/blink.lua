@@ -118,6 +118,7 @@ end
 
 local fuzzy = {
 	sorts = {
+		"exact",
 		source_sort,
 		"score",
 		"sort_text",
