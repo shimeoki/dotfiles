@@ -70,6 +70,9 @@ local function mappings()
 		["<c-u>"] = false,
 		["<c-d>"] = false,
 
+		["<c-;>"] = "select_horizontal",
+		["<c-'>"] = "select_vertical",
+
 		["J"] = "preview_scrolling_down",
 		["K"] = "preview_scrolling_up",
 		["T"] = layout.toggle_preview,
