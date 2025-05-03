@@ -48,6 +48,14 @@ local function new(b)
 end
 
 return {
+	new({
+		"<space>",
+		"<nop>",
+		"no spacebar action",
+		no_leader = true,
+		no_wrap = true,
+	}),
+
 	new({ "`", "cd %:p:h", "change current working directory to file's" }),
 
 	new({ "u", "w", "save current file" }),
