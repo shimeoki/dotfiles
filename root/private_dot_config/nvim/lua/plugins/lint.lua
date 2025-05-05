@@ -2,7 +2,7 @@ local M = {}
 
 local linters_by_ft = {
 	lua = { "luacheck" },
-	go = { "golangcilint" },
+	-- go = { "golangcilint" }, -- done by go.nvim
 	gomod = { "golangcilint" },
 	python = { "dmypy" },
 }
