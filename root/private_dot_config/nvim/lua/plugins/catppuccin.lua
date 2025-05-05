@@ -28,6 +28,8 @@ local function highlights(colors)
 		TelescopeNormal = { link = "NormalFloat" },
 		TelescopeBorder = { fg = colors.mantle, bg = colors.mantle },
 		TelescopePreviewTitle = { fg = colors.mantle, bg = colors.lavender },
+		-- molten-nvim
+		MoltenCell = { bg = colors.base },
 		-- default split separator
 		WinSeparator = { fg = colors.base },
 	}
