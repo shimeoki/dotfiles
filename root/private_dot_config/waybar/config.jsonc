@@ -151,7 +151,7 @@
 		"framerate": 144,
 		"autosens": 1,
 		"sensitivity": 3,
-		"bars": 12,
+		"bars": 24,
 		"lower_cutoff_freq": 60,
 		"higher_cutoff_freq": 20000,
 		"method": "pipewire",
