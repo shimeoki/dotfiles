@@ -126,3 +126,6 @@ alias t='btop'
 
 # gradle
 alias gw='./gradlew'
+
+# gitleaks
+alias leaks='gitleaks detect'
