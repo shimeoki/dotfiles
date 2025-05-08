@@ -152,6 +152,7 @@ return {
 		cmd = { "Mason", "MasonToolsInstall", "MasonToolsUpdate" },
 		main = "mason-tool-installer",
 		build = ":MasonToolsUpdate",
+		event = "VeryLazy",
 		dependencies = { "williamboman/mason.nvim", opts = {} },
 		opts = function()
 			return require("plugins.mason").opts
