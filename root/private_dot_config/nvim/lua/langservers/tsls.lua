@@ -7,9 +7,9 @@ local filetypes = {
 }
 
 local function vue_path()
-	local mason_registry = require("mason-registry")
-	local mason_vue = mason_registry.get_package("vue-language-server")
-	return mason_vue:get_install_path() .. "/node_modules/@vue/language-server"
+	local vue_pkg = "$MASON/packages/vue-language-server"
+	local ls_path = "/node_modules/@vue/language-server"
+	return vim.fn.expand(vue_pkg .. ls_path)
 end
 
 local function vue_plugin()
