@@ -37,7 +37,7 @@ local settings = {
 	format = { enable = false }, -- another formatter is used
 	hint = {
 		enable = true,
-		arrayIndex = "Disable",
+		arrayIndex = "Auto",
 		await = true,
 		paramName = "Literal",
 		paramType = true,
