@@ -24,11 +24,19 @@ local function accept_idx(idx)
 	end
 end
 
+local trigger = {
+	prefetch_on_insert = true,
+	show_in_snippet = true,
+	show_on_keyword = true,
+	show_on_trigger_character = true,
+}
+
 local completion = {
 	keyword = { range = "full" },
 	list = {
 		selection = { preselect = true, auto_insert = false },
 	},
+	trigger = trigger,
 	menu = {
 		max_height = 11,
 		direction_priority = { "n", "s" },
