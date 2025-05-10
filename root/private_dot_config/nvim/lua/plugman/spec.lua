@@ -1,3 +1,5 @@
+local not_opening_a_file = vim.fn.argc(-1) == 0
+
 return {
 	{
 		"windwp/nvim-autopairs",
@@ -94,7 +96,7 @@ return {
 	{
 		"GCBallesteros/jupytext.nvim",
 		main = "jupytext",
-		lazy = vim.fn.argc(-1) == 0,
+		lazy = not_opening_a_file,
 		cmd = { "NewNotebook" },
 		event = { "BufEnter" },
 		ft = { "ipynb", "markdown", "json" },
@@ -152,6 +154,7 @@ return {
 		cmd = { "Mason", "MasonToolsInstall", "MasonToolsUpdate" },
 		main = "mason-tool-installer",
 		build = ":MasonToolsUpdate",
+		lazy = not_opening_a_file,
 		event = "VeryLazy",
 		dependencies = { "williamboman/mason.nvim", opts = {} },
 		opts = function()
