@@ -1,5 +1,5 @@
 local function show_except_snippets(cmp)
-	cmp.show({ providers = { "lsp", "path", "buffer" } })
+	cmp.show({ providers = { "lsp", "path" } })
 end
 
 local function show_only_snippets(cmp)
@@ -7,7 +7,7 @@ local function show_only_snippets(cmp)
 end
 
 local function show_all(cmp)
-	cmp.show({ providers = { "lsp", "snippets", "path", "buffer" } })
+	cmp.show({ providers = { "lsp", "snippets", "path" } })
 end
 
 local function text_idx(ctx)
