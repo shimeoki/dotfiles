@@ -15,6 +15,7 @@ local ensure_installed = {
 	"hyprls",
 	"gopls",
 	"dockerfile-language-server",
+	"marksman",
 	-- debuggers
 	"delve",
 	-- linters

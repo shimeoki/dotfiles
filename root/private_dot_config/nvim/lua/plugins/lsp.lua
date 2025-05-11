@@ -47,6 +47,7 @@ function M.setup()
 	setup("hyprls")
 	setup("gopls", require("langservers.gopls").opts)
 	setup("dockerls")
+	setup("marksman")
 end
 
 return M
