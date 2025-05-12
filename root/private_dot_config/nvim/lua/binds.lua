@@ -60,6 +60,7 @@ return {
 
 	new({ "u", "w", "save current file" }),
 	new({ "U", "wall", "save all files" }),
+	new({ "x", "wqall", "save all files and quit" }),
 
 	new({ "h", "wincmd h", "focus left split" }),
 	new({ "j", "wincmd j", "focus bottom split" }),
