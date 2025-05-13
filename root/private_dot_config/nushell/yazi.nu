@@ -10,3 +10,5 @@ def --env yazi-cwd [...args] {
 
 	rm -fp $tmp
 }
+
+alias y = yazi-cwd

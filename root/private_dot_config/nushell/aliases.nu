@@ -104,8 +104,6 @@ alias t = btop
 # todo: could be a function with git-rev-parse
 alias gw = ./gradlew
 
-alias y = yazi-cwd
-
 # todo: could be a function with dynamic venv path
 alias venv = overlay use .venv/bin/activate.nu
 
