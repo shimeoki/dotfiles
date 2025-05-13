@@ -1,4 +1,4 @@
-#!/bin/env sh
+#!/usr/bin/env sh
 
 # modified (simplified) version of
 # https://github.com/LGFae/swww/blob/main/example_scripts/swww_randomize.sh

@@ -1,22 +1,18 @@
-#!/bin/env zsh
+#!/usr/bin/env zsh
 
-export ZSH_RC="$ZDOTDIR/rc"
+. "$ZDOTDIR/zinit.zsh"
+. "$ZDOTDIR/options.zsh"
+. "$ZDOTDIR/completions.zsh"
+. "$ZDOTDIR/history.zsh"
 
-# file matching
-setopt EXTENDED_GLOB
-setopt NOMATCH
+. "$ZDOTDIR/deattach.sh"
+. "$ZDOTDIR/eza-tree.sh"
+. "$ZDOTDIR/venv.sh"
+. "$ZDOTDIR/up.sh"
 
-# report status of background
-setopt NOTIFY
+. "$ZDOTDIR/oh-my-posh.zsh"
+. "$ZDOTDIR/yazi.zsh"
+. "$ZDOTDIR/fzf.zsh"
+. "$ZDOTDIR/zoxide.zsh"
 
-# set vi mode
-bindkey -v
-
-. "$ZSH_RC/zinit.zsh"
-. "$ZSH_RC/aliases.sh"
-. "$ZSH_RC/completion.zsh"
-. "$ZSH_RC/history.zsh"
-. "$ZSH_RC/path.zsh"
-
-. "$ZDOTDIR/functions.sh"
-. "$ZDOTDIR/programs.sh"
+. "$ZDOTDIR/aliases.sh"

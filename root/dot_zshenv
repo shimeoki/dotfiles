@@ -1,6 +1,5 @@
-#!/bin/env sh
+#!/usr/bin/env zsh
 
-# xdg user directories
 # source: https://wiki.archlinux.org/title/XDG_Base_Directory#User_directories
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
@@ -10,7 +9,6 @@ export XDG_STATE_HOME="$HOME/.local/state"
 # todo: set EDITOR to nano in non-graphical sessions
 # similar with BROWSER
 
-# default programs
 # source: https://wiki.archlinux.org/title/Environment_variables#Default_programs
 export SHELL='zsh'
 export PAGER='less'
@@ -25,22 +23,23 @@ export NOTES='obsidian'
 export WALLPAPER_CLIENT='swww'
 export WALLPAPER_SERVER='swww-daemon'
 
-# zsh config directory
 # source: https://wiki.archlinux.org/title/Zsh#Startup/Shutdown_files
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 
-# gpg config directory
 export GNUPGHOME="$XDG_CONFIG_HOME/gnupg"
 
-# hypr
-export HYPR_CONFIG_HOME="$XDG_CONFIG_HOME/hypr"
-
-# lf config directory
 export LF_CONFIG_HOME="$XDG_CONFIG_HOME"
 
-# xcursor path
+export EZA_ICONS_AUTO=1
+
+# source: https://wiki.archlinux.org/title/GnuPG#Configure_pinentry_to_use_the_correct_TTY
+export GPG_TTY="$TTY"
+
 # source: https://wiki.archlinux.org/title/Cursor_themes#Environment_variable
 export XCURSOR_PATH="${XCURSOR_PATH}:${XDG_DATA_HOME}/icons"
 
-# oh-my-posh config directory
 export OMP_CONFIG_HOME="$XDG_CONFIG_HOME/oh-my-posh"
+
+path+="$HOME/.cargo/bin"
+path+="$HOME/go/bin"
+path+="$ZDOTDIR/scripts"

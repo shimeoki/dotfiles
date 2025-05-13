@@ -1,4 +1,4 @@
-#!/bin/env sh
+#!/usr/bin/env zsh
 
 # launch hyprland on start
 if [ -z "$WAYLAND_DISPLAY" ] && [ "$XDG_VTNR" -eq 1 ]; then
