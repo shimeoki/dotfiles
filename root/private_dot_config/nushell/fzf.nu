@@ -12,7 +12,7 @@ $env.FZF_DEFAULT_OPTS = (
 const source_cmd = 'fd --follow --hidden --exclude .git'
 
 const dir_preview = 'eza --color always --tree {} | head -200'
-const dir_cmd = $"j \(
+const dir_cmd = $"cd \(
     ($source_cmd) --type dir | fzf --preview '($dir_preview)' \)"
 
 const file_preview = 'bat --color always --number --line-range :200 {}'
