@@ -69,8 +69,3 @@ $env.TRANSIENT_PROMPT_INDICATOR = '$ '
 $env.TRANSIENT_PROMPT_INDICATOR_VI_NORMAL = ': '
 $env.TRANSIENT_PROMPT_INDICATOR_VI_INSERT = '> '
 $env.TRANSIENT_PROMPT_MULTILINE_INDICATOR = ''
-
-# zoxide
-# source: https://github.com/ajeetdsouza/zoxide#installation
-
-zoxide init nushell --cmd j | save -f ~/.zoxide.nu

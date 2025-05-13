@@ -1,14 +1,8 @@
 # order is important
-source ($nu.default-config-dir | path join 'themes' 'catppuccin-mocha.nu')
-source ($nu.default-config-dir | path join 'yazi.nu')
-source ($nu.default-config-dir | path join 'fzf.nu')
-source ($nu.default-config-dir | path join 'aliases.nu')
+source themes/catppuccin-mocha.nu
+source fzf.nu
+source yazi.nu
+source zoxide.nu
+source aliases.nu
 
-# modules
-
-# fix: lsp is angry
-use task.nu
-
-# zoxide
-
-source ~/.zoxide.nu
+use task.nu # fix: langserver is angry
