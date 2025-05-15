@@ -24,6 +24,7 @@ local highlighters = {
 	"vue",
 	"vim",
 	"regex",
+	"kotlin",
 }
 
 local opts = {
