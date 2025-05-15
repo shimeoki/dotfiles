@@ -15,13 +15,15 @@ desc = "open shell here"
 
 [[manager.prepend_keymap]]
 on   = "<C-n>"
-run  = 'shell "ripdrag "$@" -x 2>/dev/null &" --confirm'
+run  = '''
+    shell --confirm -- ripdrag "$@" -x 2>/dev/null &
+'''
 desc = "drag and drop on selected files"
 
 [[manager.prepend_keymap]]
 on   = [ "g", "r" ]
 run  = '''
-    shell 'ya emit cd "$(git rev-parse --show-toplevel)"'
+    shell -- ya emit cd "$(git rev-parse --show-toplevel)"
 '''
 desc = "back to the root of the current git repository"
 
@@ -37,7 +39,9 @@ desc = "maximize or restore the preview pane"
 
 [[manager.prepend_keymap]]
 on   = "b"
-run  = 'shell "swww img "$0""'
+run  = '''
+    shell -- swww img "$0"
+'''
 desc = "set hovered as the background"
 
 [[manager.prepend_keymap]]
