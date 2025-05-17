@@ -10,6 +10,12 @@ local value_err = s("vr", {
 	i(0),
 })
 
+local value_ok = s("vk", {
+	i(1, "v"),
+	t(", ok := "),
+	i(0),
+})
+
 local array = s("arr", {
 	t("["),
 	i(1, "..."),
@@ -112,6 +118,7 @@ local logical_not = s("not", {
 return {
 	value,
 	value_err,
+	value_ok,
 	array,
 	value_array,
 	slice,
