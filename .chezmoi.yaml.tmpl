@@ -1,0 +1,17 @@
+{{- $gitUserName := promptStringOnce . "git.user.name"
+"git user name" -}}
+{{- $gitUserEmail := promptStringOnce . "git.user.email"
+"git user email" -}}
+{{- $gitUserSigningkey := promptStringOnce . "git.user.signingkey"
+"git user signingkey" -}}
+{{- $gitCommitGpgsign := promptBoolOnce . "git.commit.gpgsign"
+"git commit gpgsign" -}}
+
+data:
+    git:
+        user:
+            name: {{ $gitUserName }}
+            email: {{ $gitUserEmail }}
+            signingkey: {{ $gitUserSigningkey }}
+        commit:
+            gpgsign: {{ $gitCommitGpgsign }}
