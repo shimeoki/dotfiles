@@ -1,14 +1,14 @@
 [user]
-	name = shimeoki
-	email = shimeoki@gmail.com
-	signingkey = 2B092E2DCA05866B
+	name = {{ .git.user.name }}
+	email = {{ .git.user.email }}
+	signingkey = {{ .git.user.signingkey }}
 [init]
 	defaultBranch = main
 [core]
 	editor = nvim
 	pager = delta
 [commit]
-	gpgsign = true
+	gpgsign = {{ .git.commit.gpgsign }}
 	verbose = true
 [interactive]
 	diffFilter = delta --color-only
