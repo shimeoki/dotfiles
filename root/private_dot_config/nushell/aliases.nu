@@ -57,7 +57,7 @@ alias gp = git push
 alias gpa = git push --all
 alias gpt = git push --tags
 alias gt = git tag
-alias gtl = git tag --list
+alias gtn = git tag -n
 alias gta = git tag --annotate
 alias gtd = git tag --delete
 alias gm = git merge
@@ -66,7 +66,6 @@ alias gf = git fetch
 
 alias hx = helix
 
-# kitty
 alias icat = kitten icat
 alias s = kitten ssh
 
@@ -90,10 +89,8 @@ alias wific = nmcli device wifi connect
 alias wifir = nmcli device wifi rescan
 alias wifil = nmcli device wifi list
 
-# cd / zoxide
 alias jj = cd -
 
-# hyprland
 alias hlr = hyprctl reload
 alias hle = hyprctl dispatch exec
 alias hlm = hyprctl monitors
