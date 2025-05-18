@@ -1,14 +1,16 @@
 [user]
 	name = {{ .git.user.name }}
 	email = {{ .git.user.email }}
-	signingkey = {{ .git.user.signingkey }}
+	signingKey = {{ .git.user.signingkey }}
 [init]
 	defaultBranch = main
 [core]
 	editor = nvim
 	pager = delta
+	whitespace = error
+	preloadIndex = true
 [commit]
-	gpgsign = {{ .git.commit.gpgsign }}
+	gpgSign = {{ .git.commit.gpgsign }}
 	verbose = true
 [interactive]
 	diffFilter = delta --color-only
@@ -18,16 +20,19 @@
 	features = catppuccin-mocha
 	side-by-side = true
 [merge]
-	conflictstyle = zdiff3
+	conflictStyle = zdiff3
 	ff = false
 [diff]
 	colorMoved = default
 	algorithm = histogram
 	submodule = log
+	renames = copies
 [include]
 	path = ~/.config/delta/themes/catppuccin-mocha.gitconfig
 [status]
-	submodulesummary = true
+	branch = true
+	showStash = true
+	submoduleSummary = true
 [submodule]
 	recurse = true
 [transfer]
@@ -39,10 +44,15 @@
 	fsckObjects = true
 [log]
 	date = iso
+	abbrevCommit = true
 [branch]
 	sort = -committerdate
+[push]
+	autoSetupRemote = true
+	default = current
+	followTags = true
 [pull]
 	ff = only
 [tag]
-	gpgsign = true
+	gpgSign = true
 	sort = -taggerdate
