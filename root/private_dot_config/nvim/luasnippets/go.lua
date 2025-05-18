@@ -115,6 +115,46 @@ local logical_not = s("not", {
 	t("!"),
 })
 
+local even = s("even", {
+	i(1, "v"),
+	t("%2 == 0"),
+	i(0),
+})
+
+local odd = s("odd", {
+	i(1, "v"),
+	t("%2 != 0"),
+	i(0),
+})
+
+local if_nil = s("ifn", {
+	t("if "),
+	i(1, "v"),
+	t({ " == nil {", "\t" }),
+	i(0),
+	t({ "", "}" }),
+})
+
+local if_zero = s("ifz", {
+	t("if "),
+	i(1, "v"),
+	t({ " == 0 {", "\t" }),
+	i(0),
+	t({ "", "}" }),
+})
+
+local return_err = s("rr", {
+	t('return nil, errors.New("'),
+	i(0),
+	t('")'),
+})
+
+local return_nil = s("rn", {
+	t("return "),
+	i(0, "v"),
+	t(", nil"),
+})
+
 return {
 	value,
 	value_err,
@@ -133,4 +173,10 @@ return {
 	logical_and,
 	logical_or,
 	logical_not,
+	even,
+	odd,
+	if_nil,
+	if_zero,
+	return_err,
+	return_nil,
 }
