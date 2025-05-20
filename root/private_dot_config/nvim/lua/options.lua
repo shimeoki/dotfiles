@@ -76,6 +76,8 @@ set.updatetime = 1000
 set.shortmess = "ltToOCFsI"
 set.cpoptions = "aABceF"
 
+set.undofile = true
+
 g.mapleader = " "
 g.maplocalleader = " "
 
