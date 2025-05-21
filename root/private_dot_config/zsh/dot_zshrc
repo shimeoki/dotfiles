@@ -9,6 +9,7 @@
 . "$ZDOTDIR/eza-tree.sh"
 . "$ZDOTDIR/venv.sh"
 . "$ZDOTDIR/up.sh"
+. "$ZDOTDIR/proxy.sh"
 
 . "$ZDOTDIR/oh-my-posh.zsh"
 . "$ZDOTDIR/yazi.zsh"
