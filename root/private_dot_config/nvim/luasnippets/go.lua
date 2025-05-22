@@ -155,6 +155,10 @@ local return_nil = s("rn", {
 	t(", nil"),
 })
 
+local not_implemented = s("nimpl", {
+	t('panic("not implemented") // todo: implement'),
+})
+
 return {
 	value,
 	value_err,
@@ -179,4 +183,5 @@ return {
 	if_zero,
 	return_err,
 	return_nil,
+	not_implemented,
 }
