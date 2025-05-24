@@ -16,6 +16,7 @@ gui:
 
     nerdFontsVersion: 3
     showFileIcons: true
+    showFileTree: false
 
     screenMode: half
     splitDiff: auto
