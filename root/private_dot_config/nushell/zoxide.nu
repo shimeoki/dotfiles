@@ -35,5 +35,6 @@ def --env --wrapped __zoxide_zi [...rest:string] {
   cd $'(zoxide query --interactive -- ...$rest | str trim -r -c "\n")'
 }
 
-alias j = __zoxide_z
+alias j  = __zoxide_z
 alias ji = __zoxide_zi
+alias jj = cd -

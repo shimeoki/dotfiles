@@ -91,8 +91,6 @@ alias wific = nmcli device wifi connect
 alias wifir = nmcli device wifi rescan
 alias wifil = nmcli device wifi list
 
-alias jj = cd -
-
 alias hlr = hyprctl reload
 alias hle = hyprctl dispatch exec
 alias hlm = hyprctl monitors
