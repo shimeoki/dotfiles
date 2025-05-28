@@ -66,8 +66,6 @@ alias gm = git merge
 alias gmf = git merge --ff
 alias gf = git fetch
 
-alias hx = helix
-
 alias icat = kitten icat
 alias s = kitten ssh
 
