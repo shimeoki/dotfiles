@@ -1,13 +1,5 @@
-$env.FZF_DEFAULT_OPTS = (
-    " --color bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8" +
-    " --color fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc" +
-    " --color marker:#b4befe,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8" +
-    " --color selected-bg:#45475a" +
-    " --multi" +
-    " --bind J:preview-half-page-down,K:preview-half-page-up,T:toggle-preview" +
-    " --style full --reverse" +
-    " --preview-window 'right,60%,wrap,<80(down,50%,wrap)'"
-)
+# exposes two keybindings and FZF_DEFAULT_OPTS, so can be used like
+# 'use fzf.nu'.
 
 const source_cmd = 'fd --follow --hidden --exclude .git'
 
@@ -43,4 +35,20 @@ const dir = {
     }
 }
 
-$env.config.keybindings = $env.config.keybindings | append [$file $dir]
+const opts = '
+--color bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8
+--color fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc
+--color marker:#b4befe,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8
+--color selected-bg:#45475a
+--multi
+--bind J:preview-half-page-down,K:preview-half-page-up,T:toggle-preview
+--style full --reverse
+--preview-window "right,60%,wrap,<80(down,50%,wrap)"
+' | str replace "\n" ' '
+
+export-env {
+    $env.config.keybindings = $env.config.keybindings
+    | append [$file $dir]
+
+    $env.FZF_DEFAULT_OPTS = $opts
+}
