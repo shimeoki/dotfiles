@@ -4,5 +4,5 @@ source history.nu
 source fzf.nu
 source yazi.nu
 source up.nu
-source zoxide.nu
+use zoxide.nu *
 source aliases.nu
