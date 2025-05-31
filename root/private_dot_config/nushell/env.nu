@@ -1,3 +1,5 @@
+use prompt.nu
+
 # custom
 
 $env.VENV_HOME = '~/.venv'
@@ -49,23 +51,3 @@ $env.config.use_ansi_coloring = true
 
 $env.config.footer_mode = 'auto'
 $env.config.table.mode = 'rounded'
-
-# prompt
-
-# source: https://github.com/nushell/nushell/blob/main/crates/nu-utils/src/default_files/default_env.nu
-# source: https://github.com/nushell/nu_scripts/blob/main/sourced/cool-oneliners/pwd-short.nu
-
-$env.PROMPT_COMMAND = { $env.PWD | str replace $nu.home-path '~' }
-$env.PROMPT_COMMAND_RIGHT = ''
-$env.PROMPT_INDICATOR = " \n$ "
-$env.PROMPT_INDICATOR_VI_NORMAL = " \n: "
-$env.PROMPT_INDICATOR_VI_INSERT = " \n> "
-$env.PROMPT_MULTILINE_INDICATOR = '~ '
-# hack: https://github.com/nushell/reedline/issues/707
-
-$env.TRANSIENT_PROMPT_COMMAND = ''
-$env.TRANSIENT_PROMPT_COMMAND_RIGHT = ''
-$env.TRANSIENT_PROMPT_INDICATOR = '$ '
-$env.TRANSIENT_PROMPT_INDICATOR_VI_NORMAL = ': '
-$env.TRANSIENT_PROMPT_INDICATOR_VI_INSERT = '> '
-$env.TRANSIENT_PROMPT_MULTILINE_INDICATOR = ''
