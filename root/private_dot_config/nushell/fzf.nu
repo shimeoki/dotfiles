@@ -47,8 +47,7 @@ const opts = '
 ' | str replace "\n" ' '
 
 export-env {
-    $env.config.keybindings = $env.config.keybindings
-    | append [$file $dir]
+    $env.config.keybindings ++= [$file $dir]
 
     $env.FZF_DEFAULT_OPTS = $opts
 }

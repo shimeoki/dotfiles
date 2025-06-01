@@ -1,7 +1,7 @@
-def --env yazi-cwd [...args]: nothing -> nothing {
+def --env --wrapped yazi-cwd [...rest: string]: nothing -> nothing {
 	let tmp = (mktemp -t "yazi-cwd.XXXXXX")
 
-	yazi ...$args --cwd-file $tmp
+	yazi --cwd-file $tmp -- ...$rest | str trim -r -c "\n"
 
 	let cwd = (open $tmp)
 	if $cwd != "" and $cwd != $env.PWD {

@@ -3,45 +3,47 @@
 
 # source: https://github.com/ajeetdsouza/zoxide
 
-export-env {
-  $env.config = (
-    $env.config?
+def trim []: string -> string { $in | str trim -r -c "\n" }
+
+def wrap-path [segments: list<string>]: nothing -> string {
+    match $segments {
+        [] => { '~' },
+        ['-'] => { '-' },
+        [$arg] if ($arg | path type) == 'dir' => { $arg }
+        _ => { zoxide query --exclude $env.PWD -- ...$segments | trim }
+    }
+}
+
+def --env --wrapped zoxide-z [...rest: string]: nothing -> nothing {
+    cd (wrap-path $rest)
+}
+
+def --env --wrapped zoxide-zi [...rest: string]: nothing -> nothing {
+    cd $'(zoxide query --interactive -- ...$rest | trim)'
+}
+
+def --env init-hooks []: nothing -> nothing {
+    $env.config = $env.config?
     | default {}
     | upsert hooks { default {} }
     | upsert hooks.env_change { default {} }
     | upsert hooks.env_change.PWD { default [] }
-  )
+}
 
-  let __zoxide_hooked = (
+def hooked []: nothing -> bool { (
     $env.config.hooks.env_change.PWD
-    | any { try { get __zoxide_hook } catch { false } }
-  )
+    | any { try { get zoxide } catch { false } }
+) }
 
-  if not $__zoxide_hooked {
-    $env.config.hooks.env_change.PWD = (
-        $env.config.hooks.env_change.PWD | append {
-            __zoxide_hook: true,
-            code: {|_, dir| zoxide add -- $dir }
-        }
-    )
-  }
+def --env hook []: nothing -> nothing {
+    $env.config.hooks.env_change.PWD ++= [{
+        zoxide: true,
+        code: {|_, dir| zoxide add -- $dir }
+    }]
 }
 
-def --env --wrapped __zoxide_z [...rest: string] {
-  let path = match $rest {
-    [] => { '~' },
-    ['-'] => { '-' },
-    [$arg] if ($arg | path type) == 'dir' => { $arg }
-    _ => { zoxide query --exclude $env.PWD -- ...$rest | str trim -r -c "\n" }
-  }
+export-env { init-hooks; if not (hooked) { hook } }
 
-  cd $path
-}
-
-def --env --wrapped __zoxide_zi [...rest:string] {
-  cd $'(zoxide query --interactive -- ...$rest | str trim -r -c "\n")'
-}
-
-export alias j  = __zoxide_z
-export alias ji = __zoxide_zi
+export alias j  = zoxide-z
+export alias ji = zoxide-zi
 export alias jj = cd -

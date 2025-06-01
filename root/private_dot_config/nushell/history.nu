@@ -16,14 +16,14 @@ const hint_word_complete = {
     event: { send: HistoryHintWordComplete }
 }
 
-export-env {
-    $env.config.keybindings = $env.config.keybindings
-    | append [$hint_complete $hint_word_complete]
+const history = {
+    file_format:   'sqlite'
+    max_size:      1_000_000
+    sync_on_enter: true
+    isolation:     false
+}
 
-    $env.config.history = {
-        file_format:   'sqlite'
-        max_size:      1_000_000
-        sync_on_enter: true
-        isolation:     false
-    }
+export-env {
+    $env.config.keybindings ++= [$hint_complete $hint_word_complete]
+    $env.config.history = $history
 }
