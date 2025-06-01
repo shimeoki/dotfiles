@@ -1,4 +1,4 @@
-def --env yazi-cwd [...args] {
+def --env yazi-cwd [...args]: nothing -> nothing {
 	let tmp = (mktemp -t "yazi-cwd.XXXXXX")
 
 	yazi ...$args --cwd-file $tmp
@@ -11,4 +11,4 @@ def --env yazi-cwd [...args] {
 	rm -fp $tmp
 }
 
-alias y = yazi-cwd
+export alias y = yazi-cwd
