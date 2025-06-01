@@ -1,5 +1,5 @@
 # order is important
-source themes/catppuccin-mocha.nu
+use themes/catppuccin-mocha.nu
 use fzf.nu
 use yazi.nu *
 use zoxide.nu *
