@@ -52,3 +52,5 @@ export-env {
 
     $env.FZF_DEFAULT_OPTS = $opts
 }
+
+export alias f = fzf

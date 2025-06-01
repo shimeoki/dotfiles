@@ -30,8 +30,6 @@ alias lta = eza --tree --all
 alias ff = fastfetch
 def cf [] { clear; fastfetch }
 
-alias f = fzf
-
 alias g = git
 alias ga = git add
 alias gac = git add .
