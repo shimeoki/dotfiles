@@ -23,7 +23,7 @@ def prompt [] {
 # hack: https://github.com/nushell/reedline/issues/707
 
 export-env {
-    $env.PROMPT_COMMAND            = { prompt }
+    $env.PROMPT_COMMAND             = { prompt }
     $env.PROMPT_COMMAND_RIGHT       = ''
     $env.PROMPT_INDICATOR           = " \n$ "
     $env.PROMPT_INDICATOR_VI_NORMAL = " \n: "
