@@ -1,5 +1,6 @@
-# exposes two keybindings and FZF_DEFAULT_OPTS, so can be used like
-# 'use fzf.nu'.
+# module for fzf keybindings and options.
+# this file should be imported as 'use fzf.nu *' to import aliases.
+# it also exports some environment variables.
 
 const source_cmd = 'fd --follow --hidden --exclude .git'
 

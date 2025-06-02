@@ -1,5 +1,7 @@
-# module should be used as 'use zoxide.nu *' to import aliases.
-# aliases and some environment variables are only exported symbols.
+# module for zoxide usage in nushell.
+# it's a rewrite of standard (official) zoxide script for nushell.
+# this file should be imported as 'use zoxide.nu *' to import aliases.
+# it also exports some environment variables to setup hooks.
 
 # source: https://github.com/ajeetdsouza/zoxide
 

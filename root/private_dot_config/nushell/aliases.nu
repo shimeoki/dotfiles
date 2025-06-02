@@ -1,3 +1,6 @@
+# file with common aliases or custom functions that are used like aliases.
+# this file should be sourced, because there are no export keywords.
+
 alias b   = bat
 alias bn  = bat --number
 alias bnl = bat --number --line-range

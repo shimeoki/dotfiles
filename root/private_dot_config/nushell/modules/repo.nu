@@ -1,3 +1,11 @@
+# module for git repositories related actions.
+# it uses a STORE in the system (by default, ~/code/repos) to
+# store all repositories in the following layout:
+# STORE/owner/name
+# based on this layout, the module provides commands and completions for
+# the repositories.
+# recommended to import as 'use repo.nu' to set 'repo' as the prefix
+
 const DEFAULT_DOMAIN = 'github.com'
 const DEFAULT_TYPE   = 'ssh'
 

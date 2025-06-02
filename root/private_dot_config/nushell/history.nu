@@ -1,3 +1,7 @@
+# module for history settings and keybindings.
+# this file should be imported as 'use history.nu []', because the only
+# exported symbols are environment variables (including keybindings).
+
 const modes = [vi_normal vi_insert]
 
 const hint_complete = {

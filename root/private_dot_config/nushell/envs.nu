@@ -1,3 +1,8 @@
+# file with common environment variables.
+# this file is not 'env.nu', because otherwise this file will be loaded early
+# by nushell.
+# this file should be sourced, because envs are not in 'export-env' block.
+
 $env.PATH ++= ['~/.cargo/bin' '~/go/bin']
 
 $env.VENV_HOME = '~/.venv'

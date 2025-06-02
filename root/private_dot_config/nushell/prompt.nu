@@ -1,8 +1,12 @@
+# module for the prompt.
+# this file should be imported as 'use prompt.nu []', because the only exported
+# symbols are envs.
+
 # source: https://github.com/nushell/nushell/blob/main/crates/nu-utils/src/default_files/default_env.nu
 
 # source: https://github.com/nushell/nu_scripts/blob/main/sourced/cool-oneliners/pwd-short.nu
 def 'prompt pwd' [] {
-    let out = ($env.PWD | str replace $nu.home-path '~')
+    let out: string = ($env.PWD | str replace $nu.home-path '~')
     return $"(ansi green)($out)(ansi reset)"
 }
 
