@@ -1,87 +1,83 @@
-alias b = bat
-alias bn = bat --number
+alias b   = bat
+alias bn  = bat --number
 alias bnl = bat --number --line-range
-alias bp = bat --plain
+alias bp  = bat --plain
 alias bpl = bat --plain --line-range
-alias bl = bat --line-range
+alias bl  = bat --line-range
+
 alias h = batman
 
-alias cz = chezmoi
-alias czz = chezmoi apply
-alias czj = chezmoi cd
-alias cza = chezmoi add
+alias cz   = chezmoi
+alias czz  = chezmoi apply
+alias czj  = chezmoi cd
+alias cza  = chezmoi add
 alias czac = chezmoi add .
-alias czd = chezmoi diff
-alias czs = chezmoi status
+alias czd  = chezmoi diff
+alias czs  = chezmoi status
 
 alias c = clear
 
 alias e = run-external $env.EDITOR
 alias v = run-external $env.VISUAL
 
-alias l = eza
-alias lo = eza --oneline
-alias la = eza --all
-alias ll = eza --long
+alias l   = eza
+alias lo  = eza --oneline
+alias la  = eza --all
+alias ll  = eza --long
 alias lla = eza --long --all
-alias lt = eza --tree
+alias lt  = eza --tree
 alias lta = eza --tree --all
 
 alias ff = fastfetch
 def cf [] { clear; fastfetch }
 
-alias g = git
-alias ga = git add
-alias gac = git add .
-alias gg = git status
-alias ggs = git status --short
-alias gs = git switch
-alias gsc = git switch --create
-alias gr = git restore
-alias gb = git branch
-alias gba = git branch --all
-alias gbm = git branch --move
-alias gbd = git branch --delete
-alias gl = git log
-alias gls = git shortlog
-alias glg = git log --graph
-alias gla = git log --all
+alias g    = git
+alias ga   = git add
+alias gac  = git add .
+alias gg   = git status
+alias ggs  = git status --short
+alias gs   = git switch
+alias gsc  = git switch --create
+alias gr   = git restore
+alias gb   = git branch
+alias gba  = git branch --all
+alias gbm  = git branch --move
+alias gbd  = git branch --delete
+alias gl   = git log
+alias gls  = git shortlog
+alias glg  = git log --graph
+alias gla  = git log --all
 alias glga = git log --graph --all
-alias gd = git diff
-alias gdc = git diff --cached
-alias gdh = git diff HEAD
-alias gc = git commit
-alias gca = git commit --all
-alias gp = git push
-alias gpa = git push --all
-alias gpt = git push --tags
-alias gu = git pull
-alias gt = git tag
-alias gtn = git tag -n
-alias gta = git tag --annotate
-alias gtd = git tag --delete
-alias gm = git merge
-alias gmf = git merge --ff
-alias gf = git fetch
+alias gd   = git diff
+alias gdc  = git diff --cached
+alias gdh  = git diff HEAD
+alias gc   = git commit
+alias gca  = git commit --all
+alias gp   = git push
+alias gpa  = git push --all
+alias gpt  = git push --tags
+alias gu   = git pull
+alias gt   = git tag
+alias gtn  = git tag -n
+alias gta  = git tag --annotate
+alias gtd  = git tag --delete
+alias gm   = git merge
+alias gmf  = git merge --ff
+alias gf   = git fetch
 
 alias icat = kitten icat
-alias s = kitten ssh
+alias s    = kitten ssh
 
 alias lg = lazygit
 alias lc = lazydocker
 
 alias nv = nvim
 
-alias pm = yay
+alias pm  = yay
 alias pms = yay --sync
 alias pml = yay --query
 alias pmi = yay --query --info
 alias pmr = yay --remove --recursive
-
-alias waybar-toggle = killall -SIGUSR1 waybar
-alias waybar-reload = killall -SIGUSR2 waybar
-
-alias sbg = swww img
 
 alias wific = nmcli device wifi connect
 alias wifir = nmcli device wifi rescan
