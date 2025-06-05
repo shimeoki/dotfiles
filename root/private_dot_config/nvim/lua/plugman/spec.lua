@@ -58,6 +58,7 @@ return {
 	{
 		"ray-x/go.nvim",
 		main = "go",
+		cond = false, -- info: depending on old treesitter
 		ft = { "go", "gomod" },
 		build = ':lua require("go.install").update_all()',
 		opts = function()
