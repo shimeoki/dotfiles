@@ -1,3 +1,7 @@
+local M = {}
+
+local ts = vim.treesitter
+
 local highlighters = {
 	"lua",
 	"go",
@@ -27,20 +31,20 @@ local highlighters = {
 	"kotlin",
 }
 
-local opts = {
-	ensure_installed = highlighters,
-	highlight = {
-		enable = true,
-		additional_vim_regex_highlighting = false,
-	},
-}
-
-local function config()
-	require("nvim-treesitter.configs").setup(opts)
-
-	vim.treesitter.language.register("css", "gtkcss")
+local function setup_gtkcss()
+	ts.language.register("css", { "gtkcss" })
+	vim.api.nvim_create_autocmd("FileType", {
+		pattern = { "gtkcss" },
+		callback = function()
+			ts.start()
+		end,
+	})
 end
 
-return {
-	setup = config,
-}
+function M.setup()
+	require("nvim-treesitter").install(highlighters)
+
+	setup_gtkcss()
+end
+
+return M

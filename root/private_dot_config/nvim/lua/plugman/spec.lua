@@ -237,13 +237,14 @@ return {
 	},
 	{
 		"nvim-treesitter/nvim-treesitter",
-		event = { "BufReadPost", "BufNewFile", "VeryLazy" },
-		cmd = { "TSUpdate", "TSInstall", "TSBufEnable", "TSBufDisable" },
+		lazy = false,
 		build = ":TSUpdate",
-		dependencies = { "nvim-treesitter/nvim-treesitter-textobjects" },
+		branch = "main",
 		config = function()
 			require("plugins.treesitter").setup()
 		end,
+		-- idk is this supported yet
+		-- dependencies = { "nvim-treesitter/nvim-treesitter-textobjects" },
 	},
 	{
 		"folke/which-key.nvim",
