@@ -30,6 +30,8 @@ local ensure_installed = {
 	"shfmt",
 	"clang-format",
 	"pyproject-fmt",
+	-- compilers
+	"tree-sitter-cli",
 }
 
 M.opts = {
