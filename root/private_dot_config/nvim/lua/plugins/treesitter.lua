@@ -44,6 +44,14 @@ local function setup_gtkcss()
 	})
 end
 
+local function setup_shell()
+	ts.language.register("bash", { "sh", "zsh" })
+	api.nvim_create_autocmd("FileType", {
+		pattern = { "sh", "zsh" },
+		callback = start,
+	})
+end
+
 function M.setup()
 	require("nvim-treesitter").install(highlighters)
 
@@ -53,6 +61,7 @@ function M.setup()
 	})
 
 	setup_gtkcss()
+	setup_shell()
 end
 
 return M
