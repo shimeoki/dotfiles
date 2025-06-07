@@ -96,6 +96,15 @@ export def --env go [
     cd (dir $owner $name)
 }
 
+# delete specified local repository
+export def del [
+    owner?: string@owners # owner of the repository
+    name?:  string@names  # name of the repository
+]: nothing -> nothing {
+    if (input -n 1 'are you sure? (y) ') != 'y' { return }
+    rm -rf (dir $owner $name)
+}
+
 # clones the repository to the directory in the system if doesn't exist,
 # otherwise does 'git pull'
 export def fetch [
