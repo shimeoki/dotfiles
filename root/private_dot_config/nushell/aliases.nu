@@ -58,7 +58,6 @@ alias gc   = git commit
 alias gca  = git commit --all
 alias gp   = git push
 alias gpa  = git push --all
-alias gpt  = git push --tags
 alias gu   = git pull
 alias gt   = git tag
 alias gtn  = git tag -n
