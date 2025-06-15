@@ -16,13 +16,6 @@ export VISUAL='nvim'
 export EDITOR=$VISUAL
 export BROWSER='zen-browser'
 
-# programs
-export TERMINAL='kitty'
-export LAUNCHER='wofi'
-export NOTES='obsidian'
-export WALLPAPER_CLIENT='swww'
-export WALLPAPER_SERVER='swww-daemon'
-
 # source: https://wiki.archlinux.org/title/Zsh#Startup/Shutdown_files
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 
