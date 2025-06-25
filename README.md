@@ -63,6 +63,8 @@ The configuration assumes and uses Wayland with Hyprland window compositor.
 
 ### Visuals
 
+[Showcase](./showcase.md)
+
 Where possible, the configuration uses
 
 - Catppuccin Mocha as the theme,
