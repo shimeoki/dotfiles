@@ -4,7 +4,7 @@ The wallpaper used in all following images is from
 [The NOexistenceN of you AND me](https://store.steampowered.com/app/2873080/The_NOexistenceN_of_you_AND_me/).
 
 Right now only images are present. Because of that, crucial parts (such as
-animations for in Hyprland config) are missing.
+animations in Hyprland config) are missing.
 
 ## Hyprland
 
