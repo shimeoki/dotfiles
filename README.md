@@ -2,6 +2,8 @@
 
 My configuration for Arch Linux, managed by [chezmoi](https://www.chezmoi.io/).
 
+![index](./showcase/index.png)
+
 ## Table of Contents
 
 <!--toc:start-->
