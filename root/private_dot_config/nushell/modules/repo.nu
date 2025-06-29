@@ -6,12 +6,12 @@
 # the repositories.
 # recommended to import as 'use repo.nu' to set 'repo' as the prefix
 
-const DEFAULT_DOMAIN = 'github.com'
-const DEFAULT_TYPE   = 'ssh'
+const default_domain = 'github.com'
+const default_type   = 'ssh'
 
-const FILTERED_OWNERS = [-]
+const filtered_owners = [-]
 
-const STORE = ('~/code/repos' | path expand)
+const store = ('~/code/repos' | path expand)
 
 def domains [] { [
     github.com
@@ -27,7 +27,7 @@ def types [] { [
 
 def owners [] {
     ls --short-names (dir)
-    | where name not-in $FILTERED_OWNERS and type == dir
+    | where name not-in $filtered_owners and type == dir
     | get name
 }
 
@@ -40,10 +40,10 @@ def names [context: string] {
 
 # composes a git url to visit or clone the repository
 export def url [
-    owner: string@owners
-    name:  string@names
-    --domain (-d): string@domains = $DEFAULT_DOMAIN
-    --type   (-t): string@types   = $DEFAULT_TYPE
+    owner: string@owners # owner of the repository
+    name:  string@names  # name of the repository
+    --domain (-d): string@domains = $default_domain # url domain
+    --type   (-t): string@types   = $default_type   # url type
 ]: nothing -> string {
     match $type {
         'ssh'   => $"git@($domain):($owner)/($name).git"
@@ -55,7 +55,7 @@ export def url [
 export def web [
     owner: string@owners # owner of the repository
     name?: string@names  # name of the repository
-    --domain (-d): string@domains = $DEFAULT_DOMAIN # url domain
+    --domain (-d): string@domains = $default_domain # url domain
 ]: nothing -> nothing {
     if $name == null {
         start $"https://($domain)/($owner)"
@@ -68,8 +68,8 @@ export def web [
 export def clone [
     owner: string@owners # owner of the repository
     name:  string@names  # name of the repository
-    --domain (-d): string@domains = $DEFAULT_DOMAIN # url domain
-    --type   (-t): string@types   = $DEFAULT_TYPE   # url type
+    --domain (-d): string@domains = $default_domain # url domain
+    --type   (-t): string@types   = $default_type   # url type
 ]: nothing -> nothing {
     git clone (url -d $domain -t $type $owner $name)
 }
@@ -80,11 +80,11 @@ export def dir [
     name?:  string@names  # name of the repository
 ]: nothing -> string {
     if $name != null {
-        return ($STORE | path join $owner $name)
+        return ($store | path join $owner $name)
     } else if $owner != null {
-        return ($STORE | path join $owner)
+        return ($store | path join $owner)
     } else {
-        return $STORE
+        return $store
     }
 }
 
@@ -110,8 +110,8 @@ export def del [
 export def fetch [
     owner: string@owners # owner of the repository
     name:  string@names  # name of the repository
-    --domain (-d): string@domains = $DEFAULT_DOMAIN # url domain
-    --type   (-t): string@types   = $DEFAULT_TYPE   # url type
+    --domain (-d): string@domains = $default_domain # url domain
+    --type   (-t): string@types   = $default_type   # url type
 ]: nothing -> nothing {
     let repo: string = dir $owner $name
 
@@ -126,10 +126,10 @@ export def fetch [
     }
 }
 
-const HERE = (path self)
+const here = (path self)
 
 export def main []: nothing -> table {
-    let mod = $HERE | path basename | str replace --regex '\.nu$' ''
+    let mod = $here | path basename | str replace --regex '\.nu$' ''
     
     scope commands
     | where name =~ $"^($mod) "
