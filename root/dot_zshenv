@@ -35,4 +35,4 @@ export OMP_CONFIG_HOME="$XDG_CONFIG_HOME/oh-my-posh"
 
 path+="$HOME/.cargo/bin"
 path+="$HOME/go/bin"
-path+="$ZDOTDIR/scripts"
+path+="$HOME/.scripts"
