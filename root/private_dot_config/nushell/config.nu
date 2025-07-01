@@ -4,6 +4,7 @@ use themes/catppuccin-mocha.nu
 # can be hidden from the global scope this way
 
 source envs.nu
+source up.nu
 source aliases.nu
 
 use prompt.nu []
@@ -15,9 +16,4 @@ use zoxide.nu *
 
 use modules/repo.nu
 use modules/task.nu
-
-# changes current directory 'dirs' times up
-def --env up [dirs?: int = 1]: nothing -> nothing {
-    let n: int = ([$dirs 1] | math max) + 1
-    cd ('' | fill --character '.' --width $n)
-}
+use modules/bg.nu
