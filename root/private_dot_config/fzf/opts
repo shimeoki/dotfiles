@@ -1,0 +1,35 @@
+--color=bg+:#313244
+--color=bg:#1e1e2e
+--color=selected-bg:#45475a
+--color=fg:#cdd6f4
+--color=fg+:#cdd6f4
+--color=hl:#f38ba8
+--color=hl+:#f38ba8
+--color=header:#f38ba8
+--color=spinner:#f5e0dc
+--color=info:#cba6f7
+--color=pointer:#f5e0dc
+--color=marker:#b4befe
+--color=prompt:#cba6f7
+--reverse
+--cycle
+--wrap
+--ellipsis="..."
+--highlight-line
+--scroll-off=5
+--no-scrollbar
+--info=inline-right
+--prompt="> "
+--pointer=""
+--no-separator
+--marker="> "
+--marker-multi-line="> |"
+--tabstop=4
+--border=none
+--list-border=none
+--input-border=none
+--preview-border=none
+--preview-window="right,60%,border-none,wrap,<80(down,border-none,50%,wrap)"
+--bind="J:preview-half-page-down"
+--bind="K:preview-half-page-up"
+--bind="T:toggle-preview"
