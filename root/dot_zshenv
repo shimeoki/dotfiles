@@ -25,6 +25,8 @@ export LF_CONFIG_HOME="$XDG_CONFIG_HOME"
 
 export EZA_ICONS_AUTO=1
 
+export LS_COLORS="$(vivid generate catppuccin-mocha)"
+
 # source: https://wiki.archlinux.org/title/GnuPG#Configure_pinentry_to_use_the_correct_TTY
 export GPG_TTY="$TTY"
 

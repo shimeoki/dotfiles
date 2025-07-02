@@ -8,6 +8,7 @@ $env.PATH ++= ['~/.cargo/bin' '~/go/bin' '~/.scripts']
 $env.VENV_HOME = '~/.venv'
 $env.GPG_TTY = (tty)
 $env.EZA_ICONS_AUTO = 1
+$env.LS_COLORS = (vivid generate catppuccin-mocha)
 
 $env.NU_LIB_DIRS = [
     ($nu.default-config-dir | path join 'modules')
