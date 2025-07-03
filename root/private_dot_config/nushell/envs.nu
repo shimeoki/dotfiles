@@ -24,6 +24,13 @@ $env.config.cursor_shape = {
     vi_normal: 'block'
 }
 
+$env.config.history = {
+    file_format:   'sqlite'
+    max_size:      1_000_000
+    sync_on_enter: true
+    isolation:     false
+}
+
 $env.config.completions.algorithm = 'fuzzy'
 
 $env.config.use_kitty_protocol = true

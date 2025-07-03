@@ -8,7 +8,6 @@ source up.nu
 source aliases.nu
 
 use prompt.nu []
-use history.nu []
 
 use fzf.nu *
 use yazi.nu *
