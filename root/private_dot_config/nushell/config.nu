@@ -7,6 +7,7 @@ source envs.nu
 source up.nu
 source aliases.nu
 
+use binds.nu []
 use prompt.nu []
 
 use fzf.nu *
