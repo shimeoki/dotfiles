@@ -10,6 +10,8 @@
 # - remove center (line number) and ignored
 # - remove sed hack
 # - remove comments
+# - don't use stty call
+# - don't use unicode placeholders
 # - don't specify bat style
 # - formatting, refactoring and styling
 # - more explicit extension
@@ -37,10 +39,5 @@ if [[ ! $type =~ image/ ]]; then
     exit
 fi
 
-dim=${FZF_PREVIEW_COLUMNS}x${FZF_PREVIEW_LINES}
-if [[ $dim = x ]]; then
-    dim=$(stty size </dev/tty | awk '{print $2 "x" $1}')
-fi
-
-kitten icat --clear --transfer-mode=memory --unicode-placeholder --stdin=no \
-    --place="$dim@0x0" -- "$file"
+rect=${FZF_PREVIEW_COLUMNS}x${FZF_PREVIEW_LINES}@0x0
+kitten icat --clear --transfer-mode=memory --stdin=no --place="$rect" -- "$file"
