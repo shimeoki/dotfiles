@@ -65,6 +65,39 @@ const fc = {
     }
 }
 
+const y = {
+    name: y
+    modifier: control
+    keycode: char_y
+    mode: $modes
+    event: {
+        send: ExecuteHostCommand
+        cmd: y
+    }
+}
+
+const lg = {
+    name: lg
+    modifier: control
+    keycode: char_g
+    mode: $modes
+    event: {
+        send: ExecuteHostCommand
+        cmd: lg
+    }
+}
+
+const czj = {
+    name: czj
+    modifier: control
+    keycode: char_z
+    mode: $modes
+    event: {
+        send: ExecuteHostCommand
+        cmd: czj
+    }
+}
+
 export-env {
     $env.config.keybindings ++= [
         $menu_down
@@ -74,5 +107,8 @@ export-env {
         $fv
         $fj
         $fc
+        $y
+        $lg
+        $czj
     ]
 }
