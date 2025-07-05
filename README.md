@@ -354,8 +354,7 @@ source link. All rights go to the respective authors, and check their license
 
 If the source is not specified, then it's either my own code or I couldn't
 specify a source. Example of the latter situation is all Catppuccin theme files
-in the repository. Also, yazi plugins are untounched, and these directories
-include a specific license to them.
+in the repository.
 
 My own code is licensed under the license in repository root. This license
 doesn't "override" other licenses in situations described above.
