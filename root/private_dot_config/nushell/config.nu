@@ -1,9 +1,34 @@
+$env.GPG_TTY = (tty)
+$env.NU_LIB_DIRS = [($nu.default-config-dir | path join 'modules')]
+
+$env.config.show_banner = false
+
+$env.config.edit_mode = 'vi'
+$env.config.buffer_editor = 'editor'
+
+$env.config.cursor_shape = {
+    emacs:     'inherit'
+    vi_insert: 'line'
+    vi_normal: 'block'
+}
+
+$env.config.history = {
+    file_format:   'sqlite'
+    max_size:      1_000_000
+    sync_on_enter: true
+    isolation:     false
+}
+
+$env.config.completions.algorithm = 'fuzzy'
+
+$env.config.use_kitty_protocol = true
+$env.config.use_ansi_coloring = true
+
+$env.config.footer_mode = 'auto'
+$env.config.table.mode = 'rounded'
+
 use themes/catppuccin-mocha.nu
 
-# the config uses mostly modules, because unneeded variables
-# can be hidden from the global scope this way
-
-source envs.nu
 source up.nu
 source aliases.nu
 
