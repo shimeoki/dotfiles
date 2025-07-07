@@ -25,7 +25,7 @@ $env.config.use_kitty_protocol = true
 $env.config.use_ansi_coloring = true
 
 $env.config.footer_mode = 'auto'
-$env.config.table.mode = 'rounded'
+$env.config.table.mode = 'single'
 
 use themes/catppuccin-mocha.nu
 
