@@ -157,6 +157,8 @@ return {
 	new({ "E", "Yazi cwd", "open yazi in current working directory" }),
 	new({ "<c-e>", "Yazi toggle", "resume last yazi session" }),
 
+	new({ "p", "Lazy", "open lazy.nvim" }),
+
 	new({ "f", t .. "find_files", "find files" }),
 	new({ "F", t .. "live_grep", "live grep fils" }),
 
