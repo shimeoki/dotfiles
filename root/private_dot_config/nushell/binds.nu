@@ -68,7 +68,7 @@ const fc = {
 const y = {
     name: y
     modifier: control
-    keycode: char_y
+    keycode: char_e
     mode: $modes
     event: {
         send: ExecuteHostCommand
