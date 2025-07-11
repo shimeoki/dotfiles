@@ -98,6 +98,17 @@ const czj = {
     }
 }
 
+const v = {
+    name: v
+    modifier: control
+    keycode: char_v
+    mode: $modes
+    event: {
+        send: ExecuteHostCommand
+        cmd: v
+    }
+}
+
 export-env {
     $env.config.keybindings ++= [
         $menu_down
@@ -110,5 +121,6 @@ export-env {
         $y
         $lg
         $czj
+        $v
     ]
 }
