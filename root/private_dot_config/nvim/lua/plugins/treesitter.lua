@@ -30,6 +30,7 @@ local highlighters = {
 	"vim",
 	"regex",
 	"kotlin",
+	"ron",
 }
 
 local function start()
