@@ -29,19 +29,14 @@ My configuration for Arch Linux, managed by [chezmoi](https://www.chezmoi.io/).
   - [lf](#lf)
   - [Nushell](#nushell)
   - [nvim](#nvim)
-  - [nwg-look](#nwg-look)
   - [Oh My Posh](#oh-my-posh)
   - [pacman](#pacman)
   - [GnuPG](#gnupg)
-  - [GTK](#gtk)
-  - [qt5ct](#qt5ct)
-  - [qt6ct](#qt6ct)
   - [Waybar](#waybar)
   - [Wofi](#wofi)
   - [xdg-desktop](#xdg-desktop)
   - [yazi](#yazi)
   - [zsh](#zsh)
-  - [Desktop entries](#desktop-entries)
   - [spotity-launcher](#spotity-launcher)
   - [Electron](#electron)
   - [VS Code](#vs-code)
@@ -231,13 +226,6 @@ configuration could be outdated.
 
 Check the [README](/root/private_dot_config/nvim/README.md).
 
-### nwg-look
-
-- Project: https://github.com/nwg-piotr/nwg-look
-- Paths:
-  - root/private_dot_config/nwg-look
-  - root/private_dot_local/private_share/nwg-look
-
 ### Oh My Posh
 
 - Project: https://ohmyposh.dev
@@ -257,26 +245,6 @@ Maybe other configuration will be in the repository in the format of a script.
 
 - Project: https://gnupg.org
 - Path: root/private_dot_config/private_gnupg
-
-### GTK
-
-- Project: https://www.gtk.org
-- Paths:
-  - root/private_dot_config/private_gtk-3.0
-  - root/private_dot_config/private_gtk-4.0
-  - root/dot_gtkrc-2.0
-  - root/private_dot_local/private_share/themes
-  - root/private_dot_local/private_share/nwg-look
-
-### qt5ct
-
-- Project: https://sourceforge.net/projects/qt5ct
-- Path: root/private_dot_config/qt5ct
-
-### qt6ct
-
-- Project: https://github.com/trialuser02/qt6ct
-- Path: root/private_dot_config/qt6ct
 
 ### Waybar
 
@@ -309,11 +277,6 @@ support. In AUR it's `waybar-cava` package.
 - Paths:
   - root/private_dot_config/dot_zshrc
   - root/private_dot_config/zsh
-
-### Desktop entries
-
-- Project: https://specifications.freedesktop.org/desktop-entry-spec/latest/
-- Path: root/private_dot_local/private_share/applications
 
 ### spotity-launcher
 
