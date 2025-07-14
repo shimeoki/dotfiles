@@ -223,7 +223,7 @@
     cava: (
         inverted_bar_symbols: ['▔', '🮂', '🮃', '▀', '🮄', '🮅', '🮆', '█'],
         bar_symbols: ['▁', '▂', '▃', '▄', '▅', '▆', '▇', '█'],
-        bar_width: 1,
+        bar_width: 2,
         bar_spacing: 0,
         orientation: Bottom,
         bar_color: Single("blue"),
