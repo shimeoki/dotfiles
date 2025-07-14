@@ -1,5 +1,0 @@
-[Desktop Entry]
-Name=Gamescope
-Comment=Start Steam in Big Picture Mode with Gamescope
-Exec=/usr/bin/gamescope -W 1920 -H 1080 -r 144 --backend wayland -e -- /usr/bin/steam -tenfoot
-Type=Application
