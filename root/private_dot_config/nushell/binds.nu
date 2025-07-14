@@ -109,6 +109,17 @@ const v = {
     }
 }
 
+const rmpc = {
+    name: rmpc
+    modifier: control
+    keycode: char_m
+    mode: $modes
+    event: {
+        send: ExecuteHostCommand
+        cmd: rmpc
+    }
+}
+
 export-env {
     $env.config.keybindings ++= [
         $menu_down
@@ -122,5 +133,6 @@ export-env {
         $lg
         $czj
         $v
+        $rmpc
     ]
 }
