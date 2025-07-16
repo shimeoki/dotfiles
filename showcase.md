@@ -37,10 +37,10 @@ itself is previewing a fullscreened image), and 9th has Neovim open.
 
 ![nvim-01-start](./showcase/nvim/01-start.png)
 
-My configuration doesn't have fancy a fancy greeter plugin, and furthermore,
-disables default Neovim greeter, so you have this view at the start. At the
-bottom lualine can be seen. '?' refers to a new buffer, when a file wasn't
-written to a disk yet.
+My configuration doesn't have a fancy greeter plugin, and furthermore, disables
+default Neovim greeter, so you have this view at the start. At the bottom
+lualine can be seen. '?' refers to a new buffer, when a file wasn't written to a
+disk yet.
 
 ![nvim-02-telescope-horizontal](./showcase/nvim/02-telescope-horizontal.png)
 
@@ -90,7 +90,7 @@ differences and just visuals for the shells.
 
 ![shell-01-git-prompt](./showcase/shell/01-git-prompt.png)
 
-Git prompts are very simple. Nushell one is self-made is only shows current
+Git prompts are very simple. Nushell one is self-made and only shows current
 branch, while Zsh shows branch status as well (are there new files in the index
 or not), powered by Oh My Posh.
 
