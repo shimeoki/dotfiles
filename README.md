@@ -15,9 +15,12 @@ My configuration for Arch Linux, managed by [chezmoi](https://www.chezmoi.io/).
 - [Configurations](#configurations)
   - [bat](#bat)
   - [btop](#btop)
+  - [cava](#cava)
   - [delta](#delta)
   - [dunst](#dunst)
   - [fastfetch](#fastfetch)
+  - [fd](#fd)
+  - [fzf](#fzf)
   - [Git](#git)
   - [Helix](#helix)
   - [hyprwm](#hyprwm)
@@ -27,11 +30,13 @@ My configuration for Arch Linux, managed by [chezmoi](https://www.chezmoi.io/).
   - [lazydocker](#lazydocker)
   - [lazygit](#lazygit)
   - [lf](#lf)
+  - [mpd](#mpd)
   - [Nushell](#nushell)
   - [nvim](#nvim)
   - [Oh My Posh](#oh-my-posh)
   - [pacman](#pacman)
   - [GnuPG](#gnupg)
+  - [rmpc](#rmpc)
   - [Waybar](#waybar)
   - [Wofi](#wofi)
   - [xdg-desktop](#xdg-desktop)
@@ -132,6 +137,11 @@ bat cache --build
 - Project: https://github.com/aristocratos/btop
 - Path: root/private_dot_config/btop
 
+### cava
+
+- Project: https://github.com/karlstav/cava
+- Path: root/private_dot_config/cava
+
 ### delta
 
 - Project: https://github.com/dandavison/delta
@@ -146,6 +156,19 @@ bat cache --build
 
 - Project: https://github.com/fastfetch-cli/fastfetch
 - Path: root/private_dot_config/fastfetch
+
+### fd
+
+- Project: https://github.com/sharkdp/fd
+- Path: root/private_dot_config/fd
+
+### fzf
+
+- Project: https://github.com/junegunn/fzf
+- Path: root/private_dot_config/fzf
+
+Also applications can use `fzf-preview.bash` in `root/dot_scripts` directory.
+It's recommended to check comments in the script in case of issues.
 
 ### Git
 
@@ -214,6 +237,14 @@ copy of UI settings in lazygit config.
 This terminal file manager is not used by me anymore (though it's good), so the
 configuration could be outdated.
 
+### mpd
+
+- Project: https://www.musicpd.org/
+- Path: root/private_dot_config/mpd
+
+Uses `~/Music` as a music directory path. Also, it requires many directories for
+the state, playlists, etc., so parent directories should be made beforehand.
+
 ### Nushell
 
 - Project: https://www.nushell.sh
@@ -245,6 +276,20 @@ Maybe other configuration will be in the repository in the format of a script.
 
 - Project: https://gnupg.org
 - Path: root/private_dot_config/private_gnupg
+
+### rmpc
+
+- Project: https://mierak.github.io/rmpc/
+- Path: root/private_dot_config/rmpc
+
+Listens for mpd on the default port on localhost. Uses cava.
+
+Config is made specifically for this setup:
+
+- Forced Kitty Graphics Protocol usage
+- In vertical split on 1920x1080 there is exactly one line for the queue
+- Lyrics directory is the same as music directory in mpd
+- mpd should be configured to output fifo file for cava
 
 ### Waybar
 
@@ -300,6 +345,10 @@ Wayland flags.
 Wayland flags.
 
 ## Scripts
+
+This directory is appended to 'path' environment variable. It contains scripts
+or just executables that should be available to applications or the user
+directly.
 
 - [packages](root/dot_scripts/packages/README.md)
 
