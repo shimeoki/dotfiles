@@ -1,8 +1,26 @@
 #!/usr/bin/env zsh
 
 . "$ZDOTDIR/zinit.zsh"
-. "$ZDOTDIR/options.zsh"
-. "$ZDOTDIR/completions.zsh"
+
+# file matching
+setopt EXTENDED_GLOB
+setopt NOMATCH
+
+# report status of background
+setopt NOTIFY
+
+# set vi mode
+bindkey -v
+
+# enable completions
+autoload -Uz compinit && compinit
+
+# add arrow keys
+zstyle ':completion:*' menu select
+
+# completions in privileged commands
+zstyle ':completion::complete:*' gain-privileges 1
+
 . "$ZDOTDIR/history.zsh"
 
 . "$ZDOTDIR/deattach.sh"
