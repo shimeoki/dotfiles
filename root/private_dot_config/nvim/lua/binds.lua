@@ -6,6 +6,61 @@ local lsp = vim.lsp
 local lspb = lsp.buf
 local input = vim.api.nvim_input
 
+local function show_symbol_info()
+	lspb.hover()
+end
+
+local function show_signature_help()
+	lspb.signature_help()
+end
+
+local function toggle_hints()
+	local hints = lsp.inlay_hint
+	hints.enable(not hints.is_enabled())
+end
+
+local function list_code_actions()
+	lspb.code_action()
+end
+
+local function rename_symbol()
+	lspb.rename()
+end
+
+local function toggle_comment_in_normal()
+	input("gcc")
+end
+
+local function toggle_comment_in_visual()
+	input("gc")
+end
+
+local function quarto_run_cell()
+	require("quarto.runner").run_cell()
+end
+
+local function quarto_run_range()
+	require("quarto.runner").run_range()
+end
+
+local function quarto_run_above()
+	require("quarto.runner").run_above()
+end
+
+local function quarto_run_all()
+	require("quarto.runner").run_all()
+end
+
+local function luasnip_next()
+	local ls = require("luasnip")
+	return ls.choice_active() and ls.change_choice(1)
+end
+
+local function luasnip_prev()
+	local ls = require("luasnip")
+	return ls.choice_active() and ls.change_choice(-1)
+end
+
 local t = "Telescope "
 
 --- @class Bind
@@ -99,56 +154,21 @@ return {
 	new({ "{", "wincmd R", "swap split with next" }),
 	new({ "}", "wincmd r", "swap split with previous" }),
 
-	new({
-		"i",
-		function()
-			lspb.hover()
-		end,
-		"show symbol information",
-	}),
-	new({
-		"I",
-		function()
-			lspb.signature_help()
-		end,
-		"show symbol signature help",
-	}),
-	new({
-		"<c-i>",
-		function()
-			local hints = lsp.inlay_hint
-			hints.enable(not hints.is_enabled())
-		end,
-		"toggle inlay hints",
-	}),
-	new({
-		"a",
-		function()
-			lspb.code_action()
-		end,
-		"list code actions",
-	}),
-	new({
-		"N",
-		function()
-			lspb.rename()
-		end,
-		"rename symbol",
-	}),
+	new({ "i", show_symbol_info, "show symbol information" }),
+	new({ "I", show_signature_help, "show symbol signature help" }),
+	new({ "<c-i>", toggle_hints, "toggle inlay hints" }),
+	new({ "a", list_code_actions, "list code actions" }),
+	new({ "N", rename_symbol, "rename symbol" }),
 
 	new({
 		"c",
-		function()
-			input("gcc")
-		end,
+		toggle_comment_in_normal,
 		"toggle comment (normal)",
 		modes = "n",
 	}),
 	new({
 		"c",
-		function()
-			input("gc")
-		end,
+		toggle_comment_in_visual,
 		"toggle comment (visual)",
 		modes = "v",
 	}),
@@ -184,53 +204,21 @@ return {
 	new({ "g", t .. "git_commits", "list commits" }),
 	new({ "G", t .. "git_branches", "list branches" }),
 
-	new({
-		"q",
-		function()
-			require("quarto.runner").run_cell()
-		end,
-		"run cell with quarto",
-		modes = "n",
-	}),
-	new({
-		"q",
-		function()
-			require("quarto.runner").run_range()
-		end,
-		"run visual range with quarto",
-		modes = "v",
-	}),
-	new({
-		"Q",
-		function()
-			require("quarto.runner").run_above()
-		end,
-		"run cell and above with quarto",
-	}),
-	new({
-		"<c-q>",
-		function()
-			require("quarto.runner").run_all()
-		end,
-		"run all cells with quarto",
-	}),
+	new({ "q", quarto_run_cell, "run cell with quarto", modes = "n" }),
+	new({ "q", quarto_run_range, "run visual range with quarto", modes = "v" }),
+	new({ "Q", quarto_run_above, "run cell and above with quarto" }),
+	new({ "<c-q>", quarto_run_all, "run all cells with quarto" }),
 
 	new({
 		"<c-s-l>",
-		function()
-			local ls = require("luasnip")
-			return ls.choice_active() and ls.change_choice(1)
-		end,
+		luasnip_next,
 		"next luasnip choice",
 		modes = { "i", "s" },
 		no_leader = true,
 	}),
 	new({
 		"<c-s-h>",
-		function()
-			local ls = require("luasnip")
-			return ls.choice_active() and ls.change_choice(-1)
-		end,
+		luasnip_prev,
 		"previous luasnip choice",
 		modes = { "i", "s" },
 		no_leader = true,
