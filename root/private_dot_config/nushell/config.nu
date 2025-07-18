@@ -27,6 +27,11 @@ $env.config.use_ansi_coloring = true
 $env.config.footer_mode = 'auto'
 $env.config.table.mode = 'single'
 
+$env.config.display_errors = {
+    exit_code:          false
+    termination_signal: false
+}
+
 use themes/catppuccin-mocha.nu
 
 source up.nu
