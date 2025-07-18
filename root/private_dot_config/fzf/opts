@@ -33,3 +33,5 @@
 --bind="J:preview-half-page-down"
 --bind="K:preview-half-page-up"
 --bind="T:toggle-preview"
+--bind="ctrl-h:deselect+up"
+--bind="ctrl-l:select+down"
