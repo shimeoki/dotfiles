@@ -10,6 +10,9 @@ alias bl  = bat --line-range
 
 alias h = batman
 
+use modules/yazi.nu
+alias y = yazi cwd-on-exit
+
 alias cz   = chezmoi
 alias czz  = chezmoi apply
 alias czj  = chezmoi cd
