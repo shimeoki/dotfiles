@@ -13,6 +13,11 @@ alias h = batman
 use modules/yazi.nu
 alias y = yazi cwd-on-exit
 
+use modules/zoxide.nu
+alias j  = zoxide jump
+alias ji = zoxide jumper
+alias jj = cd -
+
 alias cz   = chezmoi
 alias czz  = chezmoi apply
 alias czj  = chezmoi cd
