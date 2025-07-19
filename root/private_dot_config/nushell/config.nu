@@ -41,7 +41,6 @@ use binds.nu []
 use prompt.nu []
 
 use fzf.nu *
-use yazi.nu *
 use zoxide.nu *
 
 use modules/repo.nu
