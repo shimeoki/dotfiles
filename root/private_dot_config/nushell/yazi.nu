@@ -1,7 +1,7 @@
 # module for yazi related functions or aliases.
 # this file should be imported as 'use yazi.nu *' to import aliases.
 
-def --env --wrapped yazi-cwd [...rest: string]: nothing -> nothing {
+def --env --wrapped cwd-on-exit [...rest: string]: nothing -> nothing {
 	let tmp = (mktemp -t "yazi-cwd.XXXXXX")
 
 	yazi --cwd-file $tmp ...$rest
@@ -14,4 +14,4 @@ def --env --wrapped yazi-cwd [...rest: string]: nothing -> nothing {
 	rm -fp $tmp
 }
 
-export alias y = yazi-cwd
+export alias y = cwd-on-exit
