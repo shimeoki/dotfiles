@@ -1,6 +1,5 @@
 # module for zoxide usage in nushell.
 # it's a rewrite of standard (official) zoxide script for nushell.
-# this file should be imported as 'use zoxide.nu *' to import aliases.
 # it also exports some environment variables to setup hooks.
 
 # source: https://github.com/ajeetdsouza/zoxide
@@ -16,11 +15,11 @@ def wrap-path [segments: list<string>]: nothing -> string {
     }
 }
 
-def --env --wrapped zoxide-z [...rest: string]: nothing -> nothing {
+export def --env --wrapped jump [...rest: string]: nothing -> nothing {
     cd (wrap-path $rest)
 }
 
-def --env --wrapped zoxide-zi [...rest: string]: nothing -> nothing {
+export def --env --wrapped jumper [...rest: string]: nothing -> nothing {
     cd $'(zoxide query --interactive -- ...$rest | trim)'
 }
 
@@ -45,7 +44,3 @@ def --env hook []: nothing -> nothing {
 }
 
 export-env { init-hooks; if not (hooked) { hook } }
-
-export alias j  = zoxide-z
-export alias ji = zoxide-zi
-export alias jj = cd -
