@@ -44,3 +44,4 @@ use fzf.nu *
 
 use modules/repo.nu
 use modules/task.nu
+use modules/completions.nu []
