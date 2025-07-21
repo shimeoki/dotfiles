@@ -21,6 +21,10 @@ zstyle ':completion:*' menu select
 # completions in privileged commands
 zstyle ':completion::complete:*' gain-privileges 1
 
+# enable carapace completions
+zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
+source <(carapace _carapace)
+
 . "$ZDOTDIR/history.zsh"
 
 . "$ZDOTDIR/deattach.sh"
