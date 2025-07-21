@@ -19,7 +19,7 @@ const menu_up = {
 const hint_complete = {
     name: hint_complete
     modifier: control
-    keycode: char_h
+    keycode: 'char_;'
     mode: $modes
     event: { send: HistoryHintComplete }
 }
@@ -27,9 +27,17 @@ const hint_complete = {
 const hint_word_complete = {
     name: hint_word_complete
     modifier: control
-    keycode: char_u
+    keycode: char_l
     mode: $modes
     event: { send: HistoryHintWordComplete }
+}
+
+const clear = {
+    name: clear
+    modifier: control
+    keycode: backspace
+    mode: $modes
+    event: { edit: Clear }
 }
 
 const fv = {
@@ -126,6 +134,7 @@ export-env {
         $menu_up
         $hint_complete
         $hint_word_complete
+        $clear
         $fv
         $fj
         $fc
