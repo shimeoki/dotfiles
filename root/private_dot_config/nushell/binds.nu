@@ -1,5 +1,3 @@
-const modes = [vi_normal vi_insert]
-
 $env.config.keybindings ++= [
     {
         name: menu_down
@@ -44,39 +42,6 @@ $env.config.keybindings ++= [
         event: { send: ClearScreen }
     }
 ]
-
-const fv = {
-    name: fv
-    modifier: control
-    keycode: char_f
-    mode: $modes
-    event: {
-        send: ExecuteHostCommand
-        cmd: fv
-    }
-}
-
-const fj = {
-    name: fj
-    modifier: control_shift
-    keycode: char_f
-    mode: $modes
-    event: {
-        send: ExecuteHostCommand
-        cmd: fj
-    }
-}
-
-const fc = {
-    name: fc
-    modifier: control
-    keycode: char_t
-    mode: $modes
-    event: {
-        send: ExecuteHostCommand
-        cmd: fc
-    }
-}
 
 use modules/yazi.nu
 $env.config.keybindings ++= [
