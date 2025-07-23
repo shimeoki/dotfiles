@@ -18,6 +18,13 @@ alias j  = zoxide jump
 alias ji = zoxide jumper
 alias jj = cd -
 
+use modules/fzf.nu
+alias f  = fzf
+alias fp = fzf preview
+alias fe = fzf editor
+alias fj = fzf jump
+alias fc = fzf copy
+
 alias cz   = chezmoi
 alias czz  = chezmoi apply
 alias czj  = chezmoi cd

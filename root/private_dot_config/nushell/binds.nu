@@ -57,6 +57,40 @@ $env.config.keybindings ++= [
     }
 ]
 
+use modules/fzf.nu
+$env.config.keybindings ++= [
+    {
+        name: fzf_editor
+        modifier: control
+        keycode: char_f
+        mode: [vi_normal vi_insert]
+        event: {
+            send: ExecuteHostCommand
+            cmd: 'fzf editor'
+        }
+    }
+    {
+        name: fzf_jump
+        modifier: control_shift
+        keycode: char_f
+        mode: [vi_normal vi_insert]
+        event: {
+            send: ExecuteHostCommand
+            cmd: 'fzf jump'
+        }
+    }
+    {
+        name: fzf_copy
+        modifier: control
+        keycode: char_t
+        mode: [vi_normal vi_insert]
+        event: {
+            send: ExecuteHostCommand
+            cmd: 'fzf copy'
+        }
+    }
+]
+
 $env.config.keybindings ++= [
     {
         name: lazygit
