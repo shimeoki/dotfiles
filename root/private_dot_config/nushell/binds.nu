@@ -35,9 +35,17 @@ const hint_word_complete = {
 const clear = {
     name: clear
     modifier: control
-    keycode: backspace
+    keycode: char_u
     mode: $modes
     event: { edit: Clear }
+}
+
+const clear_screen = {
+    name: clear_screen
+    modifier: control
+    keycode: backspace
+    mode: $modes
+    event: { send: ClearScreen }
 }
 
 const fv = {
@@ -135,6 +143,7 @@ export-env {
         $hint_complete
         $hint_word_complete
         $clear
+        $clear_screen
         $fv
         $fj
         $fc
