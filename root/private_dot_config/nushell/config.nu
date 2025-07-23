@@ -36,8 +36,8 @@ use themes/catppuccin-mocha.nu
 
 source up.nu
 source aliases.nu
+source binds.nu
 
-use binds.nu []
 use prompt.nu []
 
 use fzf.nu *

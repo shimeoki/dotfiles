@@ -1,52 +1,49 @@
 const modes = [vi_normal vi_insert]
 
-const menu_down = {
-    name: menu_down
-    modifier: control
-    keycode: char_j
-    mode: $modes
-    event: { send: MenuDown }
-}
-
-const menu_up = {
-    name: menu_up
-    modifier: control
-    keycode: char_k
-    mode: $modes
-    event: { send: MenuUp }
-}
-
-const hint_complete = {
-    name: hint_complete
-    modifier: control
-    keycode: 'char_;'
-    mode: $modes
-    event: { send: HistoryHintComplete }
-}
-
-const hint_word_complete = {
-    name: hint_word_complete
-    modifier: control
-    keycode: char_l
-    mode: $modes
-    event: { send: HistoryHintWordComplete }
-}
-
-const clear = {
-    name: clear
-    modifier: control
-    keycode: char_u
-    mode: $modes
-    event: { edit: Clear }
-}
-
-const clear_screen = {
-    name: clear_screen
-    modifier: control
-    keycode: backspace
-    mode: $modes
-    event: { send: ClearScreen }
-}
+$env.config.keybindings ++= [
+    {
+        name: menu_down
+        modifier: control
+        keycode: char_j
+        mode: [vi_normal vi_insert]
+        event: { send: MenuDown }
+    }
+    {
+        name: menu_up
+        modifier: control
+        keycode: char_k
+        mode: [vi_normal vi_insert]
+        event: { send: MenuUp }
+    }
+    {
+        name: hint_word_complete
+        modifier: control
+        keycode: char_l
+        mode: [vi_normal vi_insert]
+        event: { send: HistoryHintWordComplete }
+    }
+    {
+        name: hint_complete
+        modifier: control
+        keycode: 'char_;'
+        mode: [vi_normal vi_insert]
+        event: { send: HistoryHintComplete }
+    }
+    {
+        name: clear
+        modifier: control
+        keycode: char_u
+        mode: [vi_normal vi_insert]
+        event: { edit: Clear }
+    }
+    {
+        name: clear_screen
+        modifier: control
+        keycode: backspace
+        mode: [vi_normal vi_insert]
+        event: { send: ClearScreen }
+    }
+]
 
 const fv = {
     name: fv
@@ -81,76 +78,59 @@ const fc = {
     }
 }
 
-const y = {
-    name: y
-    modifier: control
-    keycode: char_e
-    mode: $modes
-    event: {
-        send: ExecuteHostCommand
-        cmd: y
+use modules/yazi.nu
+$env.config.keybindings ++= [
+    {
+        name: yazi
+        modifier: control
+        keycode: char_e
+        mode: [vi_normal vi_insert]
+        event: {
+            send: ExecuteHostCommand
+            cmd: 'yazi cwd-on-exit'
+        }
     }
-}
+]
 
-const lg = {
-    name: lg
-    modifier: control
-    keycode: char_g
-    mode: $modes
-    event: {
-        send: ExecuteHostCommand
-        cmd: lg
+$env.config.keybindings ++= [
+    {
+        name: lazygit
+        modifier: control
+        keycode: char_g
+        mode: [vi_normal vi_insert]
+        event: {
+            send: ExecuteHostCommand
+            cmd: lazygit
+        }
     }
-}
-
-const czj = {
-    name: czj
-    modifier: control
-    keycode: char_z
-    mode: $modes
-    event: {
-        send: ExecuteHostCommand
-        cmd: czj
+    {
+        name: chezmoi
+        modifier: control
+        keycode: char_z
+        mode: [vi_normal vi_insert]
+        event: {
+            send: ExecuteHostCommand
+            cmd: 'chezmoi cd'
+        }
     }
-}
-
-const v = {
-    name: v
-    modifier: control
-    keycode: char_v
-    mode: $modes
-    event: {
-        send: ExecuteHostCommand
-        cmd: v
+    {
+        name: nvim
+        modifier: control
+        keycode: char_v
+        mode: [vi_normal vi_insert]
+        event: {
+            send: ExecuteHostCommand
+            cmd: nvim
+        }
     }
-}
-
-const rmpc = {
-    name: rmpc
-    modifier: control
-    keycode: char_m
-    mode: $modes
-    event: {
-        send: ExecuteHostCommand
-        cmd: rmpc
+    {
+        name: rmpc
+        modifier: control
+        keycode: char_m
+        mode: [vi_normal vi_insert]
+        event: {
+            send: ExecuteHostCommand
+            cmd: rmpc
+        }
     }
-}
-
-export-env {
-    $env.config.keybindings ++= [
-        $menu_down
-        $menu_up
-        $hint_complete
-        $hint_word_complete
-        $clear
-        $clear_screen
-        $fv
-        $fj
-        $fc
-        $y
-        $lg
-        $czj
-        $v
-        $rmpc
-    ]
-}
+]
