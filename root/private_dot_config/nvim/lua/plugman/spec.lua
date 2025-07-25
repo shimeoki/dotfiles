@@ -115,7 +115,9 @@ return {
 		},
 		event = { "User KittyScrollbackLaunch" },
 		version = "^6.0.0",
-		opts = {},
+		opts = function()
+			return require("plugins.scrollback").opts
+		end,
 	},
 	{
 		"mfussenegger/nvim-lint",
