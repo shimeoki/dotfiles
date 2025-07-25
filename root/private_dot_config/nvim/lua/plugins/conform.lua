@@ -1,6 +1,8 @@
 local M = {}
 
 local api = vim.api
+local buf = vim.b
+local global = vim.g
 
 local formatters_by_ft = {
 	lua = { "stylua" },
@@ -43,27 +45,13 @@ local clang = {
 	},
 }
 
-local opts = {
-	formatters_by_ft = formatters_by_ft,
-	format_on_save = {
-		timeout_ms = 500,
-		lsp_format = "fallback",
-	},
-	formatters = {
-		["deno_fmt"] = deno,
-		["clang-format"] = clang,
-	},
-}
-
-local function set_formatexpr()
-	vim.opt.formatexpr = 'v:lua.require("conform").formatexpr()'
-end
+-- source: https://github.com/stevearc/conform.nvim/blob/master/doc/recipes.md#command-to-toggle-format-on-save
 
 local function get_end(line2)
 	return api.nvim_buf_get_lines(0, line2 - 1, line2, true)[1]
 end
 
-api.nvim_create_user_command("Format", function(args)
+local function format(args)
 	local range = nil
 	if args.count ~= -1 then
 		range = {
@@ -77,10 +65,58 @@ api.nvim_create_user_command("Format", function(args)
 		lsp_format = "fallback",
 		range = range,
 	})
-end, { range = true })
+end
+
+local function format_on_save(bufnr)
+	if global.disable_format or buf[bufnr].disable_format then
+		return
+	end
+
+	return { timeout_ms = 500, lsp_format = "fallback" }
+end
+
+local function disable_format(args)
+	if args.bang then
+		buf.disable_format = true
+	else
+		global.disable_format = true
+	end
+end
+
+local function enable_format()
+	buf.disable_format = false
+	global.disable_format = false
+end
+
+local function create_commands()
+	api.nvim_create_user_command("Format", format, { range = true })
+
+	api.nvim_create_user_command("FormatDisable", disable_format, {
+		desc = "disable format on save",
+		bang = true,
+	})
+
+	api.nvim_create_user_command("FormatEnable", enable_format, {
+		desc = "enable format on save",
+	})
+end
+
+local function set_formatexpr()
+	vim.opt.formatexpr = 'v:lua.require("conform").formatexpr()'
+end
+
+local opts = {
+	formatters_by_ft = formatters_by_ft,
+	format_on_save = format_on_save,
+	formatters = {
+		["deno_fmt"] = deno,
+		["clang-format"] = clang,
+	},
+}
 
 function M.setup()
 	require("conform").setup(opts)
+	create_commands()
 	set_formatexpr()
 end
 
