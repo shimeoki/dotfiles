@@ -60,13 +60,13 @@ $env.config.keybindings ++= [
 use modules/fzf.nu
 $env.config.keybindings ++= [
     {
-        name: fzf_editor
+        name: fzf_edit
         modifier: control
         keycode: char_f
         mode: [vi_normal vi_insert]
         event: {
             send: ExecuteHostCommand
-            cmd: 'fzf editor'
+            cmd: 'fzf edit'
         }
     }
     {
@@ -80,13 +80,23 @@ $env.config.keybindings ++= [
         }
     }
     {
-        name: fzf_copy
+        name: fzf_copypath
         modifier: control
         keycode: char_t
         mode: [vi_normal vi_insert]
         event: {
             send: ExecuteHostCommand
-            cmd: 'fzf copy'
+            cmd: 'fzf copypath'
+        }
+    }
+    {
+        name: fzf_copyfile
+        modifier: control_shift
+        keycode: char_t
+        mode: [vi_normal vi_insert]
+        event: {
+            send: ExecuteHostCommand
+            cmd: 'fzf copyfile'
         }
     }
 ]

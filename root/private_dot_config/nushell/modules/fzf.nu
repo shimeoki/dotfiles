@@ -5,16 +5,31 @@ export def --wrapped preview [...rest: string]: any -> any {
     fzf --preview 'fzf-preview.bash {}' ...$rest
 }
 
-export def --wrapped editor [...rest: string]: any -> any {
+export def --wrapped edit [...rest: string]: any -> any {
     preview --bind 'enter:become(nvim {})' ...$rest
 }
 
 export def --wrapped --env jump [...rest: string]: nothing -> nothing {
-    cd (fd --follow --hidden --type=dir | preview ...$rest)
+    fd --follow --hidden --type=dir
+    | preview --no-multi ...$rest
+    | cd $in
 }
 
-export def --wrapped copy [...rest: string]: nothing -> any {
+export def --wrapped copypath [...rest: string]: nothing -> any {
     wl-copy (preview ...$rest)
+}
+
+export def --wrapped copyfile [...rest: string]: nothing -> any {
+    fd --follow --hidden --type=file
+    | preview --no-multi ...$rest
+    | if ($in | is-not-empty) { bat $in | wl-copy }
+}
+
+export def --wrapped img [...rest: string]: any -> any {
+    fd --follow --hidden -e=jpg -e=png
+    | preview ...$rest
+    | lines
+    | if ($in | is-not-empty) { imv ...$in }
 }
 
 export-env {
