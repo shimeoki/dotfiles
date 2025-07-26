@@ -12,6 +12,7 @@
 --color=marker:#b4befe
 --color=prompt:#cba6f7
 --reverse
+--multi
 --cycle
 --wrap
 --ellipsis="..."
