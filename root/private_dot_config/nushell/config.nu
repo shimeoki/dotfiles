@@ -39,7 +39,7 @@ source aliases.nu
 source binds.nu
 
 use prompt.nu []
+use modules/completions *
 
 use modules/repo.nu
 use modules/task.nu
-use modules/completions.nu []
