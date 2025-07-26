@@ -15,11 +15,14 @@
 # - don't specify bat style
 # - formatting, refactoring and styling
 # - more explicit extension
+# - clear images from screen on every call
 
 if [[ $# -ne 1 ]]; then
     >&2 echo "usage: $0 <file>"
     exit 1
 fi
+
+kitten icat --clear --transfer-mode=memory --stdin=no
 
 file=${1/#\~\//$HOME/}
 type=$(file --brief --dereference --mime -- "$file")
@@ -40,4 +43,4 @@ if [[ ! $type =~ image/ ]]; then
 fi
 
 rect=${FZF_PREVIEW_COLUMNS}x${FZF_PREVIEW_LINES}@0x0
-kitten icat --clear --transfer-mode=memory --stdin=no --place="$rect" -- "$file"
+kitten icat --transfer-mode=memory --stdin=no --place="$rect" -- "$file"
