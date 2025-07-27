@@ -10,7 +10,7 @@ export XDG_STATE_HOME="$HOME/.local/state"
 # similar with BROWSER
 
 # source: https://wiki.archlinux.org/title/Environment_variables#Default_programs
-export SHELL='zsh'
+export SHELL='nu'
 export PAGER='less'
 export VISUAL='nvim'
 export EDITOR=$VISUAL
