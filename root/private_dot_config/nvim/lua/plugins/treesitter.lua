@@ -31,6 +31,7 @@ local highlighters = {
 	"regex",
 	"kotlin",
 	"ron",
+	"kdl",
 }
 
 local function start()
