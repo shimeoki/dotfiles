@@ -18,6 +18,13 @@ autoload -Uz compinit && compinit
 # add arrow keys
 zstyle ':completion:*' menu select
 
+# add vi keys to menu select
+zmodload zsh/complist
+bindkey -M menuselect 'h' vi-backward-char
+bindkey -M menuselect 'k' vi-up-line-or-history
+bindkey -M menuselect 'j' vi-down-line-or-history
+bindkey -M menuselect 'l' vi-forward-char
+
 # completions in privileged commands
 zstyle ':completion::complete:*' gain-privileges 1
 
