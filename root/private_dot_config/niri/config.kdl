@@ -1,0 +1,299 @@
+input {
+    keyboard {
+        xkb {
+            layout "us,ru"
+            options "grp:caps_toggle"
+        }
+    }
+
+    touchpad {
+        tap
+
+        drag true
+        drag-lock
+
+        natural-scroll
+        scroll-method "two-finger"
+
+        accel-profile "flat"
+    }
+
+    mouse {
+        scroll-method "on-button-down"
+
+        accel-profile "flat"
+    }
+
+    warp-mouse-to-focus
+    focus-follows-mouse
+
+    disable-power-key-handling
+
+    workspace-auto-back-and-forth
+
+    mod-key "Super"
+    mod-key-nested "Alt"
+}
+
+output "HDMI-A-1" {
+    mode "1920x1080"
+    scale 1
+
+    variable-refresh-rate on-demand=true
+}
+
+layout {
+    gaps 8
+
+    center-focused-column "never"
+
+    default-column-width { proportion 0.5; }
+
+    preset-column-widths {
+        proportion 0.5
+        proportion 1.0
+        proportion 0.3
+    }
+
+    preset-window-heights {
+        proportion 0.5
+        proportion 1.0
+        proportion 0.2
+    }
+
+    insert-hint {
+        color "#cba6f780"
+    }
+
+    tab-indicator {
+        hide-when-single-tab
+        position "right"
+
+        gap 0
+        gaps-between-tabs 0
+        corner-radius 0
+
+        width 4
+        length total-proportion=1.0
+
+        active-color   "#b4befe"
+        inactive-color "#313244"
+        urgent-color   "#f38ba8"
+    }
+
+    focus-ring {
+        off
+    }
+
+    border {
+        off
+    }
+
+    background-color "transparent"
+}
+
+prefer-no-csd
+
+screenshot-path "~/Pictures/screenshots/desktop/%Y-%m-%d-%H-%M-%S.png"
+
+window-rule {
+    match app-id="^vesktop$"
+    match app-id="^discord$"
+    match app-id=r#"^.*\.materialgram$"#
+    match app-id="^DeltaChat$"
+    match app-id=r#"^.*\.Mumble$"#
+    block-out-from "screencast"
+}
+
+window-rule {
+    match app-id="^zen$" title="^Picture-in-Picture$"
+    open-floating true
+}
+
+window-rule {
+    match app-id="^kitty$"
+    opacity 0.9
+}
+
+layer-rule {
+    match namespace="^swww-daemon$"
+    place-within-backdrop true
+}
+
+layer-rule {
+    match namespace="^notifications$"
+    block-out-from "screencast"
+}
+
+// warn: no monitor keybinds, because i don't have the ability to test them
+binds {
+    Mod+Shift+Slash { show-hotkey-overlay; }
+
+    Mod+Return { spawn "kitty"; }
+    Mod+D      { spawn "fuzzel"; }
+    Mod+B      { spawn "zen-browser"; }
+    Mod+N      { spawn "obsidian"; }
+    Mod+M      { spawn "materialgram"; }
+    Mod+A      { spawn "pwvucontrol"; }
+
+    Mod+Tab          repeat=false { toggle-overview; }
+    Mod+MouseForward repeat=false { toggle-overview; }
+
+    Mod+BackSpace   { close-window; }
+    Mod+MouseMiddle { close-window; }
+
+    Mod+U { focus-workspace-down; }
+    Mod+I { focus-workspace-up; }
+    Mod+H { focus-column-left; }
+    Mod+J { focus-window-down; }
+    Mod+K { focus-window-up; }
+    Mod+L { focus-column-right; }
+
+    Mod+Ctrl+U { move-workspace-down; }
+    Mod+Ctrl+I { move-workspace-up; }
+    Mod+Ctrl+H { move-column-left; }
+    Mod+Ctrl+J { move-window-down; }
+    Mod+Ctrl+K { move-window-up; }
+    Mod+Ctrl+L { move-column-right; }
+
+    Mod+Shift+U      { move-window-to-workspace-down; }
+    Mod+Shift+I      { move-window-to-workspace-up; }
+    Mod+Ctrl+Shift+U { move-column-to-workspace-down; }
+    Mod+Ctrl+Shift+I { move-column-to-workspace-up; }
+
+    Mod+WheelScrollDown      cooldown-ms=100 { focus-workspace-down; }
+    Mod+WheelScrollUp        cooldown-ms=100 { focus-workspace-up; }
+    Mod+Ctrl+WheelScrollDown cooldown-ms=100 { move-column-to-workspace-down; }
+    Mod+Ctrl+WheelScrollUp   cooldown-ms=100 { move-column-to-workspace-up; }
+
+    Mod+WheelScrollRight      cooldown-ms=50 { focus-column-right; }
+    Mod+WheelScrollLeft       cooldown-ms=50 { focus-column-left; }
+    Mod+Ctrl+WheelScrollRight cooldown-ms=50 { move-column-right; }
+    Mod+Ctrl+WheelScrollLeft  cooldown-ms=50 { move-column-left; }
+
+    Mod+Shift+WheelScrollDown      cooldown-ms=50 { focus-column-right; }
+    Mod+Shift+WheelScrollUp        cooldown-ms=50 { focus-column-left; }
+    Mod+Ctrl+Shift+WheelScrollDown cooldown-ms=50 { move-column-right; }
+    Mod+Ctrl+Shift+WheelScrollUp   cooldown-ms=50 { move-column-left; }
+
+    Mod+1 { focus-workspace 1; }
+    Mod+2 { focus-workspace 2; }
+    Mod+3 { focus-workspace 3; }
+    Mod+4 { focus-workspace 4; }
+    Mod+5 { focus-workspace 5; }
+    Mod+6 { focus-workspace 6; }
+    Mod+7 { focus-workspace 7; }
+    Mod+8 { focus-workspace 8; }
+    Mod+9 { focus-workspace 9; }
+
+    Mod+Ctrl+1 { move-column-to-workspace 1; }
+    Mod+Ctrl+2 { move-column-to-workspace 2; }
+    Mod+Ctrl+3 { move-column-to-workspace 3; }
+    Mod+Ctrl+4 { move-column-to-workspace 4; }
+    Mod+Ctrl+5 { move-column-to-workspace 5; }
+    Mod+Ctrl+6 { move-column-to-workspace 6; }
+    Mod+Ctrl+7 { move-column-to-workspace 7; }
+    Mod+Ctrl+8 { move-column-to-workspace 8; }
+    Mod+Ctrl+9 { move-column-to-workspace 9; }
+
+    Mod+Shift+1 { move-window-to-workspace 1; }
+    Mod+Shift+2 { move-window-to-workspace 2; }
+    Mod+Shift+3 { move-window-to-workspace 3; }
+    Mod+Shift+4 { move-window-to-workspace 4; }
+    Mod+Shift+5 { move-window-to-workspace 5; }
+    Mod+Shift+6 { move-window-to-workspace 6; }
+    Mod+Shift+7 { move-window-to-workspace 7; }
+    Mod+Shift+8 { move-window-to-workspace 8; }
+    Mod+Shift+9 { move-window-to-workspace 9; }
+
+    Mod+Comma  { consume-or-expel-window-left; }
+    Mod+Period { consume-or-expel-window-right; }
+
+    Mod+R       { switch-preset-column-width; }
+    Mod+Shift+R { switch-preset-window-height; }
+    Mod+Ctrl+R  { reset-window-height; }
+
+    Mod+F       { maximize-column; }
+    Mod+Shift+F { fullscreen-window; }
+    Mod+Ctrl+F  { expand-column-to-available-width; }
+
+    Mod+C      { center-column; }
+    Mod+Ctrl+C { center-visible-columns; }
+
+    Mod+Minus { set-column-width "-10%"; }
+    Mod+Equal { set-column-width "+10%"; }
+
+    Mod+Shift+Minus { set-window-height "-10%"; }
+    Mod+Shift+Equal { set-window-height "+10%"; }
+
+    Mod+MouseBack { toggle-window-floating; }
+    Mod+V         { toggle-window-floating; }
+    Mod+Shift+V   { switch-focus-between-floating-and-tiling; }
+
+    Mod+W { toggle-column-tabbed-display; }
+
+    Mod+S       { screenshot show-pointer=false; }
+    Mod+Shift+S { screenshot-screen; }
+    Mod+Ctrl+S  { screenshot-window; }
+
+    // Applications such as remote-desktop clients and software KVM switches may
+    // request that niri stops processing the keyboard shortcuts defined here
+    // so they may, for example, forward the key presses as-is to a remote
+    // machine. It's a good idea to bind an escape hatch to toggle the
+    // inhibitor, so a buggy application can't hold your session hostage.
+    //
+    // The allow-inhibiting=false property can be applied to other binds as
+    // well, which ensures niri always processes them, even when an inhibitor
+    // is active.
+    Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
+
+    Mod+Shift+E { quit; }
+
+    Mod+Shift+P { power-off-monitors; }
+}
+
+spawn-at-startup "swww-daemon"
+spawn-at-startup "xwayland-satellite"
+spawn-at-startup "dunst"
+spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
+spawn-at-startup "wl-paste" "--type" "text"  "--watch" "cliphist" "store"
+spawn-at-startup "wl-paste" "--type" "image" "--watch" "cliphist" "store"
+spawn-at-startup "udiskie"
+
+environment {
+    QT_QPA_PLATFORM "wayland"
+    DISPLAY ":0"
+}
+
+cursor {
+    xcursor-theme "Bibata-Modern-Ice"
+    xcursor-size 24
+}
+
+clipboard {
+    disable-primary
+}
+
+overview {
+    zoom 0.5
+
+    workspace-shadow {
+        off
+    }
+}
+
+hotkey-overlay {
+    skip-at-startup
+}
+
+animations {
+    window-open {
+        duration-ms 400
+        curve "ease-out-expo"
+    }
+
+    window-close {
+        duration-ms 200
+        curve "linear"
+    }
+}
