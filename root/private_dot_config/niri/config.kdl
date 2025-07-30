@@ -98,8 +98,10 @@ screenshot-path "~/Pictures/screenshots/desktop/%Y-%m-%d-%H-%M-%S.png"
 
 window-rule {
     match app-id="^vesktop$"
-    match app-id=r#".*\.materialgram"#
+    match app-id="^discord$"
+    match app-id=r#"^.*\.materialgram$"#
     match app-id="^DeltaChat$"
+    match app-id=r#"^.*\.Mumble$"#
     block-out-from "screencast"
 }
 
