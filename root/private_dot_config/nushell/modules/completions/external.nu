@@ -12,7 +12,7 @@ export def expander []: list<string> -> list<string> {
     let alias = (
         scope aliases
         | where name == $spans.0
-        | get --ignore-errors 0.expansion
+        | get --optional 0.expansion
     )
 
     if $alias != null {
