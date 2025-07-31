@@ -115,6 +115,22 @@ local logical_not = s("not", {
 	t("!"),
 })
 
+local equals = s("eq", {
+	t("== "),
+})
+
+local not_equals = s("neq", {
+	t("!= "),
+})
+
+local equals_nil = s("en", {
+	t("== nil"),
+})
+
+local not_equals_nil = s("nn", {
+	t("!= nil"),
+})
+
 local even = s("even", {
 	i(1, "v"),
 	t("%2 == 0"),
@@ -177,6 +193,10 @@ return {
 	logical_and,
 	logical_or,
 	logical_not,
+	equals,
+	not_equals,
+	equals_nil,
+	not_equals_nil,
 	even,
 	odd,
 	if_nil,
