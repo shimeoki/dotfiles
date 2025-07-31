@@ -61,6 +61,10 @@ local function luasnip_prev()
 	return ls.choice_active() and ls.change_choice(-1)
 end
 
+local function luasnip_unlink()
+	require("luasnip").unlink_current()
+end
+
 local t = "Telescope "
 
 --- @class Bind
@@ -220,6 +224,13 @@ return {
 		"<c-s-h>",
 		luasnip_prev,
 		"previous luasnip choice",
+		modes = { "i", "s" },
+		no_leader = true,
+	}),
+	new({
+		"<c-bs>",
+		luasnip_unlink,
+		"unlink snippet",
 		modes = { "i", "s" },
 		no_leader = true,
 	}),
