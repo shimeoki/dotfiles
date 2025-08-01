@@ -25,6 +25,23 @@ export def --wrapped copyfile [...rest: string]: nothing -> any {
     | if ($in | is-not-empty) { bat $in | wl-copy }
 }
 
+export def --wrapped copyhist [...rest: string]: nothing -> any {
+    cliphist list
+    | fzf --no-sort --no-multi --preview 'fzf-cliphist.bash {}' ...$rest
+    | if ($in | is-not-empty) { $in | cliphist decode | wl-copy }
+}
+
+export def --wrapped copycmd [...rest: string]: nothing -> any {
+    history
+    | sort-by start_timestamp --reverse
+    | get command
+    | uniq
+    | to text
+    | fzf --no-sort --no-multi
+    | str trim
+    | wl-copy
+}
+
 export def --wrapped img [...rest: string]: nothing -> any {
     fd --follow --hidden -e=jpg -e=png
     | preview ...$rest
