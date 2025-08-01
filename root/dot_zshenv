@@ -33,6 +33,9 @@ export GPG_TTY="$TTY"
 # source: https://wiki.archlinux.org/title/Cursor_themes#Environment_variable
 export XCURSOR_PATH="/usr/share/icons:${XDG_DATA_HOME}/icons"
 
+export SWWW_TRANSITION=any
+export SWWW_TRANSITION_FPS=144
+
 export OMP_CONFIG_HOME="$XDG_CONFIG_HOME/oh-my-posh"
 
 path+="$HOME/.cargo/bin"
