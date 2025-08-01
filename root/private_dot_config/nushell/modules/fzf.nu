@@ -25,7 +25,7 @@ export def --wrapped copyfile [...rest: string]: nothing -> any {
     | if ($in | is-not-empty) { bat $in | wl-copy }
 }
 
-export def --wrapped img [...rest: string]: any -> any {
+export def --wrapped img [...rest: string]: nothing -> any {
     fd --follow --hidden -e=jpg -e=png
     | preview ...$rest
     | lines
