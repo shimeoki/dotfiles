@@ -6,7 +6,7 @@ local global = vim.g
 
 local formatters_by_ft = {
 	lua = { "stylua" },
-	go = { "goimports" },
+	go = { "golines" },
 	python = { "ruff_fix", "ruff_format", "ruff_organize_imports" },
 	sh = { "shfmt" },
 	bash = { "shfmt" },
@@ -42,6 +42,13 @@ local clang = {
 	append_args = {
 		"--style",
 		"{ BasedOnStyle: Chromium, IndentWidth: 4, LineEnding: LF }",
+	},
+}
+
+local golines = {
+	append_args = {
+		"--max-len=80",
+		"--tab-len=4",
 	},
 }
 
@@ -111,6 +118,7 @@ local opts = {
 	formatters = {
 		["deno_fmt"] = deno,
 		["clang-format"] = clang,
+		["golines"] = golines,
 	},
 }
 

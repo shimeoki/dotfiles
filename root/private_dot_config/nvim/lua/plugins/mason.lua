@@ -26,6 +26,7 @@ local ensure_installed = {
 	-- formatters
 	"stylua",
 	"goimports",
+	"golines",
 	"ruff",
 	"shfmt",
 	"clang-format",
