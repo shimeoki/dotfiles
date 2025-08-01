@@ -32,6 +32,12 @@ export def --wrapped img [...rest: string]: nothing -> any {
     | if ($in | is-not-empty) { imv ...$in }
 }
 
+export def --wrapped setimg [...rest: string]: any -> any {
+    fd --follow --hidden -e=jpg -e=png -e=gif
+    | preview --no-multi ...$rest
+    | if ($in | is-not-empty) { swww img $in }
+}
+
 export-env {
     $env.FZF_DEFAULT_COMMAND = 'fd --follow --hidden'
     $env.FZF_DEFAULT_OPTS_FILE = ('~/.config/fzf/opts' | path expand)
