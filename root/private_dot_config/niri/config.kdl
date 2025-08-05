@@ -255,6 +255,7 @@ binds {
 spawn-at-startup "swww-daemon"
 spawn-at-startup "xwayland-satellite"
 spawn-at-startup "dunst"
+spawn-at-startup "udiskie"
 spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
 spawn-at-startup "wl-paste" "--type" "text"  "--watch" "cliphist" "store"
 spawn-at-startup "wl-paste" "--type" "image" "--watch" "cliphist" "store"
