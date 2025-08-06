@@ -24,6 +24,7 @@ local formatters_by_ft = {
 	yaml = { "deno_fmt" },
 	vue = { "deno_fmt" },
 	markdown = { "deno_fmt" },
+	nix = { "nixfmt" },
 	-- toml = { "pyproject-fmt" }, -- fix: don't enable on all toml files
 }
 

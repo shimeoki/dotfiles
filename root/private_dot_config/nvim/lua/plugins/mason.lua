@@ -31,6 +31,7 @@ local ensure_installed = {
 	"shfmt",
 	"clang-format",
 	"pyproject-fmt",
+	"nixfmt",
 	-- compilers
 	"tree-sitter-cli",
 }
