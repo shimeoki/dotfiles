@@ -32,6 +32,7 @@ local highlighters = {
 	"kotlin",
 	"ron",
 	"kdl",
+	"nix",
 }
 
 local function start()
