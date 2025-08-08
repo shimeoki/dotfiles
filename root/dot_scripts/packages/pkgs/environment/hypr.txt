@@ -1,7 +1,0 @@
-hyprland
-hypridle
-hyprlock
-hyprpicker
-hyprwayland-scanner
-grimblast-git
-pwvucontrol

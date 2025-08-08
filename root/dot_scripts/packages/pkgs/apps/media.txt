@@ -1,4 +1,0 @@
-mpv
-mupdf
-obs-studio
-imv

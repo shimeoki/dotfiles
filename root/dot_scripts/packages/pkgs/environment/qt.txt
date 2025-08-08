@@ -1,4 +1,0 @@
-qt5-wayland
-qt5ct
-qt6ct
-kvantum
