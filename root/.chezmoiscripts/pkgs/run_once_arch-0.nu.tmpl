@@ -1,0 +1,22 @@
+{{- if not (eq .os "linux-arch") -}} {{- abortEmpty -}} {{- end -}}
+#!/usr/bin/env nu
+
+print $"(ansi bb)dotfiles:(ansi rst) installing paru"
+
+if (which paru | is-not-empty) {
+    exit
+}
+
+let timeout = 1 # seconds
+let url = "aur.archlinux.org"
+let status = (ping -w $timeout $url | complete)
+
+if ($status.exit_code != 0) {
+    print $"(ansi rb)dotfiles:(ansi rst) aur unreachable. aborting..."
+    exit $status.exit_code
+}
+
+sudo pacman -Sy --needed base-devel git
+git clone https://aur.archlinux.org/paru.git
+cd paru
+makepkg -sic --noconfirm
