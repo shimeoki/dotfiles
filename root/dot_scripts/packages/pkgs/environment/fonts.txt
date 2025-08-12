@@ -1,8 +1,0 @@
-ttf-fira-code
-ttf-firacode-nerd
-ttf-roboto-mono
-ttf-roboto-mono-nerd
-ttf-roboto
-noto-fonts-cjk
-noto-fonts-emoji
-noto-fonts-extra
