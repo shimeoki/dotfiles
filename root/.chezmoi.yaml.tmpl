@@ -7,7 +7,13 @@
 {{- $gitCommitGpgsign := promptBoolOnce . "git.commit.gpgsign"
 "git commit gpgsign" -}}
 
+{{- $os := .chezmoi.os -}}
+{{- if hasKey .chezmoi.osRelease "id" -}}
+{{-     $os = printf "%s-%s" .chezmoi.os .chezmoi.osRelease.id -}}
+{{- end -}}
+
 data:
+    os: {{ $os | quote }}
     git:
         user:
             name: {{ $gitUserName }}
