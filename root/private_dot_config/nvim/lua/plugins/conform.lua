@@ -53,6 +53,12 @@ local golines = {
 	},
 }
 
+local nixfmt = {
+	append_args = {
+		"--width=80",
+	},
+}
+
 -- source: https://github.com/stevearc/conform.nvim/blob/master/doc/recipes.md#command-to-toggle-format-on-save
 
 local function get_end(line2)
@@ -120,6 +126,7 @@ local opts = {
 		["deno_fmt"] = deno,
 		["clang-format"] = clang,
 		["golines"] = golines,
+		["nixfmt"] = nixfmt,
 	},
 }
 
