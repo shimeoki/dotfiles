@@ -10,8 +10,11 @@ let pkgs = [
 ] | to text
 
 if ($pkgs | is-empty) {
+    print $"(ansi gb)dotfiles:(ansi rst) package list is empty"
     exit
 }
 
 # dash at the end for the packages from stdin
 $pkgs | paru -Sy --needed --noconfirm --useask --sudoloop --repo -
+
+print $"(ansi gb)dotfiles:(ansi rst) installed official arch packages"
