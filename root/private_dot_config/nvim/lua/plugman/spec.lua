@@ -29,7 +29,7 @@ return {
 		"stevearc/conform.nvim",
 		main = "conform",
 		event = { "BufWritePre" },
-		cmd = { "ConformInfo" },
+		cmd = { "ConformInfo", "Format", "FormatEnable", "FormatDisable" },
 		config = function()
 			require("plugins.conform").setup()
 		end,
