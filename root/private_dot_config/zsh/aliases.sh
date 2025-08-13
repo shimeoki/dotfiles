@@ -6,6 +6,7 @@ alias bnl='bat --number --line-range'
 alias bp='bat --plain'
 alias bpl='bat --plain --line-range'
 alias bl='bat --line-range'
+
 alias h='batman'
 
 alias cz='chezmoi'
@@ -27,7 +28,6 @@ alias ll='eza -l'
 alias lla='eza -la'
 alias lt='eza -T'
 alias lta='eza -Ta'
-alias ltl='eza_tree'
 
 alias ff='fastfetch'
 alias cf='clear && fastfetch'
@@ -80,16 +80,9 @@ alias nv='nvim'
 
 alias sudo='sudo ' # blank space is a hack
 
-alias waybar-toggle='killall -SIGUSR1 waybar'
-alias waybar-reload='killall -SIGUSR2 waybar'
-
-alias sbg='swww img'
-
 alias wific='nmcli device wifi connect'
 alias wifir='nmcli device wifi rescan'
 alias wifil='nmcli device wifi list'
-
-alias jj='j -'
 
 alias hlr='hyprctl reload'
 alias hle='hyprctl dispatch exec'

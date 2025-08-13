@@ -19,12 +19,6 @@ alias ji = zoxide jumper
 
 use modules/fzf.nu
 alias f   = fzf
-alias fp  = fzf preview
-alias fe  = fzf edit
-alias fj  = fzf jump
-alias fi  = fzf img
-alias fcf = fzf copyfile
-alias fcp = fzf copypath
 
 alias cz   = chezmoi
 alias czz  = chezmoi apply
