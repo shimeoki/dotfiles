@@ -1,4 +1,4 @@
-{{- if not (eq .os "linux-arch") -}} {{- abortEmpty -}} {{- end -}}
+{{- if ne .os "linux-arch" -}} {{- abortEmpty -}} {{- end -}}
 #!/usr/bin/env nu
 
 print $"(ansi bb)dotfiles:(ansi rst) installing paru"
