@@ -91,6 +91,7 @@ packages:
             - "carapace-bin"
             - "ripdrag-git"
             - "oh-my-posh-bin"
+            - "paru"
             # dev
             - "lazydocker"
             # desktop
