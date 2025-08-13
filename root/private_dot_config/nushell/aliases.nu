@@ -2,11 +2,7 @@
 # this file should be sourced, because there are no export keywords.
 
 alias b   = bat
-alias bn  = bat --number
-alias bnl = bat --number --line-range
 alias bp  = bat --plain
-alias bpl = bat --plain --line-range
-alias bl  = bat --line-range
 
 alias h = batman
 
@@ -18,15 +14,11 @@ alias j  = zoxide jump
 alias ji = zoxide jumper
 
 use modules/fzf.nu
-alias f   = fzf
 
 alias cz   = chezmoi
-alias czz  = chezmoi apply
+alias cza  = chezmoi apply
 alias czj  = chezmoi cd
-alias cza  = chezmoi add
-alias czac = chezmoi add .
-alias czd  = chezmoi diff
-alias czs  = chezmoi status
+alias czz  = chezmoi status
 
 alias c = clear
 
@@ -97,11 +89,5 @@ alias hlm = hyprctl monitors
 alias hlc = hyprctl clients
 
 alias t = btop
-
-# todo: could be a function with git-rev-parse
-alias gw = ./gradlew
-
-# todo: could be a function with dynamic venv path
-alias venv = overlay use .venv/bin/activate.nu
 
 alias leaks = gitleaks git

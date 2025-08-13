@@ -1,21 +1,14 @@
 #!/usr/bin/env sh
 
 alias b='bat'
-alias bn='bat --number'
-alias bnl='bat --number --line-range'
 alias bp='bat --plain'
-alias bpl='bat --plain --line-range'
-alias bl='bat --line-range'
 
 alias h='batman'
 
 alias cz='chezmoi'
-alias czz='chezmoi apply'
+alias cza='chezmoi apply'
 alias czj='chezmoi cd'
-alias cza='chezmoi add'
-alias czac='chezmoi add .'
-alias czd='chezmoi diff'
-alias czs='chezmoi status'
+alias czz='chezmoi status'
 
 alias c='clear'
 
@@ -31,8 +24,6 @@ alias lta='eza -Ta'
 
 alias ff='fastfetch'
 alias cf='clear && fastfetch'
-
-alias f='fzf'
 
 alias g='git'
 alias ga='git add'
@@ -73,7 +64,6 @@ alias icat='kitten icat'
 alias s='kitten ssh'
 
 alias lg='lazygit'
-
 alias lc='lazydocker'
 
 alias nv='nvim'
@@ -90,8 +80,5 @@ alias hlm='hyprctl monitors'
 alias hlc='hyprctl clients'
 
 alias t='btop'
-
-# todo: could be a function with git-rev-parse
-alias gw='./gradlew'
 
 alias leaks='gitleaks git'
