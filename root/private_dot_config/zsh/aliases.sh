@@ -78,12 +78,6 @@ alias lc='lazydocker'
 
 alias nv='nvim'
 
-alias pm='yay'
-alias pms='yay --sync'
-alias pml='yay --query'
-alias pmi='yay --query --info'
-alias pmr='yay --remove --recursive'
-
 alias sudo='sudo ' # blank space is a hack
 
 alias waybar-toggle='killall -SIGUSR1 waybar'

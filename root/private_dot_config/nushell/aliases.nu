@@ -93,12 +93,6 @@ alias lc = lazydocker
 
 alias nv = nvim
 
-alias pm  = yay
-alias pms = yay --sync
-alias pml = yay --query
-alias pmi = yay --query --info
-alias pmr = yay --remove --recursive
-
 alias wific = nmcli device wifi connect
 alias wifir = nmcli device wifi rescan
 alias wifil = nmcli device wifi list
