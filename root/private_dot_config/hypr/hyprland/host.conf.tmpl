@@ -1,0 +1,11 @@
+{{- $host := get .hosts .host -}}
+{{- $outputs := get $host "outputs" -}}
+
+{{- range (keys $outputs) }}
+{{-     $o := get $outputs . -}}
+monitor = {{ . }}, {{ $o.width }}x{{ $o.height }}@{{ $o.hz }}, auto, 1
+{{- end -}}
+
+{{- if eq .host "yuki" }}
+exec-once = hypridle
+{{- end -}}

@@ -1,23 +1,43 @@
-{{- $gitUserName := promptStringOnce . "git.user.name"
-"git user name" -}}
-{{- $gitUserEmail := promptStringOnce . "git.user.email"
-"git user email" -}}
-{{- $gitUserSigningkey := promptStringOnce . "git.user.signingkey"
-"git user signingkey" -}}
-{{- $gitCommitGpgsign := promptBoolOnce . "git.commit.gpgsign"
-"git commit gpgsign" -}}
-
 {{- $os := .chezmoi.os -}}
 {{- if hasKey .chezmoi.osRelease "id" -}}
 {{-     $os = printf "%s-%s" .chezmoi.os .chezmoi.osRelease.id -}}
 {{- end -}}
 
+{{- $hosts := list "kaede" "yuki" -}}
+{{- $host := promptChoiceOnce
+    . "host"
+    "dotfiles: host name"
+    $hosts
+-}}
+
+{{- $gitName := promptStringOnce 
+    . "git.name"
+    "dotfiles: git name"
+-}}
+
+{{- $gitEmail := promptStringOnce
+    . "git.email"
+    "dotfiles: git email"
+-}}
+
+{{- $gitSigningGPG := promptBoolOnce
+    . "git.signing.gpg"
+    "dotfiles: git gpg signing"
+-}}
+
+{{- $gitSigningKey := "" -}}
+{{- if $gitSigningGPG -}} {{-
+        $gitSigningKey = promptStringOnce
+        . "git.signing.key"
+        "dotfiles: git signing key"
+-}} {{- end -}}
+
 data:
     os: {{ $os | quote }}
+    host: {{ $host | quote }}
     git:
-        user:
-            name: {{ $gitUserName }}
-            email: {{ $gitUserEmail }}
-            signingkey: {{ $gitUserSigningkey }}
-        commit:
-            gpgsign: {{ $gitCommitGpgsign }}
+        name: {{ $gitName | quote }}
+        email: {{ $gitEmail | quote }}
+        signing:
+            gpg: {{ $gitSigningGPG }}
+            key: {{ $gitSigningKey | quote }}
