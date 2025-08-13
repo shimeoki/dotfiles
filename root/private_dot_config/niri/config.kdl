@@ -131,6 +131,7 @@ binds {
 
     Mod+Return { spawn "kitty"; }
     Mod+D      { spawn "fuzzel"; }
+    Mod+Q      { spawn "niri-focus.nu"; }
     Mod+B      { spawn "zen-browser"; }
     Mod+N      { spawn "obsidian"; }
     Mod+M      { spawn "materialgram"; }

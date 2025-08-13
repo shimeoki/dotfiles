@@ -55,6 +55,15 @@ export def --wrapped setimg [...rest: string]: any -> any {
     | if ($in | is-not-empty) { swww img $in }
 }
 
+export def --wrapped focus [...rest: string]: nothing -> any {
+    niri msg --json windows
+    | from json
+    | each {|w| $"($w.id) ($w.title) / ($w.app_id)" }
+    | to text
+    | fzf --no-multi --accept-nth=1 ...$rest
+    | if ($in | is-not-empty) { niri msg action focus-window --id $in }
+}
+
 export-env {
     $env.FZF_DEFAULT_COMMAND = 'fd --follow --hidden'
     $env.FZF_DEFAULT_OPTS_FILE = ('~/.config/fzf/opts' | path expand)
