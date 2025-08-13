@@ -23,6 +23,7 @@ packages:
             - "neovim"
             - "syncthing"
             - "reflector"
+            - "xdg-user-dirs"
             # dev
             - "docker"
             - "docker-buildx"
