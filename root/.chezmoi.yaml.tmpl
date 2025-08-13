@@ -7,6 +7,9 @@
 {{- $gitCommitGpgsign := promptBoolOnce . "git.commit.gpgsign"
 "git commit gpgsign" -}}
 
+{{- $hosts := list "kaede" "yuki" -}}
+{{- $host := promptChoiceOnce . "host" "host" $hosts -}}
+
 {{- $os := .chezmoi.os -}}
 {{- if hasKey .chezmoi.osRelease "id" -}}
 {{-     $os = printf "%s-%s" .chezmoi.os .chezmoi.osRelease.id -}}
@@ -14,6 +17,7 @@
 
 data:
     os: {{ $os | quote }}
+    host: {{ $host | quote }}
     git:
         user:
             name: {{ $gitUserName }}
