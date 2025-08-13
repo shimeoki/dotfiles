@@ -16,7 +16,6 @@ alias y = yazi cwd-on-exit
 use modules/zoxide.nu
 alias j  = zoxide jump
 alias ji = zoxide jumper
-alias jj = cd -
 
 use modules/fzf.nu
 alias f   = fzf
