@@ -107,4 +107,4 @@ alias t='btop'
 # todo: could be a function with git-rev-parse
 alias gw='./gradlew'
 
-alias leaks='gitleaks detect'
+alias leaks='gitleaks git'

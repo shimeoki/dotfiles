@@ -116,4 +116,4 @@ alias gw = ./gradlew
 # todo: could be a function with dynamic venv path
 alias venv = overlay use .venv/bin/activate.nu
 
-alias leaks = gitleaks detect
+alias leaks = gitleaks git
