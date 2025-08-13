@@ -24,6 +24,7 @@ packages:
             - "syncthing"
             - "reflector"
             - "xdg-user-dirs"
+            - "tlp"
             # dev
             - "docker"
             - "docker-buildx"
