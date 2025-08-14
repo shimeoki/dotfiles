@@ -149,7 +149,7 @@
 		"format": "{volume}% {icon}",
 		"format-muted": "{volume}% 󰝟",
 		"format-icons": ["󰕿", "󰖀", "󰕾"],
-		"scroll-step": 1,
+		"scroll-step": 5,
 		"on-click": "pwvucontrol",
 		"on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
 		"tooltip": false,
