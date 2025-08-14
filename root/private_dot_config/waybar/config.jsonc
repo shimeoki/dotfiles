@@ -191,7 +191,7 @@
         },
         "tooltip-format-disconnected": "",
         "on-click": "rmpc togglepause",
-        "on-click-right": "rmpc prev",
+        "on-click-right": "kitty --detach rmpc",
         "on-click-middle": "rmpc next",
         "on-scroll-up": "rmpc volume +5",
         "on-scroll-down": "rmpc volume -5"
