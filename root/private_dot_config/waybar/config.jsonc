@@ -27,6 +27,12 @@
 		// warn: won't work if you don't use kanata
 		"on-click": "hyprctl switchxkblayout kanata next"
 	},
+	"niri/language": {
+		"format": "{}",
+		"format-en": "en",
+		"format-ru": "ru",
+		"on-click": "niri msg action switch-layout next"
+	},
 	"hyprland/workspaces": {
 		"format": "{name}{icon}{windows}",
 		"format-window-separator": " ",
