@@ -11,10 +11,12 @@ export XDG_STATE_HOME="$HOME/.local/state"
 
 # source: https://wiki.archlinux.org/title/Environment_variables#Default_programs
 export SHELL='nu'
-export PAGER='less'
 export VISUAL='nvim'
 export EDITOR=$VISUAL
 export BROWSER='zen-browser'
+
+export PAGER='less -RF'
+export BAT_PAGER='less'
 
 # source: https://wiki.archlinux.org/title/Zsh#Startup/Shutdown_files
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
