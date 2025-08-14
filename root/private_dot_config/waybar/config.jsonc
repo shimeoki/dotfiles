@@ -19,7 +19,8 @@
 		"cava",
 		"wireplumber",
 		"backlight",
-		"battery"
+		"battery",
+		"tray"
 	],
 	"hyprland/language": {
 		"format": "{}",
@@ -196,5 +197,11 @@
 		"on-scroll-up": "rmpc volume +5",
 		"on-scroll-down": "rmpc volume -5",
 		"max-length": 80
+	},
+	"tray": {
+		"icon-size": 16,
+		"spacing": 12,
+		"show-passive-items": true,
+		"reverse-direction": true
 	}
 }

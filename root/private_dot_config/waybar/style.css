@@ -31,7 +31,8 @@ window#waybar.empty #window {
 #bluetooth,
 #wireplumber,
 #cava,
-#mpd {
+#mpd,
+#tray {
     background-color: @base;
     color: @text;
 
