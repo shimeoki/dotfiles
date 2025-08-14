@@ -5,19 +5,17 @@
 	"margin-left": 4,
 	"margin-right": 4,
 	"modules-left": [
+		"wireplumber",
 		"mpd"
-		// "hyprland/workspaces",
-		// "hyprland/window"
 	],
 	"modules-center": [
-		"clock"
-		// "hyprland/language"
+		"clock",
+		"niri/language"
 	],
 	"modules-right": [
 		"bluetooth",
 		"network",
 		"cava",
-		"wireplumber",
 		"backlight",
 		"battery",
 		"tray"
