@@ -18,6 +18,9 @@ export BROWSER='zen-browser'
 export PAGER='less -RF'
 export BAT_PAGER='less'
 
+# otherwise path completions in nushell don't work
+export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense'
+
 # source: https://wiki.archlinux.org/title/Zsh#Startup/Shutdown_files
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 
