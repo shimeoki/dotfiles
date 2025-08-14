@@ -173,6 +173,23 @@
 			"playing": "<span color=\"#a6e3a1\">󰐊</span>", // green
 			"paused": "<span color=\"#f9e2af\">󰏤</span>" // yellow
 		},
+        "format-stopped": "",
+        "format-disconnected": "",
+        "tooltip": true,
+        "tooltip-format": "{repeatIcon}{randomIcon}{consumeIcon}{singleIcon}",
+        "repeat-icons": {
+            "on": " repeat "
+        },
+        "random-icons": {
+            "on": " random "
+        },
+        "consume-icons": {
+            "on": " remove "
+        },
+        "single-icons": {
+            "on": " single "
+        },
+        "tooltip-format-disconnected": "",
         "on-click": "rmpc togglepause",
         "on-click-right": "rmpc prev",
         "on-click-middle": "rmpc next",
