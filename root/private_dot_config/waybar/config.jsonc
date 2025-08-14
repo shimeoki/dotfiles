@@ -113,7 +113,7 @@
 		"format-ethernet": "{bandwidthTotalBytes} 󰲝",
 		"format-disconnected": "n/a 󰲜",
 		"format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
-		"interval": 2
+		"interval": 5
 	},
 	"backlight": {
 		"format": "{percent}% {icon}",
@@ -163,7 +163,7 @@
 		"format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇"],
 		"input_delay": 2,
 		"hide_on_silence": true,
-		"sleep_timer": 4
+		"sleep_timer": 5
 	},
 	"mpd": {
 		// say thanks to pango for hardcoding colors
