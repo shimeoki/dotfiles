@@ -101,3 +101,4 @@ packages:
             - "materialgram-bin"
             - "bibata-cursor-theme"
             - "pwvucontrol"
+            - "waybar-cava"
