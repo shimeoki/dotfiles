@@ -1,0 +1,8 @@
+{{- if ne .os "linux-arch" -}} {{- abortEmpty -}} {{- end -}}
+#!/usr/bin/env nu
+
+print $"(ansi bb)dotfiles:(ansi rst) updating hostname"
+
+sudo hostnamectl hostname {{ .host | quote }}
+
+print $"(ansi gb)dotfiles:(ansi rst) updated hostname"
