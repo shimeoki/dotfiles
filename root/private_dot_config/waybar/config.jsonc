@@ -4,10 +4,11 @@
 	"margin-top": 8,
 	"margin-left": 4,
 	"margin-right": 4,
-	// "modules-left": [
-	// "hyprland/workspaces",
-	// "hyprland/window"
-	// ],
+	"modules-left": [
+		"mpd"
+		// "hyprland/workspaces",
+		// "hyprland/window"
+	],
 	"modules-center": [
 		"clock"
 		// "hyprland/language"
@@ -164,5 +165,12 @@
 		"input_delay": 2,
 		"hide_on_silence": true,
 		"sleep_timer": 4
+	},
+	"mpd": {
+		"format": "{stateIcon} {title} by {artist} from {album} ({elapsedTime:%M:%S} / {totalTime:%M:%S})",
+		"state-icons": {
+			"playing": "󰐊",
+			"paused": "󰏤"
+		}
 	}
 }

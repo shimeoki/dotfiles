@@ -30,7 +30,8 @@ window#waybar.empty #window {
 #keyboard-state,
 #bluetooth,
 #wireplumber,
-#cava {
+#cava,
+#mpd {
     background-color: @base;
     color: @text;
 
