@@ -39,8 +39,8 @@ window#waybar.empty #window {
     padding: 6px 16px;
     margin: 0 4px;
 
-    border: 1px solid alpha(@overlay2, 0.5);
-    border-radius: 8px;
+    border: 0px;
+    border-radius: 0px;
 }
 
 #workspaces button.active {
