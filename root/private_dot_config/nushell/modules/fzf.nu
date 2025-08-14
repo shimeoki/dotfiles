@@ -5,8 +5,9 @@ export def --wrapped preview [...rest: string]: any -> any {
     fzf --preview 'fzf-preview.bash {}' ...$rest
 }
 
-export def --wrapped edit [...rest: string]: any -> any {
-    preview --bind 'enter:become(nvim {})' ...$rest
+export def --wrapped edit [...rest: string]: nothing -> any {
+    fd --follow --hidden --type=file
+    | preview --bind 'enter:become(nvim {})' ...$rest
 }
 
 export def --wrapped --env jump [...rest: string]: nothing -> nothing {
