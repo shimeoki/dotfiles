@@ -154,22 +154,14 @@
 		"reverse-scrolling": false
 	},
 	"cava": {
-		"framerate": 144,
-		"autosens": 1,
+		"cava_config": "$XDG_CONFIG_HOME/cava/config",
+		"method": "fifo",
+		"source": "/tmp/mpd.fifo",
 		"sensitivity": 3,
 		"bars": 24,
-		"lower_cutoff_freq": 60,
-		"higher_cutoff_freq": 20000,
-		"method": "pipewire",
-		"source": "auto",
-		"stereo": false,
-		"reverse": false,
 		"bar_delimiter": 0,
-		"monstercat": false,
-		"waves": false,
-		"noise_reduction": 0.77,
-		"input_delay": 2,
 		"format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇"],
+		"input_delay": 2,
 		"hide_on_silence": true,
 		"sleep_timer": 4
 	}
