@@ -167,10 +167,11 @@
 		"sleep_timer": 4
 	},
 	"mpd": {
-		"format": "{stateIcon} {title} by {artist} from {album} ({elapsedTime:%M:%S} / {totalTime:%M:%S})",
+		// say thanks to pango for hardcoding colors
+		"format": "{stateIcon} at <span color=\"#89b4fa\">{volume}%</span> / <b>{title}</b> by <span color=\"#94e2d5\">{artist}</span> from <span color=\"#f5c2e7\">{album}</span> ({elapsedTime:%M:%S} / {totalTime:%M:%S})", // volume: blue, artist: teal, album: pink
 		"state-icons": {
-			"playing": "󰐊",
-			"paused": "󰏤"
-		}
+			"playing": "<span color=\"#a6e3a1\">󰐊</span>", // green
+			"paused": "<span color=\"#f9e2af\">󰏤</span>" // yellow
+		},
 	}
 }
