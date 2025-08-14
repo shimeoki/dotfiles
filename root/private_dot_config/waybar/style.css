@@ -1,12 +1,13 @@
 @import "mocha.css";
 
 * {
-    /* only nerd fonts because of the icons */
-    font-family: "RobotoMono Nerd Font";
-    /* font-family: "FiraCode Nerd Font" */
+    font-family: "NotoSansM Nerd Font", /* for the icons */
+        "Noto Sans Mono CJK JP",
+        "Noto Sans Mono CJK SC",
+        "Noto Sans Mono CJK HK",
+        "Noto Sans Mono CJK TC",
+        "Noto Sans Mono CJK KR";
     font-size: 16px;
-    /* below is for fira code font */
-    font-feature-settings: "cv02, cv11, cv25, cv26, cv32, cv28, ss04, ss06, ss07";
 }
 
 window#waybar {
@@ -30,15 +31,18 @@ window#waybar.empty #window {
 #keyboard-state,
 #bluetooth,
 #wireplumber,
-#cava {
+#cava,
+#mpd,
+#tray {
     background-color: @base;
     color: @text;
 
+    min-height: 24px;
     padding: 6px 16px;
     margin: 0 4px;
 
-    border: 1px solid alpha(@overlay2, 0.5);
-    border-radius: 8px;
+    border: 0px;
+    border-radius: 0px;
 }
 
 #workspaces button.active {
@@ -55,4 +59,3 @@ window#waybar.empty #window {
     color: @red;
     border-color: @red;
 }
-

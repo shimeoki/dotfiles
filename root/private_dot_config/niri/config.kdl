@@ -116,6 +116,11 @@ window-rule {
 }
 
 layer-rule {
+    match namespace="^waybar$"
+    opacity 0.9
+}
+
+layer-rule {
     match namespace="^swww-daemon$"
     place-within-backdrop true
 }
@@ -131,6 +136,7 @@ binds {
 
     Mod+Return { spawn "kitty"; }
     Mod+D      { spawn "fuzzel"; }
+    Mod+Z      { spawn "niri-waybar.nu"; }
     Mod+Q      { spawn "niri-focus.nu"; }
     Mod+B      { spawn "zen-browser"; }
     Mod+N      { spawn "obsidian"; }

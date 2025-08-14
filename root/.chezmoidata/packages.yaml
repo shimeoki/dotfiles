@@ -84,6 +84,7 @@ packages:
             - "ttf-roboto-mono"
             - "ttf-roboto-mono-nerd"
             - "ttf-roboto"
+            - "ttf-noto-nerd"
             - "noto-fonts-cjk"
             - "noto-fonts-emoji"
             - "noto-fonts-extra"
@@ -100,3 +101,4 @@ packages:
             - "materialgram-bin"
             - "bibata-cursor-theme"
             - "pwvucontrol"
+            - "waybar-cava"
