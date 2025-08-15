@@ -1,11 +1,11 @@
 #!/usr/bin/env nu
 
-let waybar = (ps | where name == 'waybar' | get --optional 0)
+let waybar = (systemctl --user status waybar | complete)
 
 niri msg action do-screen-transition
 
-if ($waybar == null) {
-    waybar
+if ($waybar.exit_code == 0) {
+    systemctl --user stop waybar
 } else {
-    kill $waybar.pid
+    systemctl --user start waybar
 }
