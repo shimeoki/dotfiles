@@ -1,12 +1,10 @@
 [Unit]
-Description=Kanata Service
+Description=Improve keyboard comfort and usability with advanced customization
 Documentation=https://github.com/jtroo/kanata
 
 [Service]
-Environment=PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/home/d/.cargo/bin
-Environment=DISPLAY=:0
 Type=simple
-ExecStart=/usr/bin/kanata --cfg /home/d/.config/kanata/kanata.kbd
+ExecStart=/usr/bin/kanata --cfg %h/.config/kanata/kanata.kbd
 Restart=no
 
 [Install]
