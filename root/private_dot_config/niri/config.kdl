@@ -259,8 +259,6 @@ binds {
     Mod+Shift+P { power-off-monitors; }
 }
 
-spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
-
 environment {
     QT_QPA_PLATFORM "wayland"
     DISPLAY ":0"

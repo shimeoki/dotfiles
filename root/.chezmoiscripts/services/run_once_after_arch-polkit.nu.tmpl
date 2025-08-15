@@ -1,0 +1,8 @@
+{{- if ne .os "linux-arch" -}} {{- abortEmpty -}} {{- end -}}
+#!/usr/bin/env nu
+
+print $"(ansi bb)dotfiles:(ansi rst) enabling polkit"
+
+systemctl --user enable --now polkit-gnome.service
+
+print $"(ansi gb)dotfiles:(ansi rst) enabled polkit"
