@@ -3,7 +3,8 @@
 
 print $"(ansi bb)dotfiles:(ansi rst) enabling mpd"
 
-mkdir '~/Music'
+let music = ($env.HOME | path join 'Music')
+mkdir $music
 
 let playlists = ($env.XDG_CONFIG_HOME | path join 'mpd' 'playlists')
 mkdir $playlists
