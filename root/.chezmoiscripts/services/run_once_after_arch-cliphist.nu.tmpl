@@ -3,7 +3,7 @@
 
 print $"(ansi bb)dotfiles:(ansi rst) enabling cliphist"
 
-systemctl --user enable cliphist-text.service --now
-systemctl --user enable cliphist-images.service --now
+systemctl --user enable --now cliphist-text.service
+systemctl --user enable --now cliphist-images.service
 
 print $"(ansi gb)dotfiles:(ansi rst) enabled cliphist"

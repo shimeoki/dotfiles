@@ -1,7 +1,7 @@
 {{- if ne .os "linux-arch" -}} {{- abortEmpty -}} {{- end -}}
 #!/usr/bin/env nu
 
-print $"(ansi bb)dotfiles:(ansi rst) enabling greetd.service"
+print $"(ansi bb)dotfiles:(ansi rst) enabling greetd"
 
 print $"(ansi bb)dotfiles:(ansi rst) creating greetd configuration"
 
@@ -15,13 +15,13 @@ if ($file | path exists) {
 
     let backup = $"($file).bak"
     if ($backup | path exists) {
-        print $"(ansi rb)dotfiles:(ansi rst) ($backup) already exists"
+        print --stderr $"(ansi rb)dotfiles:(ansi rst) ($backup) already exists"
         exit 1
     }
 
     sudo mv $file $backup
 
-    print $"(ansi gb)dotfiles:(ansi rst) backed up greetd configuration"
+    print $"(ansi gb)dotfiles:(ansi rst) created ($backup)"
 }
 
 let config = (r#'
@@ -46,4 +46,4 @@ print $"(ansi gb)dotfiles:(ansi rst) created greetd configuration"
 
 sudo systemctl enable greetd.service
 
-print $"(ansi gb)dotfiles:(ansi rst) enabled greetd.service"
+print $"(ansi gb)dotfiles:(ansi rst) enabled greetd"

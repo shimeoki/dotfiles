@@ -5,8 +5,8 @@
 {{- if ne $type "laptop" -}} {{- abortEmpty -}} {{- end -}}
 #!/usr/bin/env nu
 
-print $"(ansi bb)dotfiles:(ansi rst) enabling tlp.service"
+print $"(ansi bb)dotfiles:(ansi rst) enabling tlp"
 
 sudo systemctl enable --now tlp.service
 
-print $"(ansi gb)dotfiles:(ansi rst) enabled tlp.service"
+print $"(ansi gb)dotfiles:(ansi rst) enabled tlp"
