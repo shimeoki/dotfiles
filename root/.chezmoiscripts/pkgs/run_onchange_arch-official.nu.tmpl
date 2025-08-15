@@ -15,6 +15,13 @@ if ($pkgs | is-empty) {
 }
 
 # dash at the end for the packages from stdin
+let installed = ($pkgs | paru -Q - | complete)
+if ($installed.exit_code == 0) {
+    print $"(ansi gb)dotfiles:(ansi rst) packages are already installed"
+    exit
+}
+
+# dash at the end for the packages from stdin
 $pkgs | paru -Sy --needed --noconfirm --useask --sudoloop --repo -
 
 print $"(ansi gb)dotfiles:(ansi rst) installed official arch packages"
