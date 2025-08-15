@@ -1,0 +1,49 @@
+{{- if ne .os "linux-arch" -}} {{- abortEmpty -}} {{- end -}}
+#!/usr/bin/env nu
+
+print $"(ansi bb)dotfiles:(ansi rst) enabling greetd.service"
+
+print $"(ansi bb)dotfiles:(ansi rst) creating greetd configuration"
+
+let file = "/etc/greetd/config.toml"
+
+let dir = ($file | path dirname)
+sudo mkdir --parents $dir
+
+if ($file | path exists) {
+    print $"(ansi bb)dotfiles:(ansi rst) found greetd configuration"
+
+    let backup = $"($file).bak"
+    if ($backup | path exists) {
+        print $"(ansi rb)dotfiles:(ansi rst) ($backup) already exists"
+        exit 1
+    }
+
+    sudo mv $file $backup
+
+    print $"(ansi gb)dotfiles:(ansi rst) backed up greetd configuration"
+}
+
+let config = (r#'
+[terminal]
+vt = 2
+
+[initial_session]
+command = "uwsm start -- niri.desktop"
+user = {{ .chezmoi.username | quote }}
+
+[default_session]
+command = "tuigreet --user-menu --time --asterisks --remember --remember-user-session"
+'# | str trim)
+
+let ext = ($file | path parse | get extension)
+let tmp = mktemp --tmpdir "dotfiles.greetd.XXX" --suffix $".($ext)"
+$config | save --force $tmp
+
+sudo sh -c $"cat ($tmp) > ($file)"
+
+print $"(ansi gb)dotfiles:(ansi rst) created greetd configuration"
+
+sudo systemctl enable greetd.service
+
+print $"(ansi gb)dotfiles:(ansi rst) enabled greetd.service"

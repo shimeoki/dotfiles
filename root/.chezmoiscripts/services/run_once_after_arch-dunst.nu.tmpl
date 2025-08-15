@@ -1,0 +1,8 @@
+{{- if ne .os "linux-arch" -}} {{- abortEmpty -}} {{- end -}}
+#!/usr/bin/env nu
+
+print $"(ansi bb)dotfiles:(ansi rst) enabling dunst"
+
+systemctl --user add-wants graphical-session.target dunst.service
+
+print $"(ansi gb)dotfiles:(ansi rst) enabled dunst"

@@ -1,0 +1,9 @@
+{{- if ne .os "linux-arch" -}} {{- abortEmpty -}} {{- end -}}
+#!/usr/bin/env nu
+
+print $"(ansi bb)dotfiles:(ansi rst) enabling cliphist"
+
+systemctl --user enable cliphist-text.service --now
+systemctl --user enable cliphist-images.service --now
+
+print $"(ansi gb)dotfiles:(ansi rst) enabled cliphist"
