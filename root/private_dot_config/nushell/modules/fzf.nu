@@ -1,5 +1,4 @@
-# module for fzf commands and options.
-# it also exports some environment variables.
+# module for fzf commands
 
 export def --wrapped preview [...rest: string]: any -> any {
     fzf --preview 'fzf-preview.bash {}' ...$rest
@@ -63,9 +62,4 @@ export def --wrapped focus [...rest: string]: nothing -> any {
     | to text
     | fzf --no-multi --accept-nth=1 ...$rest
     | if ($in | is-not-empty) { niri msg action focus-window --id $in }
-}
-
-export-env {
-    $env.FZF_DEFAULT_COMMAND = 'fd --follow --hidden'
-    $env.FZF_DEFAULT_OPTS_FILE = ('~/.config/fzf/opts' | path expand)
 }

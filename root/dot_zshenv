@@ -23,14 +23,20 @@ export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense'
 
 # source: https://wiki.archlinux.org/title/Zsh#Startup/Shutdown_files
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
+export FZF_DEFAULT_OPTS_FILE="$XDG_CONFIG_HOME/fzf/opts"
+export FZF_DEFAULT_COMMAND="fd --hidden --follow"
 
 export GNUPGHOME="$XDG_CONFIG_HOME/gnupg"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_CTRL_T_OPTS="--height=100% --preview='fzf-preview.bash {}'"
 
 export LF_CONFIG_HOME="$XDG_CONFIG_HOME"
 
 export EZA_ICONS_AUTO=1
 
 export LS_COLORS="$(vivid generate catppuccin-mocha)"
+export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND --type=dir"
+export FZF_ALT_C_OPTS="$FZF_CTRL_T_OPTS"
 
 # source: https://wiki.archlinux.org/title/Cursor_themes#Environment_variable
 export XCURSOR_PATH="/usr/share/icons:${XDG_DATA_HOME}/icons"
