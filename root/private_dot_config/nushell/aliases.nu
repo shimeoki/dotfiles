@@ -55,6 +55,10 @@ alias hle = hyprctl dispatch exec
 alias hlm = hyprctl monitors
 alias hlc = hyprctl clients
 
+alias ctl  = systemctl
+alias sctl = sudo systemctl --system
+alias uctl = systemctl --user
+
 alias t = btop
 
 alias leaks = gitleaks git
