@@ -259,7 +259,6 @@ binds {
     Mod+Shift+P { power-off-monitors; }
 }
 
-spawn-at-startup "swww-daemon"
 spawn-at-startup "xwayland-satellite"
 spawn-at-startup "dunst"
 spawn-at-startup "udiskie"

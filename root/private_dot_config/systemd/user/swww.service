@@ -1,0 +1,13 @@
+[Unit]
+Description=A Solution to your Wayland Wallpaper Woes
+Documentation=https://github.com/LGFae/swww
+After=graphical-session.target
+
+[Service]
+Type=exec
+ExecStart=swww-daemon
+Restart=on-failure
+Slice=background-graphical.slice
+
+[Install]
+WantedBy=graphical-session.target
