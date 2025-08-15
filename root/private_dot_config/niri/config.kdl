@@ -259,11 +259,9 @@ binds {
     Mod+Shift+P { power-off-monitors; }
 }
 
-spawn-at-startup "udiskie"
 spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
 spawn-at-startup "wl-paste" "--type" "text"  "--watch" "cliphist" "store"
 spawn-at-startup "wl-paste" "--type" "image" "--watch" "cliphist" "store"
-spawn-at-startup "udiskie"
 
 environment {
     QT_QPA_PLATFORM "wayland"

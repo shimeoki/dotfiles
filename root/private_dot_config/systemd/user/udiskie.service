@@ -1,0 +1,13 @@
+[Unit]
+Description=Automounter for removable media
+Documentation=https://github.com/coldfix/udiskie
+After=graphical-session.target
+
+[Service]
+Type=exec
+ExecStart=udiskie
+Restart=on-failure
+Slice=app-graphical.slice
+
+[Install]
+WantedBy=graphical-session.target

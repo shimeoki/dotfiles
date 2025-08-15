@@ -1,0 +1,8 @@
+{{- if ne .os "linux-arch" -}} {{- abortEmpty -}} {{- end -}}
+#!/usr/bin/env nu
+
+print $"(ansi bb)dotfiles:(ansi rst) enabling udiskie"
+
+systemctl --user enable --now udiskie.service
+
+print $"(ansi gb)dotfiles:(ansi rst) enabled udiskie"
