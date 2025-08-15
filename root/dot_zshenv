@@ -32,9 +32,6 @@ export EZA_ICONS_AUTO=1
 
 export LS_COLORS="$(vivid generate catppuccin-mocha)"
 
-# source: https://wiki.archlinux.org/title/GnuPG#Configure_pinentry_to_use_the_correct_TTY
-export GPG_TTY="$TTY"
-
 # source: https://wiki.archlinux.org/title/Cursor_themes#Environment_variable
 export XCURSOR_PATH="/usr/share/icons:${XDG_DATA_HOME}/icons"
 
