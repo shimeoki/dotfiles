@@ -2,344 +2,190 @@
 
 My configuration for Arch Linux, managed by [chezmoi](https://www.chezmoi.io/).
 
-![index](./showcase/index.png)
-
-## Table of Contents
-
-<!--toc:start-->
-
-- [Description](#description)
-  - [Display](#display)
-  - [Visuals](#visuals)
-- [Installation](#installation)
-- [Configurations](#configurations)
-  - [bat](#bat)
-  - [btop](#btop)
-  - [cava](#cava)
-  - [delta](#delta)
-  - [dunst](#dunst)
-  - [fastfetch](#fastfetch)
-  - [fd](#fd)
-  - [fzf](#fzf)
-  - [Git](#git)
-  - [Helix](#helix)
-  - [hyprwm](#hyprwm)
-  - [Kanata](#kanata)
-  - [kitty](#kitty)
-  - [Kvantum](#kvantum)
-  - [lazydocker](#lazydocker)
-  - [lazygit](#lazygit)
-  - [lf](#lf)
-  - [mpd](#mpd)
-  - [Nushell](#nushell)
-  - [nvim](#nvim)
-  - [Oh My Posh](#oh-my-posh)
-  - [pacman](#pacman)
-  - [GnuPG](#gnupg)
-  - [rmpc](#rmpc)
-  - [Waybar](#waybar)
-  - [Wofi](#wofi)
-  - [xdg-desktop](#xdg-desktop)
-  - [yazi](#yazi)
-  - [zsh](#zsh)
-  - [spotity-launcher](#spotity-launcher)
-  - [Electron](#electron)
-  - [VS Code](#vs-code)
-- [Contributing](#contributing)
-- [License](#license)
-
-<!--toc:end-->
+![index](./docs/showcase/index.png)
 
 ## Description
 
 Every configuration is designed specifically for me and always could change.
 
-At the moment, this repository is not recommended for usage as a drop-in config.
-It needs tinkering and manual setup for many aspects of the system. Also, it's
-not yet templated and contains some user-specific data (e.g. git).
+Briefly about the configuration:
 
-### Display
+| Component    | Project                                        |
+| ------------ | ---------------------------------------------- |
+| Theme        | Catppuccin (Mocha)                             |
+| Font         | Fira Code (terminal) / Noto Sans Mono (Waybar) |
+| Compositor   | Niri (Wayland)                                 |
+| Task bar     | Waybar (with cava)                             |
+| Shell        | Nushell (primary) & zsh (login, secondary)     |
+| Terminal     | kitty                                          |
+| Editor       | Neovim                                         |
+| File manager | Yazi (TUI) / Nautilus (GUI)                    |
+| Music        | mpd + rmpc                                     |
 
-The configuration assumes and uses Wayland with Hyprland window compositor.
+Screenshots can be viewed in configurations' README's. The wallpaper used in all
+images is from
+[The NOexistenceN of you AND me](https://store.steampowered.com/app/2873080/The_NOexistenceN_of_you_AND_me/).
 
-### Visuals
+## Projects
 
-[Showcase](./showcase.md)
+The configurations for applications I don't use are not going to be updated. You
+can call them "archived". But this state is not permanent if I start using the
+app again. Archived state doesn't mean that these configurations are invalid,
+but you should be aware that they could be outdated.
 
-Where possible, the configuration uses
+Modules in this table are included not only by explicit configuration files, but
+on their usage in the configuration as a whole. If something is missing, file an
+issue. Aside from this table, applications can be found in
+`.chezmoidata/packages.yaml`.
 
-- Catppuccin Mocha as the theme,
-- Fira Code font as the code font (nerd variant),
-- Roboto Mono as the UI font.
+Shoutout to all projects I used. Even if I don't use them anymore, they are
+awesome. Check them out.
 
-Links:
-
-- [Catppuccin](https://github.com/catppuccin/catppuccin)
-- [Fira Code](https://github.com/tonsky/FiraCode)
-- [Roboto Mono](https://github.com/googlefonts/RobotoMono)
-- [Nerd Fonts](https://www.nerdfonts.com/)
+| Module                                                    | Archived | Notes                           |
+| --------------------------------------------------------- | -------- | ------------------------------- |
+| [bat](https://github.com/sharkdp/bat)                     | no       |                                 |
+| [btop](https://github.com/aristocratos/btop)              | no       |                                 |
+| [cava](https://github.com/karlstav/cava)                  | no       |                                 |
+| [delta](https://github.com/dandavison/delta)              | no       |                                 |
+| [dunst](https://github.com/dunst-project/dunst)           | no       |                                 |
+| [fastfetch](https://github.com/fastfetch-cli/fastfetch)   | no       |                                 |
+| [fd](https://github.com/sharkdp/fd)                       | no       |                                 |
+| [fuzzel](https://codeberg.org/dnkl/fuzzel)                | no       |                                 |
+| [fzf](https://github.com/junegunn/fzf)                    | no       |                                 |
+| [Git](https://git-scm.com)                                | no       |                                 |
+| [Helix](https://helix-editor.com)                         | **yes**  |                                 |
+| [hyprwm](https://github.com/hyprwm)                       | **yes**  | [README](./docs/hyprwm.md)      |
+| [Kanata](https://github.com/jtroo/kanata)                 | no       |                                 |
+| [kitty](https://github.com/kovidgoyal/kitty)              | no       | Tied to Neovim configuration.   |
+| [Kvantum](https://github.com/tsujan/Kvantum)              | no       |                                 |
+| [lazydocker](https://github.com/jesseduffield/lazydocker) | no       |                                 |
+| [lazygit](https://github.com/jesseduffield/lazygit)       | no       |                                 |
+| [lf](https://github.com/gokcehan/lf)                      | **yes**  |                                 |
+| [niri](https://github.com/YaLTeR/niri)                    | no       |                                 |
+| [mpd](https://www.musicpd.org/)                           | no       | Music directory is `~/Music`.   |
+| [Nushell](https://www.nushell.sh)                         | no       |                                 |
+| [Neovim](https://neovim.io)                               | no       | [README](./docs/nvim.md)        |
+| [Oh My Posh](https://ohmyposh.dev)                        | no       |                                 |
+| [pacman](https://pacman.archlinux.page)                   | no       | `/etc` config not included yet. |
+| [GnuPG](https://gnupg.org)                                | no       |                                 |
+| [rmpc](https://mierak.github.io/rmpc)                     | no       | [README](./docs/rmpc.md)        |
+| [swww](https://github.com/LGFae/swww)                     | no       |                                 |
+| [systemd](https://systemd.io/)                            | no       |                                 |
+| [uwsm](https://github.com/Vladimir-csp/uwsm)              | no       |                                 |
+| [Waybar](https://github.com/Alexays/Waybar)               | no       | Needs `waybar-cava` package.    |
+| [Wofi](https://sr.ht/~scoopta/wofi)                       | **yes**  |                                 |
+| [yazi](https://yazi-rs.github.io)                         | no       |                                 |
+| [zsh](https://www.zsh.org/)                               | no       |                                 |
 
 ## Installation
 
-For now, it is advisable to copy only certain configs and edit them for your use
-case. Clone the repository with
+Installation from the get-go in the current repository state haven't been
+tested. I started this repository without an initial reproducibility goal in
+mind, and only now I am chasing this feature (at least, to some extent).
+
+chezmoi supports only one user, and it's the case here as well. Multiple hosts
+are supported (hopefully). The only supported OS right now is Arch Linux
+(scripts are checking this).
+
+### Full
+
+Automatic `chezmoi init` installation is not recommended right now. You could
+try, but the issue is the hosts: you should add your own host to
+`.chezmoidata/hosts.yaml`. After that `chezmoi init` should work.
+
+For using this approach, I would recommend these steps:
+
+1. Back up your current configuration
+2. Clone the repository to `~/.local/share/chezmoi`
+3. Edit `hosts.yaml` to include your host
+4. `chezmoi init`
+5. `chezmoi apply`
+
+You should be aware that this setup will be pretty hard to uninstall. It will
+execute many scripts for the system-wide and user-wide changes, so even if you
+can revert the files to their original state, the system changes are still here.
+It's mostly for new machines (because you just can reinstall the system) and for
+me.
+
+### Partial
+
+The recommended approach for now.
+
+Clone the repository with:
 
 ```sh
 git clone https://github.com/shimeoki/dotfiles.git
 ```
 
-and grab the configurations you need and apply them manually.
+and grab the configurations you need and apply them manually. That's it.
 
-If you want to apply configurations with chezmoi, you can do:
+This way no scripts are ran and no templates are executed, but the system is
+safe. If you find a `.tmpl` file, replace the `{{ ... }}` with your data.
 
-```sh
-chezmoi init shimeoki
-chezmoi apply
-```
+## How to use
 
-Last command will apply _all_ configurations at once. As it's not recommended,
-you can use
+This configuration mostly focuses on navigation and terminal usage.
 
-```sh
-chezmoi apply <path>
-```
+Where possible, apps use vi-style bindings. Three main "layers" are:
 
-to apply configurations in needed directories. In both cases you are prompted to
-confirm the override of the files, if present. To confirm single files, press
-`o` and to confirm all - `a`. Be careful and backup your configurations.
+- Window compositor
+- Terminal
+- Editor (or other TUI application)
 
-## Configurations
+These apps use splits for the space management and navigation. Bindings are
+usually the same or very similar. The difference is the modifier key:
 
-The configurations for applications I don't use are not going to be updated. You
-can call them "archived". But this state is not permanent if I start using the
-app again.
+| Application     | Mod                 |
+| --------------- | ------------------- |
+| niri / Hyprland | Super (Windows key) |
+| kitty           | Alt                 |
+| Neovim          | Ctrl                |
 
-The repository uses chezmoi and separate root directory, so, for example, all
-paths with `root/private_dot_config` are translated to `~/.config`.
+So it's not adviced to change any modifiers because of the hierarchy. For
+example, use Alt for the compositor as well, because it would break terminal
+shortcuts. If you changed one mod key, change others appropriately.
 
-### bat
+With the default "layout":
 
-- Project: https://github.com/sharkdp/bat
-- Path: root/private_dot_config/bat
+- compositor can use Shift, Ctrl and Alt,
+- terminal can use Shift and Ctrl
+- and editor can use Shift
 
-Configuration is a Catppuccin Mocha theme. This theme is used by other
-applications, and this command needs to be executed after the first install:
+as additional modifiers.
 
-```sh
-bat cache --build
-```
+This way, left hand is reserved for the modifier combinations and right hand is
+used for the bindings (mostly window control).
 
-### btop
+The other important aspect is the searching. The configuration uses two main
+ways:
 
-- Project: https://github.com/aristocratos/btop
-- Path: root/private_dot_config/btop
+- fzf-style
+- yazi-style
 
-### cava
+For example, if the file is located pretty deep and you only need to find it,
+you use fzf. But if you need to do some actions with the file and it's pretty
+close, you use yazi. If needed, you just combine two methods: go to the needed
+directory with fzf and then do the stuff with yazi.
 
-- Project: https://github.com/karlstav/cava
-- Path: root/private_dot_config/cava
+Of course, traditional method of cd'ing and cp'ing manually is not gone. But
+it's mostly used in scripts or restricted environment (elevated privileges like
+system-wide configuration). Usually, if you find yourself just typing the path
+manually, you are doing something wrong.
 
-### delta
+Because of this, fzf is deeply integrated in Nushell, zsh, niri (window focus)
+and Neovim (telescope). Yazi is used as the main file manager (by itself and in
+Neovim - no file tree).
 
-- Project: https://github.com/dandavison/delta
-- Path: root/private_dot_config/delta
+Window management is escalated to another level thanks to overview in niri.
+Mouse is the preferred method for arranging windows and navigating between them.
+You can also use the keyboard on a laptop, if you prefer. Mouse is recommended,
+because you use a browser while you work anyway, and dragging the windows with a
+pointer is more intuitive.
 
-### dunst
-
-- Project: https://github.com/dunst-project/dunst
-- Path: root/private_dot_config/dunst
-
-### fastfetch
-
-- Project: https://github.com/fastfetch-cli/fastfetch
-- Path: root/private_dot_config/fastfetch
-
-### fd
-
-- Project: https://github.com/sharkdp/fd
-- Path: root/private_dot_config/fd
-
-### fzf
-
-- Project: https://github.com/junegunn/fzf
-- Path: root/private_dot_config/fzf
-
-Also applications can use `fzf-preview.bash` in `root/dot_scripts` directory.
-It's recommended to check comments in the script in case of issues.
-
-### Git
-
-- Project: https://git-scm.com
-- Path: root/private_dot_config/git
-
-### Helix
-
-- Project: https://helix-editor.com
-- Path: root/private_dot_config/helix
-
-This editor is not used by me anymore (though it's pretty good and I like it),
-so the configuration could be outdated.
-
-### hyprwm
-
-- Project: https://github.com/hyprwm
-- Path: root/private_dot_config/hypr
-
-Many projects of the hypr ecosystem are configured:
-
-- Hyprland,
-- hyprlock,
-- hypridle,
-- hyprcursor
-- and grimblast.
-
-Their configurations could be found in path specified above, as well as the
-project links in the organization.
-
-### Kanata
-
-- Project: https://github.com/jtroo/kanata
-- Path: root/private_dot_config/kanata
-
-### kitty
-
-- Project: https://github.com/kovidgoyal/kitty
-- Path: root/private_dot_config/kitty
-
-This configuration is tied to Neovim configuration. Check `scrollback.conf`.
-
-### Kvantum
-
-- Project: https://github.com/tsujan/Kvantum
-- Path: root/private_dot_config/Kvantum
-
-### lazydocker
-
-- Project: https://github.com/jesseduffield/lazydocker
-- Path: root/private_dot_config/lazydocker
-
-Right now I don't use this application often, so this configuration is mostly a
-copy of UI settings in lazygit config.
-
-### lazygit
-
-- Project: https://github.com/jesseduffield/lazygit
-- Path: root/private_dot_config/lazygit
-
-### lf
-
-- Project: https://github.com/gokcehan/lf
-- Path: root/private_dot_config/lf
-
-This terminal file manager is not used by me anymore (though it's good), so the
-configuration could be outdated.
-
-### mpd
-
-- Project: https://www.musicpd.org/
-- Path: root/private_dot_config/mpd
-
-Uses `~/Music` as a music directory path. Also, it requires many directories for
-the state, playlists, etc., so parent directories should be made beforehand.
-
-### Nushell
-
-- Project: https://www.nushell.sh
-- Path: root/private_dot_config/nushell
-
-### nvim
-
-- Project: https://neovim.io
-- Path: root/private_dot_config/nvim
-
-Check the [README](/root/private_dot_config/nvim/README.md).
-
-### Oh My Posh
-
-- Project: https://ohmyposh.dev
-- Path: root/private_dot_config/oh-my-posh
-
-### pacman
-
-- Project: https://pacman.archlinux.page
-- Path: root/private_dot_config/pacman
-
-The configurations contains only some of the rules. Many changes are made in
-`/etc` directory on the system, but I can't include this here.
-
-Maybe other configuration will be in the repository in the format of a script.
-
-### GnuPG
-
-- Project: https://gnupg.org
-- Path: root/private_dot_config/private_gnupg
-
-### rmpc
-
-- Project: https://mierak.github.io/rmpc/
-- Path: root/private_dot_config/rmpc
-
-Listens for mpd on the default port on localhost. Uses cava.
-
-Config is made specifically for this setup:
-
-- Forced Kitty Graphics Protocol usage
-- In vertical split on 1920x1080 there is exactly one line for the queue
-- Lyrics directory is the same as music directory in mpd
-- mpd should be configured to output fifo file for cava
-
-### Waybar
-
-- Project: https://github.com/Alexays/Waybar
-- Path: root/private_dot_config/waybar
-
-The configuration contains cava module. It's bugged at the moment (screenshots
-and toggling the bar are breaking the application), so you can choose to use it
-or not: to use, you need to install a specific version of Waybar with cava
-support. In AUR it's `waybar-cava` package.
-
-### Wofi
-
-- Project: https://sr.ht/~scoopta/wofi
-- Path: root/private_dot_config/wofi
-
-### xdg-desktop
-
-- Project: https://github.com/flatpak/xdg-desktop-portal
-- Path: root/private_dot_config/xdg-desktop-portal
-
-### yazi
-
-- Project: https://yazi-rs.github.io
-- Path: root/private_dot_config/yazi
-
-### zsh
-
-- Project: https://www.zsh.org/
-- Paths:
-  - root/private_dot_config/dot_zshrc
-  - root/private_dot_config/zsh
-
-### spotity-launcher
-
-- Project: https://github.com/kpcyrd/spotify-launcher
-- Path: root/private_dot_config/spotify-launcher.conf
-
-Wayland flags.
-
-### Electron
-
-- Project: https://github.com/electron/electron
-- Path: root/private_dot_config/electron-flags.conf
-
-Wayland flags.
-
-### VS Code
-
-- Project: https://github.com/microsoft/vscode
-- Path: root/private_dot_config/code-flags.conf
-
-Wayland flags.
+Aside from the navigation, space management and searching, the configuration
+tries to be minimal to my liking. For example, they are mostly no tab bars and
+Waybar is turned off by default, so it's expected that you would toggle it on
+demand. Also, there are no fancy widgets and not too much eye-candy.
 
 ## Contributing
 
