@@ -1,0 +1,8 @@
+{{- if ne .os "linux-arch" -}} {{- abortEmpty -}} {{- end -}}
+#!/usr/bin/env nu
+
+print $"(ansi bb)dotfiles:(ansi rst) building bat cache"
+
+bat cache --build
+
+print $"(ansi gb)dotfiles:(ansi rst) built bat cache"
