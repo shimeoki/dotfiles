@@ -26,14 +26,17 @@ Screenshots can be viewed in configurations' README's. The wallpaper used in all
 images is from
 [The NOexistenceN of you AND me](https://store.steampowered.com/app/2873080/The_NOexistenceN_of_you_AND_me/).
 
-## Configurations
+## Projects
 
 The configurations for applications I don't use are not going to be updated. You
 can call them "archived". But this state is not permanent if I start using the
-app again.
+app again. Archived state doesn't mean that these configurations are invalid,
+but you should be aware that they could be outdated.
 
-Archived state doesn't mean that these configurations are invalid, but you
-should be aware that they could be outdated.
+Modules in this table are included not only by explicit configuration files, but
+on their usage in the configuration as a whole. If something is missing, file an
+issue. Aside from this table, applications can be found in
+`.chezmoidata/packages.yaml`.
 
 Shoutout to all projects I used. Even if I don't use them anymore, they are
 awesome. Check them out.
@@ -47,6 +50,7 @@ awesome. Check them out.
 | [dunst](https://github.com/dunst-project/dunst)           | no       |                                 |
 | [fastfetch](https://github.com/fastfetch-cli/fastfetch)   | no       |                                 |
 | [fd](https://github.com/sharkdp/fd)                       | no       |                                 |
+| [fuzzel](https://codeberg.org/dnkl/fuzzel)                | no       |                                 |
 | [fzf](https://github.com/junegunn/fzf)                    | no       |                                 |
 | [Git](https://git-scm.com)                                | no       |                                 |
 | [Helix](https://helix-editor.com)                         | **yes**  |                                 |
@@ -57,6 +61,7 @@ awesome. Check them out.
 | [lazydocker](https://github.com/jesseduffield/lazydocker) | no       |                                 |
 | [lazygit](https://github.com/jesseduffield/lazygit)       | no       |                                 |
 | [lf](https://github.com/gokcehan/lf)                      | **yes**  |                                 |
+| [niri](https://github.com/YaLTeR/niri)                    | no       |                                 |
 | [mpd](https://www.musicpd.org/)                           | no       | Music directory is `~/Music`.   |
 | [Nushell](https://www.nushell.sh)                         | no       |                                 |
 | [Neovim](https://neovim.io)                               | no       | [README](./docs/nvim.md)        |
@@ -64,6 +69,9 @@ awesome. Check them out.
 | [pacman](https://pacman.archlinux.page)                   | no       | `/etc` config not included yet. |
 | [GnuPG](https://gnupg.org)                                | no       |                                 |
 | [rmpc](https://mierak.github.io/rmpc)                     | no       | [README](./docs/rmpc.md)        |
+| [swww](https://github.com/LGFae/swww)                     | no       |                                 |
+| [systemd](https://systemd.io/)                            | no       |                                 |
+| [uwsm](https://github.com/Vladimir-csp/uwsm)              | no       |                                 |
 | [Waybar](https://github.com/Alexays/Waybar)               | no       | Needs `waybar-cava` package.    |
 | [Wofi](https://sr.ht/~scoopta/wofi)                       | **yes**  |                                 |
 | [yazi](https://yazi-rs.github.io)                         | no       |                                 |
