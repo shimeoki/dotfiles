@@ -1,0 +1,12 @@
+{{- if ne .os "linux-arch" -}} {{- abortEmpty -}} {{- end -}}
+
+{{- $host := get .hosts .host -}}
+{{- $type := get $host "type" -}}
+{{- if ne $type "laptop" -}} {{- abortEmpty -}} {{- end -}}
+#!/usr/bin/env nu
+
+print $"(ansi bb)dotfiles:(ansi rst) enabling tlp"
+
+sudo systemctl enable --now tlp.service
+
+print $"(ansi gb)dotfiles:(ansi rst) enabled tlp"

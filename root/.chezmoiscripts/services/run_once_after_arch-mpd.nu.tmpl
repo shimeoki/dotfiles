@@ -1,0 +1,17 @@
+{{- if ne .os "linux-arch" -}} {{- abortEmpty -}} {{- end -}}
+#!/usr/bin/env nu
+
+print $"(ansi bb)dotfiles:(ansi rst) enabling mpd"
+
+let music = ($env.HOME | path join 'Music')
+mkdir $music
+
+let playlists = ($env.XDG_CONFIG_HOME | path join 'mpd' 'playlists')
+mkdir $playlists
+
+let cache = ($env.XDG_CACHE_HOME | path join 'mpd')
+mkdir $cache
+
+systemctl --user enable --now mpd.service
+
+print $"(ansi gb)dotfiles:(ansi rst) enabled mpd"

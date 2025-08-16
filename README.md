@@ -45,7 +45,6 @@ My configuration for Arch Linux, managed by [chezmoi](https://www.chezmoi.io/).
   - [spotity-launcher](#spotity-launcher)
   - [Electron](#electron)
   - [VS Code](#vs-code)
-- [Scripts](#scripts)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -108,8 +107,6 @@ chezmoi apply <path>
 to apply configurations in needed directories. In both cases you are prompted to
 confirm the override of the files, if present. To confirm single files, press
 `o` and to confirm all - `a`. Be careful and backup your configurations.
-
-After that, some [scripts](#scripts) (for example, `packages`) could be ran.
 
 ## Configurations
 
@@ -385,14 +382,6 @@ Wayland flags.
 - Archived: **yes**
 
 Wayland flags.
-
-## Scripts
-
-This directory is appended to 'path' environment variable. It contains scripts
-or just executables that should be available to applications or the user
-directly.
-
-- [packages](root/dot_scripts/packages/README.md)
 
 ## Contributing
 

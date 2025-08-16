@@ -116,6 +116,11 @@ window-rule {
 }
 
 layer-rule {
+    match namespace="^waybar$"
+    opacity 0.9
+}
+
+layer-rule {
     match namespace="^swww-daemon$"
     place-within-backdrop true
 }
@@ -129,12 +134,14 @@ layer-rule {
 binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
-    Mod+Return { spawn "kitty"; }
+    Mod+Return { spawn "uwsm-app" "--" "kitty.desktop"; }
+    Mod+B      { spawn "uwsm-app" "--" "zen.desktop"; }
+    Mod+N      { spawn "uwsm-app" "--" "obsidian.desktop"; }
+    Mod+M      { spawn "uwsm-app" "--" "materialgram"; }
+    Mod+A      { spawn "uwsm-app" "--" "pwvucontrol"; }
     Mod+D      { spawn "fuzzel"; }
-    Mod+B      { spawn "zen-browser"; }
-    Mod+N      { spawn "obsidian"; }
-    Mod+M      { spawn "materialgram"; }
-    Mod+A      { spawn "pwvucontrol"; }
+    Mod+Z      { spawn "niri-waybar.nu"; }
+    Mod+Q      { spawn "niri-focus.nu"; }
 
     Mod+Tab          repeat=false { toggle-overview; }
     Mod+MouseForward repeat=false { toggle-overview; }
@@ -251,14 +258,6 @@ binds {
 
     Mod+Shift+P { power-off-monitors; }
 }
-
-spawn-at-startup "swww-daemon"
-spawn-at-startup "xwayland-satellite"
-spawn-at-startup "dunst"
-spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
-spawn-at-startup "wl-paste" "--type" "text"  "--watch" "cliphist" "store"
-spawn-at-startup "wl-paste" "--type" "image" "--watch" "cliphist" "store"
-spawn-at-startup "udiskie"
 
 environment {
     QT_QPA_PLATFORM "wayland"

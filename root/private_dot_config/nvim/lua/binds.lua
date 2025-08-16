@@ -115,6 +115,13 @@ return {
 		no_wrap = true,
 	}),
 
+	new({
+		"<c-d>",
+		'"_d',
+		"delete with no register",
+		no_wrap = true,
+	}),
+
 	new({ "@", "cd %:p:h", "change current working directory to file's" }),
 
 	new({ "u", "w", "save current file" }),

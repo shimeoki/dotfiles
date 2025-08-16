@@ -1,6 +1,0 @@
-pipewire
-pipewire-alsa
-pipewire-pulse
-pipewire-audio
-pipewire-jack
-sof-firmware

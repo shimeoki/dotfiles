@@ -1,0 +1,37 @@
+{{- if ne .os "linux-arch" -}} {{- abortEmpty -}} {{- end -}}
+#!/usr/bin/env nu
+
+print $"(ansi bb)dotfiles:(ansi rst) installing aur packages"
+
+let pkgs = [
+{{- range .packages.arch.aur }}
+    {{ . | quote -}}
+{{ end }}
+] | to text
+
+if ($pkgs | is-empty) {
+    print $"(ansi gb)dotfiles:(ansi rst) package list is empty"
+    exit
+}
+
+# dash at the end for the packages from stdin
+let installed = ($pkgs | paru -Q - | complete)
+if ($installed.exit_code == 0) {
+    print $"(ansi gb)dotfiles:(ansi rst) packages are already installed"
+    exit
+}
+
+let timeout = 1 # seconds
+let url = "aur.archlinux.org"
+let status = (ping -w $timeout $url | complete)
+
+if ($status.exit_code != 0) {
+    print --stderr $"(ansi rb)dotfiles:(ansi rst) aur is unreachable"
+    exit $status.exit_code
+}
+
+# dash at the end for the packages from stdin
+$pkgs | (paru -Sy --needed --noconfirm --useask --sudoloop
+    --aur --skipreview --norebuild --noredownload --batchinstall -)
+
+print $"(ansi gb)dotfiles:(ansi rst) installed aur packages"

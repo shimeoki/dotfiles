@@ -1,12 +1,12 @@
-# module for fzf commands and options.
-# it also exports some environment variables.
+# module for fzf commands
 
 export def --wrapped preview [...rest: string]: any -> any {
     fzf --preview 'fzf-preview.bash {}' ...$rest
 }
 
-export def --wrapped edit [...rest: string]: any -> any {
-    preview --bind 'enter:become(nvim {})' ...$rest
+export def --wrapped edit [...rest: string]: nothing -> any {
+    fd --follow --hidden --type=file
+    | preview --bind 'enter:become(nvim {})' ...$rest
 }
 
 export def --wrapped --env jump [...rest: string]: nothing -> nothing {
@@ -55,7 +55,11 @@ export def --wrapped setimg [...rest: string]: any -> any {
     | if ($in | is-not-empty) { swww img $in }
 }
 
-export-env {
-    $env.FZF_DEFAULT_COMMAND = 'fd --follow --hidden'
-    $env.FZF_DEFAULT_OPTS_FILE = ('~/.config/fzf/opts' | path expand)
+export def --wrapped focus [...rest: string]: nothing -> any {
+    niri msg --json windows
+    | from json
+    | each {|w| $"($w.id) ($w.title) / ($w.app_id)" }
+    | to text
+    | fzf --no-multi --accept-nth=1 ...$rest
+    | if ($in | is-not-empty) { niri msg action focus-window --id $in }
 }

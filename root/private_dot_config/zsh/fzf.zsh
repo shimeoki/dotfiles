@@ -5,15 +5,6 @@
 
 eval "$(fzf --zsh)"
 
-export FZF_DEFAULT_OPTS_FILE="$XDG_CONFIG_HOME/fzf/opts"
-
-export FZF_DEFAULT_COMMAND="fd --hidden --follow"
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND --type=dir"
-
-export FZF_CTRL_T_OPTS="--height=100% --preview='fzf-preview.bash {}'"
-export FZF_ALT_C_OPTS="$FZF_CTRL_T_OPTS"
-
 _fzf_compgen_path() {
     eval "$FZF_CTRL_T_COMMAND" . "$1"
 }

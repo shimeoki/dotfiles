@@ -1,43 +1,44 @@
 #!/usr/bin/env zsh
 
+path+="$HOME/.cargo/bin"
+path+="$HOME/go/bin"
+path+="$HOME/.scripts"
+
 # source: https://wiki.archlinux.org/title/XDG_Base_Directory#User_directories
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_STATE_HOME="$HOME/.local/state"
 
-# todo: set EDITOR to nano in non-graphical sessions
-# similar with BROWSER
-
-# source: https://wiki.archlinux.org/title/Environment_variables#Default_programs
-export SHELL='nu'
-export PAGER='less'
-export VISUAL='nvim'
-export EDITOR=$VISUAL
-export BROWSER='zen-browser'
-
 # source: https://wiki.archlinux.org/title/Zsh#Startup/Shutdown_files
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
-
 export GNUPGHOME="$XDG_CONFIG_HOME/gnupg"
-
 export LF_CONFIG_HOME="$XDG_CONFIG_HOME"
+export OMP_CONFIG_HOME="$XDG_CONFIG_HOME/oh-my-posh"
+
+# source: https://wiki.archlinux.org/title/Environment_variables#Default_programs
+export SHELL='/usr/bin/nu'
+export EDITOR='nvim'
+export VISUAL=$EDITOR
+export BROWSER='zen-browser'
+export PAGER='less -RF'
+export BAT_PAGER='less'
 
 export EZA_ICONS_AUTO=1
-
 export LS_COLORS="$(vivid generate catppuccin-mocha)"
+export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense'
 
-# source: https://wiki.archlinux.org/title/GnuPG#Configure_pinentry_to_use_the_correct_TTY
-export GPG_TTY="$TTY"
+export FZF_DEFAULT_OPTS_FILE="$XDG_CONFIG_HOME/fzf/opts"
+export FZF_DEFAULT_COMMAND="fd --hidden --follow"
+
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_CTRL_T_OPTS="--height=100% --preview='fzf-preview.bash {}'"
+
+export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND --type=dir"
+export FZF_ALT_C_OPTS="$FZF_CTRL_T_OPTS"
 
 # source: https://wiki.archlinux.org/title/Cursor_themes#Environment_variable
 export XCURSOR_PATH="/usr/share/icons:${XDG_DATA_HOME}/icons"
 
 export SWWW_TRANSITION=any
 export SWWW_TRANSITION_FPS=144
-
-export OMP_CONFIG_HOME="$XDG_CONFIG_HOME/oh-my-posh"
-
-path+="$HOME/.cargo/bin"
-path+="$HOME/go/bin"
-path+="$HOME/.scripts"

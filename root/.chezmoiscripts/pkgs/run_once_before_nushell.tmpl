@@ -1,0 +1,11 @@
+{{ if eq .os "linux-arch" -}}
+#!/usr/bin/env sh
+
+# "dotfiles:" in bold blue
+printf "\033[1;34mdotfiles:\033[0m installing nushell\n"
+
+sudo pacman -Sy --noconfirm nushell
+
+# "dotfiles:" in bold green
+printf "\033[1;32mdotfiles:\033[0m installed nushell\n"
+{{ end -}}

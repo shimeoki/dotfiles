@@ -1,7 +1,7 @@
 [user]
-	name = {{ .git.user.name }}
-	email = {{ .git.user.email }}
-	signingKey = {{ .git.user.signingkey }}
+	name = {{ .git.name }}
+	email = {{ .git.email }}
+	signingKey = {{ .git.signing.key }}
 [init]
 	defaultBranch = main
 [core]
@@ -10,7 +10,7 @@
 	whitespace = error
 	preloadIndex = true
 [commit]
-	gpgSign = {{ .git.commit.gpgsign }}
+	gpgSign = {{ .git.signing.gpg }}
 	verbose = true
 [interactive]
 	diffFilter = delta --color-only
@@ -54,5 +54,20 @@
 [pull]
 	ff = only
 [tag]
-	gpgSign = true
+	gpgSign = {{ .git.signing.gpg }}
 	sort = -taggerdate
+[alias]
+	ci = commit
+	reword = commit --amend
+	st = status --short
+	sw = switch
+	new = switch --create
+	b = branch
+	del = branch --delete
+	list = branch --all
+	hist = log --graph --oneline --all
+	undo = reset HEAD~
+	unstage = reset HEAD
+	m = merge
+	ff = merge --ff
+	changes = diff --cached
