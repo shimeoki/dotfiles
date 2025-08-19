@@ -39,7 +39,7 @@ sort = yes
 stack_duplicates = true
 hide_duplicate_count = false
 
-font = RobotoMono Nerd Font 12
+font = NotoSansM Nerd Font, Noto Sans Mono CJK JP, Noto Sans Mono CJK SC, Noto Sans Mono CJK HK, Noto Sans Mono CJK TC, Noto Sans Mono CJK KR 12
 line_height = 0
 
 markup = full
