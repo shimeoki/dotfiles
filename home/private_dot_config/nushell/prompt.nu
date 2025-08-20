@@ -23,8 +23,48 @@ def 'prompt git' [] {
         return ''
     }
 
-    let out = ($cmd.stdout | str replace "\n" '')
-    return $" (ansi blue)@($out)(ansi reset)"
+    let revs = (
+        git rev-list --left-right --count HEAD...@{upstream} | complete
+    )
+
+    let branch = ($cmd.stdout | str replace "\n" '')
+    let color = 'blue'
+
+    if $revs.exit_code != 0 {
+        return $"(ansi $color)($branch)(ansi reset)"
+    }
+
+    let diffs = ($revs.stdout | split column --regex '\s+')
+    let ahead = ($diffs | get column1.0 | into int)
+    let behind = ($diffs | get column2.0 | into int)
+
+    let color = if $behind > 0 {
+        'yellow'
+    } else if $ahead > 0 {
+        'cyan'
+    } else {
+        $color
+    }
+
+    let plus = if $ahead == 0 {
+        ''
+    } else {
+        $"+($ahead)"
+    }
+
+    let minus = if $behind == 0 {
+        ''
+    } else {
+        $"-($behind)"
+    }
+
+    let status = (
+        $"($plus) ($minus)"
+        | str trim
+        | if ($in | is-empty) { '=' } else { $in }
+    )
+
+    $"(ansi $color)($status) ($branch)(ansi reset)" | str trim
 }
 
 def 'prompt time' [] {
@@ -39,7 +79,7 @@ def 'prompt time' [] {
 }
 
 def prompt [] {
-    $"(prompt pwd)(prompt git)"
+    $"(prompt pwd) (prompt git)" | str trim
 }
 
 # hack: https://github.com/nushell/reedline/issues/707
