@@ -1,0 +1,31 @@
+window#waybar {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+/* source: https://github.com/Alexays/Waybar/wiki/Module:-Hyprland#example-3 */
+
+window#waybar.empty #window {
+    background-color: transparent;
+    border: none;
+}
+
+#workspaces button,
+#clock,
+#battery,
+#language,
+#network,
+#window,
+#backlight,
+#keyboard-state,
+#bluetooth,
+#wireplumber,
+#cava,
+#mpd,
+#tray {
+    min-height: 24px;
+    padding: 6px 16px;
+    margin: 0 4px;
+
+    border: 0px;
+    border-radius: 0px;
+}

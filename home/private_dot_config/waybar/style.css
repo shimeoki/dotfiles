@@ -1,25 +1,6 @@
-@import "mocha.css";
-
-* {
-    font-family: "NotoSansM Nerd Font", /* for the icons */
-        "Noto Sans Mono CJK JP",
-        "Noto Sans Mono CJK SC",
-        "Noto Sans Mono CJK HK",
-        "Noto Sans Mono CJK TC",
-        "Noto Sans Mono CJK KR";
-    font-size: 16px;
-}
-
-window#waybar {
-    background-color: rgba(0, 0, 0, 0);
-}
-
-/* source: https://github.com/Alexays/Waybar/wiki/Module:-Hyprland#example-3 */
-
-window#waybar.empty #window {
-    background-color: transparent;
-    border: none;
-}
+@import "themes/catppuccin-mocha.css";
+@import "font.css";
+@import "default.css";
 
 #workspaces button,
 #clock,
@@ -36,13 +17,6 @@ window#waybar.empty #window {
 #tray {
     background-color: @base;
     color: @text;
-
-    min-height: 24px;
-    padding: 6px 16px;
-    margin: 0 4px;
-
-    border: 0px;
-    border-radius: 0px;
 }
 
 #workspaces button.active {
