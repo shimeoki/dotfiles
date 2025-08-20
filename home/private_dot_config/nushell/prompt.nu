@@ -27,6 +27,17 @@ def 'prompt git' [] {
     return $" (ansi blue)@($out)(ansi reset)"
 }
 
+def 'prompt time' [] {
+    let time = ($env.CMD_DURATION_MS | into int | into duration --unit ms)
+    if $time < 5sec {
+        return ''
+    }
+
+    let color = "light_gray"
+
+    $"(ansi $color)($time)(ansi reset)"
+}
+
 def prompt [] {
     $"(prompt pwd)(prompt git)"
 }
@@ -35,7 +46,7 @@ def prompt [] {
 
 export-env {
     $env.PROMPT_COMMAND             = { prompt }
-    $env.PROMPT_COMMAND_RIGHT       = ''
+    $env.PROMPT_COMMAND_RIGHT       = { prompt time }
     $env.PROMPT_INDICATOR           = " \n$ "
     $env.PROMPT_INDICATOR_VI_NORMAL = " \n: "
     $env.PROMPT_INDICATOR_VI_INSERT = " \n> "
