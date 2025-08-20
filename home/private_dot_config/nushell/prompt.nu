@@ -18,53 +18,44 @@ def 'prompt pwd' [] {
 }
 
 def 'prompt git' [] {
-    let cmd = (git branch --show-current | complete)
-    if $cmd.exit_code != 0 {
+    let status = (git status --short | complete)
+    let lines = ($status.stdout | lines)
+    if ($lines | length) < 1 {
         return ''
     }
 
-    let revs = (
-        git rev-list --left-right --count HEAD...@{upstream} | complete
-    )
+    mut color = 'blue'
 
-    let branch = ($cmd.stdout | str replace "\n" '')
-    let color = 'blue'
+    let delta = if ($lines | length) > 1 { '~' } else { '' }
+    let cols = ($lines | get 0 | split column '...' | get 0)
+    let name = ($cols | get column1 | parse '## {branch}' | get branch.0)
+    let branch = $'($name)($delta)'
 
-    if $revs.exit_code != 0 {
-        return $"(ansi $color)($branch)(ansi reset)"
+    let upstream = ($cols | get --optional column2)
+    if ($upstream | is-empty) {
+        return $'(ansi $color)($branch)(ansi reset)'
     }
 
-    let diffs = ($revs.stdout | split column --regex '\s+')
-    let ahead = ($diffs | get column1.0 | into int)
-    let behind = ($diffs | get column2.0 | into int)
+    let diff = ($upstream | parse --regex '\[(?:ahead (?<ahead>\d+))?(?:, )?(?:behind (?<behind>\d+))?\]')
+    let ahead = ($diff | get --optional ahead.0)
+    let behind = ($diff | get --optional behind.0)
 
-    let color = if $behind > 0 {
-        'yellow'
-    } else if $ahead > 0 {
-        'cyan'
-    } else {
-        $color
+    let plus = if ($ahead | is-empty) { '' } else {
+        $color = 'cyan'
+        $'+($ahead)'
     }
 
-    let plus = if $ahead == 0 {
-        ''
-    } else {
-        $"+($ahead)"
-    }
-
-    let minus = if $behind == 0 {
-        ''
-    } else {
-        $"-($behind)"
+    let minus = if ($behind | is-empty) { '' } else {
+        $color = 'yellow'
+        $'-($behind)'
     }
 
     let status = (
-        $"($plus) ($minus)"
-        | str trim
-        | if ($in | is-empty) { '=' } else { $in }
+        $'($plus) ($minus)'
+        | str trim | if ($in | is-empty) { '= ' } else { $'($in) ' }
     )
 
-    $"(ansi $color)($status) ($branch)(ansi reset)" | str trim
+    $'(ansi $color)($status)($branch)(ansi reset)'
 }
 
 def 'prompt time' [] {
