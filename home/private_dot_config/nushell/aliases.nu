@@ -25,9 +25,8 @@ alias c = clear
 alias e = run-external $env.EDITOR
 alias v = run-external $env.VISUAL
 
-alias l   = eza
-alias lo  = eza --oneline
-alias la  = eza --all
+alias l   = eza --oneline
+alias la  = eza --oneline --all
 alias ll  = eza --long
 alias lla = eza --long --all
 alias lt  = eza --tree
