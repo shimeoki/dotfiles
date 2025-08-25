@@ -1,7 +1,7 @@
 # module for fzf commands
 
 export def --wrapped preview [...rest: string]: any -> any {
-    fzf --preview 'fzf-preview.bash {}' ...$rest
+    fzf --preview="fzf-preview.bash r#'{r}'#" ...$rest
 }
 
 export def --wrapped edit [...rest: string]: nothing -> any {
