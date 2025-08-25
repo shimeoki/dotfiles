@@ -22,13 +22,18 @@ if [[ $# -ne 1 ]]; then
     exit 1
 fi
 
-kitten icat --clear --transfer-mode=memory --stdin=no
+kitten icat --transfer-mode=memory --stdin=no \
+    --clear
 
 file=${1/#\~\//$HOME/}
 type=$(file --brief --dereference --mime -- "$file")
 
 if [[ $type =~ inode/ ]]; then
-    eza --color=always --tree --all --git-ignore -- "$file"
+    eza --color=always --icons=always \
+        --tree --all --ignore-glob=.git \
+        --group-directories-first --no-quotes \
+        -- "$file"
+
     exit
 fi
 
@@ -38,9 +43,13 @@ if [[ ! $type =~ image/ ]]; then
         exit
     fi
 
-    bat --color=always --pager=never -- "$file"
+    bat --color=always --paging=never \
+        --style="header,changes,numbers" \
+        -- "$file"
+
     exit
 fi
 
 rect=${FZF_PREVIEW_COLUMNS}x${FZF_PREVIEW_LINES}@0x0
-kitten icat --transfer-mode=memory --stdin=no --place="$rect" -- "$file"
+kitten icat --transfer-mode=memory --stdin=no \
+    --place="$rect" -- "$file"
