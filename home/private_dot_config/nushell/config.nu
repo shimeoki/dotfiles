@@ -35,6 +35,7 @@ $env.config.display_errors = {
 use themes/catppuccin-mocha.nu
 
 source up.nu
+source uuid.nu
 source aliases.nu
 source binds.nu
 
