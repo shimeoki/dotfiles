@@ -134,11 +134,11 @@ layer-rule {
 binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
-    Mod+Return { spawn "uwsm-app" "--" "kitty.desktop"; }
-    Mod+B      { spawn "uwsm-app" "--" "zen.desktop"; }
-    Mod+N      { spawn "uwsm-app" "--" "obsidian.desktop"; }
-    Mod+M      { spawn "uwsm-app" "--" "materialgram"; }
-    Mod+A      { spawn "uwsm-app" "--" "pwvucontrol"; }
+    Mod+Return { spawn "kitty"; }
+    Mod+B      { spawn "zen-browser"; }
+    Mod+N      { spawn "obsidian"; }
+    Mod+M      { spawn "materialgram"; }
+    Mod+A      { spawn "pwvucontrol"; }
     Mod+D      { spawn "fuzzel"; }
     Mod+Z      { spawn "niri-waybar.nu"; }
     Mod+Q      { spawn "niri-focus.nu"; }
