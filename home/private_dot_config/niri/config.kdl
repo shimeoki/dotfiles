@@ -261,7 +261,6 @@ binds {
 
 environment {
     QT_QPA_PLATFORM "wayland"
-    DISPLAY ":0"
 }
 
 cursor {
