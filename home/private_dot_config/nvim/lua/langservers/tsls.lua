@@ -25,7 +25,15 @@ local function opts()
 		init_options = {
 			plugins = { vue_plugin() },
 		},
+		workspace_required = true,
 		filetypes = filetypes,
+		root_markers = {
+			"package-lock.json",
+			"yarn.lock",
+			"pnpm-lock.yaml",
+			"bun.lockb",
+			"bun.lock",
+		},
 	}
 end
 

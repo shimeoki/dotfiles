@@ -48,6 +48,7 @@ function M.setup()
 	setup("gopls", require("langservers.gopls").opts)
 	setup("dockerls")
 	setup("marksman")
+	setup("denols", require("langservers.denols").opts)
 end
 
 return M

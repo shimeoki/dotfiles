@@ -16,6 +16,7 @@ local ensure_installed = {
 	"gopls",
 	"dockerfile-language-server",
 	"marksman",
+	"deno",
 	-- debuggers
 	"delve",
 	-- linters
