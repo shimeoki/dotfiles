@@ -30,10 +30,10 @@ local formatters_by_ft = {
 
 local deno = {
 	append_args = {
-		"--use-tabs=true",
+		"--use-tabs=false",
 		"--indent-width=4",
 		"--line-width=80",
-		"--no-semicolons=false",
+		"--no-semicolons=true",
 		"--prose-wrap=always",
 		"--single-quote=false",
 	},
