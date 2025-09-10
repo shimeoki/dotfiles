@@ -17,6 +17,7 @@ local ensure_installed = {
 	"dockerfile-language-server",
 	"marksman",
 	"deno",
+	"svelte-language-server",
 	-- debuggers
 	"delve",
 	-- linters

@@ -49,6 +49,7 @@ function M.setup()
 	setup("dockerls")
 	setup("marksman")
 	setup("denols", require("langservers.denols").opts)
+	setup("svelte")
 end
 
 return M

@@ -33,6 +33,7 @@ local highlighters = {
 	"ron",
 	"kdl",
 	"nix",
+	"svelte",
 }
 
 local function start()
