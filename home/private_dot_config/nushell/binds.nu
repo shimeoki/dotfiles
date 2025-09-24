@@ -14,16 +14,30 @@ $env.config.keybindings ++= [
         event: { send: MenuUp }
     }
     {
-        name: hint_word_complete
+        name: menu_right
         modifier: control
         keycode: char_l
+        mode: [vi_normal vi_insert]
+        event: { send: MenuRight }
+    }
+    {
+        name: menu_left
+        modifier: control
+        keycode: char_h
+        mode: [vi_normal vi_insert]
+        event: { send: MenuLeft }
+    }
+    {
+        name: hint_word_complete
+        modifier: control
+        keycode: "char_;"
         mode: [vi_normal vi_insert]
         event: { send: HistoryHintWordComplete }
     }
     {
         name: hint_complete
         modifier: control
-        keycode: 'char_;'
+        keycode: "char_'"
         mode: [vi_normal vi_insert]
         event: { send: HistoryHintComplete }
     }
