@@ -90,6 +90,8 @@ layout {
     }
 
     background-color "transparent"
+
+    empty-workspace-above-first
 }
 
 prefer-no-csd
