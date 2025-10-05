@@ -1,12 +1,3 @@
-local integrations = {
-	notify = true,
-	noice = true,
-	mason = true,
-	which_key = true,
-	blink_cmp = true,
-	indent_blankline = { scope_color = "lavender" },
-}
-
 local function highlights(colors)
 	return {
 		-- luasnip
@@ -24,10 +15,6 @@ local function highlights(colors)
 		NotifyINFOBorder = { fg = colors.mantle, bg = colors.mantle },
 		NotifyDEBUGBorder = { fg = colors.mantle, bg = colors.mantle },
 		NotifyTRACEBorder = { fg = colors.mantle, bg = colors.mantle },
-		-- telescope
-		TelescopeNormal = { link = "NormalFloat" },
-		TelescopeBorder = { fg = colors.mantle, bg = colors.mantle },
-		TelescopePreviewTitle = { fg = colors.mantle, bg = colors.lavender },
 		-- molten-nvim
 		MoltenCell = { bg = colors.base },
 		-- default split separator
@@ -38,9 +25,13 @@ end
 local opts = {
 	flavour = "mocha",
 	background = { light = "latte", dark = "mocha" },
+	float = { solid = true },
 	show_end_of_buffer = false,
-	integrations = integrations,
 	custom_highlights = highlights,
+	auto_integrations = true,
+	integrations = {
+		indent_blankline = { scope_color = "lavender" },
+	},
 }
 
 return {
