@@ -159,6 +159,16 @@ local if_zero = s("ifz", {
 	t({ "", "}" }),
 })
 
+local if_block = s("ifb", {
+	t("if "),
+	i(1, "statement"),
+	t("; "),
+	i(2, "condition"),
+	t({ " {", "\t" }),
+	i(0),
+	t({ "", "}" }),
+})
+
 local return_err = s("rr", {
 	t('return nil, errors.New("'),
 	i(0),
@@ -201,6 +211,7 @@ return {
 	odd,
 	if_nil,
 	if_zero,
+	if_block,
 	return_err,
 	return_nil,
 	not_implemented,
