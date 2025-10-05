@@ -172,7 +172,7 @@ local return_nil = s("rn", {
 })
 
 local not_implemented = s("nimpl", {
-	t('panic("not implemented") // todo: implement'),
+	t('panic("not implemented") // TODO: implement'),
 })
 
 return {
