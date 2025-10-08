@@ -137,11 +137,11 @@ binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     Mod+Return { spawn "kitty"; }
+    Mod+Space  { spawn "fuzzel"; }
     Mod+B      { spawn "zen-browser"; }
     Mod+N      { spawn "obsidian"; }
     Mod+M      { spawn "materialgram"; }
     Mod+A      { spawn "pwvucontrol"; }
-    Mod+D      { spawn "fuzzel"; }
     Mod+Z      { spawn "niri-waybar.nu"; }
     Mod+Q      { spawn "niri-focus.nu"; }
 
