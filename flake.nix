@@ -8,17 +8,9 @@
     };
 
     outputs =
-        {
-            self,
-            nixpkgs,
-            systems,
-            ...
-        }:
+        inputs:
         let
-            forEachSystem = nixpkgs.lib.genAttrs (import systems);
-            getPkgs = system: import nixpkgs { inherit system; };
-
-            home = path: "${self}/home/${path}";
+            home = path: "${inputs.self}/home/${path}";
             config = path: home "private_dot_config/${path}";
             functions = { inherit config; };
 
@@ -41,10 +33,7 @@
                 };
 
             mkPackage =
-                system:
-                let
-                    pkgs = getPkgs system;
-                in
+                pkgs:
                 pkgs.stdenv.mkDerivation {
                     name = "shimeoki-dotfiles";
                     src = ./home/dot_scripts;
@@ -61,12 +50,18 @@
                     '';
                 };
         in
-        {
-            homeModules.default = module;
-            nixosModules.default = module;
+        inputs.flake-parts.lib.mkFlake { inherit inputs; } {
+            systems = import inputs.systems;
 
-            packages = forEachSystem (system: {
-                default = mkPackage system;
-            });
+            flake = {
+                homeModules.default = module;
+                nixosModules.default = module;
+            };
+
+            perSystem =
+                { pkgs, ... }:
+                {
+                    packages.default = mkPackage pkgs;
+                };
         };
 }
