@@ -21,9 +21,11 @@
             systems = import inputs.systems;
 
             imports = [
+                # keep-sorted start
+                ./flake/fmt.nix
                 ./flake/module.nix
                 ./flake/package.nix
-                ./flake/fmt.nix
+                # keep-sorted end
             ];
         };
 }

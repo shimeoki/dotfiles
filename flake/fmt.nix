@@ -7,11 +7,7 @@
     perSystem = {
         treefmt = {
             programs = {
-                nixfmt = {
-                    enable = true;
-                    width = 80;
-                };
-
+                # keep-sorted start block=yes newline_separated=yes
                 deno = {
                     enable = true;
                     includes = [
@@ -19,6 +15,16 @@
                         "deno.json"
                     ];
                 };
+
+                keep-sorted = {
+                    enable = true;
+                };
+
+                nixfmt = {
+                    enable = true;
+                    width = 80;
+                };
+                # keep-sorted end
             };
 
             settings.formatter = {
