@@ -7,19 +7,21 @@ end
 vim.opt.rtp:prepend(path)
 
 local disabled_builtin_plugins = {
+	-- keep-sorted start
+	"editorconfig",
 	"gzip",
+	"man",
 	"matchit",
 	"matchparen",
 	"netrwPlugin",
+	"osc52",
+	"shada",
+	"spellfile",
 	"tarPlugin",
 	"tohtml",
 	"tutor",
 	"zipPlugin",
-	"editorconfig",
-	"man",
-	"osc52",
-	"shada",
-	"spellfile",
+	-- keep-sorted end
 }
 
 local opts = {
