@@ -1,205 +1,205 @@
 {
-	"layer": "top",
-	"position": "top",
-	"margin-top": 8,
-	"margin-left": 4,
-	"margin-right": 4,
-	"modules-left": [
-		"wireplumber",
-		"mpd"
-	],
-	"modules-center": [
-		"clock",
-		"niri/language"
-	],
-	"modules-right": [
-		"bluetooth",
-		"network",
-		"cava",
-		"backlight",
-		"battery",
-		"tray"
-	],
-	"hyprland/language": {
-		"format": "{}",
-		"format-en": "en",
-		"format-ru": "ru",
-		// warn: won't work if you don't use kanata
-		"on-click": "hyprctl switchxkblayout kanata next"
-	},
-	"niri/language": {
-		"format": "{}",
-		"format-en": "en",
-		"format-ru": "ru",
-		"on-click": "niri msg action switch-layout next"
-	},
-	"hyprland/workspaces": {
-		"format": "{name}{icon}{windows}",
-		"format-window-separator": " ",
-		"window-rewrite-default": "󰣆",
-		"window-rewrite": {
-			"class<(firefox|floorp|zen)>": "󰈹",
-			"class<(code)>": "󰨞",
-			"class<(kitty)>": "󰆍",
-			"class<(obsidian)>": "󰠮",
-			"class<(.*telegram.*|.*materialgram)>": "",
-			"class<(element|signal)>": "󰍩",
-			"class<(wofi|albert)>": "󰮫",
-			"class<(steam)>": "󰓓",
-			"class<(discord|vesktop)>": "󰙯",
-			"class<(nekobox)>": "󰖂",
-			"class<(opentabletdriver.*)>": "󰏬",
-			"class<(spotify)>": "󰓇",
-			"class<(gamescope)>": "󰺵",
-			"class<(.*obsproject.*)>": "󰻂"
-		},
-		"format-icons": {
-			"default": " ",
-			"special": " ",
-			"empty": ""
-		},
-		"on-scroll-up": "hyprctl dispatch workspace m+1",
-		"on-scroll-down": "hyprctl dispatch workspace m-1",
-		"show-special": true
-	},
-	"hyprland/window": {
-		"format": "{}",
-		"separate-outputs": true,
-		"icon": false,
-		"on-click": "hyprctl dispatch exec $TERMINAL",
-		"on-click-right": "hyprctl dispatch movetoworkspacesilent special:S",
-		"on-click-middle": "hyprctl dispatch killactive"
-	},
-	"battery": {
-		"states": {
-			"charge-100": 100,
-			"charge-99": 99,
-			"charge-89": 89,
-			"charge-79": 79,
-			"charge-69": 69,
-			"charge-59": 59,
-			"charge-49": 49,
-			"charge-39": 39,
-			"charge-29": 29,
-			"charge-19": 19,
-			"charge-9": 9
-		},
-		"format-charge-100": "{capacity}% 󰁹",
-		"format-charge-99": "{capacity}% 󰂂",
-		"format-charge-89": "{capacity}% 󰂁",
-		"format-charge-79": "{capacity}% 󰂀",
-		"format-charge-69": "{capacity}% 󰁿",
-		"format-charge-59": "{capacity}% 󰁾",
-		"format-charge-49": "{capacity}% 󰁽",
-		"format-charge-39": "{capacity}% 󰁼",
-		"format-charge-29": "{capacity}% 󰁻",
-		"format-charge-19": "{capacity}% 󰁺",
-		"format-charge-9": "{capacity}% 󰂎",
-		"format-charging-charge-100": "{capacity}% 󰂅",
-		"format-charging-charge-99": "{capacity}% 󰂋",
-		"format-charging-charge-89": "{capacity}% 󰂊",
-		"format-charging-charge-79": "{capacity}% 󰢞",
-		"format-charging-charge-69": "{capacity}% 󰂉",
-		"format-charging-charge-59": "{capacity}% 󰢝",
-		"format-charging-charge-49": "{capacity}% 󰂈",
-		"format-charging-charge-39": "{capacity}% 󰂇",
-		"format-charging-charge-29": "{capacity}% 󰂆",
-		"format-charging-charge-19": "{capacity}% 󰢜",
-		"format-charging-charge-9": "{capacity}% 󰢟"
-	},
-	"network": {
-		"format-wifi": "{essid} {icon}",
-		"tooltip-format-wifi": "Signal strength: {signalStrength}%",
-		"format-ethernet": "{bandwidthTotalBytes} 󰲝",
-		"format-disconnected": "n/a 󰲜",
-		"format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
-		"interval": 5
-	},
-	"backlight": {
-		"format": "{percent}% {icon}",
-		"format-icons": ["󰃚", "󰃛", "󰃜", "󰃝", "󰃞", "󰃟", "󰃠"]
-	},
-	"keyboard-state": {
-		"capslock": true,
-		"format": {
-			"capslock": "caps {icon}"
-		},
-		"format-icons": {
-			"locked": "󰌾",
-			"unlocked": "󰿆"
-		}
-	},
-	"clock": {
-		"interval": 60,
-		"tooltip": true,
-		"format": "{:%R}",
-		"tooltip-format": "{:%F (%A, %B %d)}"
-	},
-	"bluetooth": {
-		"format": "{status} 󰂯",
-		"format-no-controller": "",
-		"format-disabled": "",
-		"format-off": "",
-		"format-connected": "{device_alias} 󰂱",
-		"format-connected-battery": "{device_alias} 󰂱 {device_battery_percentage}% 󰥉"
-	},
-	"wireplumber": {
-		"format": "{volume}% {icon}",
-		"format-muted": "{volume}% 󰝟",
-		"format-icons": ["󰕿", "󰖀", "󰕾"],
-		"scroll-step": 5,
-		"on-click": "pwvucontrol",
-		"on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
-		"tooltip": false,
-		"reverse-scrolling": true
-	},
-	"cava": {
-		"cava_config": "$XDG_CONFIG_HOME/cava/config",
-		"method": "fifo",
-		"source": "/tmp/mpd.fifo",
-		"sensitivity": 3,
-		"bars": 24,
-		"bar_delimiter": 0,
-		"format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇"],
-		"input_delay": 2,
-		"hide_on_silence": true,
-		"sleep_timer": 5
-	},
-	"mpd": {
-		// say thanks to pango for hardcoding colors
-		"format": "{stateIcon} at <span color=\"#89b4fa\">{volume}%</span> / <b>{title}</b> by <span color=\"#94e2d5\">{artist}</span> from <span color=\"#f5c2e7\">{album}</span> ({elapsedTime:%M:%S} / {totalTime:%M:%S})", // volume: blue, artist: teal, album: pink
-		"state-icons": {
-			"playing": "<span color=\"#a6e3a1\">󰐊</span>", // green
-			"paused": "<span color=\"#f9e2af\">󰏤</span>" // yellow
-		},
-		"format-stopped": "",
-		"format-disconnected": "",
-		"tooltip": true,
-		"tooltip-format": "{repeatIcon}{randomIcon}{consumeIcon}{singleIcon}",
-		"repeat-icons": {
-			"on": " repeat "
-		},
-		"random-icons": {
-			"on": " random "
-		},
-		"consume-icons": {
-			"on": " remove "
-		},
-		"single-icons": {
-			"on": " single "
-		},
-		"tooltip-format-disconnected": "",
-		"on-click": "kitty --detach rmpc",
-		"on-click-right": "rmpc togglepause",
-		"on-click-middle": "rmpc next",
-		"on-scroll-up": "rmpc volume +5",
-		"on-scroll-down": "rmpc volume -5",
-		"max-length": 80
-	},
-	"tray": {
-		"icon-size": 16,
-		"spacing": 12,
-		"show-passive-items": true,
-		"reverse-direction": true
-	}
+    "layer": "top",
+    "position": "top",
+    "margin-top": 8,
+    "margin-left": 4,
+    "margin-right": 4,
+    "modules-left": [
+        "wireplumber",
+        "mpd"
+    ],
+    "modules-center": [
+        "clock",
+        "niri/language"
+    ],
+    "modules-right": [
+        "bluetooth",
+        "network",
+        "cava",
+        "backlight",
+        "battery",
+        "tray"
+    ],
+    "hyprland/language": {
+        "format": "{}",
+        "format-en": "en",
+        "format-ru": "ru",
+        // warn: won't work if you don't use kanata
+        "on-click": "hyprctl switchxkblayout kanata next"
+    },
+    "niri/language": {
+        "format": "{}",
+        "format-en": "en",
+        "format-ru": "ru",
+        "on-click": "niri msg action switch-layout next"
+    },
+    "hyprland/workspaces": {
+        "format": "{name}{icon}{windows}",
+        "format-window-separator": " ",
+        "window-rewrite-default": "󰣆",
+        "window-rewrite": {
+            "class<(firefox|floorp|zen)>": "󰈹",
+            "class<(code)>": "󰨞",
+            "class<(kitty)>": "󰆍",
+            "class<(obsidian)>": "󰠮",
+            "class<(.*telegram.*|.*materialgram)>": "",
+            "class<(element|signal)>": "󰍩",
+            "class<(wofi|albert)>": "󰮫",
+            "class<(steam)>": "󰓓",
+            "class<(discord|vesktop)>": "󰙯",
+            "class<(nekobox)>": "󰖂",
+            "class<(opentabletdriver.*)>": "󰏬",
+            "class<(spotify)>": "󰓇",
+            "class<(gamescope)>": "󰺵",
+            "class<(.*obsproject.*)>": "󰻂"
+        },
+        "format-icons": {
+            "default": " ",
+            "special": " ",
+            "empty": ""
+        },
+        "on-scroll-up": "hyprctl dispatch workspace m+1",
+        "on-scroll-down": "hyprctl dispatch workspace m-1",
+        "show-special": true
+    },
+    "hyprland/window": {
+        "format": "{}",
+        "separate-outputs": true,
+        "icon": false,
+        "on-click": "hyprctl dispatch exec $TERMINAL",
+        "on-click-right": "hyprctl dispatch movetoworkspacesilent special:S",
+        "on-click-middle": "hyprctl dispatch killactive"
+    },
+    "battery": {
+        "states": {
+            "charge-100": 100,
+            "charge-99": 99,
+            "charge-89": 89,
+            "charge-79": 79,
+            "charge-69": 69,
+            "charge-59": 59,
+            "charge-49": 49,
+            "charge-39": 39,
+            "charge-29": 29,
+            "charge-19": 19,
+            "charge-9": 9
+        },
+        "format-charge-100": "{capacity}% 󰁹",
+        "format-charge-99": "{capacity}% 󰂂",
+        "format-charge-89": "{capacity}% 󰂁",
+        "format-charge-79": "{capacity}% 󰂀",
+        "format-charge-69": "{capacity}% 󰁿",
+        "format-charge-59": "{capacity}% 󰁾",
+        "format-charge-49": "{capacity}% 󰁽",
+        "format-charge-39": "{capacity}% 󰁼",
+        "format-charge-29": "{capacity}% 󰁻",
+        "format-charge-19": "{capacity}% 󰁺",
+        "format-charge-9": "{capacity}% 󰂎",
+        "format-charging-charge-100": "{capacity}% 󰂅",
+        "format-charging-charge-99": "{capacity}% 󰂋",
+        "format-charging-charge-89": "{capacity}% 󰂊",
+        "format-charging-charge-79": "{capacity}% 󰢞",
+        "format-charging-charge-69": "{capacity}% 󰂉",
+        "format-charging-charge-59": "{capacity}% 󰢝",
+        "format-charging-charge-49": "{capacity}% 󰂈",
+        "format-charging-charge-39": "{capacity}% 󰂇",
+        "format-charging-charge-29": "{capacity}% 󰂆",
+        "format-charging-charge-19": "{capacity}% 󰢜",
+        "format-charging-charge-9": "{capacity}% 󰢟"
+    },
+    "network": {
+        "format-wifi": "{essid} {icon}",
+        "tooltip-format-wifi": "Signal strength: {signalStrength}%",
+        "format-ethernet": "{bandwidthTotalBytes} 󰲝",
+        "format-disconnected": "n/a 󰲜",
+        "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+        "interval": 5
+    },
+    "backlight": {
+        "format": "{percent}% {icon}",
+        "format-icons": ["󰃚", "󰃛", "󰃜", "󰃝", "󰃞", "󰃟", "󰃠"]
+    },
+    "keyboard-state": {
+        "capslock": true,
+        "format": {
+            "capslock": "caps {icon}"
+        },
+        "format-icons": {
+            "locked": "󰌾",
+            "unlocked": "󰿆"
+        }
+    },
+    "clock": {
+        "interval": 60,
+        "tooltip": true,
+        "format": "{:%R}",
+        "tooltip-format": "{:%F (%A, %B %d)}"
+    },
+    "bluetooth": {
+        "format": "{status} 󰂯",
+        "format-no-controller": "",
+        "format-disabled": "",
+        "format-off": "",
+        "format-connected": "{device_alias} 󰂱",
+        "format-connected-battery": "{device_alias} 󰂱 {device_battery_percentage}% 󰥉"
+    },
+    "wireplumber": {
+        "format": "{volume}% {icon}",
+        "format-muted": "{volume}% 󰝟",
+        "format-icons": ["󰕿", "󰖀", "󰕾"],
+        "scroll-step": 5,
+        "on-click": "pwvucontrol",
+        "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "tooltip": false,
+        "reverse-scrolling": true
+    },
+    "cava": {
+        "cava_config": "$XDG_CONFIG_HOME/cava/config",
+        "method": "fifo",
+        "source": "/tmp/mpd.fifo",
+        "sensitivity": 3,
+        "bars": 24,
+        "bar_delimiter": 0,
+        "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇"],
+        "input_delay": 2,
+        "hide_on_silence": true,
+        "sleep_timer": 5
+    },
+    "mpd": {
+        // say thanks to pango for hardcoding colors
+        "format": "{stateIcon} at <span color=\"#89b4fa\">{volume}%</span> / <b>{title}</b> by <span color=\"#94e2d5\">{artist}</span> from <span color=\"#f5c2e7\">{album}</span> ({elapsedTime:%M:%S} / {totalTime:%M:%S})", // volume: blue, artist: teal, album: pink
+        "state-icons": {
+            "playing": "<span color=\"#a6e3a1\">󰐊</span>", // green
+            "paused": "<span color=\"#f9e2af\">󰏤</span>" // yellow
+        },
+        "format-stopped": "",
+        "format-disconnected": "",
+        "tooltip": true,
+        "tooltip-format": "{repeatIcon}{randomIcon}{consumeIcon}{singleIcon}",
+        "repeat-icons": {
+            "on": " repeat "
+        },
+        "random-icons": {
+            "on": " random "
+        },
+        "consume-icons": {
+            "on": " remove "
+        },
+        "single-icons": {
+            "on": " single "
+        },
+        "tooltip-format-disconnected": "",
+        "on-click": "kitty --detach rmpc",
+        "on-click-right": "rmpc togglepause",
+        "on-click-middle": "rmpc next",
+        "on-scroll-up": "rmpc volume +5",
+        "on-scroll-down": "rmpc volume -5",
+        "max-length": 80
+    },
+    "tray": {
+        "icon-size": 16,
+        "spacing": 12,
+        "show-passive-items": true,
+        "reverse-direction": true
+    }
 }
