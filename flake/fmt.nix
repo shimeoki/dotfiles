@@ -24,6 +24,10 @@
                     enable = true;
                     width = 80;
                 };
+
+                stylua = {
+                    enable = true;
+                };
                 # keep-sorted end
             };
 
