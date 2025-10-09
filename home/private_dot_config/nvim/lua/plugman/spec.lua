@@ -1,12 +1,8 @@
 local not_opening_a_file = vim.fn.argc(-1) == 0
 
 return {
-	{
-		"windwp/nvim-autopairs",
-		main = "nvim-autopairs",
-		event = "InsertEnter",
-		opts = {},
-	},
+	-- luasnip is sorted differently because of the dependencies, but whatever
+	-- keep-sorted start block=yes by_regex=(?i)".+/(.+)"
 	{
 		"saghen/blink.cmp",
 		version = "1.*",
@@ -14,15 +10,6 @@ return {
 		dependencies = { "L3MON4D3/LuaSnip", version = "v2.*" },
 		opts = function()
 			return require("plugins.blink").opts
-		end,
-	},
-	{
-		"catppuccin/nvim",
-		name = "catppuccin",
-		main = "catppuccin",
-		priority = 1000,
-		opts = function()
-			return require("plugins.catppuccin").opts
 		end,
 	},
 	{
@@ -40,6 +27,16 @@ return {
 		cmd = { "CsvViewEnable", "CsvViewDisable", "CsvViewToggle" },
 		opts = function()
 			return require("plugins.csvview").opts
+		end,
+	},
+	{
+		"L3MON4D3/LuaSnip",
+		main = "luasnip",
+		version = "v2.*",
+		build = "make install_jsregexp",
+		dependencies = { "rafamadriz/friendly-snippets" },
+		config = function()
+			require("plugins.luasnip").setup()
 		end,
 	},
 	{
@@ -69,11 +66,6 @@ return {
 		"ray-x/guihua.lua",
 	},
 	{
-		"nvim-tree/nvim-web-devicons",
-		main = "nvim-web-devicons",
-		opts = {},
-	},
-	{
 		"3rd/image.nvim",
 		main = "image",
 		ft = { "markdown" },
@@ -86,13 +78,6 @@ return {
 		main = "ibl",
 		event = { "BufReadPost", "BufWritePost", "BufNewFile", "VeryLazy" },
 		opts = {},
-	},
-	{
-		"mfussenegger/nvim-jdtls",
-		ft = { "java" },
-		config = function()
-			require("plugins.jdtls").setup()
-		end,
 	},
 	{
 		"GCBallesteros/jupytext.nvim",
@@ -117,40 +102,6 @@ return {
 		version = "^6.0.0",
 		opts = function()
 			return require("plugins.scrollback").opts
-		end,
-	},
-	{
-		"mfussenegger/nvim-lint",
-		event = { "BufReadPost", "BufWritePost", "BufNewFile" },
-		config = function()
-			require("plugins.lint").setup()
-		end,
-	},
-	{
-		"neovim/nvim-lspconfig",
-		event = { "BufReadPost", "BufWritePost", "BufNewFile" },
-		lazy = false,
-		config = function()
-			require("plugins.lsp").setup()
-		end,
-	},
-	{
-		"nvim-lualine/lualine.nvim",
-		main = "lualine",
-		event = "VeryLazy",
-		dependencies = { "nvim-tree/nvim-web-devicons" },
-		opts = function()
-			return require("plugins.lualine").opts
-		end,
-	},
-	{
-		"L3MON4D3/LuaSnip",
-		main = "luasnip",
-		version = "v2.*",
-		build = "make install_jsregexp",
-		dependencies = { "rafamadriz/friendly-snippets" },
-		config = function()
-			require("plugins.luasnip").setup()
 		end,
 	},
 	{
@@ -186,24 +137,56 @@ return {
 		"MunifTanjim/nui.nvim",
 	},
 	{
-		"rcarriga/nvim-notify",
+		"catppuccin/nvim",
+		name = "catppuccin",
+		main = "catppuccin",
+		priority = 1000,
 		opts = function()
-			return require("plugins.notify").opts
+			return require("plugins.catppuccin").opts
 		end,
 	},
 	{
-		"nvim-lua/plenary.nvim",
+		"windwp/nvim-autopairs",
+		main = "nvim-autopairs",
+		event = "InsertEnter",
+		opts = {},
 	},
 	{
-		"quarto-dev/quarto-nvim",
-		main = "quarto",
-		ft = { "quarto", "markdown", "json", "python" },
+		"mfussenegger/nvim-dap",
 		dependencies = {
-			"jmbuhr/otter.nvim",
-			"nvim-treesitter/nvim-treesitter",
+			"theHamsta/nvim-dap-virtual-text",
+			"rcarriga/nvim-dap-ui",
 		},
+	},
+	{
+		"mfussenegger/nvim-jdtls",
+		ft = { "java" },
+		config = function()
+			require("plugins.jdtls").setup()
+		end,
+	},
+	{
+		"mfussenegger/nvim-lint",
+		event = { "BufReadPost", "BufWritePost", "BufNewFile" },
+		config = function()
+			require("plugins.lint").setup()
+		end,
+	},
+	{
+		"neovim/nvim-lspconfig",
+		event = { "BufReadPost", "BufWritePost", "BufNewFile" },
+		lazy = false,
+		config = function()
+			require("plugins.lsp").setup()
+		end,
+	},
+	{
+		"nvim-neotest/nvim-nio",
+	},
+	{
+		"rcarriga/nvim-notify",
 		opts = function()
-			return require("plugins.quarto").opts
+			return require("plugins.notify").opts
 		end,
 	},
 	{
@@ -218,6 +201,46 @@ return {
 		"kylechui/nvim-surround",
 		event = "VeryLazy",
 		opts = {},
+	},
+	{
+		"quarto-dev/quarto-nvim",
+		main = "quarto",
+		ft = { "quarto", "markdown", "json", "python" },
+		dependencies = {
+			"jmbuhr/otter.nvim",
+			"nvim-treesitter/nvim-treesitter",
+		},
+		opts = function()
+			return require("plugins.quarto").opts
+		end,
+	},
+	{
+		"nvim-treesitter/nvim-treesitter",
+		lazy = false,
+		build = ":TSUpdate",
+		branch = "main",
+		config = function()
+			require("plugins.treesitter").setup()
+		end,
+		-- idk is this supported yet
+		-- dependencies = { "nvim-treesitter/nvim-treesitter-textobjects" },
+	},
+	{
+		"nvim-lualine/lualine.nvim",
+		main = "lualine",
+		event = "VeryLazy",
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+		opts = function()
+			return require("plugins.lualine").opts
+		end,
+	},
+	{
+		"nvim-tree/nvim-web-devicons",
+		main = "nvim-web-devicons",
+		opts = {},
+	},
+	{
+		"nvim-lua/plenary.nvim",
 	},
 	{
 		"nvim-telescope/telescope.nvim",
@@ -240,17 +263,6 @@ return {
 		end,
 	},
 	{
-		"nvim-treesitter/nvim-treesitter",
-		lazy = false,
-		build = ":TSUpdate",
-		branch = "main",
-		config = function()
-			require("plugins.treesitter").setup()
-		end,
-		-- idk is this supported yet
-		-- dependencies = { "nvim-treesitter/nvim-treesitter-textobjects" },
-	},
-	{
 		"folke/which-key.nvim",
 		main = "which-key",
 		event = "VeryLazy",
@@ -266,14 +278,5 @@ return {
 			return require("plugins.yazi").opts
 		end,
 	},
-	{
-		"mfussenegger/nvim-dap",
-		dependencies = {
-			"theHamsta/nvim-dap-virtual-text",
-			"rcarriga/nvim-dap-ui",
-		},
-	},
-	{
-		"nvim-neotest/nvim-nio",
-	},
+	-- keep-sorted end
 }
