@@ -23,6 +23,7 @@
             imports = [
                 ./flake/module.nix
                 ./flake/package.nix
+                ./flake/fmt.nix
             ];
         };
 }
