@@ -151,7 +151,7 @@
 		"on-click": "pwvucontrol",
 		"on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
 		"tooltip": false,
-		"reverse-scrolling": false
+		"reverse-scrolling": true
 	},
 	"cava": {
 		"cava_config": "$XDG_CONFIG_HOME/cava/config",
