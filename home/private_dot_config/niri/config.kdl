@@ -139,6 +139,7 @@ binds {
     Mod+Return { spawn "kitty"; }
     Mod+Space  { spawn "fuzzel"; }
     Mod+B      { spawn "zen-browser"; }
+    Mod+E      { spawn "nautilus"; }
     Mod+N      { spawn "obsidian"; }
     Mod+M      { spawn "materialgram"; }
     Mod+A      { spawn "pwvucontrol"; }
