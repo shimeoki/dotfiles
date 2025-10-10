@@ -1,3 +1,4 @@
+-- keep-sorted start block=yes newline_separated=yes
 local value = s("v", {
 	i(1, "v"),
 	t(" := "),
@@ -189,8 +190,10 @@ local todo = s("todo", {
 	t("// TODO: "),
 	i(0),
 })
+-- keep-sorted end
 
 return {
+	-- keep-sorted start
 	value,
 	value_err,
 	value_ok,
@@ -221,4 +224,5 @@ return {
 	return_nil,
 	not_implemented,
 	todo,
+	-- keep-sorted end
 }

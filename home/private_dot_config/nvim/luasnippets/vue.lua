@@ -1,3 +1,4 @@
+-- keep-sorted start block=yes newline_separated=yes
 local init = s("init", {
 	t({ '<script setup lang="ts">', "" }),
 	t({ "</script>", "", "" }),
@@ -7,7 +8,10 @@ local init = s("init", {
 }, {
 	condition = conds.line_begin,
 })
+-- keep-sorted end
 
 return {
+	-- keep-sorted start
 	init,
+	-- keep-sorted end
 }
