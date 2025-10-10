@@ -185,6 +185,11 @@ local not_implemented = s("nimpl", {
 	t('panic("not implemented") // TODO: implement'),
 })
 
+local todo = s("todo", {
+	t("// TODO: "),
+	i(0),
+})
+
 return {
 	value,
 	value_err,
@@ -215,4 +220,5 @@ return {
 	return_err,
 	return_nil,
 	not_implemented,
+	todo,
 }
