@@ -16,6 +16,11 @@ return {
 		i(0, "type"),
 	}),
 
+	s("embed", {
+		t("//go:embed "),
+		i(0, "files"),
+	}),
+
 	s("en", {
 		t("== nil"),
 	}),
