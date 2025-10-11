@@ -114,6 +114,7 @@ window-rule {
 
 window-rule {
     match app-id="^kitty$"
+    match app-id="^obsidian$"
     opacity 0.9
 }
 
