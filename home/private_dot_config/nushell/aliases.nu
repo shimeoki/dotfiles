@@ -25,6 +25,16 @@ alias c = clear
 alias e = run-external $env.EDITOR
 alias v = run-external $env.VISUAL
 
+# i really don't like reassigning binaries this way, but eza doesn't have a cfg
+def --wrapped eza [...args: string] {
+    (^eza
+        --color=always --icons=always
+        --ignore-glob=.git
+        --group-directories-first --no-quotes
+        ...$args
+    )
+}
+
 alias l   = eza --oneline
 alias la  = eza --oneline --all
 alias ll  = eza --long

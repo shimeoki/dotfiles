@@ -15,6 +15,12 @@ alias c='clear'
 alias e='$EDITOR'
 alias v='$VISUAL'
 
+# i really don't like reassigning binaries this way, but eza doesn't have a cfg
+alias eza='eza \
+    --color=always --icons=always \
+    --ignore-glob=.git \
+    --group-directories-first --no-quotes'
+
 alias l='eza --oneline'
 alias la='eza --oneline --all'
 alias ll='eza --long'
