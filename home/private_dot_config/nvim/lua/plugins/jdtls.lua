@@ -1,10 +1,11 @@
-local function jdtls_path()
-	return vim.fn.exepath("jdtls")
-end
-
 local function config()
-	local jdtls = require("jdtls")
-	jdtls.start_or_attach(require("langservers.jdtls")(jdtls_path()))
+	vim.api.nvim_create_autocmd("FileType", {
+		pattern = { "java" },
+		callback = function()
+			local path = require("langservers.jdtls")(vim.fn.exepath("jdtls"))
+			require("jdtls").start_or_attach(path)
+		end,
+	})
 end
 
 return {
