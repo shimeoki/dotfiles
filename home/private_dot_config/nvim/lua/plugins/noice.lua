@@ -80,9 +80,37 @@ local hide_written_messages = {
 	opts = { skip = true },
 }
 
+local jdtls_progress = {
+	["Building"] = true,
+	["Validate documents"] = true,
+	["Publish Diagnostics"] = true,
+}
+
+local hide_jdtls_progress = {
+	filter = {
+		event = "lsp",
+		kind = "progress",
+		cond = function(m)
+			if not m.opts or not m.opts.progress then
+				return false
+			end
+
+			local msg = m.opts.progress -- noice why
+
+			if msg.client ~= "jdtls" then
+				return false
+			end
+
+			return jdtls_progress[msg.message] or false
+		end,
+	},
+	opts = { skip = true },
+}
+
 local routes = {
 	hide_search_virtual_text,
 	hide_written_messages,
+	hide_jdtls_progress,
 }
 
 M.opts = {
