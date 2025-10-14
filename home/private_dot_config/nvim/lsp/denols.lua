@@ -6,9 +6,4 @@ return {
 		"typescript",
 		"typescriptreact",
 	},
-	root_markers = {
-		"deno.json",
-		"deno.jsonc",
-		"deno.lock",
-	},
 }
