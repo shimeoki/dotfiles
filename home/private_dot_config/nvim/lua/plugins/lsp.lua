@@ -10,13 +10,6 @@ local function setup(name, opts)
 	lsp.enable(name)
 end
 
-local ts_ls_filetypes = {
-	"javascript",
-	"javascriptreact",
-	"typescript",
-	"typescriptreact",
-	"vue",
-}
 local denols_root_markers = {
 	"deno.json",
 	"deno.jsonc",
@@ -34,8 +27,7 @@ function M.setup()
 	setup("clangd")
 	setup("nushell")
 	setup("vue_ls")
-	-- FIXME: remove after migrating from lspconfig
-	setup("ts_ls", { filetypes = ts_ls_filetypes })
+	setup("ts_ls")
 	setup("cssls")
 	setup("texlab")
 	setup("hyprls")
