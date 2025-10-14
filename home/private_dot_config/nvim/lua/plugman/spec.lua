@@ -161,9 +161,6 @@ return {
 	{
 		"mfussenegger/nvim-jdtls",
 		ft = { "java" },
-		config = function()
-			require("plugins.jdtls").setup()
-		end,
 	},
 	{
 		"mfussenegger/nvim-lint",
