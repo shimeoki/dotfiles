@@ -1,0 +1,21 @@
+vim.lsp.inlay_hint.enable()
+
+vim.lsp.enable({
+	"lua_ls",
+	"jedi_language_server",
+	"ruff",
+	"bashls",
+	"clangd",
+	"nushell",
+	"vue_ls",
+	"ts_ls",
+	"cssls",
+	"texlab",
+	"hyprls",
+	"gopls",
+	"dockerls",
+	"marksman",
+	"denols",
+	"svelte",
+	"jdtls",
+})
