@@ -36,7 +36,7 @@ function M.setup()
 	-- todo: load only on corresponding filetypes
 	setup("lua_ls")
 	setup("jedi_language_server")
-	setup("ruff", require("langservers.ruff").opts)
+	setup("ruff")
 	setup("bashls")
 	setup("clangd")
 	setup("nushell")
