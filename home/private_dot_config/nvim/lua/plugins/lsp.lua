@@ -34,7 +34,7 @@ function M.setup()
 	fix_rename()
 
 	-- todo: load only on corresponding filetypes
-	setup("lua_ls", require("langservers.luals").opts)
+	setup("lua_ls")
 	setup("jedi_language_server")
 	setup("ruff", require("langservers.ruff").opts)
 	setup("bashls")
