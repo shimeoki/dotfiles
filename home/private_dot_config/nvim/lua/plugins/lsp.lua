@@ -24,8 +24,6 @@ local denols_root_markers = {
 }
 
 function M.setup()
-	require("diagnostics")
-
 	lsp.inlay_hint.enable()
 
 	-- todo: load only on corresponding filetypes
