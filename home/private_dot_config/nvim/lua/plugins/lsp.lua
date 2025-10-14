@@ -50,6 +50,7 @@ function M.setup()
 	setup("marksman")
 	setup("denols", require("langservers.denols").opts)
 	setup("svelte")
+	setup("jdtls")
 end
 
 return M
