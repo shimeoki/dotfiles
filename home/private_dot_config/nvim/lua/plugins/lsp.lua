@@ -10,11 +10,7 @@ local function setup(name, opts)
 	lsp.enable(name)
 end
 
-local denols_root_markers = {
-	"deno.json",
-	"deno.jsonc",
-	"deno.lock",
-}
+local denols_root_markers = {}
 
 function M.setup()
 	lsp.inlay_hint.enable()
@@ -34,8 +30,7 @@ function M.setup()
 	setup("gopls")
 	setup("dockerls")
 	setup("marksman")
-	-- FIXME: remove after migrating from lspconfig
-	setup("denols", { root_markers = denols_root_markers })
+	setup("denols")
 	setup("svelte")
 	setup("jdtls")
 end
