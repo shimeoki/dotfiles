@@ -1,38 +1,29 @@
-local runtime = "LuaJIT"
-
 local globals = {
 	"vim",
 	"require",
 }
 
+-- INFO: sources
+-- https://github.com/neovim/neovim/issues/21686#issuecomment-1522446128
+-- https://github.com/neovim/nvim-lspconfig/blob/ac98db2f9f06a56498ec890a96928774eae412c3/lsp/lua_ls.lua
+
+--- @type vim.lsp.Config
 return {
-	on_init = function(client)
-		if not client.workspace_folders then
-			return
-		end
-
-		local path = client.workspace_folders[1].name
-		local rc1 = vim.loop.fs_stat(path .. "/.luarc.json")
-		local rc2 = vim.loop.fs_stat(path .. "/.luarc.jsonc")
-
-		if rc1 or rc2 then
-			return
-		end
-
-		local cfg = client.config.settings.Lua
-
-		cfg = vim.tbl_deep_extend("force", cfg, {
-			runtime = { version = runtime },
-			workspace = {
-				checkThirdParty = false,
-				library = { vim.env.VIMRUNTIME },
-			},
-		})
-	end,
-	-- source: https://github.com/neovim/neovim/issues/21686#issuecomment-1522446128
+	cmd = { "lua-language-server" },
+	filetypes = { "lua" },
+	root_markers = {
+		".luarc.json",
+		".luarc.jsonc",
+		".luacheckrc",
+		".stylua.toml",
+		"stylua.toml",
+		"selene.toml",
+		"selene.yml",
+		".git",
+	},
 	settings = {
 		Lua = {
-			runtime = { version = runtime },
+			runtime = { version = "LuaJIT" },
 			diagnostics = { globals = globals },
 			telemetry = { enable = false },
 			format = { enable = false }, -- another formatter is used
