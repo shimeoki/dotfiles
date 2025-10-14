@@ -12,7 +12,7 @@ local root_markers = {
 local function data_dir()
 	local project = vim.fs.root(0, root_markers)
 	local cache = vim.fn.stdpath("cache") .. "/jdtls/workspace"
-	return vim.fn.fnamemodify(cache .. project, ":p:h")
+	return vim.fn.fnamemodify(cache .. project, ":p")
 end
 
 local function jvm_args()
@@ -29,22 +29,12 @@ end
 
 --- @type vim.lsp.Config
 return {
-	--- @param dispatchers? vim.lsp.rpc.Dispatchers
-	--- @param config vim.lsp.ClientConfig
-	cmd = function(dispatchers, config)
-		local config_cmd = {
-			"jdtls",
-			"-data",
-			data_dir(),
-			jvm_args(),
-		}
-
-		return vim.lsp.rpc.start(config_cmd, dispatchers, {
-			cwd = config.cmd_cwd,
-			env = config.cmd_env,
-			detached = config.detached,
-		})
-	end,
+	cmd = {
+		"jdtls",
+		"-data",
+		data_dir(),
+		jvm_args(),
+	},
 	filetypes = { "java" },
 	root_markers = {
 		"gradlew",
