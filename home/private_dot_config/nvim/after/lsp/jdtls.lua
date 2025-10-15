@@ -10,7 +10,7 @@ local root_markers = {
 }
 
 local function data_dir()
-	local project = vim.fs.root(0, root_markers)
+	local project = vim.fs.root(0, root_markers) or vim.fn.getcwd()
 	local cache = vim.fn.stdpath("cache") .. "/jdtls/workspace"
 	return vim.fn.fnamemodify(cache .. project, ":p")
 end
