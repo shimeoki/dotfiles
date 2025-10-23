@@ -69,8 +69,23 @@ def 'prompt time' [] {
     $"(ansi $color)($time)(ansi reset)"
 }
 
+def env-exists [name: string] {
+    $env | get --optional $name | is-not-empty
+}
+
+def 'prompt sub' [] {
+    let nix = if (env-exists IN_NIX_SHELL) { 'nix' } else { '' }
+    let yazi = if (env-exists YAZI_LEVEL) { 'yazi' } else { '' }
+
+    let parts = ([ $nix $yazi ] | compact --empty)
+    if ($parts | is-empty) { return '' }
+
+    let color = 'light_gray'
+    $"(ansi $color)\(($parts | str join ', ')\)(ansi reset)"
+}
+
 def prompt [] {
-    $"(prompt pwd) (prompt git)" | str trim
+    $"(prompt sub) (prompt pwd) (prompt git)" | str trim
 }
 
 # hack: https://github.com/nushell/reedline/issues/707
