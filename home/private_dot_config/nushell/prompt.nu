@@ -7,22 +7,14 @@
 # source: https://github.com/nushell/nu_scripts/blob/main/sourced/cool-oneliners/pwd-short.nu
 def 'prompt pwd' [] {
     let out = ($env.PWD | str replace $nu.home-path '~')
-
-    let color = if $env.LAST_EXIT_CODE == 0 {
-        "green"
-    } else {
-        "red"
-    }
-
+    let color = if $env.LAST_EXIT_CODE == 0 { "green" } else { "red" }
     $"(ansi $color)($out)(ansi reset)"
 }
 
 def 'prompt git' [] {
     let status = (git status --short | complete)
     let lines = ($status.stdout | lines)
-    if ($lines | length) < 1 {
-        return ''
-    }
+    if ($lines | length) < 1 { return '' }
 
     mut color = 'blue'
 
@@ -32,9 +24,7 @@ def 'prompt git' [] {
     let branch = $'($name)($delta)'
 
     let upstream = ($cols | get --optional column2)
-    if ($upstream | is-empty) {
-        return $'(ansi $color)($branch)(ansi reset)'
-    }
+    if ($upstream | is-empty) { return $'(ansi $color)($branch)(ansi reset)' }
 
     let diff = ($upstream | parse --regex '\[(?:ahead (?<ahead>\d+))?(?:, )?(?:behind (?<behind>\d+))?\]')
     let ahead = ($diff | get --optional ahead.0)
@@ -60,12 +50,9 @@ def 'prompt git' [] {
 
 def 'prompt time' [] {
     let time = ($env.CMD_DURATION_MS | into int | into duration --unit ms)
-    if $time < 5sec {
-        return ''
-    }
+    if $time < 5sec { return '' }
 
     let color = "light_gray"
-
     $"(ansi $color)($time)(ansi reset)"
 }
 
