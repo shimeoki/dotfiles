@@ -64,13 +64,12 @@ local completion = {
 local keymap = {
 	preset = "none",
 
-	["<enter>"] = { "accept", "snippet_forward", "fallback" },
-	["<tab>"] = { "accept", "snippet_forward", "fallback" },
-
 	["<c-s>"] = { "show", "hide", "fallback_to_mappings" },
 	["<c-a>"] = { show_all, "fallback_to_mappings" },
 	["<c-e>"] = { show_except_snippets, "fallback_to_mappings" },
 	["<c-o>"] = { show_only_snippets, "fallback_to_mappings" },
+
+	["<c-space>"] = { "accept", "fallback" },
 
 	["<c-j>"] = { "select_next", "fallback_to_mappings" },
 	["<c-k>"] = { "select_prev", "fallback_to_mappings" },
