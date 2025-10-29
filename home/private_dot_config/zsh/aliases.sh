@@ -10,6 +10,8 @@ alias cza='chezmoi apply'
 alias czj='chezmoi cd'
 alias czz='chezmoi status'
 
+alias bk='cd -'
+
 alias c='clear'
 
 alias e='$EDITOR'
