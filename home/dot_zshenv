@@ -37,6 +37,8 @@ export FZF_CTRL_T_OPTS="--height=100% --preview='fzf-preview.bash {}'"
 export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND --type=dir"
 export FZF_ALT_C_OPTS="$FZF_CTRL_T_OPTS"
 
+export _ZO_FZF_OPTS="--no-sort --height=100% --preview='fzf-preview.bash {2..}'"
+
 # source: https://wiki.archlinux.org/title/Cursor_themes#Environment_variable
 export XCURSOR_PATH="/usr/share/icons:${XDG_DATA_HOME}/icons"
 
