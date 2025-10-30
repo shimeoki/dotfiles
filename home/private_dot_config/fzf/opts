@@ -42,3 +42,4 @@
 --bind="ctrl-l:select+down"
 --bind="ctrl-u:half-page-down"
 --bind="ctrl-i:half-page-up"
+--bind="ctrl-f:first"
