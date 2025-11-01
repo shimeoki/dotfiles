@@ -23,8 +23,8 @@
             imports = [
                 # keep-sorted start
                 ./flake/fmt.nix
-                ./flake/module.nix
-                ./flake/package.nix
+                ./flake/mod.nix
+                ./flake/pkg.nix
                 # keep-sorted end
             ];
         };

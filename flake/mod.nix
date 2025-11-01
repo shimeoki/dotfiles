@@ -8,13 +8,13 @@ let
     module =
         { lib, ... }:
         {
-            options.shimeoki.dotfiles = with lib; {
-                config = mkOption {
-                    type = with types; functionTo pathInStore;
+            options.shimeoki.dotfiles = {
+                config = lib.mkOption {
+                    type = with lib.types; functionTo pathInStore;
                 };
 
-                package = mkOption {
-                    type = types.package;
+                package = lib.mkOption {
+                    type = with lib.types; package;
                 };
             };
 

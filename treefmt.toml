@@ -1,0 +1,37 @@
+[formatter.deno]
+command = "deno"
+excludes = []
+includes = ["*.md", "deno.json"]
+options = ["fmt"]
+
+[formatter.keep-sorted]
+command = "keep-sorted"
+excludes = []
+includes = ["*"]
+options = []
+
+[formatter.nixfmt]
+command = "nixfmt"
+excludes = []
+includes = ["*.nix"]
+options = ["--width", "80", "--indent", "4"]
+
+[formatter.stylua]
+command = "stylua"
+excludes = []
+includes = ["*.lua"]
+options = []
+
+[global]
+excludes = [
+    "*.lock",
+    "*.patch",
+    "package-lock.json",
+    "go.mod",
+    "go.sum",
+    ".gitignore",
+    ".gitmodules",
+    ".hgignore",
+    ".svnignore",
+]
+on-unmatched = "warn"
