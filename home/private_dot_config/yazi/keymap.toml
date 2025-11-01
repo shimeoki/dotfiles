@@ -48,3 +48,48 @@ desc = "set hovered as the background"
 on   = "C"
 run  = "plugin ouch"
 desc = "compress with ouch"
+
+[[mgr.prepend_keymap]]
+on   = [ "1" ]
+run  = "plugin relative-motions 1"
+desc = "https://github.com/dedukun/relative-motions.yazi"
+
+[[mgr.prepend_keymap]]
+on   = [ "2" ]
+run  = "plugin relative-motions 2"
+desc = "https://github.com/dedukun/relative-motions.yazi"
+
+[[mgr.prepend_keymap]]
+on   = [ "3" ]
+run  = "plugin relative-motions 3"
+desc = "https://github.com/dedukun/relative-motions.yazi"
+
+[[mgr.prepend_keymap]]
+on   = [ "4" ]
+run  = "plugin relative-motions 4"
+desc = "https://github.com/dedukun/relative-motions.yazi"
+
+[[mgr.prepend_keymap]]
+on   = [ "5" ]
+run  = "plugin relative-motions 5"
+desc = "https://github.com/dedukun/relative-motions.yazi"
+
+[[mgr.prepend_keymap]]
+on   = [ "6" ]
+run  = "plugin relative-motions 6"
+desc = "https://github.com/dedukun/relative-motions.yazi"
+
+[[mgr.prepend_keymap]]
+on   = [ "7" ]
+run  = "plugin relative-motions 7"
+desc = "https://github.com/dedukun/relative-motions.yazi"
+
+[[mgr.prepend_keymap]]
+on   = [ "8" ]
+run  = "plugin relative-motions 8"
+desc = "https://github.com/dedukun/relative-motions.yazi"
+
+[[mgr.prepend_keymap]]
+on   = [ "9" ]
+run  = "plugin relative-motions 9"
+desc = "https://github.com/dedukun/relative-motions.yazi"
