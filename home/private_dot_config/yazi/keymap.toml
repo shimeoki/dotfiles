@@ -13,15 +13,11 @@ run  = 'shell "$SHELL" --block --confirm'
 
 [[mgr.prepend_keymap]]
 on   = "<C-n>"
-run  = '''
-    shell --confirm -- ripdrag "$@" -x 2>/dev/null &
-'''
+run  = 'shell --confirm -- ripdrag "$@" -x 2>/dev/null &'
 
 [[mgr.prepend_keymap]]
 on   = [ "g", "r" ]
-run  = '''
-    shell -- ya emit cd "$(git rev-parse --show-toplevel)"
-'''
+run  = 'shell -- ya emit cd "$(git rev-parse --show-toplevel)"'
 desc = "back to the root of the current git repository"
 
 [[mgr.prepend_keymap]]
@@ -34,9 +30,7 @@ run  = "plugin toggle-pane max-preview"
 
 [[mgr.prepend_keymap]]
 on   = "b"
-run  = '''
-    shell -- swww img "$0"
-'''
+run  = 'shell -- swww img "$0"'
 
 [[mgr.prepend_keymap]]
 on   = "C"
