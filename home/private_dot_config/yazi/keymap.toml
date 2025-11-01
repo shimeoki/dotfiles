@@ -6,19 +6,16 @@ desc = "chmod on selected files"
 [[mgr.prepend_keymap]]
 on   = "<C-d>"
 run  = "plugin diff"
-desc = "diff the selected file with the hovered file"
 
 [[mgr.prepend_keymap]]
 on   = "!"
 run  = 'shell "$SHELL" --block --confirm'
-desc = "open shell here"
 
 [[mgr.prepend_keymap]]
 on   = "<C-n>"
 run  = '''
     shell --confirm -- ripdrag "$@" -x 2>/dev/null &
 '''
-desc = "drag and drop on selected files"
 
 [[mgr.prepend_keymap]]
 on   = [ "g", "r" ]
@@ -30,24 +27,20 @@ desc = "back to the root of the current git repository"
 [[mgr.prepend_keymap]]
 on   = "<C-t>"
 run  = "plugin toggle-pane min-preview"
-desc = "show or hide the preview pane"
 
 [[mgr.prepend_keymap]]
 on   = "T"
 run  = "plugin toggle-pane max-preview"
-desc = "maximize or restore the preview pane"
 
 [[mgr.prepend_keymap]]
 on   = "b"
 run  = '''
     shell -- swww img "$0"
 '''
-desc = "set hovered as the background"
 
 [[mgr.prepend_keymap]]
 on   = "C"
 run  = "plugin ouch"
-desc = "compress with ouch"
 
 [[mgr.prepend_keymap]]
 on  = "M"
@@ -64,44 +57,35 @@ run = "plugin bypass reverse"
 [[mgr.prepend_keymap]]
 on   = [ "1" ]
 run  = "plugin relative-motions 1"
-desc = "https://github.com/dedukun/relative-motions.yazi"
 
 [[mgr.prepend_keymap]]
 on   = [ "2" ]
 run  = "plugin relative-motions 2"
-desc = "https://github.com/dedukun/relative-motions.yazi"
 
 [[mgr.prepend_keymap]]
 on   = [ "3" ]
 run  = "plugin relative-motions 3"
-desc = "https://github.com/dedukun/relative-motions.yazi"
 
 [[mgr.prepend_keymap]]
 on   = [ "4" ]
 run  = "plugin relative-motions 4"
-desc = "https://github.com/dedukun/relative-motions.yazi"
 
 [[mgr.prepend_keymap]]
 on   = [ "5" ]
 run  = "plugin relative-motions 5"
-desc = "https://github.com/dedukun/relative-motions.yazi"
 
 [[mgr.prepend_keymap]]
 on   = [ "6" ]
 run  = "plugin relative-motions 6"
-desc = "https://github.com/dedukun/relative-motions.yazi"
 
 [[mgr.prepend_keymap]]
 on   = [ "7" ]
 run  = "plugin relative-motions 7"
-desc = "https://github.com/dedukun/relative-motions.yazi"
 
 [[mgr.prepend_keymap]]
 on   = [ "8" ]
 run  = "plugin relative-motions 8"
-desc = "https://github.com/dedukun/relative-motions.yazi"
 
 [[mgr.prepend_keymap]]
 on   = [ "9" ]
 run  = "plugin relative-motions 9"
-desc = "https://github.com/dedukun/relative-motions.yazi"
