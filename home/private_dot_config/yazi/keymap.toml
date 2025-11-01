@@ -50,6 +50,10 @@ run  = "plugin ouch"
 desc = "compress with ouch"
 
 [[mgr.prepend_keymap]]
+on  = "M"
+run = "plugin mount"
+
+[[mgr.prepend_keymap]]
 on   = [ "1" ]
 run  = "plugin relative-motions 1"
 desc = "https://github.com/dedukun/relative-motions.yazi"
