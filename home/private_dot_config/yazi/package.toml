@@ -38,6 +38,11 @@ use = "yazi-rs/plugins:mount"
 rev = "8f1d971"
 hash = "4fccaaf10c36dc2466e2438a386ff017"
 
+[[plugin.deps]]
+use = "Rolv-Apneseth/bypass"
+rev = "c1e5fcf"
+hash = "208e77480824f62558a5b037c8569d61"
+
 [[flavor.deps]]
 use = "yazi-rs/flavors:catppuccin-mocha"
 rev = "f9ae9f2"

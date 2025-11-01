@@ -54,6 +54,14 @@ on  = "M"
 run = "plugin mount"
 
 [[mgr.prepend_keymap]]
+on = [ "L" ]
+run = "plugin bypass"
+
+[[mgr.prepend_keymap]]
+on = [ "H" ]
+run = "plugin bypass reverse"
+
+[[mgr.prepend_keymap]]
 on   = [ "1" ]
 run  = "plugin relative-motions 1"
 desc = "https://github.com/dedukun/relative-motions.yazi"
