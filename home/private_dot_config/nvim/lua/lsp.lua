@@ -1,8 +1,8 @@
 vim.lsp.inlay_hint.enable()
 
 vim.lsp.enable({
+	"basedpyright",
 	"lua_ls",
-	"jedi_language_server",
 	"ruff",
 	"bashls",
 	"clangd",

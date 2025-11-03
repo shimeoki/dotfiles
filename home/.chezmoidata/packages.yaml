@@ -47,7 +47,6 @@ packages:
             - "gopls"
             - "gradle"
             - "jdk-openjdk"
-            - "jedi-language-server"
             - "lazydocker"
             - "lazygit"
             - "lua"
@@ -139,6 +138,7 @@ packages:
 
             ## dev
             # keep-sorted start
+            - "basedpyright-bin"
             - "dockerfile-language-server"
             - "jdtls"
             - "nixfmt"
