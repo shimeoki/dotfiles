@@ -1,45 +1,12 @@
-local M = {}
-
-local ensure_installed = {
-	-- langservers
-	"lua-language-server",
-	"jdtls",
-	"jedi-language-server",
-	"bash-language-server",
-	"clangd",
-	"deno",
-	"vue-language-server",
-	"typescript-language-server",
-	"css-lsp",
-	"texlab",
-	"hyprls",
-	"gopls",
-	"dockerfile-language-server",
-	"marksman",
-	"deno",
-	"svelte-language-server",
-	-- debuggers
-	"delve",
-	-- linters
-	"luacheck",
-	"golangci-lint",
-	"shellcheck",
-	"mypy",
-	-- formatters
-	"stylua",
-	"goimports",
-	"golines",
-	"ruff",
-	"shfmt",
-	"clang-format",
-	"pyproject-fmt",
-	"nixfmt",
-	-- compilers
-	"tree-sitter-cli",
+-- INFO: other packages are installed system-wide, check the packages.yaml
+return {
+	ensure_installed = {
+		-- keep-sorted start
+		"goimports",
+		"golines",
+		"hyprls",
+		"pyproject-fmt",
+		"vue-language-server",
+		-- keep-sorted end
+	},
 }
-
-M.opts = {
-	ensure_installed = ensure_installed,
-}
-
-return M

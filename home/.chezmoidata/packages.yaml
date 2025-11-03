@@ -32,7 +32,10 @@ packages:
 
             ## dev
             # keep-sorted start
+            - "bash-language-server"
             - "clang"
+            - "delve"
+            - "deno"
             - "docker"
             - "docker-buildx"
             - "docker-compose"
@@ -40,18 +43,37 @@ packages:
             - "git-delta"
             - "gitleaks"
             - "go"
+            - "golangci-lint"
+            - "gopls"
             - "gradle"
             - "jdk-openjdk"
+            - "jedi-language-server"
+            - "lazydocker"
             - "lazygit"
             - "lua"
+            - "lua-language-server"
+            - "luacheck"
             - "luarocks"
+            - "marksman"
+            - "mypy"
             - "nodejs"
             - "npm"
             - "pnpm"
             - "pre-commit"
             - "python"
+            - "ruff"
             - "rust"
+            - "shellcheck"
+            - "shfmt"
+            - "simdjson"
+            - "stylua"
+            - "svelte-language-server"
+            - "texlab"
+            - "tree-sitter-cli"
+            - "typescript-language-server"
             - "uv"
+            - "vscode-css-languageserver"
+            - "yq"
             # keep-sorted end
 
             ## audio / music
@@ -117,7 +139,10 @@ packages:
 
             ## dev
             # keep-sorted start
-            - "lazydocker"
+            - "dockerfile-language-server"
+            - "jdtls"
+            - "nixfmt"
+            - "treefmt"
             # keep-sorted end
 
             ## desktop

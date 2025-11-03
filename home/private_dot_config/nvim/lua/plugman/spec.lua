@@ -113,7 +113,7 @@ return {
 		event = "VeryLazy",
 		dependencies = { "williamboman/mason.nvim", opts = {} },
 		opts = function()
-			return require("plugins.mason").opts
+			return require("plugins.mason")
 		end,
 	},
 	{
