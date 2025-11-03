@@ -247,6 +247,8 @@ binds {
     Mod+Shift+S { screenshot-screen; }
     Mod+Ctrl+S  { screenshot-window; }
 
+    Mod+O { toggle-window-rule-opacity; }
+
     // Applications such as remote-desktop clients and software KVM switches may
     // request that niri stops processing the keyboard shortcuts defined here
     // so they may, for example, forward the key presses as-is to a remote
