@@ -1,6 +1,7 @@
 packages:
     arch:
         official:
+            # keep-sorted start
             - "bat"
             - "btop"
             - "cryptsetup"
@@ -27,7 +28,10 @@ packages:
             - "yazi"
             - "zoxide"
             - "zsh"
-            # dev
+            # keep-sorted end
+
+            ## dev
+            # keep-sorted start
             - "clang"
             - "docker"
             - "docker-buildx"
@@ -48,7 +52,10 @@ packages:
             - "python"
             - "rust"
             - "uv"
-            # audio / music
+            # keep-sorted end
+
+            ## audio / music
+            # keep-sorted start
             - "beets"
             - "cava"
             - "mpd"
@@ -59,7 +66,10 @@ packages:
             - "pipewire-pulse"
             - "rmpc"
             - "sof-firmware"
-            # desktop
+            # keep-sorted end
+
+            ## desktop
+            # keep-sorted start
             - "cliphist"
             - "deltachat-desktop"
             - "discord"
@@ -82,7 +92,10 @@ packages:
             - "wl-clipboard"
             - "xdg-desktop-portal-gnome"
             - "xwayland-satellite"
-            # fonts
+            # keep-sorted end
+
+            ## fonts
+            # keep-sorted start
             - "noto-fonts-cjk"
             - "noto-fonts-emoji"
             - "noto-fonts-extra"
@@ -92,17 +105,26 @@ packages:
             - "ttf-roboto"
             - "ttf-roboto-mono"
             - "ttf-roboto-mono-nerd"
+            # keep-sorted end
         aur:
+            # keep-sorted start
             - "carapace-bin"
             - "kanata"
             - "oh-my-posh-bin"
             - "paru"
             - "ripdrag-git"
-            # dev
+            # keep-sorted end
+
+            ## dev
+            # keep-sorted start
             - "lazydocker"
-            # desktop
+            # keep-sorted end
+
+            ## desktop
+            # keep-sorted start
             - "bibata-cursor-theme"
             - "materialgram-bin"
             - "pwvucontrol"
             - "waybar-cava"
             - "zen-browser-bin"
+            # keep-sorted end
