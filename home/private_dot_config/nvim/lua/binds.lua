@@ -35,22 +35,6 @@ local function toggle_comment_in_visual()
 	input("gc")
 end
 
-local function quarto_run_cell()
-	require("quarto.runner").run_cell()
-end
-
-local function quarto_run_range()
-	require("quarto.runner").run_range()
-end
-
-local function quarto_run_above()
-	require("quarto.runner").run_above()
-end
-
-local function quarto_run_all()
-	require("quarto.runner").run_all()
-end
-
 local function luasnip_next()
 	local ls = require("luasnip")
 	return ls.choice_active() and ls.change_choice(1)
@@ -214,11 +198,6 @@ return {
 
 	new({ "g", t .. "git_commits", "list commits" }),
 	new({ "G", t .. "git_branches", "list branches" }),
-
-	new({ "q", quarto_run_cell, "run cell with quarto", modes = "n" }),
-	new({ "q", quarto_run_range, "run visual range with quarto", modes = "v" }),
-	new({ "Q", quarto_run_above, "run cell and above with quarto" }),
-	new({ "<c-q>", quarto_run_all, "run all cells with quarto" }),
 
 	new({
 		"<c-s-l>",
