@@ -67,17 +67,6 @@ return {
 		opts = {},
 	},
 	{
-		"GCBallesteros/jupytext.nvim",
-		main = "jupytext",
-		lazy = not_opening_a_file,
-		cmd = { "NewNotebook" },
-		event = { "BufEnter" },
-		ft = { "ipynb", "markdown", "json" },
-		opts = function()
-			return require("plugins.jupytext").opts
-		end,
-	},
-	{
 		"mikesmithgh/kitty-scrollback.nvim",
 		main = "kitty-scrollback",
 		cmd = {
@@ -101,15 +90,6 @@ return {
 		dependencies = { "williamboman/mason.nvim", opts = {} },
 		opts = function()
 			return require("plugins.mason")
-		end,
-	},
-	{
-		"benlubas/molten-nvim",
-		ft = { "python", "markdown", "json" },
-		version = "^1.0.0",
-		build = ":UpdateRemotePlugins",
-		config = function()
-			require("plugins.molten").setup()
 		end,
 	},
 	{
@@ -177,18 +157,6 @@ return {
 		"kylechui/nvim-surround",
 		event = "VeryLazy",
 		opts = {},
-	},
-	{
-		"quarto-dev/quarto-nvim",
-		main = "quarto",
-		ft = { "quarto", "markdown", "json", "python" },
-		dependencies = {
-			"jmbuhr/otter.nvim",
-			"nvim-treesitter/nvim-treesitter",
-		},
-		opts = function()
-			return require("plugins.quarto").opts
-		end,
 	},
 	{
 		"nvim-treesitter/nvim-treesitter",
