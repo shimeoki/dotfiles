@@ -53,19 +53,6 @@ return {
 		opts = {},
 	},
 	{
-		"ray-x/go.nvim",
-		main = "go",
-		cond = false, -- info: depending on old treesitter
-		ft = { "go", "gomod" },
-		build = ':lua require("go.install").update_all()',
-		opts = function()
-			return require("plugins.go").opts
-		end,
-	},
-	{
-		"ray-x/guihua.lua",
-	},
-	{
 		"3rd/image.nvim",
 		main = "image",
 		ft = { "markdown" },
@@ -240,15 +227,6 @@ return {
 		},
 		config = function()
 			require("plugins.telescope").setup()
-		end,
-	},
-	{
-		"folke/todo-comments.nvim",
-		main = "todo-comments",
-		cmd = { "TodoTelescope" },
-		event = { "BufReadPost", "BufWritePost", "BufNewFile" },
-		opts = function()
-			return require("plugins.todo").opts
 		end,
 	},
 	{
