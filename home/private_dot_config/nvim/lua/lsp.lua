@@ -1,21 +1,23 @@
 vim.lsp.inlay_hint.enable()
 
 vim.lsp.enable({
+	-- keep-sorted start
 	"basedpyright",
-	"lua_ls",
-	"ruff",
 	"bashls",
 	"clangd",
-	"nushell",
-	"vue_ls",
-	"ts_ls",
 	"cssls",
-	"texlab",
-	"hyprls",
-	"gopls",
-	"dockerls",
-	"marksman",
 	"denols",
-	"svelte",
+	"dockerls",
+	"gopls",
+	"hyprls",
 	"jdtls",
+	"lua_ls",
+	"marksman",
+	"nushell",
+	"ruff",
+	"svelte",
+	"texlab",
+	"ts_ls",
+	"vue_ls",
+	-- keep-sorted end
 })
