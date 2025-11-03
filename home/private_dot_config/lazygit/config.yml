@@ -26,6 +26,5 @@ gui:
     filterMode: fuzzy
 
 git:
-    paging:
-        colorArg: always
-        pager: delta --paging=never
+    pagers:
+        - pager: delta --paging=never
