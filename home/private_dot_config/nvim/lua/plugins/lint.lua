@@ -1,10 +1,11 @@
 local M = {}
 
 local linters_by_ft = {
-	lua = { "luacheck" },
+	-- keep-sorted start
 	go = { "golangcilint" },
-	gomod = { "golangcilint" },
+	lua = { "luacheck" },
 	python = { "dmypy" },
+	-- keep-sorted end
 }
 
 local luacheck = {
