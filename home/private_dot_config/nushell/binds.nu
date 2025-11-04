@@ -71,6 +71,20 @@ $env.config.keybindings ++= [
     }
 ]
 
+use modules/zoxide.nu
+$env.config.keybindings ++= [
+    {
+        name: zoxide
+        modifier: control_shift
+        keycode: char_e
+        mode: [vi_normal vi_insert]
+        event: {
+            send: ExecuteHostCommand
+            cmd: 'zoxide jumper'
+        }
+    }
+]
+
 use modules/fzf.nu
 $env.config.keybindings ++= [
     {
