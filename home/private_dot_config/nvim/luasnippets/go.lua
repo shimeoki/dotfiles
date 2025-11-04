@@ -100,10 +100,20 @@ return {
 		i(0, "type"),
 	}),
 
+	s("rb", {
+		t("if err := "),
+		i(1, "statement"),
+		t({ "; err != nil {", "\treturn nil, err", "}" }),
+	}),
+
 	s("rn", {
 		t("return "),
 		i(0, "v"),
 		t(", nil"),
+	}),
+
+	s("rp", {
+		t("return nil, err"),
 	}),
 
 	s("rr", {
