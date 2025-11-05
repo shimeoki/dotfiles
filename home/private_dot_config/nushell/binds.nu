@@ -30,14 +30,14 @@ $env.config.keybindings ++= [
     {
         name: hint_word_complete
         modifier: control
-        keycode: "char_;"
+        keycode: "space"
         mode: [vi_normal vi_insert]
         event: { send: HistoryHintWordComplete }
     }
     {
         name: hint_complete
-        modifier: control
-        keycode: "char_'"
+        modifier: control_shift
+        keycode: "space"
         mode: [vi_normal vi_insert]
         event: { send: HistoryHintComplete }
     }
