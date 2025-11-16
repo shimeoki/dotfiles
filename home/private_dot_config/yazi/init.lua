@@ -4,10 +4,6 @@ require("full-border"):setup({
 
 require("git"):setup()
 
-require("relative-motions"):setup({
-	show_numbers = "relative_absolute",
-})
-
 function Status:name()
 	local h = self._tab.current.hovered
 	if not h then
