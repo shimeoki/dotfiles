@@ -4,7 +4,7 @@ local date = os.date
 local theme = vim.env.XDG_CONFIG_HOME .. "/bat/themes/Catppuccin Mocha.tmTheme"
 local font = "FiraCode Nerd Font=16"
 local indent_width = 4
-local directory = vim.env.HOME .. "/Pictures/screenshots/code/"
+local directory = vim.env.HOME .. "/Pictures/screenshots/nvim/"
 
 local function current_buf_name()
 	return api.nvim_buf_get_name(api.nvim_get_current_buf())
