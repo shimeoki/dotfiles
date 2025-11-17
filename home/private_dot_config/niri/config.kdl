@@ -96,7 +96,7 @@ layout {
 
 prefer-no-csd
 
-screenshot-path "~/Pictures/screenshots/desktop/%Y-%m-%d-%H-%M-%S.png"
+screenshot-path "~/Pictures/screenshots/kaede/%Y-%m-%d-%H-%M-%S.png"
 
 window-rule {
     match app-id="^vesktop$"
