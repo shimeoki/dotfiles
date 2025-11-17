@@ -47,39 +47,3 @@ run = "plugin bypass"
 [[mgr.prepend_keymap]]
 on = [ "H" ]
 run = "plugin bypass reverse"
-
-[[mgr.prepend_keymap]]
-on   = [ "1" ]
-run  = "plugin relative-motions 1"
-
-[[mgr.prepend_keymap]]
-on   = [ "2" ]
-run  = "plugin relative-motions 2"
-
-[[mgr.prepend_keymap]]
-on   = [ "3" ]
-run  = "plugin relative-motions 3"
-
-[[mgr.prepend_keymap]]
-on   = [ "4" ]
-run  = "plugin relative-motions 4"
-
-[[mgr.prepend_keymap]]
-on   = [ "5" ]
-run  = "plugin relative-motions 5"
-
-[[mgr.prepend_keymap]]
-on   = [ "6" ]
-run  = "plugin relative-motions 6"
-
-[[mgr.prepend_keymap]]
-on   = [ "7" ]
-run  = "plugin relative-motions 7"
-
-[[mgr.prepend_keymap]]
-on   = [ "8" ]
-run  = "plugin relative-motions 8"
-
-[[mgr.prepend_keymap]]
-on   = [ "9" ]
-run  = "plugin relative-motions 9"
