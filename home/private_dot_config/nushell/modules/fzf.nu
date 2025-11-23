@@ -22,7 +22,7 @@ export def --wrapped copypath [...rest: string]: nothing -> any {
 export def --wrapped copyfile [...rest: string]: nothing -> any {
     fd --follow --hidden --type=file
     | preview --no-multi ...$rest
-    | if ($in | is-not-empty) { bat $in | wl-copy }
+    | if ($in | is-not-empty) { open $in | wl-copy }
 }
 
 export def --wrapped copyhist [...rest: string]: nothing -> any {
