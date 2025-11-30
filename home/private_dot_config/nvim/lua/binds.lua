@@ -198,6 +198,7 @@ return {
 
 	new({ "g", t .. "git_commits", "list commits" }),
 	new({ "G", t .. "git_branches", "list branches" }),
+	new({ "<c-g>", t .. "git_status", "list staged files" }),
 
 	new({
 		"<c-s-l>",
