@@ -20,7 +20,7 @@ def 'prompt git' [] {
 
     let delta = if ($lines | length) > 1 { '~' } else { '' }
     let cols = ($lines | get 0 | split column '...' | get 0)
-    let name = ($cols | get column1 | parse '## {branch}' | get branch.0)
+    let name = ($cols | get column0 | parse '## {branch}' | get branch.0)
     let branch = $'($name)($delta)'
 
     let upstream = ($cols | get --optional column2)
