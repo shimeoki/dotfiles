@@ -6,7 +6,7 @@
 
 # source: https://github.com/nushell/nu_scripts/blob/main/sourced/cool-oneliners/pwd-short.nu
 def 'prompt pwd' [] {
-    let out = ($env.PWD | str replace $nu.home-path '~')
+    let out = ($env.PWD | str replace $nu.home-dir '~')
     let color = if $env.LAST_EXIT_CODE == 0 { "green" } else { "red" }
     $"(ansi $color)($out)(ansi reset)"
 }
