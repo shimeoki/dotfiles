@@ -267,6 +267,9 @@ binds {
 
 environment {
     QT_QPA_PLATFORM "wayland"
+    LIBVA_DRIVER_NAME "nvidia"
+    __GLX_VENDOR_LIBRARY_NAME "nvidia"
+    GBM_BACKEND "nvidia-drm"
     ELECTRON_OZONE_PLATFORM_HINT "auto"
 }
 
