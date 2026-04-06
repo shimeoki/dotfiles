@@ -2,50 +2,28 @@
 -- https://github.com/neovim/nvim-lspconfig/blob/ac98db2f9f06a56498ec890a96928774eae412c3/lsp/ts_ls.lua
 -- https://github.com/vuejs/language-tools/wiki/Neovim
 
-local vue_ls = "$MASON/packages/vue-language-server/node_modules/@vue/language-server"
-
-local root_markers = {
-	"package-lock.json",
-	"yarn.lock",
-	"pnpm-lock.yaml",
-	"bun.lockb",
-	"bun.lock",
-	{ ".git" },
-}
+-- TODO: return vue_ls setup
 
 return {
 	cmd = { "typescript-language-server", "--stdio" },
 	init_options = {
 		hostInfo = "neovim",
-		plugins = {
-			{
-				name = "@vue/typescript-plugin",
-				location = vim.fn.expand(vue_ls),
-				languages = { "vue" },
-				configNamespace = "typescript",
-			},
-		},
 	},
 	workspace_required = true,
-	root_markers = root_markers,
+	root_markers = {
+		"package-lock.json",
+		"yarn.lock",
+		"pnpm-lock.yaml",
+		"bun.lockb",
+		"bun.lock",
+		{ ".git" },
+	},
 	filetypes = {
 		"javascript",
 		"javascriptreact",
 		"typescript",
 		"typescriptreact",
-		"vue",
 	},
-	root_dir = function(bufnr, on_dir)
-		-- deno projects are managed by denols.
-		-- use deno.lock as the marker, because deno.json can be used
-		-- for formatting. deno.lock suggests "full deno project"
-		local deno_markers = { "deno.lock" }
-		if vim.fs.root(bufnr, deno_markers) then
-			return
-		end
-
-		on_dir(vim.fs.root(bufnr, root_markers) or vim.fn.getcwd())
-	end,
 	handlers = {
 		-- handle rename request for certain code actions like extracting functions / types
 		["_typescript.rename"] = function(_, result, ctx)
